@@ -1,0 +1,34 @@
+jobname: amip
+queue: normal
+walltime: 1:40:00
+
+# note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
+laboratory: access-esm
+model: um
+model: um
+ncpus: 192
+exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
+input:
+- /g/data/access/payu/access-esm/input/historical/atmosphere
+- /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
+restart: /g/data/access/payu/access-esm/restart/pre-industrial
+
+calendar:
+    start:
+        # Check also 'MODEL_BASIS_TIME' in atmosphere namelists,
+        # 'inidate' in ice namelists
+        year: 1850
+        month: 1
+        days: 1
+
+    runtime:
+        years: 1 # NOTE: Must be 1 year for land use changes
+        months: 0
+        days: 0
+
+# Increase to run multiple years in a single submission
+runspersub: 1
+
+stacksize: unlimited
+
+qsub_flags: -W umask=027
