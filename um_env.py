@@ -49,4 +49,6 @@ vars = {
 'SOOTEMIS': 'INPUT/BC_hi_1849_2015_ESM1.anc',
 'SULPEMIS': 'INPUT/scycl_1849_2015_ESM1_v4.anc',
 'VEGINIT': 'INPUT/cable_vegfunc_N96.anc',
+'SSTIN': 'INPUT/amip_sst_n96_greg.pp',
+'SICEIN': 'INPUT/amip_seaice_n96_greg.pp',
 }
