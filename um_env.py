@@ -1,6 +1,6 @@
 vars = {
 'AINITIAL': '',
-'ASTART': 'INPUT/pre-industrial.astart', 
+'ASTART': 'INPUT/restart_dump.astart',
 'AUSCOM_CPL': 'false',
 'DATAW': '{work_path}',
 'FASTRUN': 'true',

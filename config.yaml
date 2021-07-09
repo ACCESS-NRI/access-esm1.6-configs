@@ -10,9 +10,9 @@ ncpus: 192
 exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
 input:
 - /g/data/access/payu/access-esm/input/amip
-- /g/data/access/payu/access-esm/input/historical/atmosphere
+- /g/data/access/payu/access-esm/input/historical.corrected/atmosphere
 - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
-restart: /g/data/access/payu/access-esm/restart/pre-industrial/atmosphere
+restart: /g/data/access/payu/access-esm/restart/amip
 
 calendar:
     start:

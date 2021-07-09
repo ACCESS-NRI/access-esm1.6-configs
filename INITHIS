@@ -75,8 +75,8 @@
  DSOILTMP= 'DSOILTMP : $ANCIL_LAND/qrclim.slt',
  SOILTYPE= 'SOILTYPE : $ANCIL_LAND/qrparm.soil_igbp_vg',
  VEGTYPE= 'VEGTYPE : ',
-SSTIN='SSTIN  : /g/data/p66/txz599/data/ancil/misc/amip_sst_n96_greg.pp'
-SICEIN='SICEIN  : /g/data/p66/txz599/data/ancil/misc/amip_seaice_n96_greg.pp'
+ SSTIN='SSTIN  : /g/data/p66/txz599/data/ancil/misc/amip_sst_n96_greg.pp',
+ SICEIN='SICEIN  : /g/data/p66/txz599/data/ancil/misc/amip_seaice_n96_greg.pp',
  CURNTIN= 'CURNTIN : ',
  MASK= 'MASK : $ANCIL_LAND/qrparm.mask',
  OROG= 'OROG : $ANCIL_LAND/qrparm.orog',
