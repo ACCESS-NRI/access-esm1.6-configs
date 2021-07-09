@@ -1,7 +1,7 @@
 vars = {
 'AINITIAL': '',
 'ASTART': 'INPUT/pre-industrial.astart', 
-'AUSCOM_CPL': 'true',
+'AUSCOM_CPL': 'false',
 'DATAW': '{work_path}',
 'FASTRUN': 'true',
 'IDEALISE': '',
