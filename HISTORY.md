@@ -33,3 +33,19 @@ But for now it's working.
 ## Model running, but I think the data is off
 
 Restarting with 'corrected' historical files
+
+## Changing start dump
+
+Holger, you can try to run the payu version with the following restart file:
+
+
+
+/scratch/p66/txz599/archive/AM-09-t1/restart/atm/AM-09-t1.astart-19780101
+
+
+
+This restart file has already the correct number of expected prognostic fields, so no further processing required.
+
+Not identical, try again with non-corrected
+
+
