@@ -49,3 +49,6 @@ This restart file has already the correct number of expected prognostic fields, 
 Not identical, try again with non-corrected
 
 
+## Tilo's directories
+/g/data/p66/txz599/ACCESS-ESM1p5/exp/AM-09-t1
+/scratch/p66/txz599/archive/AM-09-t1/
