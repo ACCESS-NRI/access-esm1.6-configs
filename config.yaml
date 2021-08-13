@@ -1,6 +1,6 @@
 jobname: amip
-queue: express #normal
-walltime: 0:05:00 #1:40:00
+queue: normal
+walltime: 1:40:00
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
@@ -10,9 +10,6 @@ ncpus: 192
 exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
 input:
 - /g/data/access/payu/access-esm/input/amip
-  #- /g/data/access/payu/access-esm/input/historical/atmosphere
-  #- /g/data/access/payu/access-esm/input/historical.corrected/atmosphere
-  #- /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
 restart: /g/data/access/payu/access-esm/restart/amip
 
 calendar:
@@ -32,7 +29,7 @@ calendar:
 runspersub: 1
 
 userscripts:
-    setup: python3 scripts/update_trace_gasses.py
+    setup: ./scripts/update_trace_gasses.sh
 
 stacksize: unlimited
 
