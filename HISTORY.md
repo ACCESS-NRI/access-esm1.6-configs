@@ -52,3 +52,20 @@ Not identical, try again with non-corrected
 ## Tilo's directories
 /g/data/p66/txz599/ACCESS-ESM1p5/exp/AM-09-t1
 /scratch/p66/txz599/archive/AM-09-t1/
+
+
+## My own ksh run was successful. 
+/scratch/w35/hxw599/exp/AM-09
+The final absolute Norm is:
+```
+  Final Absolute Norm :   9.476114947009368E-003
+  Final Absolute Norm :   9.263593553513758E-003
+  Final Absolute Norm :   8.666711488850787E-003
+  Final Absolute Norm :   8.694108134046526E-003
+  Final Absolute Norm :   9.565927145833091E-003
+  Final Absolute Norm :   8.337744422816816E-003
+  Final Absolute Norm :   9.181470990641743E-003
+  Final Absolute Norm :   7.638193879830560E-003
+  Final Absolute Norm :   8.416312129883008E-003
+  Final Absolute Norm :   8.060406845402416E-003
+```
