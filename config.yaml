@@ -31,6 +31,9 @@ calendar:
 # Increase to run multiple years in a single submission
 runspersub: 1
 
+userscripts:
+    setup: python3 scripts/update_trace_gasses.py
+
 stacksize: unlimited
 
 qsub_flags: -W umask=027

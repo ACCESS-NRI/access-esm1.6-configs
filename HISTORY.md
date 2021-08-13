@@ -69,3 +69,10 @@ The final absolute Norm is:
   Final Absolute Norm :   8.416312129883008E-003
   Final Absolute Norm :   8.060406845402416E-003
 ```
+
+## Trace Gasses
+
+Tilo's script modifies the MMR of various trace gasses every year. I don't think this should have any effect, because `l_clmchfcg` is set to True, so it should take the values out of the arrays. But still, I'll try it.
+
+At the moment, the year is hardcoded in the script, so that needs to change before it can run if that is an issue...
+
