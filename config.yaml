@@ -1,6 +1,6 @@
 jobname: amip
-queue: normal
-walltime: 1:40:00
+queue: express #normal
+walltime: 0:05:00 #1:40:00
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
