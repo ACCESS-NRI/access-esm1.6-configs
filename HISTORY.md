@@ -76,3 +76,13 @@ Tilo's script modifies the MMR of various trace gasses every year. I don't think
 
 At the moment, the year is hardcoded in the script, so that needs to change before it can run if that is an issue...
 
+
+## Setting up the INPUT files again
+
+Seems to be working now, not sure whether the `scripts/update_trace_gasses.py` script is necessary, if it is, we need to fix it. (Currently it only uses the gasses for the year 1978.)
+
+But I'm now letting it run for a year, see what the output is.
+
+## Year output result
+
+Compared the Air Temperature for 31/12/1978 and they look identical to the NetCDF version, except for some 15 uK noise, which I've also seen in my ksh run. So I'll do one more short run (just 5 minutes) without the script to adapt the trace gasses, which I think shouldn't be needed.

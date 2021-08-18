@@ -1,6 +1,6 @@
 jobname: amip
-queue: normal
-walltime: 1:40:00
+queue: express #normal
+walltime: 0:03:00 #1:40:00
 
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
@@ -28,8 +28,8 @@ calendar:
 # Increase to run multiple years in a single submission
 runspersub: 1
 
-userscripts:
-    setup: ./scripts/update_trace_gasses.sh
+#userscripts:
+#    setup: ./scripts/update_trace_gasses.sh
 
 stacksize: unlimited
 
