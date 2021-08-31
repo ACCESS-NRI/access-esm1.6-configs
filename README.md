@@ -7,10 +7,6 @@ Get payu:
     module use /g/data3/hh5/public/modules
     module load conda/analysis3
 
-Get some global CABLE files:
-
-    test -d $HOME/CABLE-AUX-1.4 || cp -r ~access/data/ACCESS_CMIP5/CABLE-AUX-1.4 $HOME/
-
 Create a directory in which to keep the model configurations:
 
     mkdir -p ~/access-esm
@@ -121,11 +117,6 @@ Create a directory in your home directory to keep all the Control Directories yo
 
     mkdir ~/access-esm
     cd ~/access-esm
-
-The cable submodel needs some files in your home directory at a specific location. 
-Use this command to ensure they're there:
-
-    test -d $HOME/CABLE-AUX-1.4 || cp -r ~access/data/ACCESS_CMIP5/CABLE-AUX-1.4 $HOME/
 
 Then clone the most recent version of the ACCESS-ESM control directory:
 

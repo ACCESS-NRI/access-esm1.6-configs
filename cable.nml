@@ -1,7 +1,7 @@
 &cable
 !
- filename%veg     = '~/CABLE-AUX-1.4/core/biogeophys/def_veg_params.txt' !relative to your home dir
- filename%soil    = '~/CABLE-AUX-1.4/core/biogeophys/def_soil_params.txt' !relative to your home dir
+ filename%veg     = 'INPUT/cable-aux-core/biogeophys/def_veg_params.txt' !relative to your home dir
+ filename%soil    = 'INPUT/cable-aux-core/biogeophys/def_soil_params.txt' !relative to your home dir
 !
 !
 !! cable_user flags
@@ -55,7 +55,7 @@
   l_laiFeedbk   = .TRUE.  ! using prognostic LAI
   l_vcmaxFeedbk = .TRUE.  ! using prognostic Vcmax
 ! filenames for CASA-CNP input files
-!  casafile%cnpbiome='~/CABLE-AUX-1.4/core/biogeochem/pftlookup_csiro_v16_17tiles.csv' ! biome specific BGC parameters
-  casafile%cnpbiome='~/CABLE-AUX-1.4/core/biogeochem/pftlookup_csiro_v16_17tiles_wtlnds.csv'  ! biome specific BGC parameters
-  casafile%phen='~/CABLE-AUX-1.4/core/biogeochem/modis_phenology_csiro.txt' ! phenology by latitude (modis derived)
+!  casafile%cnpbiome='INPUT/cable-aux-core/biogeochem/pftlookup_csiro_v16_17tiles.csv' ! biome specific BGC parameters
+  casafile%cnpbiome='INPUT/cable-aux-core/biogeochem/pftlookup_csiro_v16_17tiles_wtlnds.csv'  ! biome specific BGC parameters
+  casafile%phen='INPUT/cable-aux-core/biogeochem/modis_phenology_csiro.txt' ! phenology by latitude (modis derived)
 &end
