@@ -1,5 +1,8 @@
 # ACCESS-ESM with **payu**
 
+## Excessive Output Warning
+The ACCESS-ESM-AMIP run as it is at the moment produces a lot of output. Please contact CMS before running it for a long time. Thank you.
+
 ## Quickstart Guide
 
 Get payu:
