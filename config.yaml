@@ -23,9 +23,9 @@ walltime: 2:30:00
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p5/2024.05.0
+      - access-esm1p6/pr2-6
 
 # Model configuration
 model: access
@@ -67,14 +67,11 @@ submodels:
     - name: ocean
       model: mom
       ncpus: 180
-      exe: fms_ACCESS-CM.x
+      exe: fms_ACCESS-ESM.x
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/share/ocean/biogeochemistry/global.1deg/2024.07.12/bgc_param.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_fice_monthly_om1p5_bc.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_xkw_monthly_om1p5_bc.nc
         # Tides
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/tideamp.nc
@@ -119,7 +116,7 @@ collate:
     walltime: 1:00:00
     mpi: false
 
-restart: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/restart/
+restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/restart
 
 # Timing controls
 calendar:
@@ -138,10 +135,10 @@ runspersub: 1
 # Misc
 restart_freq: 10YS
 
-runlog: true
+runlog: false
 manifest:
   reproduce:
-    exe: True
+    exe: False
 
 
 stacksize: unlimited
