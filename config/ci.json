@@ -1,0 +1,22 @@
+{
+    "$schema": "https://github.com/ACCESS-NRI/schema/tree/main/au.org.access-nri/model/configuration/ci/1-0-0.json",
+    "scheduled": {
+        "default": {
+            "markers": "checksum"
+        }
+    },
+    "reproducibility": {
+        "default": {
+            "markers": "checksum"
+        }
+    },
+    "qa": {
+        "default": {
+            "markers": "config"
+        }
+    },
+    "default": {
+        "model-config-tests-version": "0.0.1",
+        "python-version": "3.11.0"
+    }
+}

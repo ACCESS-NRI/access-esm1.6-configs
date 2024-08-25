@@ -1,0 +1,17 @@
+name: Scheduled Checks
+run-name: Scheduled Checks (${{ github.event_name }})
+on:
+  workflow_dispatch:
+  schedule:
+    # FIXME: Modify based on how often one wants to run these scheduled checks
+    - cron: '0 0 1 * *'  # once a month
+jobs:
+  checks:
+    name: Check
+    if: github.repository != 'ACCESS-NRI/model-configs-template'
+    uses: access-nri/model-config-tests/.github/workflows/config-schedule-1-ci.yml@main
+    secrets: inherit
+    permissions:
+      checks: write
+      contents: write
+      issues: write
