@@ -25,7 +25,7 @@ modules:
   use:
       - /g/data/vk83/modules
   load:
-      - access-esm1p5/2024.05.0
+      - access-esm1p5/2024.05.1
 
 # Model configuration
 model: access
@@ -73,8 +73,6 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/ocean/biogeochemistry/global.1deg/2024.07.12/bgc_param.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_fice_monthly_om1p5_bc.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_xkw_monthly_om1p5_bc.nc
         # Tides
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/tideamp.nc
