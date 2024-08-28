@@ -149,7 +149,6 @@ diag_table:
             tide_speed_drag:
             tide_speed_mask:
 
-
     'monthly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -178,7 +177,6 @@ diag_table:
             age_global:
             sw_heat:
             sw_frac:
-            temp_runoffmix:
             temp_rivermix:
             temp_vdiffuse_impl:
             salt_vdiffuse_impl:
@@ -220,6 +218,7 @@ diag_table:
 
     'monthly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
+            file_name_prefix: oceanbgc
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
@@ -235,7 +234,6 @@ diag_table:
             adic:
             fe:
             pprod_gross:
-
 
     'monthly 2d ocean fields':
         defaults:  # these can be overridden for individual fields below
@@ -281,7 +279,6 @@ diag_table:
             wfiform:
             anompb:
             eta_t:
-            rhobarz:
             conv_rho_ud_t:
             bottom_temp:
             bottom_salt:
@@ -331,6 +328,7 @@ diag_table:
 
     'monthly 2d BGC fields':
         defaults:  # these can be overridden for individual fields below
+            file_name_prefix: oceanbgc
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
@@ -353,13 +351,20 @@ diag_table:
             surface_adic:
             surface_o2:
 
-
     'monthly 1d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 1d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            file_name:
+                - file_name_prefix
+                - file_name_dimension
+                - output_freq
+                - '':
+                    - output_freq_units
+                - file_name_date
         fields:
+            geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
             temp_merid_flux_advect_global:
             temp_merid_flux_over_global:
             temp_merid_flux_gyre_global:
@@ -402,6 +407,13 @@ diag_table:
             file_name_dimension: scalar  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            file_name:
+                - file_name_prefix
+                - file_name_dimension
+                - output_freq
+                - '':
+                    - output_freq_units
+                - file_name_date
         fields:
             total_mass_seawater:
             total_volume_seawater:
@@ -432,13 +444,19 @@ diag_table:
             temp_surface_ave:
             salt_surface_ave:
 
-
-
     'monthly scalar BGC fields':
         defaults:  # these can be overridden for individual fields below
+            file_name_prefix: oceanbgc
             file_name_dimension: scalar  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            file_name:
+                - file_name_prefix
+                - file_name_dimension
+                - output_freq
+                - '':
+                    - output_freq_units
+                - file_name_date
         fields:
             total_co2_flux:
             total_aco2_flux:
