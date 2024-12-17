@@ -6,6 +6,7 @@
          threading_read='multi'
          threading_write='single'
          fileset_write='single'
+         checksum_required=.false.
 /
 
  &fms_nml
@@ -618,9 +619,9 @@
 /
 
  &mom_oasis3_interface_nml
-      num_fields_in=17
+      num_fields_in=19
       num_fields_out=9
-      fields_in= 'u_flux' ,'v_flux' ,'lprec','fprec','salt_flx','mh_flux','sw_flux','q_flux','t_flux','lw_flux','runof' ,'p' ,'aice', 'wfimelt', 'wfiform','co2_io', 'wnd_io'
+      fields_in= 'u_flux' ,'v_flux' ,'lprec','fprec','salt_flx','mh_flux','sw_flux','q_flux','t_flux','lw_flux','runof' ,'p' ,'aice', 'wfimelt', 'wfiform','co2_io', 'wnd_io', 'licefw', 'liceht'
       fields_out='t_surf','s_surf','u_surf','v_surf','dssldx','dssldy','frazil', 'co2_o', 'co2fx_o'
       send_before_ocean_update=.false.
       send_after_ocean_update=.true.
@@ -641,6 +642,8 @@
     sign_stflx=1.0
     redsea_gulfbay_sfix=.true.
     sfix_hours=24
+    chk_i2o_fields=.false.
+    chk_o2i_fields=.false.
 /
 
 &ocean_solo_nml
