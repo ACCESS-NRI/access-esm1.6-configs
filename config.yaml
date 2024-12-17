@@ -25,7 +25,7 @@ modules:
   use:
       - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/pr2-6
+      - access-esm1p6/pr26-4
 
 # Model configuration
 model: access
@@ -116,7 +116,7 @@ collate:
     walltime: 1:00:00
     mpi: false
 
-restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/restart
+restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2024.12.10
 
 # Timing controls
 calendar:
