@@ -1,3 +1,8 @@
+#202407: input_ice.nml now includes N/S iceberg and runoff domain control etc.
+#        note iceberg_rate_s/n are "tunable", i.e.,
+#        iceberg_rate_s => 0 ~ 1
+#        iceberg_rate_n => 0 ~ 1
+#        water mass budget wouldn't be changed by such tuning!
 &coupling
  caltype=1
  jobnum=2

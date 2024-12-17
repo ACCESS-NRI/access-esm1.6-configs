@@ -333,6 +333,9 @@ diag_table:
             wind_power_u:
             wind_power_v:
             hblt: {reduction_method: 'max'}
+            licefw:
+            liceht:
+
 
     'monthly 2d BGC fields':
         defaults:  # these can be overridden for individual fields below
