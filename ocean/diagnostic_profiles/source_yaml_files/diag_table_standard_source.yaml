@@ -336,10 +336,7 @@ diag_table:
 
     'monthly 2d BGC fields':
         defaults:  # these can be overridden for individual fields below
-<<<<<<< HEAD
-=======
             module_name: generic_wombatlite
->>>>>>> 0b64387 (Configure for WOMBATlite)
             file_name_prefix: oceanbgc
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
@@ -384,11 +381,9 @@ diag_table:
                     - output_freq_units
                 - file_name_date
         fields:
-<<<<<<< HEAD
             geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
-=======
             geolat_c: {reduction_method: 'snap'} # For some reason can't output _only_ gyre diags in a file
->>>>>>> 0b64387 (Configure for WOMBATlite)
+            geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
             temp_merid_flux_advect_global:
             temp_merid_flux_over_global:
             temp_merid_flux_gyre_global:
@@ -468,23 +463,3 @@ diag_table:
             temp_surface_ave:
             salt_surface_ave:
 
-<<<<<<< HEAD
-    'monthly scalar BGC fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_prefix: oceanbgc
-            file_name_dimension: scalar  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
-            file_name:
-                - file_name_prefix
-                - file_name_dimension
-                - output_freq
-                - '':
-                    - output_freq_units
-                - file_name_date
-        fields:
-            total_co2_flux:
-            total_aco2_flux:
-
-=======
->>>>>>> 0b64387 (Configure for WOMBATlite)
