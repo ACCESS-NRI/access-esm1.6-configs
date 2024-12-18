@@ -86,11 +86,11 @@ work/atmosphere/INPUT/ozone_1850_ESM1.anc:
   hashes:
     binhash: 7e82d4a83bf18e59277f026cbbee4c74
     md5: a64a01e3b092085fca308524a75a1cee
-work/atmosphere/INPUT/pftlookup_cable3.csv:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2024.12.18/pftlookup_cable3.csv
+work/atmosphere/INPUT/pftlookup_csiro_v16_17tiles_wtlnds.csv:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/pftlookup_csiro_v16_17tiles_wtlnds.csv
   hashes:
-    binhash: 004f14bafcd8b80befb28e93b28c537c
-    md5: 815c9662b2f6a09c820c2b47caaab678
+    binhash: 7b29e253f569372abb0a5f2769b58a3d
+    md5: 109d0702afd2cb0a66bf141faccaee30
 work/atmosphere/INPUT/qrparm.mask:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
   hashes:
@@ -282,25 +282,25 @@ work/coupler/rmp_um1v_to_cice_CONSERV_FRACNNEI.nc:
     binhash: 89de238897ba6f06a4c9a1bcefe4ebc8
     md5: 3bf9569f34b657f2ecab8ef5c93e7659
 work/ice/INPUT/grid.nc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/grid.nc
   hashes:
-    binhash: 9566a89e6c51961869a81fc1751bbf85
-    md5: a50e35486edd4f43e208b254ecb64582
+    binhash: e27f1045f956550305426c6abb36c868
+    md5: 1213e346055ee073fe33dc12578d99c6
 work/ice/INPUT/kmt.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
   hashes:
     binhash: 0ed504b151b168eebdee3aa13edd8c37
     md5: 2bde88b9e44c46aecf2ba2dff188d1ac
-work/ice/INPUT/lice_discharge_iceberg.nc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc
-  hashes:
-    binhash: 12d1d12f6460932f097acbb6000f52fe
-    md5: b1d6dabd4f3641865dd2d58f12db010e
 work/ice/INPUT/monthly_sstsss.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
   hashes:
     binhash: 49aab10f25c58a9a0ffa5617847050ff
     md5: 323d4c605f83f4d7d3126da70153c2ed
+work/ocean/INPUT/bgc_param.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/ocean/biogeochemistry/global.1deg/2024.07.12/bgc_param.nc
+  hashes:
+    binhash: 69340d523fddf842e3e7a030eb139111
+    md5: 9defb35e7a7181e9170a6ae57a4d3348
 work/ocean/INPUT/dust.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
   hashes:
@@ -311,11 +311,21 @@ work/ocean/INPUT/grid_spec.nc:
   hashes:
     binhash: 20468cf509d14ec15c908f7fbd8b3de5
     md5: b9adc1e552201aa3abc6efb72786ec93
+work/ocean/INPUT/ocmip2_fice_monthly_om1p5_bc.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_fice_monthly_om1p5_bc.nc
+  hashes:
+    binhash: 60f4723017d75ebe8a5bc5fe0f37ad1d
+    md5: c0ed75eef44962dbe6fc9f61dbd228a9
 work/ocean/INPUT/ocmip2_press_monthly_om1p5_bc.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
   hashes:
     binhash: d4b3605e8765d477b02a55d6ae21feac
     md5: 2e71cbb78c052e06e3df20f862928da2
+work/ocean/INPUT/ocmip2_xkw_monthly_om1p5_bc.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_xkw_monthly_om1p5_bc.nc
+  hashes:
+    binhash: 39f04199eedf0e3a6c638d890795311e
+    md5: 348a035bed83e280bb0a1de0066947fc
 work/ocean/INPUT/roughness_amp.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
   hashes:

@@ -19,14 +19,13 @@ laboratory: access-esm
 jobname: pre-industrial
 queue: normal
 walltime: 2:30:00
-jobfs: 1500MB
 
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/prerelease/modules
+      - /g/data/vk83/modules
   load:
-      - access-esm1p6/pr27-5
+      - access-esm1p5/2024.05.0
 
 # Model configuration
 model: access
@@ -53,7 +52,7 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/vegetation/global.N96/2020.05.19/cable_vegfunc_N96.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/modis_phenology_csiro.txt
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2024.12.18/pftlookup_cable3.csv
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/pftlookup_csiro_v16_17tiles_wtlnds.csv
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_soil_params.txt
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_veg_params.txt
         # Spectral
@@ -68,11 +67,14 @@ submodels:
     - name: ocean
       model: mom
       ncpus: 180
-      exe: fms_ACCESS-ESM.x
+      exe: fms_ACCESS-CM.x
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/ocean/biogeochemistry/global.1deg/2024.07.12/bgc_param.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_fice_monthly_om1p5_bc.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/unused/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_xkw_monthly_om1p5_bc.nc
         # Tides
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/tideamp.nc
@@ -88,9 +90,7 @@ submodels:
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc
-        # Iceberg flux
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/grid.nc
         # Climatology
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
 
@@ -119,7 +119,7 @@ collate:
     walltime: 1:00:00
     mpi: false
 
-restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2024.12.10
+restart: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/restart/
 
 # Timing controls
 calendar:
@@ -141,7 +141,7 @@ restart_freq: 10YS
 runlog: true
 manifest:
   reproduce:
-    exe: true
+    exe: True
 
 
 stacksize: unlimited
@@ -152,7 +152,8 @@ qsub_flags: -W umask=027
 # longer term storage
 sync:
     enable: False # set path below and change to true
-    path: null # Set to location on /g/data or a remote server and path (rsync syntax)
+    path: /g/data/tm70/sw6175/esm1p5-runs/release/20240827-release-preindustrial+concentrations-run # Set to location on /g/data or a remote server and path (rsync syntax)
+    remove_local_dirs: true
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,
