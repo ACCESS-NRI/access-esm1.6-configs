@@ -541,38 +541,41 @@ ACCESS-ESM_CMIP6
 
 # monthly 2d BGC fields
 
-"oceanbgc-2d-stf03-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "stf03", "stf03", "oceanbgc-2d-stf03-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"oceanbgc-2d-o2_stf-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"generic_wombatlite", "o2_stf", "o2_stf", "oceanbgc-2d-o2_stf-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
-"oceanbgc-2d-stf07-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "stf07", "stf07", "oceanbgc-2d-stf07-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"oceanbgc-2d-dic_stf-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"generic_wombatlite", "dic_stf", "dic_stf", "oceanbgc-2d-dic_stf-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
-"oceanbgc-2d-stf09-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "stf09", "stf09", "oceanbgc-2d-stf09-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"oceanbgc-2d-adic_stf-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"generic_wombatlite", "adic_stf", "adic_stf", "oceanbgc-2d-adic_stf-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
-"oceanbgc-2d-stf10-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "stf10", "stf10", "oceanbgc-2d-stf10-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"oceanbgc-2d-fe_stf-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"generic_wombatlite", "fe_stf", "fe_stf", "oceanbgc-2d-fe_stf-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "oceanbgc-2d-pco2-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "pco2", "pco2", "oceanbgc-2d-pco2-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"generic_wombatlite", "pco2", "pco2", "oceanbgc-2d-pco2-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "oceanbgc-2d-paco2-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "paco2", "paco2", "oceanbgc-2d-paco2-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"generic_wombatlite", "paco2", "paco2", "oceanbgc-2d-paco2-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "oceanbgc-2d-pprod_gross_2d-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "pprod_gross_2d", "pprod_gross_2d", "oceanbgc-2d-pprod_gross_2d-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"generic_wombatlite", "pprod_gross_2d", "pprod_gross_2d", "oceanbgc-2d-pprod_gross_2d-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
-"oceanbgc-2d-atm_co2-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "atm_co2", "atm_co2", "oceanbgc-2d-atm_co2-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"oceanbgc-2d-export_prod-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"generic_wombatlite", "export_prod", "export_prod", "oceanbgc-2d-export_prod-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
-"oceanbgc-2d-wnd-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "wnd", "wnd", "oceanbgc-2d-wnd-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"oceanbgc-2d-export_inorg-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"generic_wombatlite", "export_inorg", "export_inorg", "oceanbgc-2d-export_inorg-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "oceanbgc-2d-det_sediment-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "det_sediment", "det_sediment", "oceanbgc-2d-det_sediment-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"generic_wombatlite", "det_sediment", "det_sediment", "oceanbgc-2d-det_sediment-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "oceanbgc-2d-caco3_sediment-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "caco3_sediment", "caco3_sediment", "oceanbgc-2d-caco3_sediment-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"generic_wombatlite", "caco3_sediment", "caco3_sediment", "oceanbgc-2d-caco3_sediment-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+
+
+# monthly 2d BGC surface fields
 
 "oceanbgc-2d-surface_no3-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
 "ocean_model", "surface_no3", "surface_no3", "oceanbgc-2d-surface_no3-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
@@ -666,7 +669,6 @@ ACCESS-ESM_CMIP6
 "ocean_model", "pe_tot", "pe_tot", "ocean-scalar-1monthly-ym%4yr%2mo", "all", "average", "none", 2
 "ocean_model", "temp_surface_ave", "temp_surface_ave", "ocean-scalar-1monthly-ym%4yr%2mo", "all", "average", "none", 2
 "ocean_model", "salt_surface_ave", "salt_surface_ave", "ocean-scalar-1monthly-ym%4yr%2mo", "all", "average", "none", 2
-
 
 # monthly scalar BGC fields
 
