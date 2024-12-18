@@ -218,6 +218,7 @@ diag_table:
 
     'monthly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
+            module_name: generic_wombatlite
             file_name_prefix: oceanbgc
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
@@ -328,22 +329,31 @@ diag_table:
 
     'monthly 2d BGC fields':
         defaults:  # these can be overridden for individual fields below
+            module_name: generic_wombatlite
             file_name_prefix: oceanbgc
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
-            stf03:
-            stf07:
-            stf09:
-            stf10:
+            o2_stf:
+            dic_stf:
+            adic_stf:
+            fe_stf:
             pco2:
             paco2:
             pprod_gross_2d:
-            atm_co2:
-            wnd:
+            export_prod:
+            export_inorg:
             det_sediment:
             caco3_sediment:
+ 
+    'monthly 2d BGC surface fields':
+        defaults:  # these can be overridden for individual fields below
+            file_name_prefix: oceanbgc
+            file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
+            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
+            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+        fields:
             surface_no3:
             surface_phy:
             surface_alk:
@@ -443,21 +453,4 @@ diag_table:
             pe_tot:
             temp_surface_ave:
             salt_surface_ave:
-
-    'monthly scalar BGC fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_prefix: oceanbgc
-            file_name_dimension: scalar  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
-            file_name:
-                - file_name_prefix
-                - file_name_dimension
-                - output_freq
-                - '':
-                    - output_freq_units
-                - file_name_date
-        fields:
-            total_co2_flux:
-            total_aco2_flux:
 

@@ -149,6 +149,7 @@ diag_table:
             tide_speed_drag:
             tide_speed_mask:
 
+
     'yearly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -167,6 +168,7 @@ diag_table:
             pot_rho_0:
             sw_heat:
             sw_frac:
+            temp_runoffmix:
             temp_rivermix:
             temp_tendency_expl:
             salt_tendency_expl:
@@ -198,6 +200,7 @@ diag_table:
             wt:
             wrhot:
 
+
     'monthly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -223,6 +226,7 @@ diag_table:
             temp_vdiffuse_impl:
             salt_vdiffuse_impl:
 
+
     'monthly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
             module_name: generic_wombatlite
@@ -232,16 +236,68 @@ diag_table:
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
             no3:
-            phy:
             o2:
+            phy:
             det:
             zoo:
+            phyfe:
+            detfe:
+            zoofe:
+            pchl:
             caco3:
             dic:
             alk:
-            adic:
+            dicr:
+            dicp:
             fe:
             pprod_gross:
+            zprod_gross:
+            radbio:
+            radmid:
+            radmld:
+            phy_mu:
+            phy_mumax:
+            pchl_mu:
+            pchl_lpar:
+            phy_kni:
+            phy_kfe:
+            phy_lpar:
+            phy_lnit:
+            phy_lfer:
+            phy_dfeupt:
+            phy_feupreg:
+            phy_fedoreg:
+            feIII:
+            felig:
+            fecol:
+            fesources:
+            fesinks:
+            feprecip:
+            fescaven:
+            fescadet:
+            feloss:
+            fecoag2det:
+            htotal:
+            ahtotal:
+            phygrow:
+            phyresp:
+            phymort:
+            zooeps:
+            zoograzphy:
+            zoograzdet:
+            zooresp:
+            zoomort:
+            zooslopphy:
+            zooslopdet:
+            zooexcrphy:
+            zooexcrdet:
+            reminr:
+            detremi:
+            caldiss:
+            pic2poc:
+            det_vmove:
+            alk_correct:
+            dic_correct:
 
     'monthly 2d ocean fields':
         defaults:  # these can be overridden for individual fields below
@@ -287,6 +343,7 @@ diag_table:
             wfiform:
             anompb:
             eta_t:
+            rhobarz:
             conv_rho_ud_t:
             bottom_temp:
             bottom_salt:
@@ -344,7 +401,7 @@ diag_table:
         fields:
             o2_stf:
             dic_stf:
-            adic_stf:
+            dicp_stf:
             fe_stf:
             pco2:
             paco2:
@@ -352,7 +409,15 @@ diag_table:
             export_prod:
             export_inorg:
             det_sediment:
+            detfe_sediment:
             caco3_sediment:
+            det_sed_depst:
+            detfe_sed_depst:
+            caco3_sed_depst:
+            det_sed_bury:
+            detfe_sed_bury:
+            caco3_sed_bury:
+            zeuphot:
 
     'monthly 2d BGC surface fields':
         defaults:  # these can be overridden for individual fields below
@@ -365,7 +430,8 @@ diag_table:
             surface_phy:
             surface_alk:
             surface_dic:
-            surface_adic:
+            surface_dicp:
+            surface_dicr:
             surface_o2:
 
     'monthly 1d ocean fields':
@@ -381,7 +447,7 @@ diag_table:
                     - output_freq_units
                 - file_name_date
         fields:
-            geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
+            geolat_c: {reduction_method: 'snap'} # For some reason can't output _only_ gyre diags in a file
             temp_merid_flux_advect_global:
             temp_merid_flux_over_global:
             temp_merid_flux_gyre_global:
