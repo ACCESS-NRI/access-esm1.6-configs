@@ -149,7 +149,6 @@ diag_table:
             tide_speed_drag:
             tide_speed_mask:
 
-
     'monthly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -178,7 +177,6 @@ diag_table:
             age_global:
             sw_heat:
             sw_frac:
-            temp_runoffmix:
             temp_rivermix:
             temp_vdiffuse_impl:
             salt_vdiffuse_impl:
@@ -238,7 +236,6 @@ diag_table:
             fe:
             pprod_gross:
 
-
     'monthly 2d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -283,7 +280,6 @@ diag_table:
             wfiform:
             anompb:
             eta_t:
-            rhobarz:
             conv_rho_ud_t:
             bottom_temp:
             bottom_salt:
@@ -378,7 +374,7 @@ diag_table:
                     - output_freq_units
                 - file_name_date
         fields:
-            geolat_c: {reduction_method: 'snap'} # For some reason can't output _only_ gyre diags in a file
+            geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
             temp_merid_flux_advect_global:
             temp_merid_flux_over_global:
             temp_merid_flux_gyre_global:
