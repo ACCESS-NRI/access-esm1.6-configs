@@ -138,10 +138,10 @@ runspersub: 1
 # Misc
 restart_freq: 10YS
 
-runlog: false
+runlog: true
 manifest:
   reproduce:
-    exe: False
+    exe: true
 
 
 stacksize: unlimited
