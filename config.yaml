@@ -26,7 +26,7 @@ modules:
   use:
       - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/pr26-4
+      - access-esm1p6/pr27-5
 
 # Model configuration
 model: access
@@ -88,7 +88,9 @@ submodels:
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/grid.nc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc
+        # Iceberg flux
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc
         # Climatology
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
 
@@ -136,10 +138,10 @@ runspersub: 1
 # Misc
 restart_freq: 10YS
 
-runlog: false
+runlog: true
 manifest:
   reproduce:
-    exe: False
+    exe: true
 
 
 stacksize: unlimited
