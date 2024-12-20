@@ -3,6 +3,7 @@
 !
 !! cable_user flags
 !
+  cable_user%GS_SWITCH = 'medlyn' ! alternative is 'leuning' - used for ESM1.5
   cable_user%CABLE_RUNTIME_COUPLED = .TRUE. ! controls whether snow initialised if
                                             ! ktau_gl=1
                                             ! must be set true for coupled run
@@ -11,9 +12,10 @@
                                             ! default is .false.
   cable_user%FWSOIL_SWITCH = 'standard' ! Controls root water uptake function
                                         ! choices are: 
-                                        ! 'standard'
+                                        ! 'standard' - used for ESM1.5
                                         ! 'non-linear extrapolation' 
                                         ! 'Lai and Ktaul 2000' NB TYPO IS IN CODE (should be Katul)
+                                        ! 'Haverd2013'  - likely choice for ESM1.6
   cable_user%DIAG_SOIL_RESP = 'ON '  ! Controls soil respiration scheme when CASA-CNP not used
                                      ! 'ON' uses scheme tuned with parameter veg%vegcf
                                      ! 'OFF' uses scheme tuned with parameter veg%rs20
@@ -29,6 +31,8 @@
                                  ! Choices are:
                                  ! 'P-M' Penman_Monteith, otherwise defaults to 
                                  ! humidity deficit method
+  cable_user%access13roots = .TRUE. ! TRUE uses prescribed froot values
+                                    ! FALSE uses 'rootbeta' parameterisation (as ACCESS-CM2)
 !!--------------Test Switches--------------
   cable_user%l_new_roughness_soil  = .FALSE.   ! for new soil roughness, E.Kowalczyk Mar14
   cable_user%l_new_runoff_speed    = .FALSE.   ! for new increase in runoff speed, E.Kowalczyk Mar14
@@ -40,6 +44,8 @@
   satuParam = 0.8     ! only used if hydraulic redistribution .true.
 !
 ! CASA-CNP flags
+  l_luc = .FALSE.
+  l_thinforest = .FALSE. 
   l_casacnp = .TRUE. ! redundant? actually controlled by icycle
   icycle = 3 ! Controls whether CASA-CNP is run and for which species
              ! Choices are:
@@ -50,6 +56,7 @@
   l_laiFeedbk   = .TRUE.  ! using prognostic LAI
   l_vcmaxFeedbk = .TRUE.  ! using prognostic Vcmax
 ! filenames for CASA-CNP input files
+! updated pftlookup file for CABLE3 format
   casafile%cnpbiome='INPUT/pftlookup_cable3.csv'  ! biome specific BGC parameters
   casafile%phen='INPUT/modis_phenology_csiro.txt' ! phenology by latitude (modis derived)
 &end
