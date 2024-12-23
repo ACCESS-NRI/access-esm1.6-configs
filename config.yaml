@@ -5,11 +5,16 @@ walltime: 1:40:00
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
 
-model: um
-ncpus: 192
-exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
-input:
-- /g/data/access/payu/access-esm/input/amip
+model: access
+
+submodels:
+  - name: atmosphere
+  model: um
+  ncpus: 192
+  exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
+  input:
+  - /g/data/access/payu/access-esm/input/amip
+
 restart: /g/data/access/payu/access-esm/restart/amip
 
 calendar:
