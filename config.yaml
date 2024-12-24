@@ -9,13 +9,13 @@ model: access
 
 submodels:
   - name: atmosphere
-  model: um
-  ncpus: 192
-  exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
-  input:
-  - /g/data/access/payu/access-esm/input/amip
+    model: um
+    ncpus: 192
+    exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
+    input:
+      - /g/data/access/payu/access-esm/input/amip
 
-restart: /g/data/access/payu/access-esm/restart/amip
+restart: /g/data/tm70/sw6175/development/esm1.5-amip/amip
 
 calendar:
     start:
