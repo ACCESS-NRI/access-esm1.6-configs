@@ -5,13 +5,20 @@ walltime: 1:40:00
 # note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
 laboratory: access-esm
 
+# Modules for loading model executables
+modules:
+  use:
+      - /g/data/vk83/modules
+  load:
+      - access-esm1p5/2024.05.1
+
 model: access
 
 submodels:
   - name: atmosphere
     model: um
     ncpus: 192
-    exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
+    exe: um_hg3.exe
     input:
       - /g/data/access/payu/access-esm/input/amip
 
