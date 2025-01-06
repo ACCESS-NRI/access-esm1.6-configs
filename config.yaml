@@ -10,8 +10,8 @@ model: access
 submodels:
   - name: atmosphere
     model: um
-    ncpus: 192
-    exe: /g/data/access/payu/access-esm/bin/coe/amip/um7.3x
+    ncpus: 240
+    exe: um_hg3.exe
     input:
       - /g/data/access/payu/access-esm/input/amip
 
