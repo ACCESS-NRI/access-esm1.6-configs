@@ -36,3 +36,5 @@ runspersub: 1
 stacksize: unlimited
 
 qsub_flags: -W umask=027
+
+postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
