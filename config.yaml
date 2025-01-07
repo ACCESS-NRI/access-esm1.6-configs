@@ -13,7 +13,33 @@ submodels:
     ncpus: 240
     exe: um_hg3.exe
     input:
-      - /g/data/access/payu/access-esm/input/amip
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/BC_hi_1849_2015_ESM1.anc
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/Bio_1849_2015_ESM1.anc
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/Ndep_1849_2015.anc
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/OCFF_1849_2015_ESM1.anc
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/ozone_1849_2015_ESM1.anc
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/scycl_1849_2015_ESM1_v4.anc
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/TSI_CMIP6_ESM_v2
+      - /g/data/access/payu/access-esm/input/historical.corrected/atmosphere/volcts_cmip6.dat
+      - /g/data/access/payu/access-esm/input/amip/amip_seaice_n96_greg.pp
+      - /g/data/access/payu/access-esm/input/amip/amip_sst_n96_greg.pp
+      - /g/data/access/payu/access-esm/input/amip/cable_vegfunc_N96.anc
+      - /g/data/access/payu/access-esm/input/amip/spec3a_lw_hadgem1_6on
+      - /g/data/access/payu/access-esm/input/amip/spec3a_sw_hadgem1_6on
+      - /g/data/access/payu/access-esm/input/amip/sulpc_oxidants_N96_L38
+      - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/
+      - /g/data/access/payu/access-esm/input/amip/cable-aux-core/biogeochem/pftlookup_csiro_v16_17tiles_wtlnds.csv
+      - /g/data/access/payu/access-esm/input/amip/cable-aux-core/biogeochem/modis_phenology_csiro.txt
+      - /g/data/access/payu/access-esm/input/amip/cable-aux-core/biogeophys/def_soil_params.txt
+      - /g/data/access/payu/access-esm/input/amip/cable-aux-core/biogeophys/def_veg_params.txt
+      
+
+
+
+
+
+
+
 
 restart: /g/data/tm70/sw6175/development/esm1.5-amip/amip
 
