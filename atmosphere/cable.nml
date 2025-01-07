@@ -56,6 +56,6 @@
   l_vcmaxFeedbk = .TRUE.  ! using prognostic Vcmax
 ! filenames for CASA-CNP input files
 !  casafile%cnpbiome='INPUT/cable-aux-core/biogeochem/pftlookup_csiro_v16_17tiles.csv' ! biome specific BGC parameters
-  casafile%cnpbiome='INPUT/cable-aux-core/biogeochem/pftlookup_csiro_v16_17tiles_wtlnds.csv'  ! biome specific BGC parameters
-  casafile%phen='INPUT/cable-aux-core/biogeochem/modis_phenology_csiro.txt' ! phenology by latitude (modis derived)
+  casafile%cnpbiome='INPUT/pftlookup_csiro_v16_17tiles_wtlnds.csv'  ! biome specific BGC parameters
+  casafile%phen='INPUT/modis_phenology_csiro.txt' ! phenology by latitude (modis derived)
 &end
