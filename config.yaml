@@ -8,9 +8,9 @@ laboratory: access-esm
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p5/2024.05.1
+      - access-esm1p6/pr27-5
 
 model: access
 
@@ -61,13 +61,6 @@ submodels:
       # Boundary conditions
       - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_seaice_n96_greg.pp
       - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_sst_n96_greg.pp
-
-
-
-
-
-
-
 
 
 restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2023.03.13
