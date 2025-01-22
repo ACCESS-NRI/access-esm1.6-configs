@@ -26,11 +26,7 @@ modules:
   use:
       - /g/data/vk83/prerelease/modules
   load:
-<<<<<<< HEAD
       - access-esm1p6/pr28-23
-=======
-      - access-esm1p6/pr27-5
->>>>>>> dev-amip
 
 # Model configuration
 model: access
@@ -103,17 +99,13 @@ calendar:
 runspersub: 1
 
 # Misc
-restart_freq: 10YS
+restart_freq: 10
 
 runlog: true
 manifest:
   reproduce:
     exe: True
 
-<<<<<<< HEAD
-=======
-
->>>>>>> dev-amip
 stacksize: unlimited
 
 qsub_flags: -W umask=027
