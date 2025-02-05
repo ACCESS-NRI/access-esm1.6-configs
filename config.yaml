@@ -34,7 +34,7 @@ model: access
 submodels:
     - name: atmosphere
       model: um
-      ncpus: 192
+      ncpus: 240
       exe: um_hg3.exe
       input:
         # Aerosols
