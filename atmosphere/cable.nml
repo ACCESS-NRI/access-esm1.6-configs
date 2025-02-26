@@ -10,7 +10,7 @@
                                             ! use true for atmosphere only runs if
                                             ! want to take snow from start dump
                                             ! default is .false.
-  cable_user%FWSOIL_SWITCH = 'standard' ! Controls root water uptake function
+  cable_user%FWSOIL_SWITCH = 'Haverd2013' ! Controls root water uptake function
                                         ! choices are: 
                                         ! 'standard' - used for ESM1.5
                                         ! 'non-linear extrapolation' 
@@ -33,6 +33,10 @@
                                  ! humidity deficit method
   cable_user%access13roots = .TRUE. ! TRUE uses prescribed froot values
                                     ! FALSE uses 'rootbeta' parameterisation (as ACCESS-CM2)
+  cable_user%L_REV_CORR = .TRUE.
+  snmin = 0.11
+  cable_user%SOIL_THERMAL_FIX = .TRUE.
+
 !!--------------Test Switches--------------
   cable_user%l_new_roughness_soil  = .FALSE.   ! for new soil roughness, E.Kowalczyk Mar14
   cable_user%l_new_runoff_speed    = .FALSE.   ! for new increase in runoff speed, E.Kowalczyk Mar14
