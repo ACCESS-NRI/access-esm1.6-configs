@@ -164,6 +164,24 @@ detfe_sediment_dest_var_unit = mol m-2
 detfe_sediment_src_var_record = 1
 detfe_sediment_src_var_gridspec = NONE
 detfe_sediment_valid_min = 0.0
+#
+caco3bury_src_file = INPUT/ocean_wombatlite.res.nc
+caco3bury_src_var_name = caco3bury
+caco3bury_src_var_unit = none
+caco3bury_dest_var_name = caco3bury
+caco3bury_dest_var_unit = mol m-2 s-1
+caco3bury_src_var_record = 1
+caco3bury_src_var_gridspec = NONE
+caco3bury_valid_min = 0.0
+#
+detbury_src_file = INPUT/ocean_wombatlite.res.nc
+detbury_src_var_name = detbury
+detbury_src_var_unit = none
+detbury_dest_var_name = detbury
+detbury_dest_var_unit = mol m-2 s-1
+detbury_src_var_record = 1
+detbury_src_var_gridspec = NONE
+detbury_valid_min = 0.0
 /
 
 "prog_tracers","ocean_mod","dicr"
