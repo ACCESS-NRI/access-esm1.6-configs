@@ -48,7 +48,7 @@
   satuParam = 0.8     ! only used if hydraulic redistribution .true.
 !
 ! CASA-CNP flags
-  l_luc = .FALSE.
+  l_luc = .TRUE.
   l_thinforest = .FALSE. 
   l_casacnp = .TRUE. ! redundant? actually controlled by icycle
   icycle = 3 ! Controls whether CASA-CNP is run and for which species
