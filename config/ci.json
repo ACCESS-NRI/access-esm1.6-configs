@@ -7,7 +7,7 @@
     },
     "reproducibility": {
         "default": {
-            "markers": "checksum"
+            "markers": "checksum or checksum_slow"
         }
     },
     "qa": {
@@ -16,8 +16,8 @@
         }
     },
     "default": {
-        "model-config-tests-version": "0.0.9",
+        "model-config-tests-version": "main",
         "python-version": "3.11.0",
-        "payu-version": "1.1.5"
+        "payu-version": "dev"
     }
 }
