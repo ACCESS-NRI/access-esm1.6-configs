@@ -34,7 +34,7 @@ jobs:
   generate-checksums:
     name: Generate Checksums
     if: github.repository != 'access-nri/model-config-tests'
-    uses: access-nri/model-config-tests/.github/workflows/generate-checksums.yml@146-add-marker-input-for-initial-checksums
+    uses: access-nri/model-config-tests/.github/workflows/generate-checksums.yml@main
     with:
       config-branch-name: ${{ inputs.config-branch-name }}
       commit-checksums: ${{ inputs.commit-checksums }}
