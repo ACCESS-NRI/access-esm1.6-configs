@@ -17,9 +17,13 @@
 laboratory: access-esm
 
 jobname: pre-industrial
-queue: normal
+queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
+
+platform:
+  nodesize: 104
+  nodemem: 512
 
 # Modules for loading model executables
 modules:
@@ -34,7 +38,7 @@ model: access-esm1.6
 submodels:
     - name: atmosphere
       model: um
-      ncpus: 192
+      ncpus: 208
       exe: um_hg3.exe
       input:
         # Aerosols
@@ -67,7 +71,7 @@ submodels:
 
     - name: ocean
       model: mom
-      ncpus: 180
+      ncpus: 196
       exe: fms_ACCESS-ESM.x
       input:
         # Biogeochemistry
