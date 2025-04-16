@@ -362,57 +362,6 @@ diag_table:
             surface_dic:
             surface_adic:
             surface_o2:
-
-    'monthly 1d ocean fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_dimension: 1d  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
-            file_name:
-                - file_name_prefix
-                - file_name_dimension
-                - output_freq
-                - '':
-                    - output_freq_units
-                - file_name_date
-        fields:
-            geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
-            temp_merid_flux_advect_global:
-            temp_merid_flux_over_global:
-            temp_merid_flux_gyre_global:
-            salt_merid_flux_advect_global:
-            salt_merid_flux_over_global:
-            salt_merid_flux_gyre_global:
-            temp_merid_flux_advect_southern:
-            temp_merid_flux_over_southern:
-            temp_merid_flux_gyre_southern:
-            salt_merid_flux_advect_southern:
-            salt_merid_flux_over_southern:
-            salt_merid_flux_gyre_southern:
-            temp_merid_flux_advect_atlantic:
-            temp_merid_flux_over_atlantic:
-            temp_merid_flux_gyre_atlantic:
-            salt_merid_flux_advect_atlantic:
-            salt_merid_flux_over_atlantic:
-            salt_merid_flux_gyre_atlantic:
-            temp_merid_flux_advect_pacific:
-            temp_merid_flux_over_pacific:
-            temp_merid_flux_gyre_pacific:
-            salt_merid_flux_advect_pacific:
-            salt_merid_flux_over_pacific:
-            salt_merid_flux_gyre_pacific:
-            temp_merid_flux_advect_arctic:
-            temp_merid_flux_over_arctic:
-            temp_merid_flux_gyre_arctic:
-            salt_merid_flux_advect_arctic:
-            salt_merid_flux_over_arctic:
-            salt_merid_flux_gyre_arctic:
-            temp_merid_flux_advect_indian:
-            temp_merid_flux_over_indian:
-            temp_merid_flux_gyre_indian:
-            salt_merid_flux_advect_indian:
-            salt_merid_flux_over_indian:
-            salt_merid_flux_gyre_indian:
             
     'monthly scalar ocean fields':
         defaults:  # these can be overridden for individual fields below
