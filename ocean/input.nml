@@ -201,7 +201,7 @@
 /
 
  &ocean_model_nml
-      layout = 14,14
+      layout = LAYOUT
       io_layout = 1,1
       time_tendency='twolevel'
       vertical_coordinate='zstar'
@@ -657,8 +657,8 @@
 
 &ocean_solo_nml
     years = 0
-    months = 12
-    days   = 0
+    months = 0
+    days   = NDAYS
     date_init = 0001,01,01,0,0,0
     hours = 0
     minutes = 0
