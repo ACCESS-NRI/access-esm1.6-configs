@@ -1,0 +1,107 @@
+#PBS -l walltime=300
+#PBS -q normalsr
+#PBS -l ncpus=208
+#PBS -l mem=960GB
+#PBS -l jobfs=2gb
+#PBS -l storage=gdata/vk83
+#PBS -l wd
+
+module use /g/data/vk83/modules
+module load access-esm1p6/dev_2025.04.000
+module load openmpi
+
+# Environment variables
+export UM_ATM_NPROCX=16
+export UM_ATM_NPROCY=13
+(( UM_NPES = $UM_ATM_NPROCX * $UM_ATM_NPROCY ))
+export UM_NPES
+
+# Set run length
+export NDAYS=1
+
+export AINITIAL=''
+export ASTART=INPUT/AM-09-t1.astart-19780101
+export AUSCOM_CPL='false'
+export DATAW=$PWD/work
+export FASTRUN='true'
+export IDEALISE=''
+export PAREXE=''
+export PRINT_STATUS=PrStatus_Oper
+export RPSEED=''
+export RUNID=AMIP
+export TYPE=NRUN
+export UM_NAM_MAX_SECONDS=300
+export UM_SECTOR_SIZE=2048
+export UM_STDOUT_FILE=atm.fort6.pe
+export VN='7.3'
+
+# Config input paths
+export UNIT01=''
+export UNIT02=prefix
+export UNIT04=STASHC
+export UNIT05=namelists
+export UNIT07=PI-01.out2
+export UNIT08=/dev/null
+export UNIT09=CONTCNTL
+export UNIT10=xhist
+export UNIT11=ihist
+export UNIT12=thist
+export UNIT14=errflag
+export UNIT15=''
+export UNIT58=''
+export UNIT22=INPUT/STASHmaster
+export UNIT57=INPUT/spec3a_sw_hadgem1_6on
+export UNIT80=INPUT/spec3a_lw_hadgem1_6on
+export STASETS_DIR=INPUT/stasets
+export VERT_LEV=INPUT/vertlevs_G3
+
+# Ancillary files
+export ARCLBIOG=INPUT/biogenic_351sm.N96L38
+export BIOMASS=INPUT/Bio_1849_2015_ESM1.anc
+export CHEMOXID=INPUT/sulpc_oxidants_N96_L38
+export DMSCONC=INPUT/DMS_conc.N96
+export NDEPFIL=INPUT/Ndep_1849_2015.anc
+export OCFFEMIS=INPUT/OCFF_1849_2015_ESM1.anc
+export OZONE=INPUT/ozone_1849_2015_ESM1.anc
+export SOOTEMIS=INPUT/BC_hi_1849_2015_ESM1.anc
+export SULPEMIS=INPUT/scycl_1849_2015_ESM1_v4.anc
+export VEGINIT=INPUT/cable_vegfunc_N96.anc
+export SSTIN=INPUT/amip_sst_n96_greg.pp
+export SICEIN=INPUT/amip_seaice_n96_greg.pp
+
+
+mkdir -p work/INPUT
+cd work/INPUT
+
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/BC_hi_1849_2015_ESM1.anc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/Bio_1849_2015_ESM1.anc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96 .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/biogeochemistry/global.N96/2021.06.22/Ndep_1849_2015.anc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/OCFF_1849_2015_ESM1.anc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/resolution_independent/2021.06.22/TSI_CMIP6_ESM_v2 .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p5/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_seaice_n96_greg.pp .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p5/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_sst_n96_greg.pp .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38 .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/vegetation/global.N96/2024.07.04/cableCMIP6_LC_1850-2015.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/vegetation/global.N96/2020.05.19/cable_vegfunc_N96.anc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_soil_params.txt .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_veg_params.txt .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/modis_phenology_csiro.txt .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/global.N96/2021.06.22/ozone_1849_2015_ESM1.anc .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2024.12.18/pftlookup_cable3.csv .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2023.03.13/atmosphere/restart_dump.astart .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/scycl_1849_2015_ESM1_v4.anc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38 .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/resolution_independent/2021.06.22/volcts_cmip6.dat .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/STASHmaster .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/stasets .
+ln -s /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2023.03.13/atmosphere/restart_dump.astart AM-09-t1.astart-19780101
+
+cd ..
+ln -s ../atmosphere/* .
+rm namelists
+sed "s/NDAYS/$NDAYS/" ../atmosphere/namelists > namelists
+
+mpirun -np $UM_NPES um_hg3.exe

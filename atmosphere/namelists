@@ -39,7 +39,7 @@
 NICE=1,
  /
  &STSHCOMP
- RUN_TARGET_END=  0 , 0 , 365 , 0 , 0 , 0 ,
+ RUN_TARGET_END=  0 , 0 , NDAYS , 0 , 0 , 0 ,
  OCAAA=1,
  INDEP_SR='1A','  ','  ','  ','  ','  ','  ','  ','  ',
  '  ','  ','  ','  ','  ','  ','  ','  ','  ','  ','0A','  ','  ','  ','  ',
@@ -89,7 +89,7 @@ NICE=1,
  MODEL_STATUS='NonOperational',
  MODEL_BASIS_TIME=  1978 , 01 , 01 , 0 , 0 , 0 ,
  ANCIL_REFTIME=  1978 , 01 , 01 , 0 , 0 , 0 ,
- RUN_TARGET_END=  0 , 0 , 365 , 0 , 0 , 0 , 
+ RUN_TARGET_END=  0 , 0 , NDAYS , 0 , 0 , 0 , 
  LCLIMREALYR=.FALSE.,
  LCAL360=.FALSE., 
  LTIMER=.TRUE., 
