@@ -28,9 +28,9 @@ platform:
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/dev_2025.04.000
+      - access-esm1p6/pr86-2
 
 # Model configuration
 model: access-esm1.6
@@ -72,7 +72,7 @@ submodels:
     - name: ocean
       model: mom
       ncpus: 196
-      exe: fms_ACCESS-ESM.x
+      exe: mom5_access_cm
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
@@ -138,11 +138,12 @@ runspersub: 1
 # Misc
 restart_freq: 10YS
 
-runlog: true
+runlog: False
 manifest:
   reproduce:
-    exe: true
-
+    exe: False
+metadata:
+  enable: False
 
 stacksize: unlimited
 qsub_flags: -W umask=027
