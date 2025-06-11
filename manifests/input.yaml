@@ -1,16 +1,16 @@
 format: yamanifest
 version: 1.0
 ---
-work/atmosphere/INPUT/BC_hi_1850_ESM1.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/BC_hi_1850_ESM1.anc
+work/atmosphere/INPUT/BC_1850_cmip7.anc:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/BC_1850_cmip7.anc
   hashes:
-    binhash: a98741eb50f16483786933e6bbd700e3
-    md5: 74803eb36a358f9ac8ecdae36cdb7f56
-work/atmosphere/INPUT/Bio_1850_ESM1.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/Bio_1850_ESM1.anc
+    binhash: 1b813f612ec0c46bddb8d1c41dc4cc46
+    md5: 72eac6922e418ad1da3756cd118c80b2
+work/atmosphere/INPUT/Bio_1850_cmip7.anc:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/Bio_1850_cmip7.anc
   hashes:
-    binhash: 4ee80aefae4975731a21667b5b26343f
-    md5: 69dc6afb4bc7524d346f3b82f2657c97
+    binhash: 89287284b946f3165d2d0d0517572e50
+    md5: 9c7af32c6d35a0ecbaa99026bd57943f
 work/atmosphere/INPUT/DMS_conc.N96:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
   hashes:
@@ -21,11 +21,11 @@ work/atmosphere/INPUT/Ndep_1850_ESM1.anc:
   hashes:
     binhash: 47374849ef42f83e3c02629827a482ee
     md5: 48462cfa1aeed200c3b8d0bf1b49654a
-work/atmosphere/INPUT/OCFF_1850_ESM1.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/OCFF_1850_ESM1.anc
+work/atmosphere/INPUT/OCFF_1850_cmip7.anc:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/OCFF_1850_cmip7.anc
   hashes:
-    binhash: 0ec3fde7a17984009b8d90ff1ddbc92f
-    md5: 95eec04860fa30ee863d30e67e683407
+    binhash: 7ac76d91223e2e1cab68c331ad7b6547
+    md5: 6bceddebc7b0c2ebeea3be8b4c0f13e8
 work/atmosphere/INPUT/STASHmaster/STASHmaster_A:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/STASHmaster/STASHmaster_A
   hashes:
@@ -76,11 +76,11 @@ work/atmosphere/INPUT/def_veg_params.txt:
   hashes:
     binhash: 22ce1f400a832868aefeaa9721ac3a48
     md5: 1f9a27f0e252bf6c466100573c126789
-work/atmosphere/INPUT/modis_phenology_csiro.txt:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/modis_phenology_csiro.txt
+work/atmosphere/INPUT/modis_phenology_csiro_nophase.txt:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.06.06/modis_phenology_csiro_nophase.txt
   hashes:
-    binhash: a86ffb366359d6d353c6f385789185a1
-    md5: a7b89d25cff82cf13cf812a98ad3a029
+    binhash: fa3895eef407ca32fdd36817452f75b8
+    md5: 490d889ddfed508c6cfe3d62a225384e
 work/atmosphere/INPUT/ozone_1850_ESM1.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/forcing/global.N96/2020.05.19/ozone_1850_ESM1.anc
   hashes:
@@ -101,11 +101,11 @@ work/atmosphere/INPUT/qrparm.soil_igbp_vg:
   hashes:
     binhash: 51560dde970f7123a7250cc6bdc8f3ef
     md5: 26ce57f462dd574fe49f290ab7877112
-work/atmosphere/INPUT/scycl_1850_ESM1_v4.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/scycl_1850_ESM1_v4.anc
+work/atmosphere/INPUT/scycl_1850_cmip7.anc:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/scycl_1850_cmip7.anc
   hashes:
-    binhash: 4dac8b00fc0b26a086f2dd9e610aba6a
-    md5: 2c390f44c4f57078340cfbd408fdc754
+    binhash: a338723ccb4fd879c443516e844c7198
+    md5: 46c41f2683230a383bd7fb1face49203
 work/atmosphere/INPUT/spec3a_lw_hadgem1_6on:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
   hashes:
