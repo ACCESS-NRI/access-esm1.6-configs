@@ -1,6 +1,6 @@
 contact: anton-seaice
 email: anton.steketee@anu.edu.au
-created: '2025-06-04'
+created: '2025-06-17'
 description: |-
   ACCESS-ESM1.5 global coupled model configuration running in co2 concentration driven mode under pre-industrial forcings, as described in Ziehn et al. (2020), https://doi.org/10.1071/ES19035.
   Pre-industrial forcing data including atmospheric co2 concentrations are primarily sourced from UKMO versions of CMIP6 inputs, with additional atmospheric forcings sourced from CMIP5 and land cover data adapted from Lawrence et al. (2012), https://doi.org/10.1175/JCLI-D-11-00256.1.
@@ -26,7 +26,7 @@ license: CC-BY-4.0
 model: ACCESS-ESM1.6
 version: '1.1'
 url: https://github.com/ACCESS-NRI/access-esm1.6-configs
-experiment_uuid: 7641358f-98f9-423c-96e8-8cc1e57c2904
+experiment_uuid: d3543a3b-bce9-4d13-8af0-5b7eefbb6e1d
 name: 
-  esm1.6-preind-202504-cice5-80-202504-dev-preindustrial+concentrations+cice5-7641358f
-parent_experiment: af64d066-abb8-478b-a3fe-c3074234601d
+  esm1.6-preind-202504-cice5-rerun-80-202504-dev-preindustrial+concentrations+cice5-d3543a3b
+parent_experiment: 7641358f-98f9-423c-96e8-8cc1e57c2904
