@@ -31,7 +31,7 @@ modules:
   use:
       - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/pr70-17
+      - access-esm1p6/pr70-18
 
 # Model configuration
 model: access-esm1.6
@@ -120,7 +120,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/tm70/as2285/payu/esm1.6-preind-202504-cice5/restart100
+restart: /g/data/tm70/as2285/payu/esm1.6-preind-202504-cice5-rerun/restart100
 
 # Timing controls
 calendar:
