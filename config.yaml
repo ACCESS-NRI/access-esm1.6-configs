@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: pre-industrial
+jobname: 4xCO2
 queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
@@ -120,7 +120,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/tm70/as2285/payu/esm1.6-preind-202504-cice5-rerun/restart100
+restart: /g/data/tm70/as2285/payu/esm1.6/esm1.6-4xCO2-202504-cice5/restart1050
 
 # Timing controls
 calendar:
@@ -159,7 +159,7 @@ storage:
 sync:
     enable: True # set path below and change to true
     restarts: True
-    path: /g/data/tm70/as2285/experiments/esm1.6+cice5+apr+part2+rerun # Set to location on /g/data or a remote server and path (rsync syntax)
+    path: /g/data/tm70/as2285/experiments/esm1.6-4xCO2-202504-cice5 # Set to location on /g/data or a remote server and path (rsync syntax)
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,
