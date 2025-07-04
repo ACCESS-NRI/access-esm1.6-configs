@@ -5,9 +5,6 @@
 #        water mass budget wouldn't be changed by such tuning!
 &coupling
  jobnum=2
- inidate=01010101
- runtime0=3155673600
- runtime=86400
  dt_cpl_ai=10800
  dt_cice=3600
  pop_icediag=.true.
