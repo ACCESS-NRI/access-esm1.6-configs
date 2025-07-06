@@ -5,7 +5,7 @@
     dt             = 3600
     restart_dir    = './RESTART/'
     restart_format = 'nc'
-    use_restart_time = .false.
+    use_restart_time = .true.
     pointer_file   = './RESTART/ice.restart_file'
     dumpfreq       = 'y'
     diagfreq       = 1e6
