@@ -25,12 +25,13 @@ platform:
   nodesize: 104
   nodemem: 512
 
+
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/dev_2025.04.000
+      - access-esm1p6/pr70-21
 
 # Model configuration
 model: access-esm1.6
@@ -86,17 +87,17 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/grids/mosaic/global.1deg/2020.05.19/grid_spec.nc
 
     - name: ice
-      model: cice
+      model: cice5
       ncpus: 12
-      exe: cice_access_360x300_12x1_12p.exe
+      exe: cice_access-esm1.6_360x300_12x1_12p.exe
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc
         # Iceberg flux
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc 
         # Climatology
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
+        # - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
 
     - name: coupler
       model: oasis
@@ -119,7 +120,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2025.04.08 
+restart: /g/data/tm70/as2285/payu/esm1.6/esm1.6-preind-202504-cice5/restart100
 
 # Timing controls
 calendar:
@@ -136,23 +137,33 @@ calendar:
 runspersub: 1
 
 # Misc
-restart_freq: 10YS
+restart_freq: 1
 
 runlog: true
+metadata:
+  enable: true
 manifest:
   reproduce:
-    exe: true
+    exe: false
 
 
 stacksize: unlimited
 qsub_flags: -W umask=027
 
+storage:
+  gdata:
+    - p66
+    - tm70
+  scratch:
+    - p66
+    - tm70
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
 sync:
     enable: False # set path below and change to true
-    path: null # Set to location on /g/data or a remote server and path (rsync syntax)
+    restarts: True
+    path: /g/data/$PROJECT/$USER/esm1.6+cice5-preind+conc # Set to location on /g/data or a remote server and path (rsync syntax)
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,

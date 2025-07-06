@@ -4,14 +4,8 @@
 #        iceberg_rate_n => 0 ~ 1
 #        water mass budget wouldn't be changed by such tuning!
 &coupling
- caltype=1
  jobnum=2
- inidate=01010101
- init_date=00010101
- runtime0=3155673600
- runtime=86400
  dt_cpl_ai=10800
- dt_cpl_io=3600
  dt_cice=3600
  pop_icediag=.true.
  ice_pressure_on=.true.

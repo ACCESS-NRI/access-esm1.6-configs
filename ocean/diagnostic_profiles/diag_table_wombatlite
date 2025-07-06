@@ -217,17 +217,29 @@ ACCESS-ESM_CMIP6
 "ocean-3d-bv_freq-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
 "ocean_model", "bv_freq", "bv_freq", "ocean-3d-bv_freq-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
-"ocean-3d-ty_trans-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "ty_trans", "ty_trans", "ocean-3d-ty_trans-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
-
-"ocean-3d-ty_trans_gm-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
-"ocean_model", "ty_trans_gm", "ty_trans_gm", "ocean-3d-ty_trans_gm-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+"ocean-3d-tx_trans_rho-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"ocean_model", "tx_trans_rho", "tx_trans_rho", "ocean-3d-tx_trans_rho-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "ocean-3d-ty_trans_rho-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
 "ocean_model", "ty_trans_rho", "ty_trans_rho", "ocean-3d-ty_trans_rho-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
+"ocean-3d-tx_trans_rho_gm-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"ocean_model", "tx_trans_rho_gm", "tx_trans_rho_gm", "ocean-3d-tx_trans_rho_gm-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+
 "ocean-3d-ty_trans_rho_gm-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
 "ocean_model", "ty_trans_rho_gm", "ty_trans_rho_gm", "ocean-3d-ty_trans_rho_gm-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+
+"ocean-3d-tx_trans_gm-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"ocean_model", "tx_trans_gm", "tx_trans_gm", "ocean-3d-tx_trans_gm-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+
+"ocean-3d-ty_trans_gm-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"ocean_model", "ty_trans_gm", "ty_trans_gm", "ocean-3d-ty_trans_gm-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+
+"ocean-3d-tx_trans-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"ocean_model", "tx_trans", "tx_trans", "ocean-3d-tx_trans-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
+
+"ocean-3d-ty_trans-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"ocean_model", "ty_trans", "ty_trans", "ocean-3d-ty_trans-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "ocean-3d-u-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
 "ocean_model", "u", "u", "ocean-3d-u-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
@@ -475,7 +487,7 @@ ACCESS-ESM_CMIP6
 "ocean-2d-squared_surface_temp-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
 "ocean_model", "squared_surface_temp", "squared_surface_temp", "ocean-2d-squared_surface_temp-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
-"ocean-2d-surface_salt-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
+"ocean-2d-surface_salt-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "months"
 "ocean_model", "surface_salt", "surface_salt", "ocean-2d-surface_salt-1monthly-mean-ym%4yr%2mo", "all", "average", "none", 2
 
 "ocean-2d-mld-1monthly-mean-ym%4yr%2mo", 1, "months", 1, "days", "time", 1, "years"
