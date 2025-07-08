@@ -31,7 +31,7 @@ modules:
   use:
       - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/pr101-7
+      - access-esm1p6/pr91-21
 
 # Model configuration
 model: access-esm1.6
@@ -57,7 +57,7 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2020.05.19/Ndep_1850_ESM1.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/vegetation/global.N96/2020.05.19/cable_vegfunc_N96.anc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.06.06/modis_phenology_csiro_nophase.txt
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/modis_phenology_csiro.txt
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2024.12.18/pftlookup_cable3.csv
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_soil_params.txt
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_veg_params.txt
@@ -95,8 +95,9 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc
         # Iceberg flux
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2025.06.06/lice_discharge_iceberg.nc
-        #this is the same as /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc 
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2025.04.01/lice_discharge_masks_iceberg.nc
+        # Climatology
+        # - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
 
     - name: coupler
       model: oasis
@@ -119,7 +120,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/tm70/sw6175/development/esm1p6/restartfiles/cice5-caltests/non-leap/restart000 
+restart: /g/data/tm70/as2285/payu/esm1.6-preind-202504-cice5/restart100 
 
 # Timing controls
 calendar:
@@ -129,8 +130,8 @@ calendar:
         days: 1
 
     runtime:
-        years: 0
-        months: 1
+        years: 1
+        months: 0
         days: 0
 
 runspersub: 1
@@ -156,8 +157,9 @@ storage:
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
 sync:
-    enable: False # set path below and change to true
-    path:  # Set to location on /g/data or a remote server and path (rsync syntax)
+    enable: True # set path below and change to true
+    restarts: True
+    path: /g/data/tm70/sw6175/esm1p6-runs/esm1.6+cice5+apr+continue # Set to location on /g/data or a remote server and path (rsync syntax)
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,

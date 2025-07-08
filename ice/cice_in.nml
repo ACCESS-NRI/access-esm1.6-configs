@@ -5,9 +5,9 @@
     dt             = 3600
     restart_dir    = './RESTART/'
     restart_format = 'nc'
-    use_restart_time = .true.
+    use_restart_time = .false.
     pointer_file   = './RESTART/ice.restart_file'
-    dumpfreq       = 'm'
+    dumpfreq       = 'y'
     diagfreq       = 1e6
     print_global   = .false.
     diag_type      = 'file'
@@ -51,7 +51,7 @@
     phi_c_slow_mode = 0.05
     rac_rapid_mode = 10.0
     saltmax = 9.6
-    !ice_ref_salinity = 4
+    ice_ref_salinity = 4
 /
 
 &dynamics_nml
@@ -81,6 +81,6 @@
     calc_tsfc       = .false.
     formdrag        = .false.
     ustar_min       = 0.0005
-    tfrz_option     = 'linear_salt'
+    tfrz_option     = 'linear_salt' !is this used ?
     update_ocn_f    = .true.
 /
