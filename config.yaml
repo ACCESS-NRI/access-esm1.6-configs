@@ -27,11 +27,9 @@ platform:
 
 
 # Modules for loading model executables
-modules:
-  use:
-      - /g/data/vk83/prerelease/modules
-  load:
-      - access-esm1p6/pr70-21
+modules:  
+  use: /g/data/vk83/prerelease/modules
+  load: access-esm1p6/pr97-12
 
 # Model configuration
 model: access-esm1.6
