@@ -5,6 +5,7 @@
 #PBS -q normal
 #PBS -l walltime=00:40:00
 #PBS -l wd
+#PBS -W umask=027
 
 module use /g/data/vk83/modules
 module load payu
