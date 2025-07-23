@@ -68,6 +68,8 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
         # STASH
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/
+        # STATIC MMRS
+        - /g/data/tm70/sw6175/esm1p6-inputs/patch-nmls/static_mmrs
 
     - name: ocean
       model: mom
