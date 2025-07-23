@@ -11,8 +11,7 @@
     print_global   = .false.
     diag_type      = 'file'
     history_dir    = './HISTORY/'
-    incond_dir     = './HISTORY/'
-    runtype        = 'continue'
+    history_deflate_level = 1
 /
 
 &grid_nml
