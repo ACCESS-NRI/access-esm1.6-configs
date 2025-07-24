@@ -72,7 +72,7 @@ submodels:
     - name: ocean
       model: mom
       ncpus: 196
-      exe: fms_ACCESS-ESM.x
+      exe: mom5_access_cm
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
