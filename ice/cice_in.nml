@@ -1,115 +1,69 @@
 &setup_nml
-    days_per_year  = 365
-  , year_init      = 0001
-  , istep0         = 0
-  , dt             = 3600
-  , npt            = 24
-  , ndyn_dt        = 1
-  , runtype        = 'initial'
-  , ice_ic         = 'default'
-  , restart        = .false.
-  , restart_dir    = './RESTART/'
-  , restart_file   = 'iced'
-  , pointer_file   = './RESTART/ice.restart_file'
-  , dumpfreq       = 'y'
-  , dumpfreq_n     = 1
-  , diagfreq       = 24
-  , diag_type      = 'file'
-  , diag_file      = 'ice_diag.d'
-  , print_global   = .false.
-  , print_points   = .false.
-  , latpnt(1)      =  90.
-  , lonpnt(1)      =   0.
-  , latpnt(2)      = -65.
-  , lonpnt(2)      = -45.
-  , dbug           = .false.
-  , history_dir    = './HISTORY/'
-  , write_ic       = .false.
-  , incond_dir     = './HISTORY/'
-  , incond_file    = 'iceh_ic'
-  , history_file   = 'iceh'
-  , history_format = 'nc'
+    use_leap_years = .true.
+    year_init      = 0001
+    dt             = 3600
+    restart_dir    = './RESTART/'
+    restart_format = 'nc'
+    use_restart_time = .true.
+    pointer_file   = './RESTART/ice.restart_file'
+    dumpfreq       = 'y'
+    diagfreq       = 1e6
+    print_global   = .false.
+    diag_type      = 'file'
+    history_dir    = './'
+    runtype        = 'continue'
+    history_deflate_level = 1
 /
 
 &grid_nml
     grid_format  = 'nc'
-  , grid_type    = 'tripole'
-  , grid_file    = './INPUT/grid.nc'
-  , kmt_file     = './INPUT/kmt.nc'
-  , kcatbound    = 0
+    grid_type    = 'tripole'
+    grid_file    = './INPUT/grid.nc'
+    kmt_file     = './INPUT/kmt.nc'
+    kcatbound    = 0
 /
 
 &domain_nml
     nprocs = 12
-  , processor_shape   = 'slenderX1'
-  , distribution_type = 'cartesian'
-  , distribution_wght = 'latitude'
-  , ew_boundary_type  = 'cyclic'
-  , ns_boundary_type  = 'tripole'
+    processor_shape   = 'slenderX1'
+    distribution_type = 'cartesian'
+    distribution_wght = 'latitude'
+    ew_boundary_type  = 'cyclic'
+    ns_boundary_type  = 'tripole'
+    maskhalo_bound    = .false.
+    maskhalo_dyn      = .false.
+    maskhalo_remap    = .false.
 /
 
 &tracer_nml
-    tr_iage      = .false.
-  , restart_age  = .false.
-  , tr_lvl       = .false.
-  , restart_lvl  = .false.
-  , tr_pond      = .false.
-  , restart_pond = .false.
 /
 
-&ice_nml
-    kitd            = 1
-  , kdyn            = 1
-  , ndte            = 120
-  , kstrength       = 1
-  , krdg_partic     = 1
-  , krdg_redist     = 1
-  , mu_rdg          = 3
-  , advection       = 'remap'
-  , heat_capacity   = .false.
-  , conduct         = 'bubbly'
-  , shortwave       = 'default'
-  , albedo_type     = 'default'
-  , albicev         = 0.86
-  , albicei         = 0.44
-  , albsnowv        = 0.98
-  , albsnowi        = 0.70
-  , ahmax           = 0.1
-  , snowpatch       = 0.01
-  , dT_mlt          = 1.0
-  , dalb_mlt        = -0.02
-  , awtvdr          = 0.00318
-  , awtidr          = 0.00182
-  , awtvdf          = 0.63282
-  , awtidf          = 0.36218
-  , R_ice           = 0.
-  , R_pnd           = 0.
-  , R_snw           = 0.
-  , atmbndy         = 'default'
-  , fyear_init      = 0001
-  , ycycle          = 1
-  , atm_data_format = 'nc'
-  , atm_data_type   = 'default'
-  , atm_data_dir    = 'unknown_atm_data_dir'
-  , calc_strair     = .false.
-  , calc_Tsfc       = .false.
-  , precip_units    = 'mks'
-  , Tfrzpt          = 'linear_S'
-  , Tocnfrz         = -1.8
-  , ustar_min       = 0.0005
-  , cosw            = 0.96
-  , sinw            = 0.28
-  , dragio          = 0.00536
-  , chio            = 0.004
-  , iceruf	    = 0.0005
-  , update_ocn_f    = .true.
-  , oceanmixed_ice  = .false.
-  , ocn_data_format = 'nc'
-  , sss_data_type   = 'default'
-  , sst_data_type   = 'default'
-  , ocn_data_dir    = 'unknown_ocn_data_dir'
-  , oceanmixed_file = 'unknown_oceanmixed_file'
-  , restore_sst     = .false.
-  , trestore        =  0
-  , restore_ice     = .false.
+&thermo_nml
+    chio = 0.004
+    conduct = 'bubbly'
+    ktherm = 0
+    saltmax = 9.6
+    ice_ref_salinity = 4
+/
+
+&dynamics_nml
+    cosw            = 0.96
+    sinw            = 0.28
+/
+
+&shortwave_nml
+/
+
+&ponds_nml
+/
+
+&zbgc_nml
+/
+
+&forcing_nml
+    calc_strair     = .false.
+    calc_tsfc       = .false.
+    ustar_min       = 0.0005
+    tfrz_option     = 'linear_salt'
+    update_ocn_f    = .true.
 /
