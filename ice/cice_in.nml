@@ -6,13 +6,13 @@
     restart_format = 'nc'
     use_restart_time = .true.
     pointer_file   = './RESTART/ice.restart_file'
-    dumpfreq       = 'y'
+    dumpfreq       = 'x' !only for extra restarts, payu sets `dump_last=.true.`
     diagfreq       = 1e6
     print_global   = .false.
     diag_type      = 'file'
     history_dir    = './'
+    history_deflate_level = 1 !see other history settings in `ice_history.nml`
     runtype        = 'continue'
-    history_deflate_level = 1
 /
 
 &grid_nml
@@ -30,9 +30,9 @@
     distribution_wght = 'latitude'
     ew_boundary_type  = 'cyclic'
     ns_boundary_type  = 'tripole'
-    maskhalo_bound    = .false.
-    maskhalo_dyn      = .false.
-    maskhalo_remap    = .false.
+    maskhalo_bound    = .true.
+    maskhalo_dyn      = .true.
+    maskhalo_remap    = .true.
 /
 
 &tracer_nml
@@ -61,8 +61,8 @@
 /
 
 &forcing_nml
-    calc_strair     = .false.
-    calc_tsfc       = .false.
+    calc_strair     = .false. !wind stress calculated in the UM
+    calc_tsfc       = .false. !ice skin temperature calculated in the UM
     ustar_min       = 0.0005
     tfrz_option     = 'linear_salt'
     update_ocn_f    = .true.
