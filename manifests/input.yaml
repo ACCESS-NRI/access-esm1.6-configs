@@ -232,67 +232,32 @@ work/atmosphere/INPUT/volcts_18502000ave.dat:
     binhash: 34b64995370a775e276c7a270aa659a7
     md5: 47bd369c750be55d706ab60c78bc7aee
 work/coupler/areas.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/areas.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/grids/global.oi_1deg.a_N96/2025.07.29/areas.nc
   hashes:
-    binhash: 74a0105eb80df5993bef82be279536ee
-    md5: 1aac9e2f82d96176f7b87ba1efc8784e
+    binhash: 38b36da3d0026acf1232d414c58a05d4
+    md5: baac51890712116fed22bea5db130ee1
 work/coupler/grids.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/grids.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/grids/global.oi_1deg.a_N96/2025.07.29/grids.nc
   hashes:
-    binhash: dd60e450879fe3d1bc8697179b2bb68e
-    md5: 2348de62f5fe4d55ec849f79e5d027fd
+    binhash: f8c1d444a726ee0cd7d7b91ee9b86f3b
+    md5: 9145052d524bd19faa88287c8c020976
 work/coupler/masks.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/masks.nc
   hashes:
     binhash: 9372991dd00c8f0d9a2aeb97fb36d1f1
     md5: 0a12503901fd3d595bc25b5d3008f9d3
-work/coupler/rmp_cice_to_um1t_CONSERV_FRACNNEI.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_cice_to_um1t_CONSERV_FRACNNEI.nc
-  hashes:
-    binhash: 10999c39f61114a78b187ec0f98cd3f6
-    md5: a8129dba5b3a7f70a5bc2fbf7f0e4f68
-work/coupler/rmp_cice_to_um1u_CONSERV_FRACNNEI.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_cice_to_um1u_CONSERV_FRACNNEI.nc
-  hashes:
-    binhash: 1d0f36698633414416f8e744c88e2746
-    md5: 6fc856e7c2014e20903a01cdd61f4f2c
-work/coupler/rmp_cice_to_um1v_CONSERV_FRACNNEI.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_cice_to_um1v_CONSERV_FRACNNEI.nc
-  hashes:
-    binhash: 059755d03c22fc3f8d05af551a2f8efb
-    md5: a2a7d940a9eaab59ec8fa49154116a64
-work/coupler/rmp_um1t_to_cice_CONSERV_DESTAREA.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1t_to_cice_CONSERV_DESTAREA.nc
-  hashes:
-    binhash: 32ae62df22794a672138d9b1e4f78dd5
-    md5: 25be6489585df07097d4b6009bf23ec2
-work/coupler/rmp_um1t_to_cice_CONSERV_FRACNNEI.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1t_to_cice_CONSERV_FRACNNEI.nc
-  hashes:
-    binhash: 79c6f6f8817db2cf95dc815fcd84bc3f
-    md5: 269086623444b48d0cd481e69d4bdc5f
-work/coupler/rmp_um1u_to_cice_CONSERV_FRACNNEI.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1u_to_cice_CONSERV_FRACNNEI.nc
-  hashes:
-    binhash: 130343da4a880b8d9f3e210eec37a556
-    md5: 58ea836bf1e12d5fc21460763b02548f
-work/coupler/rmp_um1v_to_cice_CONSERV_FRACNNEI.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/rmp_um1v_to_cice_CONSERV_FRACNNEI.nc
-  hashes:
-    binhash: 89de238897ba6f06a4c9a1bcefe4ebc8
-    md5: 3bf9569f34b657f2ecab8ef5c93e7659
 work/ice/INPUT/grid.nc:
   copy: true
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/grid.nc
   hashes:
-    binhash: 9566a89e6c51961869a81fc1751bbf85
-    md5: a50e35486edd4f43e208b254ecb64582
+    binhash: fe44237f8bbe8cbcbe8fadef8957f35c
+    md5: ff163d91fb6f3e1f5536c8a109d5c04c
 work/ice/INPUT/kmt.nc:
   copy: true
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/kmt.nc
   hashes:
-    binhash: 0ed504b151b168eebdee3aa13edd8c37
-    md5: 2bde88b9e44c46aecf2ba2dff188d1ac
+    binhash: c733037d8edd737e43df4335edecb6e8
+    md5: f9d11b6fd3c66d6e16a4afde99eec937
 work/ice/INPUT/lice_discharge_iceberg.nc:
   copy: true
   fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc
@@ -305,10 +270,25 @@ work/ocean/INPUT/dust.nc:
     binhash: 89983106fff4813c347b2e98a8f62f52
     md5: bfbbea8ac46a932d0ec8631afbfc2ae2
 work/ocean/INPUT/grid_spec.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/grids/mosaic/global.1deg/2020.05.19/grid_spec.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/mosaic/global.1deg/2025.07.29/grid_spec.nc
   hashes:
-    binhash: 20468cf509d14ec15c908f7fbd8b3de5
-    md5: b9adc1e552201aa3abc6efb72786ec93
+    binhash: 78c18496a68d4abc5a0982ee10110fcb
+    md5: 159843131d3e9a169486fe7402047970
+work/ocean/INPUT/ocean_hgrid.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/mosaic/global.1deg/2025.07.29/ocean_hgrid.nc
+  hashes:
+    binhash: 54eae673fd3c78c4962166a2065c097e
+    md5: add61fd8a7e0576871a20dfee003f42b
+work/ocean/INPUT/ocean_mosaic.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/mosaic/global.1deg/2025.07.29/ocean_mosaic.nc
+  hashes:
+    binhash: a15d1478279c9df0ce672b13f367b2c9
+    md5: 938e1cf183a7db8d1eeb17db45fbac3e
+work/ocean/INPUT/ocean_vgrid.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/vertical/global.1deg/2025.07.29/ocean_vgrid.nc
+  hashes:
+    binhash: 000e7fe06ca6e9d2c69ad6d8b924a932
+    md5: b304f3311d9e2f2622277c3636e7347c
 work/ocean/INPUT/ocmip2_press_monthly_om1p5_bc.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
   hashes:
@@ -329,3 +309,8 @@ work/ocean/INPUT/tideamp.nc:
   hashes:
     binhash: f20fffd2f2b42e73b177b439b006751d
     md5: b2840af757d9b7b40207f33f1fc84c5c
+work/ocean/INPUT/topog.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/bathymetry/global.1deg/2025.07.29/topog.nc
+  hashes:
+    binhash: 420f402d07ad59887eed0f1ef812e041
+    md5: a6eaa6fb5097093d3ef05b075cdb810a
