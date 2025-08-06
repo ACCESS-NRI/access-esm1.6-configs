@@ -4,14 +4,8 @@
 #        iceberg_rate_n => 0 ~ 1
 #        water mass budget wouldn't be changed by such tuning!
 &coupling
- caltype=1
  jobnum=2
- inidate=01010101
- init_date=00010101
- runtime0=3155673600
- runtime=86400
  dt_cpl_ai=10800
- dt_cpl_io=3600
  dt_cice=3600
  pop_icediag=.true.
  ice_pressure_on=.true.
@@ -28,7 +22,7 @@
  runoff_js_n=230
  runoff_je_n=300
  runoff_lh=.true.
- add_lprec=0.256E-07
+ add_lprec=0.17060809E-07 ! kg/m^2/s freshwater to add to every ocean cell
  use_ocnslope=.false.
  use_umask=.false.
  rotate_winds=.true.
