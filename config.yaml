@@ -30,7 +30,7 @@ modules:
   use:
       - /g/data/vk83/modules
   load:
-      - access-esm1p6/dev_2025.06.000
+      - access-esm1p6/2025.07.000
 
 # Model configuration
 model: access-esm1.6
@@ -72,7 +72,7 @@ submodels:
     - name: ocean
       model: mom
       ncpus: 196
-      exe: fms_ACCESS-ESM.x
+      exe: mom5_access_cm 
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
@@ -86,17 +86,15 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/grids/mosaic/global.1deg/2020.05.19/grid_spec.nc
 
     - name: ice
-      model: cice
+      model: cice5
       ncpus: 12
-      exe: cice_access_360x300_12x1_12p.exe
+      exe: cice_access-esm1.6_360x300_12x1_12p.exe
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc
         # Iceberg flux
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc
-        # Climatology
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc
 
     - name: coupler
       model: oasis
@@ -146,12 +144,13 @@ manifest:
 
 stacksize: unlimited
 qsub_flags: -W umask=027
-
+payu_minimum_version: 1.1.7
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
 sync:
     enable: False # set path below and change to true
+    restarts: True
     path: null # Set to location on /g/data or a remote server and path (rsync syntax)
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
