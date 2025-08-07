@@ -27,11 +27,11 @@
 #########################################################################
  $NFIELDS
 # This is the total number of fields being exchanged. 
-### 24 fields  atm -> ice
+### 26 fields  atm -> ice
 ### 15 fields  ice -> ocn
 ###  7 fields  ocn -> ice
 ### 18 fields  ice -> atm
-   72 
+   74 
  $END
 #########################################################################
 # unused in mct $JOBNAME
@@ -498,6 +498,22 @@ INSTANT
 # Field 17 : 10m wind speed
 ########## 
 wnd_i1 wnd_io 44 3600 1 i2o.nc IGNORED
+cice cice LAG=0 SEQ=+1
+#
+LOCTRANS
+INSTANT
+##########
+# Field 18 : land ice discharge waterflux
+########## 
+lice_fw licefw 44 3600 1 i2o.nc IGNORED
+cice cice LAG=0 SEQ=+1
+#
+LOCTRANS
+INSTANT
+##########
+# Field 19 : land ice discharge heatflux
+########## 
+lice_ht liceht 44 3600 1 i2o.nc IGNORED
 cice cice LAG=0 SEQ=+1
 #
 LOCTRANS

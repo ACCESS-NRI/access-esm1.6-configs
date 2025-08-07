@@ -6,6 +6,7 @@
          threading_read='multi'
          threading_write='single'
          fileset_write='single'
+         checksum_required=.false.
 /
 
  &fms_nml
@@ -200,7 +201,8 @@
 /
 
  &ocean_model_nml
-      layout = 18,10
+      layout = 14,14
+      io_layout = 1,1
       time_tendency='twolevel'
       vertical_coordinate='zstar'
       dt_ocean = 3600
@@ -210,6 +212,11 @@
       cmip_units=.true.
       debug=.false.
       do_wave=.true.
+/
+
+&mpp_io_nml
+    deflate_level     = 4
+    shuffle           = 1
 /
 
  &ocean_momentum_source_nml
@@ -480,7 +487,7 @@
 /
 
  &ocean_topog_nml
-        min_thickness=25.0
+        min_thickness=0.001
 /
 
  &ocean_tracer_advect_nml
@@ -503,6 +510,18 @@
       age_tracer_max_init=0.
       frazil_heating_after_vphysics=.true.
       frazil_heating_before_vphysics=.false.
+/
+
+&generic_tracer_nml
+    do_generic_tracer = .true.
+    do_generic_WOMBATlite = .true.
+/
+
+&generic_wombatlite_nml
+    co2_calc='mocsy'
+    do_caco3_dynamics=.true.
+    do_burial=.false.
+    do_conserve_tracers=.false.
 /
 
  &ocean_velocity_advect_nml
@@ -609,9 +628,9 @@
 /
 
  &mom_oasis3_interface_nml
-      num_fields_in=17
+      num_fields_in=19
       num_fields_out=9
-      fields_in= 'u_flux' ,'v_flux' ,'lprec','fprec','salt_flx','mh_flux','sw_flux','q_flux','t_flux','lw_flux','runof' ,'p' ,'aice', 'wfimelt', 'wfiform','co2_io', 'wnd_io'
+      fields_in= 'u_flux' ,'v_flux' ,'lprec','fprec','salt_flx','mh_flux','sw_flux','q_flux','t_flux','lw_flux','runof' ,'p' ,'aice', 'wfimelt', 'wfiform','co2_io', 'wnd_io', 'licefw', 'liceht'
       fields_out='t_surf','s_surf','u_surf','v_surf','dssldx','dssldy','frazil', 'co2_o', 'co2fx_o'
       send_before_ocean_update=.false.
       send_after_ocean_update=.true.
@@ -632,6 +651,8 @@
     sign_stflx=1.0
     redsea_gulfbay_sfix=.true.
     sfix_hours=24
+    chk_i2o_fields=.false.
+    chk_o2i_fields=.false.
 /
 
 &ocean_solo_nml

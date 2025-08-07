@@ -218,6 +218,7 @@ diag_table:
 
     'monthly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
+            module_name: generic_wombatlite
             file_name_prefix: oceanbgc
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
@@ -325,82 +326,42 @@ diag_table:
             wind_power_u:
             wind_power_v:
             hblt: {reduction_method: 'max'}
+            licefw:
+            liceht:
 
     'monthly 2d BGC fields':
+        defaults:  # these can be overridden for individual fields below
+            module_name: generic_wombatlite
+            file_name_prefix: oceanbgc
+            file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
+            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
+            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+        fields:
+            o2_stf:
+            dic_stf:
+            adic_stf:
+            fe_stf:
+            pco2:
+            paco2:
+            pprod_gross_2d:
+            export_prod:
+            export_inorg:
+            det_sediment:
+            caco3_sediment:
+ 
+    'monthly 2d BGC surface fields':
         defaults:  # these can be overridden for individual fields below
             file_name_prefix: oceanbgc
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
-            stf03:
-            stf07:
-            stf09:
-            stf10:
-            pco2:
-            paco2:
-            pprod_gross_2d:
-            atm_co2:
-            wnd:
-            det_sediment:
-            caco3_sediment:
             surface_no3:
             surface_phy:
             surface_alk:
             surface_dic:
             surface_adic:
             surface_o2:
-
-    'monthly 1d ocean fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_dimension: 1d  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
-            file_name:
-                - file_name_prefix
-                - file_name_dimension
-                - output_freq
-                - '':
-                    - output_freq_units
-                - file_name_date
-        fields:
-            geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
-            temp_merid_flux_advect_global:
-            temp_merid_flux_over_global:
-            temp_merid_flux_gyre_global:
-            salt_merid_flux_advect_global:
-            salt_merid_flux_over_global:
-            salt_merid_flux_gyre_global:
-            temp_merid_flux_advect_southern:
-            temp_merid_flux_over_southern:
-            temp_merid_flux_gyre_southern:
-            salt_merid_flux_advect_southern:
-            salt_merid_flux_over_southern:
-            salt_merid_flux_gyre_southern:
-            temp_merid_flux_advect_atlantic:
-            temp_merid_flux_over_atlantic:
-            temp_merid_flux_gyre_atlantic:
-            salt_merid_flux_advect_atlantic:
-            salt_merid_flux_over_atlantic:
-            salt_merid_flux_gyre_atlantic:
-            temp_merid_flux_advect_pacific:
-            temp_merid_flux_over_pacific:
-            temp_merid_flux_gyre_pacific:
-            salt_merid_flux_advect_pacific:
-            salt_merid_flux_over_pacific:
-            salt_merid_flux_gyre_pacific:
-            temp_merid_flux_advect_arctic:
-            temp_merid_flux_over_arctic:
-            temp_merid_flux_gyre_arctic:
-            salt_merid_flux_advect_arctic:
-            salt_merid_flux_over_arctic:
-            salt_merid_flux_gyre_arctic:
-            temp_merid_flux_advect_indian:
-            temp_merid_flux_over_indian:
-            temp_merid_flux_gyre_indian:
-            salt_merid_flux_advect_indian:
-            salt_merid_flux_over_indian:
-            salt_merid_flux_gyre_indian:
             
     'monthly scalar ocean fields':
         defaults:  # these can be overridden for individual fields below
@@ -443,21 +404,4 @@ diag_table:
             pe_tot:
             temp_surface_ave:
             salt_surface_ave:
-
-    'monthly scalar BGC fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_prefix: oceanbgc
-            file_name_dimension: scalar  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
-            file_name:
-                - file_name_prefix
-                - file_name_dimension
-                - output_freq
-                - '':
-                    - output_freq_units
-                - file_name_date
-        fields:
-            total_co2_flux:
-            total_aco2_flux:
 
