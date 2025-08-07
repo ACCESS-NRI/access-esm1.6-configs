@@ -81,6 +81,21 @@ More information on submitting a Pull Request and on the specifics of this pipel
 For more information on the manually running the pytests that are run as part of the reproducibility CI checks, see
 [model-config-tests](https://github.com/ACCESS-NRI/model-config-tests/).
 
+## Automated Cherry Picking
+
+There is a workflow which enables semi-automated cherry-picking from one branch into another, using the !cherry-pick keyword in a pull-request. This is useful when a change needs to be applied across multiple branches.
+
+For example, if a pull-request changes `dev-preindustrial+concentrations`, to apply the change to `dev-4xCO2+concentrations`:
+- First finalise and merge the pull-request into `dev-preindustrial+concentrations`
+- Second, as a standalone comment in the pull-request, use the keywod as follows:
+    ` !cherry-pick <commit> into <branch> `
+
+<commit> must exist in `dev-preindustrial+concentrations`. This can be one or multiple commit hashes seperated by spaces.
+<branch> would be `dev-4xCO2+concentrations` in this example
+
+This will attempt to make a new pull-request with the request commit(s), and leave a comment on the initial-pull request with the outcome.
+
+
 ## Conditions of use
 
 `<TO DO>`
