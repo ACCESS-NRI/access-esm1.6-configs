@@ -72,4 +72,5 @@ l_vcmaxFeedbk = .TRUE.                      ! using prognostic Vcmax
 casafile%phen     = 'INPUT/modis_phenology_csiro.txt'
 casafile%cnpbiome = 'INPUT/pftlookup_cable3.csv'
 
+ l_casacnp = .TRUE. ! redundant? actually controlled by icycle
 &end
