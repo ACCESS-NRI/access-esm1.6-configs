@@ -2,168 +2,173 @@ format: yamanifest
 version: 1.0
 ---
 work/atmosphere/restart_dump.astart:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/atmosphere/restart_dump.astart
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/atmosphere/restart_dump.astart
   hashes:
-    binhash: ac03c5bad6ada504312b4e0da7f9b8ee
-    md5: 60ded854dc696d28f5c39bdc8e14583c
+    binhash: f255da7750d8f4e5dc8d12e05cde412c
+    md5: 71e3e2026e0981a9a0cba152fdf25581
+work/atmosphere/restart_luh3.astart:
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/atmosphere/restart_luh3.astart
+  hashes:
+    binhash: 6ddb25acb190c11a6f2a2c7ada6ef6f8
+    md5: 94196a846f8b2659a5d1f8ea614dadd5
 work/atmosphere/um.res.yaml:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/atmosphere/um.res.yaml
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/atmosphere/um.res.yaml
   hashes:
-    binhash: 24fc957c97d3f8d89ecceac81b35f8a4
-    md5: c8d9d19c3d4a2ea2da580c79d00a2286
+    binhash: cfe3d247d62e7f2636a72dc331bb77bd
+    md5: 1283676142f4ab5f70d1c31069794129
 work/coupler/a2i.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/coupler/a2i.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/coupler/a2i.nc
   hashes:
-    binhash: b6b80f1bbf7da8021352d0e26a9a27b0
-    md5: ab7e76da453eca23f7511ba4b38ce298
+    binhash: 58bb7af573027333959e2b0f60a45faa
+    md5: ff8ac649fca67c3c8362748055c5f0c0
 work/coupler/i2a.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/coupler/i2a.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/coupler/i2a.nc
   hashes:
-    binhash: c6aafc1b084dcca778f555ec25bfac26
-    md5: b9a657e2785c2843b9cc1cfe55fe9a8f
+    binhash: 81203aa794c72b8a48f748302c5ceb2b
+    md5: 1c98a057b9c08cf927482b570621fc50
 work/coupler/o2i.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/coupler/o2i.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/coupler/o2i.nc
   hashes:
-    binhash: 6a0e0f3b744eddf84ca2129924113e47
-    md5: 608a3a5573d8b8723b9c63eb17eb9bfc
+    binhash: 3dcdffaef99cb92ddffa0d407e94c517
+    md5: 776f2a57a0da2c9a41ad95cea6fc5afa
 work/ice/RESTART/cice_in.nml:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/cice_in.nml
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/cice_in.nml
   hashes:
-    binhash: 97c1b39ad6b092c6fc7ceedbb16656d6
-    md5: 9ea6abd44473d778faa21313d6a534b7
+    binhash: 636137bd4adc94c5355d64c1bcfc5ea9
+    md5: 46fac930969614f14d67abf46fbbf137
 work/ice/RESTART/ice.restart_file:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/ice.restart_file
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/ice.restart_file
   hashes:
-    binhash: 4462bc1f34ae3ead66c3e9910283d4be
-    md5: a616b260db49613f0c2aeb25a7b9176c
+    binhash: a4613216cbbebbb0e1dec3a7d7e151ed
+    md5: e0fab615e8d8628947cda3a11b9ea199
 work/ice/RESTART/ice.restart_file-01001231:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/ice.restart_file-01001231
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/ice.restart_file-01001231
   hashes:
-    binhash: 68b6441eef2b37feb9bc954060c24dc3
+    binhash: da7733a2dcdbf21d0886d7154d705745
     md5: 2b181afa9524673b64612f3094427fbe
-work/ice/RESTART/iced.18920101:
+work/ice/RESTART/iced.18830101:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/iced.18920101
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/iced.18830101
   hashes:
-    binhash: 41583525161d6ad877435b528cfe4401
-    md5: 634cc05de8bd8997d2ccec68801ef10b
+    binhash: a438e66fd0f487c7022f52a86c47bcd8
+    md5: d69373e3b7ffd1ea0119f82cd57be613
 work/ice/RESTART/input_ice.nml:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/input_ice.nml
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/input_ice.nml
   hashes:
-    binhash: 0c81339b138a7ae82e9a2da18a6dad11
+    binhash: eaaf283a8870c819c06f5e9343a04417
     md5: e2d6d0541795dd3eeae54cda28ecba96
 work/ice/RESTART/mice.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/mice.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/mice.nc
   hashes:
-    binhash: 52caeecd2507fdaea3c4ffa85722b88e
-    md5: 5abd92b1512795b7d4122db3cadc156e
+    binhash: 0583b1dcce2008f7cda124aaf30169a9
+    md5: e4e6e97297ee678f060ab8d881dd0405
 work/ice/RESTART/mice.nc-01001231:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/mice.nc-01001231
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/mice.nc-01001231
   hashes:
-    binhash: 061a95f85057ccbf4650fddfb56b908b
+    binhash: da09dc5d134c0bcaea9ec102facf72fe
     md5: 380a7008500f58eb5e8006b1eac18527
 work/ice/RESTART/restart_date.nml:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ice/restart_date.nml
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ice/restart_date.nml
   hashes:
-    binhash: 743ea752456022ae0501794211292ebd
-    md5: afba5a1ee81a452b9b1184d7e68e2ee9
+    binhash: 9e3292f347ca69c735d0363f2e6e424e
+    md5: 4ae65083c41e7f710c810f8ffed30bbb
 work/ocean/INPUT/ocean_age.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_age.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_age.res.nc
   hashes:
-    binhash: 097dfad56db5db209e49564629247c77
-    md5: fb630bb59d149119c2f9b61ad96990ae
+    binhash: b1f9c3f0c821f56d162492f3f65e9a05
+    md5: d8206ccbb4b90953afbb5a350af7de29
 work/ocean/INPUT/ocean_barotropic.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_barotropic.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_barotropic.res.nc
   hashes:
-    binhash: 6601cae921b566db228f474475bee0a8
-    md5: 71f27797322356eddf03cf6130f9b96e
+    binhash: 93400daa69290f9eaa5c64e2df883540
+    md5: b0f7219438fa50ff3493cdee7630c30f
 work/ocean/INPUT/ocean_bih_friction.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_bih_friction.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_bih_friction.res.nc
   hashes:
-    binhash: c6be4a3022f0648b904efc4169633e1a
-    md5: 8a68721be4e6d38aac61990661ba6d75
+    binhash: 3c261542c0df0f0bb2ae53bd7b72bf4b
+    md5: cd1715754bc018e3bb2579a457b037b3
 work/ocean/INPUT/ocean_density.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_density.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_density.res.nc
   hashes:
-    binhash: 17a09b59ea0714f3fe8afe350c312da4
-    md5: b2fa085108cb34054b3d88b632f4fa9f
+    binhash: d94622c819244e2f4e681a4b90b80921
+    md5: 152e26aab84d1b71c38d692f28251bfa
 work/ocean/INPUT/ocean_frazil.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_frazil.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_frazil.res.nc
   hashes:
-    binhash: 327a2b19c52236fe51dd81211a567646
-    md5: 43d0f6ef54afa0520ceb3fc1a9620973
+    binhash: fcf4e708d2247a847a1f5db07f61beb0
+    md5: 4ef48c4a5b7f71d6084e47cccdc15855
 work/ocean/INPUT/ocean_lap_friction.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_lap_friction.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_lap_friction.res.nc
   hashes:
-    binhash: d027727eed347346e26f12323abc92ca
-    md5: d476b98c014784f98fea7b0f60ebba30
+    binhash: 6592ef4f67f03bb82903af68cbcc336d
+    md5: 598403f526c3f4a70fd3ab9c87c91216
 work/ocean/INPUT/ocean_neutral.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_neutral.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_neutral.res.nc
   hashes:
-    binhash: 732e607615a68ddfa8ea5ceadba5cb4b
-    md5: efa65e2867b54231a3d7a6ff0ea5cfbb
+    binhash: 73e3ef9b76ca12c4bae0624bba51e757
+    md5: 5eda148419e2597988dac054a92f92ba
 work/ocean/INPUT/ocean_pot_temp.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_pot_temp.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_pot_temp.res.nc
   hashes:
-    binhash: bcdd9ed38944a39fc87e578725669b85
-    md5: ac21787d318238d4e39f7964deae1540
+    binhash: 147c0998c5c8d4455e406a4b91f44984
+    md5: 7f5445acf030f17190b69db4df7d6f37
 work/ocean/INPUT/ocean_sbc.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_sbc.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_sbc.res.nc
   hashes:
-    binhash: ab8c9bc58141ed98d9bda99554f341bc
-    md5: d5b174375fc6eb2fd150ffb4ce5aa1ba
+    binhash: 359530a87e4825e515159b94c5a565e9
+    md5: 2844dd9398afa107fcc8a3c298a48871
 work/ocean/INPUT/ocean_sigma_transport.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_sigma_transport.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_sigma_transport.res.nc
   hashes:
-    binhash: ae2fca54b679043fdb9098eacb41b173
+    binhash: 784c981ab636dfc407e36c7dee19df43
     md5: e79fdeb47e6d0f7d20847a1ded2b5296
 work/ocean/INPUT/ocean_solo.res:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_solo.res
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_solo.res
   hashes:
-    binhash: 9bdb596fd9bb3d79f1226f36e68320d6
-    md5: b5f939ce3c3ec30c8a656cd3feed900a
+    binhash: 58e5413efe9b3e740b2c816fcb514d3a
+    md5: 928d17456b5769a59cca052716cbd994
 work/ocean/INPUT/ocean_temp_salt.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_temp_salt.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_temp_salt.res.nc
   hashes:
-    binhash: ca2c756814b28f0c92e2189acfe42c6d
-    md5: 0065c4626aa1ba5bbc33e71e66864754
+    binhash: e5a599d980cc1fb05764b3b228cb257e
+    md5: a929f1ab91beeba1e979fa922bc7ece3
 work/ocean/INPUT/ocean_thickness.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_thickness.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_thickness.res.nc
   hashes:
-    binhash: 3f5aeda5342ac9de421b793627ccc9df
-    md5: 2eeccdb46f7c5e7243321c0572762829
+    binhash: 663a38e13ebfdf461dcb08878cbedc9e
+    md5: af4799bbf299cbf804263a4eefc07796
 work/ocean/INPUT/ocean_tracer.res:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_tracer.res
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_tracer.res
   hashes:
-    binhash: 4759933f6c076bd4e738714e2807a90a
-    md5: 1ce1477e9d39e8e5c0a0d37466236bd0
+    binhash: d8f6e9ce416fdc1f23166c6837ab3243
+    md5: 2eb1a3327059af74f7f3aa6c11969268
 work/ocean/INPUT/ocean_velocity.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_velocity.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_velocity.res.nc
   hashes:
-    binhash: 23234fa6dc9e5fbb3bdd99108127e0ba
-    md5: 8f6d0fbe2e77c94b8b908caf92501722
+    binhash: 7835c9254f6a38c94708b7f467a1ab16
+    md5: 33f3124ea8e24aea6c59aad815d14b49
 work/ocean/INPUT/ocean_velocity_advection.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_velocity_advection.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_velocity_advection.res.nc
   hashes:
-    binhash: bf7488b6687f98b9d486ce4bc843f29b
-    md5: 452e07a63902ead65d990a0c96040034
+    binhash: 3feaf6a018a8b68494d695b146c69d4a
+    md5: 58a2812b957b1bdeedd155cc97a0b4af
 work/ocean/INPUT/ocean_wombatlite.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_wombatlite.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_wombatlite.res.nc
   hashes:
-    binhash: 4bf6ced8ddc5503e68620f2f80f14256
-    md5: f2a623ca7fde4f58e5b2336030ca9fd3
+    binhash: 50c5c4669d59ef8f8a32792d350a70fc
+    md5: e1a722683c805b346249a56164bbab5c
 work/ocean/INPUT/ocean_wombatlite_airsea_flux.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Aus-PFTs-2-Aus-PFTs-4-802ef3b5/restart008/ocean/ocean_wombatlite_airsea_flux.res.nc
+  fullpath: /g/data/p66/jxs599/ESM16/PAYU/Feat/NortonLCmap/restarts/ocean/ocean_wombatlite_airsea_flux.res.nc
   hashes:
-    binhash: 44ca30fc21ce61bc0d119638e8be095a
-    md5: 949624837f098234edd2f8df148f962c
+    binhash: 5488a16e1447576d70dd42648ba56526
+    md5: 59d31841b163c49742b43651d8b8bde8

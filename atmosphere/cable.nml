@@ -1,66 +1,75 @@
 &cable
-!
-!
-!! cable_user flags
-!
-  cable_user%GS_SWITCH = 'medlyn' ! alternative is 'leuning' - used for ESM1.5
-  cable_user%CABLE_RUNTIME_COUPLED = .TRUE. ! controls whether snow initialised if
-                                            ! ktau_gl=1
-                                            ! must be set true for coupled run
-                                            ! use true for atmosphere only runs if
-                                            ! want to take snow from start dump
-                                            ! default is .false.
-  cable_user%FWSOIL_SWITCH = 'Haverd2013' ! Controls root water uptake function
-                                        ! choices are: 
-                                        ! 'standard' - used for ESM1.5
-                                        ! 'non-linear extrapolation' 
-                                        ! 'Lai and Ktaul 2000' NB TYPO IS IN CODE (should be Katul)
-                                        ! 'Haverd2013'  - likely choice for ESM1.6
-  cable_user%DIAG_SOIL_RESP = 'ON '  ! Controls soil respiration scheme when CASA-CNP not used
-                                     ! 'ON' uses scheme tuned with parameter veg%vegcf
-                                     ! 'OFF' uses scheme tuned with parameter veg%rs20
-  cable_user%LEAF_RESPIRATION = 'OFF' ! Controls what is output into the GPP stash variable
-                                      ! 'OFF' is true GPP (photosynthesis + leaf respiration)
-                                      ! 'ON' is only photosynthesis, canopy%fpn
-  cable_user%RUN_DIAG_LEVEL= 'BASIC'  ! Controls output from CABLE to standard out
-                                      ! choices are:
-                                      ! 'BASIC'
-                                      ! 'NONE' 
-                                      ! 'zero' (in cable_explicit_driver - what does this do?)
-  cable_user%ssnow_POTEV = ''    ! Controls method used for soil evaporation
-                                 ! Choices are:
-                                 ! 'P-M' Penman_Monteith, otherwise defaults to 
-                                 ! humidity deficit method
-  cable_user%access13roots = .TRUE. ! TRUE uses prescribed froot values
-                                    ! FALSE uses 'rootbeta' parameterisation (as ACCESS-CM2)
-  cable_user%L_REV_CORR = .TRUE.
-  snmin = 0.11
-  cable_user%SOIL_THERMAL_FIX = .TRUE.
+
+!!--------------cable_user flags--------------
+
+cable_user%CABLE_RUNTIME_COUPLED= .TRUE.    ! controls whether snow initialised if
+																			  	  ! ktau_gl=1
+                                          	! must be set true for coupled run
+                                          	! use true for atmosphere only runs if
+                                          	! want to take snow from start dump
+                                          	! default is .false.
+
+cable_user%GS_SWITCH		    = 'medlyn'      ! alternative is 'leuning' - used for ESM1.5
+
+cable_user%FWSOIL_SWITCH    = 'Haverd2013'	! Controls root water uptake function
+                                            ! choices are: 
+                                            ! 'standard' - used for ESM1.5
+                                            ! 'non-linear extrapolation' 
+                                            ! 'Lai and Ktaul 2000' NB TYPO IS IN CODE (should be Katul)
+                                            ! 'Haverd2013'  - likely choice for ESM1.6
+cable_user%DIAG_SOIL_RESP   = 'ON '			    ! Controls soil respiration scheme when CASA-CNP not used
+                                     			  ! 'ON' uses scheme tuned with parameter veg%vegcf
+                                     			  ! 'OFF' uses scheme tuned with parameter veg%rs20
+cable_user%LEAF_RESPIRATION = 'OFF'				  ! Controls what is output into the GPP stash variable
+                                      			! 'OFF' is true GPP (photosynthesis + leaf respiration)
+                                      			! 'ON' is only photosynthesis, canopy%fpn
+cable_user%RUN_DIAG_LEVEL   = 'BASIC'  		  ! Controls output from CABLE to standard out
+                                      			! choices are:
+                                      			! 'BASIC'
+                                      			! 'NONE' 
+                                      			! 'zero' (in cable_explicit_driver - what does this do?)
+cable_user%ssnow_POTEV      = ''            ! Controls method used for soil evaporation
+                                            ! Choices are:
+                                            ! 'P-M' Penman_Monteith, otherwise defaults to 
+                                            ! humidity deficit method
+cable_user%access13roots    = .TRUE.        ! TRUE uses prescribed froot values
+                                            ! FALSE uses 'rootbeta' parameterisation (as ACCESS-CM2)
+cable_user%L_REV_CORR       = .TRUE.
+cable_user%SOIL_THERMAL_FIX = .TRUE.
+
 
 !!--------------Test Switches--------------
-  cable_user%l_new_roughness_soil  = .FALSE.   ! for new soil roughness, E.Kowalczyk Mar14
-  cable_user%l_new_runoff_speed    = .FALSE.   ! for new increase in runoff speed, E.Kowalczyk Mar14
-  cable_user%l_new_reduce_soilevp  = .FALSE.   ! to reduce soil evaporation, E.Kowalczyk Mar14
-!!-----------------------------------------
-!
-  redistrb = .FALSE.  ! Turn on/off the hydraulic redistribution
-  wiltParam = 0.5     ! only used if hydraulic redistribution .true.
-  satuParam = 0.8     ! only used if hydraulic redistribution .true.
-!
-! CASA-CNP flags
-  l_luc = .FALSE.
-  l_thinforest = .FALSE. 
-  l_casacnp = .TRUE. ! redundant? actually controlled by icycle
-  icycle = 3 ! Controls whether CASA-CNP is run and for which species
-             ! Choices are:
-             ! 0 CASA-CNP not run
-             ! 1 Carbon only
-             ! 2 Carbon and nitrogen
-             ! 3 Carbon, nitrogen and phosphorus
-  l_laiFeedbk   = .TRUE.  ! using prognostic LAI
-  l_vcmaxFeedbk = .TRUE.  ! using prognostic Vcmax
-! filenames for CASA-CNP input files
-! updated pftlookup file for CABLE3 format
-casafile%phen     = '/g/data/p66/jxs599/ESM16/PAYU/Feat/JuneSpinUpJuggle/Aus-pft_rml599/modis_phenology_csiro.txt'
-casafile%cnpbiome = '/g/data/p66/jxs599/ESM16/PAYU/Feat/JuneSpinUpJuggle/Aus-pft_rml599/pftlookup_cable3.csv'
+
+cable_user%l_new_roughness_soil  = .FALSE.  ! for new soil roughness, E.Kowalczyk Mar14
+cable_user%l_new_runoff_speed    = .FALSE.  ! for new increase in runoff speed, E.Kowalczyk Mar14
+cable_user%l_new_reduce_soilevp  = .FALSE.  ! to reduce soil evaporation, E.Kowalczyk Mar14
+
+
+!!--------------CABLE misc.-----------------
+
+snmin         = 0.11												! threshold snow depth[m]? to trigger 3-layer scheme
+redistrb			= .FALSE.										  ! Turn on/off the hydraulic redistribution
+wiltParam 		= 0.5    										  ! only used if hydraulic redistribution .true.
+satuParam 		= 0.8    										  ! only used if hydraulic redistribution .true.
+
+!!--------------CASA-CNP flags--------------
+
+l_luc         = .FALSE.
+l_thinforest  = .FALSE. 
+icycle        = 3                           ! Choices are:
+                                            ! 0 CASA-CNP not run
+                                            ! 1 Carbon only
+                                            ! 2 Carbon and nitrogen
+                                            ! 3 Carbon, nitrogen and phosphorus
+                       
+l_laiFeedbk   = .TRUE.                      ! using prognostic LAI
+l_vcmaxFeedbk = .TRUE.                      ! using prognostic Vcmax
+
+! CASA-CNP input filenames 
+! Please leave these as is. They are fixed links to EDITable paths in config.yaml 
+! that are recorded in payu manifests for posterity 
+
+casafile%phen     = 'INPUT/modis_phenology_csiro.txt'
+casafile%cnpbiome = 'INPUT/pftlookup_cable3.csv'
+
 &end
