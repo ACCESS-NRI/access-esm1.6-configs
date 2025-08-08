@@ -87,7 +87,7 @@ There is a workflow which enables semi-automated cherry-picking from one branch 
 
 For example, if a pull-request changes `dev-preindustrial+concentrations`, to apply the change to `dev-4xCO2+concentrations`:
 - First finalise and merge the pull-request into `dev-preindustrial+concentrations`
-- Second, as a standalone comment in the pull-request, use the keywod as follows:
+- Second, as a standalone comment in the pull-request, use the keyword as follows:
     ` !cherry-pick <commit> into <branch> `
 
 <commit> must exist in `dev-preindustrial+concentrations`. This can be one or multiple commit hashes seperated by spaces.
