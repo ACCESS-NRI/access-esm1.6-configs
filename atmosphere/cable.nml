@@ -72,5 +72,6 @@ l_vcmaxFeedbk = .TRUE.                      ! using prognostic Vcmax
 casafile%phen     = 'INPUT/modis_phenology_csiro.txt'
 casafile%cnpbiome = 'INPUT/pftlookup_cable3.csv'
 
- l_casacnp = .TRUE. ! redundant? actually controlled by icycle
+l_casacnp         = .TRUE.  ! delete - redundant - controlled by icycle 
+													  ! BUT equires corresponding changes to remove mentions in code
 &end
