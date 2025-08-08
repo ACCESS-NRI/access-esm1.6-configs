@@ -26,6 +26,30 @@ where scenario is typically a CMIP experiment identifier, concentration and inte
 
 All available configurations are browsable under [the list of release branches](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=release-). There are currently no released configurations.
 
+
+These configurations are under active development:
+- [dev-preindustrial+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bconcentrations)
+- [dev-preindustrial+emissions](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bemissions)
+- [dev-4xCO2+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-4xCO2%2Bconcentrations)
+- [dev-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2)
+- [dev-amip](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-amip)
+
+Where changes are made, they should be applied to all these branches (where relevant). These comparisons can assist with understanding differences between configurations:
+
+~ [dev-preindustrial+concentrations↔️dev-preindustrial+emissions
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-preindustrial+emissions
+)
+
+~ [dev-preindustrial+concentrations↔️dev-4xCO2+concentrations
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-4xCO2+concentrations
+)
+
+~ [dev-preindustrial+concentrations↔️dev-1pctCO2
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-1pctCO2
+)
+
+
+
 ## How to use this repository to run a model
 
 All configurations use [payu](https://github.com/payu-org/payu) to run the model.
