@@ -88,13 +88,6 @@ restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip
 
 # Timing controls
 calendar:
-    start:
-        # Check also 'MODEL_BASIS_TIME' in atmosphere namelists,
-        # 'inidate' in ice namelists
-        year: 1978
-        month: 1
-        days: 1
-
     runtime:
         years: 1 # NOTE: Must be 1 year for land use changes
         months: 0
