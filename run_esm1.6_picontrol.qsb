@@ -86,7 +86,7 @@ mkdir -p $WORKDIR/coupler
 cd $WORKDIR/coupler
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/* .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/* .
-ln -sf $RESTART_DIR/coupler/* .
+cp $RESTART_DIR/coupler/* .
 ln -sf $TOPDIR/coupler/* .
 rm namcouple
 sed "s/NSECONDS/$NSECONDS/" $TOPDIR/coupler/namcouple > namcouple
