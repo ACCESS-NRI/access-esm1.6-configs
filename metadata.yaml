@@ -12,17 +12,18 @@ notes: |-
    ACCESS-NRI requests users follow the guidelines for acknowledging ACCESS-NRI and include a statement such as:
    "This research used the ACCESS-ESM1.5 model infrastructure provided by ACCESS-NRI, which is enabled by the Australian Government's National Collaborative Research Infrastructure Strategy (NCRIS)."
 keywords:
-  - global
-  - access-esm1.6
+- global
+- access-esm1.6
 realm:
-  - atmos
-  - land
-  - ocean
-  - ocnBgchem
-  - seaIce
+- atmos
+- land
+- ocean
+- ocnBgchem
+- seaIce
 nominal_resolution: 100 km
 reference: https://doi.org/10.1071/ES19035
 license: CC-BY-4.0
 model: ACCESS-ESM1.6
 version: '1.1'
 url: https://github.com/ACCESS-NRI/access-esm1.5-configs.git
+experiment_uuid: 95a0c2e7-1c9b-4527-a7dc-e478caaa2932
