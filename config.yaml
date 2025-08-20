@@ -28,9 +28,9 @@ platform:
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/2025.07.000
+      - access-esm1p6/pr122-1
 
 # Model configuration
 model: access-esm1.6
@@ -135,10 +135,12 @@ runspersub: 1
 # Misc
 restart_freq: 10YS
 
-runlog: true
+runlog: false
 manifest:
   reproduce:
-    exe: true
+    exe: false
+metadata:
+  enable: false
 
 
 stacksize: unlimited
