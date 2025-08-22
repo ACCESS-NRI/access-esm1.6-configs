@@ -67,14 +67,14 @@ export VERT_LEV=INPUT/vertlevs_G3
 
 # Ancillary files
 export ARCLBIOG=INPUT/biogenic_351sm.N96L38
-export BIOMASS=INPUT/Bio_1850_ESM1.anc
+export BIOMASS=INPUT/Bio_1850_cmip7.anc
 export CHEMOXID=INPUT/sulpc_oxidants_N96_L38
 export DMSCONC=INPUT/DMS_conc.N96
 export NDEPFIL=INPUT/Ndep_1850_ESM1.anc
-export OCFFEMIS=INPUT/OCFF_1850_ESM1.anc
+export OCFFEMIS=INPUT/OCFF_1850_cmip7.anc
 export OZONE=INPUT/ozone_1850_ESM1.anc
-export SOOTEMIS=INPUT/BC_hi_1850_ESM1.anc
-export SULPEMIS=INPUT/scycl_1850_ESM1_v4.anc
+export SOOTEMIS=INPUT/BC_1850_cmip7.anc
+export SULPEMIS=INPUT/scycl_1850_cmip7.anc
 export VEGINIT=INPUT/cable_vegfunc_N96.anc
 
 export TOPDIR=$PWD
