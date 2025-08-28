@@ -7,7 +7,7 @@
 #PBS -l wd
 
 module use /g/data/vk83/modules
-module load access-esm1p6/dev_2025.04.000
+module load access-esm1p6/2025.07.000
 module load openmpi
 
 set -u
@@ -67,25 +67,28 @@ export VERT_LEV=INPUT/vertlevs_G3
 
 # Ancillary files
 export ARCLBIOG=INPUT/biogenic_351sm.N96L38
-export BIOMASS=INPUT/Bio_1850_ESM1.anc
+export BIOMASS=INPUT/Bio_1850_cmip7.anc
 export CHEMOXID=INPUT/sulpc_oxidants_N96_L38
 export DMSCONC=INPUT/DMS_conc.N96
 export NDEPFIL=INPUT/Ndep_1850_ESM1.anc
-export OCFFEMIS=INPUT/OCFF_1850_ESM1.anc
+export OCFFEMIS=INPUT/OCFF_1850_cmip7.anc
 export OZONE=INPUT/ozone_1850_ESM1.anc
-export SOOTEMIS=INPUT/BC_hi_1850_ESM1.anc
-export SULPEMIS=INPUT/scycl_1850_ESM1_v4.anc
+export SOOTEMIS=INPUT/BC_1850_cmip7.anc
+export SULPEMIS=INPUT/scycl_1850_cmip7.anc
 export VEGINIT=INPUT/cable_vegfunc_N96.anc
 
 export TOPDIR=$PWD
 export WORKDIR=$PWD/work
 
-RESTART_DIR=/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2025.04.08
+RESTART_DIR=/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2025.08.01
 
 mkdir -p $WORKDIR/coupler
 cd $WORKDIR/coupler
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2020.05.19/* .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/* .
+
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2025.08.06/* .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/grids/global.oi_1deg.a_N96/2025.07.29/* .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/masks.nc .
+# Coupler restarts are modified in place, hence must be copied rather than linked
 cp $RESTART_DIR/coupler/* .
 ln -sf $TOPDIR/coupler/* .
 rm namcouple
@@ -95,10 +98,10 @@ mkdir -p $WORKDIR/atmosphere/INPUT
 cd $WORKDIR/atmosphere/INPUT
 
 # Aerosols
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/OCFF_1850_ESM1.anc .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/BC_hi_1850_ESM1.anc .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/scycl_1850_ESM1_v4.anc .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/aerosol/global.N96/2020.05.19/Bio_1850_ESM1.anc .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/OCFF_1850_cmip7.anc .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/BC_1850_cmip7.anc .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/scycl_1850_cmip7.anc .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/Bio_1850_cmip7.anc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38 .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38 .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96 .
@@ -109,7 +112,7 @@ ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/at
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2020.05.19/Ndep_1850_ESM1.anc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/vegetation/global.N96/2020.05.19/cable_vegfunc_N96.anc .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/modis_phenology_csiro.txt .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.06.06/modis_phenology_csiro_nophase.txt .
 ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2024.12.18/pftlookup_cable3.csv .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_soil_params.txt .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_veg_params.txt .
@@ -138,8 +141,12 @@ ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/bioge
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/tideamp.nc .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/shortwave_penetration/global.1deg/2020.05.19/ssw_atten_depth.nc .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/grids/mosaic/global.1deg/2020.05.19/grid_spec.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/shortwave_penetration/global.1deg/2025.06.23/ssw_atten_depth.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/mosaic/global.1deg/2025.07.29/grid_spec.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/mosaic/global.1deg/2025.07.29/ocean_mosaic.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/mosaic/global.1deg/2025.07.29/ocean_hgrid.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/bathymetry/global.1deg/2025.07.29/topog.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/grids/vertical/global.1deg/2025.07.29/ocean_vgrid.nc .
 
 cd $WORKDIR/ocean
 ln -sf $TOPDIR/ocean/* .
@@ -151,8 +158,8 @@ mkdir -p $WORKDIR/ice/INPUT
 mkdir -p $WORKDIR/ice/HISTORY
 mkdir -p $WORKDIR/ice/RESTART
 cd $WORKDIR/ice/INPUT
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/grids/global.1deg/2020.05.19/kmt.nc .
-ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/ice/grids/global.1deg/2024.11.01/grid.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/kmt.nc .
+ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/grid.nc .
 ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2024.11.08/lice_discharge_iceberg.nc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ice/climatology/global.1deg/2020.05.19/monthly_sstsss.nc .
 cd $WORKDIR/ice/RESTART
@@ -168,5 +175,5 @@ rm input_ice.nml
 sed "s/NSECONDS/$NSECONDS/" $TOPDIR/ice/input_ice.nml > input_ice.nml
 
 mpirun -wdir $WORKDIR/atmosphere -np $UM_NPES um_hg3.exe : \
-       -wdir $WORKDIR/ocean -np $OCN_NPES fms_ACCESS-ESM.x : \
-       -wdir $WORKDIR/ice -np 12 cice_access_360x300_12x1_12p.exe
+       -wdir $WORKDIR/ocean -np $OCN_NPES mom5_access_cm  : \
+       -wdir $WORKDIR/ice -np 12 cice_access-esm1.6_360x300_12x1_12p.exe
