@@ -84,11 +84,12 @@ RESTART_DIR=/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/p
 
 mkdir -p $WORKDIR/coupler
 cd $WORKDIR/coupler
+
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2025.08.06/* .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/grids/global.oi_1deg.a_N96/2025.07.29/* .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/coupler/grids/global.oi_1deg.a_N96/2020.05.19/masks.nc .
 # Coupler restarts are modified in place, hence must be copied rather than linked
-cp -r $RESTART_DIR/coupler/* .
+cp $RESTART_DIR/coupler/* .
 ln -sf $TOPDIR/coupler/* .
 rm namcouple
 sed "s/NSECONDS/$NSECONDS/" $TOPDIR/coupler/namcouple > namcouple
