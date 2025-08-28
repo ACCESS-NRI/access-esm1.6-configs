@@ -149,6 +149,7 @@ diag_table:
             tide_speed_drag:
             tide_speed_mask:
 
+
     'yearly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -167,6 +168,7 @@ diag_table:
             pot_rho_0:
             sw_heat:
             sw_frac:
+            temp_runoffmix:
             temp_rivermix:
             temp_tendency_expl:
             salt_tendency_expl:
@@ -198,6 +200,7 @@ diag_table:
             wt:
             wrhot:
 
+
     'monthly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -223,6 +226,7 @@ diag_table:
             temp_vdiffuse_impl:
             salt_vdiffuse_impl:
 
+
     'monthly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
             module_name: generic_wombatlite
@@ -232,16 +236,73 @@ diag_table:
             output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
             no3:
-            phy:
             o2:
+            phy:
             det:
             zoo:
+            phyfe:
+            detfe:
+            zoofe:
+            pchl:
             caco3:
             dic:
             alk:
-            adic:
+            dicr:
+            dicp:
             fe:
             pprod_gross:
+            zprod_gross:
+            radbio:
+            radmid:
+            radmld:
+            phy_mu:
+            phy_mumax:
+            pchl_mu:
+            pchl_lpar:
+            phy_kni:
+            phy_kfe:
+            phy_lpar:
+            phy_lnit:
+            phy_lfer:
+            phy_dfeupt:
+            phy_feupreg:
+            phy_fedoreg:
+            feIII:
+            felig:
+            fecol:
+            fesources:
+            fesinks:
+            feprecip:
+            fescaven:
+            fescadet:
+            feloss:
+            fecoag2det:
+            htotal:
+            ahtotal:
+            phygrow:
+            phyresp:
+            phymort:
+            zooeps:
+            zoograzphy:
+            zoograzdet:
+            zooresp:
+            zoomort:
+            zooslopphy:
+            zooslopdet:
+            zooexcrphy:
+            zooexcrdet:
+            reminr:
+            detremi:
+            caldiss:
+            pic2poc:
+            omega_ara:
+            omega_cal:
+            co3:
+            co2_star:
+            htotal:
+            det_vmove:
+            alk_correct:
+            dic_correct:
 
     'monthly 2d ocean fields':
         defaults:  # these can be overridden for individual fields below
@@ -287,6 +348,7 @@ diag_table:
             wfiform:
             anompb:
             eta_t:
+            rhobarz:
             conv_rho_ud_t:
             bottom_temp:
             bottom_salt:
@@ -336,7 +398,6 @@ diag_table:
             licefw:
             liceht:
 
-
     'monthly 2d BGC fields':
         defaults:  # these can be overridden for individual fields below
             module_name: generic_wombatlite
@@ -347,7 +408,7 @@ diag_table:
         fields:
             o2_stf:
             dic_stf:
-            adic_stf:
+            dicp_stf:
             fe_stf:
             pco2:
             paco2:
@@ -355,7 +416,15 @@ diag_table:
             export_prod:
             export_inorg:
             det_sediment:
+            detfe_sediment:
             caco3_sediment:
+            det_sed_depst:
+            detfe_sed_depst:
+            caco3_sed_depst:
+            det_sed_bury:
+            detfe_sed_bury:
+            caco3_sed_bury:
+            zeuphot:
 
     'monthly 2d BGC surface fields':
         defaults:  # these can be overridden for individual fields below
@@ -368,7 +437,8 @@ diag_table:
             surface_phy:
             surface_alk:
             surface_dic:
-            surface_adic:
+            surface_dicp:
+            surface_dicr:
             surface_o2:
             
     'monthly scalar ocean fields':
@@ -391,6 +461,18 @@ diag_table:
             pbot_adjust:
             temp_global_ave:
             salt_global_ave:
+            no3_global_ave:
+            fe_global_ave:
+            o2_global_ave:
+            dic_global_ave:
+            alk_global_ave:
+            dicr_global_ave:
+            dicp_global_ave:
+            caco3_global_ave:
+            det_global_ave:
+            phy_global_ave:
+            pchl_global_ave:
+            zoo_global_ave:
             total_ocean_pme_river:
             total_ocean_river:
             total_ocean_evap:
@@ -412,4 +494,16 @@ diag_table:
             pe_tot:
             temp_surface_ave:
             salt_surface_ave:
+            no3_surface_ave:
+            fe_surface_ave:
+            o2_surface_ave:
+            dic_surface_ave:
+            alk_surface_ave:
+            dicr_surface_ave:
+            dicp_surface_ave:
+            caco3_surface_ave:
+            det_surface_ave:
+            phy_surface_ave:
+            pchl_surface_ave:
+            zoo_surface_ave:
 

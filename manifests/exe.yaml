@@ -2,17 +2,17 @@ format: yamanifest
 version: 1.0
 ---
 work/atmosphere/um_hg3.exe:
-  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-19.0.3.199/um7-git.2024.07.03_access-esm1.5-kgxooyp2s476dd4zc5mgtwhxfknkhnoe/bin/um_hg3.exe
+  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-2021.10.0/um7-git.access-esm1.6-2025.06.000_access-esm1.6-ozj2s6o3tr2r36yucd7skbk7dav3wlgk/bin/um_hg3.exe
   hashes:
-    binhash: 3180dda616c7dfe63d8134e00bff2641
-    md5: 1b7874ffb5e34ec50b6a68abbb7769a6
-work/ice/cice_access_360x300_12x1_12p.exe:
-  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-19.0.3.199/cice4-git.2024.05.21_access-esm1.5-hhtnigwxdyz7ta4dv3gvhwulze6hxqra/bin/cice_access_360x300_12x1_12p.exe
+    binhash: af47c294f8862c812cc946e109ee8508
+    md5: 052e46aa1f4c23f27eb89f4f4827ab66
+work/ice/cice_access-esm1.6_360x300_12x1_12p.exe:
+  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-2021.10.0/cice5-git.access-esm1.6-2025.07.001_access-esm1.6-atis5epr7y6fnal65zhvj4yz3kgjsoq3/bin/cice_access-esm1.6_360x300_12x1_12p.exe
   hashes:
-    binhash: 818f213e53d30fc307b565c35939382c
-    md5: 04fd88249ebc16e3f560fc265838e9d1
-work/ocean/fms_ACCESS-CM.x:
-  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-19.0.3.199/mom5-git.access-esm1.5_2024.08.23_access-esm1.5-ougudnkjcdkuuu6wuxne3uy7tr4y6oes/bin/fms_ACCESS-CM.x
+    binhash: e5debd13190d041b88218aa4c0304814
+    md5: d1009571b4af6ef7507314c5ad0cc381
+work/ocean/mom5_access_cm:
+  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-2021.10.0/mom5-git.2025.05.000_access-esm1.6-ywsqxamqrrav63qrkqavla2oa2wlpxa5/bin/mom5_access_cm
   hashes:
-    binhash: 711dd9e382eee06aba1f38ce83f7e7d5
-    md5: 96863931103def85ed76b152ba01b5c1
+    binhash: 36da13e2ba4e6d1fe80e3db9bf48f4ff
+    md5: 86a35c20adc8b369bf741226420f6702
