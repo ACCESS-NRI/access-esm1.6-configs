@@ -96,7 +96,7 @@ calendar:
 runspersub: 1
 
 # Misc
-restart_freq: 10
+restart_freq: 10YS
 
 runlog: true
 manifest:
@@ -106,6 +106,7 @@ manifest:
 stacksize: unlimited
 
 qsub_flags: -W umask=027
+payu_minimum_version: 1.1.7
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
