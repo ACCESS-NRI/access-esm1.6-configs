@@ -54,18 +54,6 @@ theme:
 copyright: Copyright &copy; 2025 ACCESS-NRI, CSIRO and contributors
 
 plugins:
-  - include-configuration-stubs:
-      repo: ACCESS-NRI/access-esm1.6-configs
-      main_website:
-        pattern: "dev-* release-*"
-        ref_type: branch
-      preview_website:
-        pattern: ""
-        ref_type: branch
-      stubs_parent_url: pages/configurations
-      stubs_nav_path: Configurations
-      stubs_dir: documentation/stub
-
   - git-revision-date-localized:
       type: date
       enable_creation_date: false
@@ -107,7 +95,7 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home:                  index.md
+  - Home:                  pages/index.md
 
 # Footer
 extra:
