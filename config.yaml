@@ -75,7 +75,7 @@ submodels:
       exe: mom5_access_cm 
       input:
         # Biogeochemistry
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/biogeochemistry/global.1deg/2025.09.22/SFe_Hamiltonetal2020_monthly_clim.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
         # Tides
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
