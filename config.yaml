@@ -30,7 +30,7 @@ modules:
   use:
       - /g/data/vk83/modules
   load:
-      - access-esm1p6/2025.07.001
+      - access-esm1p6/2025.09.001
 
 # Model configuration
 model: access-esm1.6
@@ -75,7 +75,7 @@ submodels:
       exe: mom5_access_cm 
       input:
         # Biogeochemistry
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/dust.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/biogeochemistry/global.1deg/2025.09.22/SFe_Hamiltonetal2020_monthly_clim.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/biogeochemistry/global.1deg/2020.05.19/ocmip2_press_monthly_om1p5_bc.nc
         # Tides
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/ocean/tides/global.1deg/2020.05.19/roughness_amp.nc
@@ -143,6 +143,9 @@ manifest:
 
 stacksize: unlimited
 qsub_flags: -W umask=027
+mpi:
+  flags:
+    - --mca mpi_yield_when_idle true
 payu_minimum_version: 1.1.7
 
 # Sync options for automatically copying data from ephemeral scratch space to
