@@ -11,7 +11,7 @@
  ice_pressure_on=.true.
  air_pressure_on=.false.
  ice_fwflux=.true.
- iceberg=2            ! Use iceberg meltwater spread from variable FICEBERG_GC2 
+ iceberg=2            ! Use iceberg meltwater spread from variable FICEBERG_GC3 
                       ! in lice_discharge_iceberg.nc
  iceberg_rate_s=0.5   ! Proportion of runoff to spread around Antarctica
  iceberg_rate_n=0.5   ! Proportion of runoff to spread around Greenland
