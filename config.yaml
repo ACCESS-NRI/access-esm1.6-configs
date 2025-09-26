@@ -137,6 +137,8 @@ runlog: true
 manifest:
   reproduce:
     exe: true
+    input: true
+    restart: true
 
 
 stacksize: unlimited
