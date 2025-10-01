@@ -61,6 +61,6 @@
   l_vcmaxFeedbk = .TRUE.  ! using prognostic Vcmax
 ! filenames for CASA-CNP input files
 ! updated pftlookup file for CABLE3 format
-  casafile%cnpbiome='INPUT/pftlookup_cable3.csv'  ! biome specific BGC parameters
-  casafile%phen='INPUT/modis_phenology_csiro_nophase.txt' ! phenology by latitude (modis derived)
+  casafile%cnpbiome='INPUT/pftlookup_cable3_1213_exp6_c4crop.csv'  ! biome specific BGC parameters
+  casafile%phen='INPUT/modis_phenology_csiro_13evergreen.txt' ! phenology by latitude (modis derived)
 &end
