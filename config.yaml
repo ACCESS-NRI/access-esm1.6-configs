@@ -78,13 +78,6 @@ restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip
 
 # Timing controls
 calendar:
-    start:
-        # Check also 'MODEL_BASIS_TIME' in atmosphere namelists,
-        # 'inidate' in ice namelists
-        year: 1978
-        month: 1
-        days: 1
-
     runtime:
         years: 1 # NOTE: Must be 1 year for land use changes
         months: 0
@@ -93,7 +86,7 @@ calendar:
 runspersub: 1
 
 # Misc
-restart_freq: 10
+restart_freq: 10YS
 
 runlog: true
 manifest:
@@ -104,6 +97,7 @@ manifest:
 
 stacksize: unlimited
 qsub_flags: -W umask=027
+payu_minimum_version: 1.1.7
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
