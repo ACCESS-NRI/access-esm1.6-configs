@@ -111,9 +111,6 @@ manifest:
 stacksize: unlimited
 
 qsub_flags: -W umask=027
-mpi:
-  flags:
-    - --mca mpi_yield_when_idle true
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
