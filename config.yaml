@@ -28,9 +28,9 @@ platform:
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/prerelease/modules
+      - /g/data/vk83/modules
   load:
-      - access-esm1p6/pr129-3
+      - access-esm1p6/2025.09.002
 
 # Model configuration
 model: access-esm1.6
@@ -111,6 +111,9 @@ manifest:
 stacksize: unlimited
 
 qsub_flags: -W umask=027
+mpi:
+  flags:
+    - --mca mpi_yield_when_idle true
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
