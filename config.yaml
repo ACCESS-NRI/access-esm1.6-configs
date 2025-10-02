@@ -153,6 +153,7 @@ payu_minimum_version: 1.1.7
 sync:
   enable: True
   restarts: True
+  walltime: 30:00
   path: /g/data/p73/archive/CMIP7/ACCESS-ESM1-6/spinup/Sept-A
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
