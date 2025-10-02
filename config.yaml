@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: test-PIspinup-Sept-C
+jobname: Sept-C
 queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
@@ -136,9 +136,9 @@ restart_freq: 10YS
 runlog: true
 manifest:
   reproduce:
-    exe: true
-    input: true
-    restart: true
+    exe: false
+    input: false
+    restart: false
 
 
 stacksize: unlimited
@@ -151,9 +151,10 @@ payu_minimum_version: 1.1.7
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
 sync:
-    enable: False # set path below and change to true
-    restarts: True
-    path: null # Set to location on /g/data or a remote server and path (rsync syntax)
+  enable: True
+  restarts: True
+  walltime: 30:00
+  path: /g/data/p73/archive/CMIP7/ACCESS-ESM1-6/spinup/Sept-C
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,
