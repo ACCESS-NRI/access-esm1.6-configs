@@ -78,7 +78,7 @@
  AOBINC= 0 ,
  AOBGRP= 0 ,
  /
-  ## End of file ##
+
  &NLSTCALL
  EXPT_ID='aiih',
  JOB_ID='c',
@@ -204,7 +204,6 @@
  L_PEER=.FALSE.,
  /
 
- !!! END OF FILE !!!
  &NLSTCGEN
  STEPS_PER_PERIODim=48,0,0,0,
  SECS_PER_PERIODim=86400,0,0,0,
@@ -243,8 +242,6 @@
  BOUND_FIELDCODE=0,0,0,0,
  /
 
-
- !!! END OF FILE !!!
  &NLSTCATM
  MODEL_DOMAIN=1 ,
  L_SNOW_ALBEDO=.FALSE.,
@@ -990,4 +987,4 @@
  L_CLMCHFCG=.FALSE.,
  /
 
- !!! END OF FILE !!!
+
