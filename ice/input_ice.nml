@@ -4,22 +4,17 @@
 #        iceberg_rate_n => 0 ~ 1
 #        water mass budget wouldn't be changed by such tuning!
 &coupling
- caltype=1
  jobnum=2
- inidate=01010101
- init_date=00010101
- runtime0=3155673600
- runtime=86400
- dt_cpl_ai=10800
- dt_cpl_io=3600
- dt_cice=3600
+ dt_cpl_ai=10800      ! Atmoshphere-Ice coupling timestep
+ dt_cice=3600         ! Cice timestep and ice-ocn coupling timestep
  pop_icediag=.true.
  ice_pressure_on=.true.
  air_pressure_on=.false.
  ice_fwflux=.true.
- iceberg=2
- iceberg_rate_s=0.5
- iceberg_rate_n=0.5
+ iceberg=2            ! Use iceberg meltwater spread from variable FICEBERG_GC3 
+                      ! in lice_discharge_iceberg.nc
+ iceberg_rate_s=0.5   ! Proportion of runoff to spread around Antarctica
+ iceberg_rate_n=0.5   ! Proportion of runoff to spread around Greenland
  iceberg_je_s=70
  runoff_je_s=45
  iceberg_js_n=201
@@ -27,14 +22,14 @@
  runoff_ie_n=270
  runoff_js_n=230
  runoff_je_n=300
- runoff_lh=.true.
- add_lprec=0.256E-07
+ runoff_lh=.true.     ! Account for latent heat to melt runoff from icesheets
+ add_lprec=5.23958664e-09 ! kg/m^2/s freshwater to add to every ocean cell
  use_ocnslope=.false.
  use_umask=.false.
  rotate_winds=.true.
  limit_icemelt=.false.
  meltlimit=-200.0
- chk_i2o_fields=.false.
+ chk_i2o_fields=.false. ! Extra coupler diagnostics
  chk_o2i_fields=.false.
  chk_i2a_fields=.false.
  chk_a2i_fields=.false.
