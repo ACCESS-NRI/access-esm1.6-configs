@@ -30,7 +30,7 @@ modules:
   use:
       - /g/data/vk83/modules
   load:
-      - access-esm1p6/2025.09.002
+      - access-esm1p6/2025.10.000
 
 # Model configuration
 model: access-esm1.6
@@ -119,7 +119,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2025.09.26.A
+restart: /g/data/p73/archive/CMIP7/ACCESS-ESM1-6/spinup/Sept-A/restart280/
 
 # Timing controls
 calendar:
