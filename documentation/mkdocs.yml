@@ -59,12 +59,11 @@ plugins:
       enable_creation_date: false
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - mkdocs-jupyter
   - macros
   - bibtex:
       bib_file: references.bib
       csl_file: https://raw.githubusercontent.com/citation-style-language/styles/26eccff9e537f71494a4da7b91afac1adf571dc9/apa.csl
-  - events:
-      events_dir: community_resources/events/events
 
 markdown_extensions: 
   - attr_list
@@ -108,7 +107,7 @@ nav:
         - CASA - land biogeochem.:     pages/model_components/casa.md
   - Inputs:
         - Ocean:    pages/inputs/ocean.md
-        - Sea ice:    pages/inputs/seaice.md
+        - Sea Ice: pages/inputs/sea_ice.md
         - Atmosphere:    pages/inputs/atmosphere.md
         - Land:    pages/inputs/land.md
 
@@ -116,7 +115,8 @@ nav:
         - Configuration:    pages/configs_experiments/overviewconfiguration.md
         - Experiments:    pages/configs_experiments/experiments.md
 
-  - Diagnostics:        pages/diagnostics/index.md
+  - Diagnostics:        
+        - Sea Ice: pages/diagnostics/sea_ice.ipynb
   - Infrastructure:    
         - Architecture:          pages/infrastructure/Architecture.md
         - Building:              pages/infrastructure/Building.md
