@@ -69,7 +69,7 @@ sivol = sithick*siconc <!-- I am confused about why this is true, as sithick is 
 
 We use [fixed salinity](https://github.com/ACCESS-NRI/access-esm1.6-configs/blob/c150adbad53b3dc8ed4079fe2136cbb767fa0a63/ice/cice_in.nml#L46) for sea ice of 4 g/kg. Therefore: `sisalt = simass * 0.004`
 
-
+$sivol*rhoi = simass $
 
 ### Temperatures
 

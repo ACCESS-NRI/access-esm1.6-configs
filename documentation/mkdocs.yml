@@ -64,6 +64,12 @@ plugins:
   - bibtex:
       bib_file: references.bib
       csl_file: https://raw.githubusercontent.com/citation-style-language/styles/26eccff9e537f71494a4da7b91afac1adf571dc9/apa.csl
+<<<<<<< HEAD
+=======
+  - mkdocs-jupyter:
+      include_requirejs: true
+      custom_mathjax_url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"
+>>>>>>> f7cd2e1 (today work)
 
 markdown_extensions: 
   - attr_list
@@ -142,7 +148,7 @@ extra_css:
   - css/custom.css
 
 extra_javascript:
-  - javascripts/mathjax.js # For pymdownx.arithmatex extension
+  # - javascripts/mathjax.js # For pymdownx.arithmatex extension
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # For pymdownx.arithmatex extension
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js     # For tablesort functionality 
   - https://cdn.jsdelivr.net/gh/atteggiani/animated-terminal@3.0/animated-terminal.min.js # Terminal animations
@@ -155,5 +161,6 @@ watch:
   - mkdocs.yml
   - overrides/
 
-hooks:
-  - hooks/hide_pages_url_segment.py
+# hooks:
+# To-do: fix for mkdocs-jupyter
+  # - hooks/hide_pages_url_segment.py
