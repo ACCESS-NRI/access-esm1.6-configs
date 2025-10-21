@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: test-PIspinup-Oct-B
+jobname: Oct-B-replace-030
 queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
@@ -119,7 +119,7 @@ submodels:
 collate:
     enable: false
 
-restart: /scratch/p66/jxs599/access-esm/archive/feat-GPP-13-test-PIspinup-Sept-C-c88ebe39/restart080
+restart: /g/data/p66/jxs599/ESM16/PAYU/Dev/Oct-B-repeat-030/restart020 
 
 # Timing controls
 calendar:
@@ -131,14 +131,14 @@ calendar:
 runspersub: 1
 
 # Misc
-restart_freq: 10YS
+restart_freq: 1YS
 
 runlog: true
 manifest:
   reproduce:
     exe: true
     input: true
-    restart: true
+    restart: false
 
 
 stacksize: unlimited
