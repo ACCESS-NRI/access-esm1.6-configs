@@ -19,11 +19,24 @@ env:
   WEBSITE_DIR: ${{ github.workspace }}/full-website
   PR_PREVIEWS_DIR: pr-previews
   PR_PREVIEW_EXCLUDE_REGEX: ^!no-(pr-)?preview\b
+  BUILD_DEVELOPMENT_WEBSITE: false
 concurrency:
   group: documentation-build-deploy
   cancel-in-progress: true
 
 jobs:
+  # The conditionals cannot depend directly from the GitHub environment (e.g., if: env.BUILD_DEVELOPMENT_WEBSITE == 'true') 
+  # so we use a job to set that as an output that can be then used in the other jobs' conditionals
+  set-development-preview-condition:
+    name: Set development preview build condition
+    runs-on: ubuntu-latest
+    outputs:
+      build_development_website: ${{ steps.set-condition.outputs.build_development_website }}
+    steps:
+      - name: Set condition
+        id: set-condition
+        run: echo "build_development_website=${{ env.BUILD_DEVELOPMENT_WEBSITE }}" >> $GITHUB_OUTPUT
+
   # Get the root url to be used at build time to set the SITE_URL env variable
   # used in the mkdocs.yml file to construct the website map for links
   get-root-url:
@@ -145,7 +158,8 @@ jobs:
   build-development:
     name: Build development website
     runs-on: ubuntu-latest
-    needs: get-root-url
+    needs: [set-development-preview-condition,get-root-url]
+    if: ${{ needs.set-development-preview-condition.outputs.build_development_website == 'true' }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
     steps:
@@ -351,8 +365,8 @@ jobs:
     name: Set entire website structure
     runs-on: ubuntu-latest
     needs: [build-main, build-development, build-pr]
-    # Run this job also if build-pr was skipped because no PR was found
-    if: ${{ contains(fromJson('["success","skipped"]'), needs.build-pr.result) }}
+    # Run this job also if build-pr or build-development was skipped (no PR was found or no development build requested)
+    if: ${{ contains(fromJson('["success","skipped"]'), needs.build-pr.result) && contains(fromJson('["success","skipped"]'), needs.build-development.result) }}
     env:
       GH_TOKEN: ${{ github.token }} # Required for gh usage
     steps:
