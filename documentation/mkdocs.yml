@@ -95,7 +95,33 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home:                  pages/index.md
+  - Home:                            pages/index.md
+  - Contributing:          
+        - Contributing overview:     pages/contributing/index.md   
+        - Edit this Documentation:   pages/contributing/Edit-Config-Docs.md
+        - Add Supported Config:      pages/contributing/Add-Supported-Config.md      
+  - Model Components:
+        - wombat:   pages/model_components/wombat.md
+        - um:       pages/model_components/um.md
+  - Inputs:
+        - ocean:    pages/inputs/ocean.md
+        - sea ice:    pages/inputs/seaice.md
+        - atmosphere:    pages/inputs/atmosphere.md
+        - land:    pages/inputs/land.md
+        - forcing:    pages/inputs/forcing.md
+        - land namelists and parameter files:    pages/inputs/land2.md
+        - ocean grids and bathymetry:    pages/inputs/ocean_grid_bathy.md
+        - atmosphere land grids:    pages/inputs/atmos_land_grid.md
+
+  - Configurations and Experiments:
+        - Configuration:    pages/configs_experiments/overviewconfiguration.md
+        - Experiments:    pages/configs_experiments/experiments.md
+
+  - Diagnostics:        pages/diagnostics.md
+  - Infrastructure:    
+        - Architecture:          pages/infrastructure/Architecture.md
+        - Building:              pages/infrastructure/Building.md
+        - Git practices:         pages/infrastructure/Git-practices.md
 
 # Footer
 extra:
