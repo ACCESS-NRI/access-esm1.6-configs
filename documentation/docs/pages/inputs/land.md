@@ -3,6 +3,10 @@
 
 ## Grids
 
+### Tiling
+
 ## Ancillaries
 
-## Parameters and namelist files
+### Vegetation distribution
+
+## Parameters
