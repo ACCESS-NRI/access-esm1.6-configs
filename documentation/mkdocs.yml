@@ -92,6 +92,7 @@ markdown_extensions:
   - tables
   - toc:
       title: On this page
+      permalink: true
 
 # Navigation
 nav:
@@ -99,23 +100,23 @@ nav:
   - Contributing:          
         - Contributing overview:     pages/contributing/index.md   
   - Model Components:
-        - wombat:   pages/model_components/wombat.md
-        - um:       pages/model_components/um.md
+        - MOM - ocean:      pages/model_components/mom.md
+        - WOMBAT - ocean biogeochem.:   pages/model_components/wombat.md
+        - CICE - sea ice:     pages/model_components/cice.md
+        - UM - atmosphere:       pages/model_components/um.md
+        - CABLE - land:    pages/model_components/cable.md
+        - CASA - land biogeochem.:     pages/model_components/casa.md
   - Inputs:
-        - ocean:    pages/inputs/ocean.md
-        - sea ice:    pages/inputs/seaice.md
-        - atmosphere:    pages/inputs/atmosphere.md
-        - land:    pages/inputs/land.md
-        - forcing:    pages/inputs/forcing.md
-        - land namelists and parameter files:    pages/inputs/land2.md
-        - ocean grids and bathymetry:    pages/inputs/ocean_grid_bathy.md
-        - atmosphere land grids:    pages/inputs/atmos_land_grid.md
+        - Ocean:    pages/inputs/ocean.md
+        - Sea ice:    pages/inputs/seaice.md
+        - Atmosphere:    pages/inputs/atmosphere.md
+        - Land:    pages/inputs/land.md
 
   - Configurations and Experiments:
         - Configuration:    pages/configs_experiments/overviewconfiguration.md
         - Experiments:    pages/configs_experiments/experiments.md
 
-  - Diagnostics:        pages/diagnostics.md
+  - Diagnostics:        pages/diagnostics/index.md
   - Infrastructure:    
         - Architecture:          pages/infrastructure/Architecture.md
         - Building:              pages/infrastructure/Building.md
