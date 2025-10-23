@@ -1,10 +1,10 @@
 ## Getting involved in ACCESS-ESM1.6
 
-There are several ways we welcome feedback and contributions on ACCESS-ESM1.6 development. Contributions from people of all career stages and backgrounds is highly encouraged. All the models and configurations we develop are open source. Development is led by CSIRO and ACCESS-NRI and we follow an open development model building on the work of international modelling consortia.
+There are several ways we welcome feedback and contributions on ACCESS-ESM1.6 development. Contributions from people of all career stages and backgrounds are highly encouraged. Development is led by CSIRO and ACCESS-NRI. We follow an open development workflow where possible building on the work of international modelling groups.
 
 ### Interact with developers in person
 
-If you would like to interact in person with the development team, we have weekly standup meetings at Tuesday at 9.45am. They are discussed [on the access hive forum](https://forum.access-hive.org.au/t/access-esm1-6-development/3114/267) (subscribe to this thread for notifications) and the meeting minutes are [also on the forum](https://forum.access-hive.org.au/t/csiro-access-nri-standup-minutes/3789/60). Everyone is welcome to suggest agenda items and participate. If you'd like to come, best to get in touch on the [on the access hive forum](https://forum.access-hive.org.au/t/access-esm1-6-development/3114/267) or email chris.bull@anu.edu.au.
+If you would like to interact in person with the development team, we have weekly standup meetings on Tuesday at 9.45am. They are discussed [on the ACCESS-Hive forum](https://forum.access-hive.org.au/t/access-esm1-6-development/3114/267) (subscribe to this thread for notifications) and the meeting minutes are [also on the forum](https://forum.access-hive.org.au/t/csiro-access-nri-standup-minutes/3789/60). Everyone is welcome to suggest agenda items and participate. If you'd like to come, best to get in touch on [the ACCESS-Hive forum](https://forum.access-hive.org.au/t/access-esm1-6-development/3114/267).
 
 We also manage most of our development openly on GitHub, we track ESM1.6 work on a [GitHub project board here](https://github.com/orgs/ACCESS-NRI/projects/14). If you'd like to have your issue considered for esm1.6 development, please [open an issue](https://github.com/ACCESS-NRI/access-esm1.6-configs/issues/new).
 
@@ -19,7 +19,7 @@ All contributions are welcome but we would particularly appreciate text suggesti
 
 ### Quick contributions 
 !!! tip
-    This method has the advantage is that it's *very quick* (<1 minute!). The caveat is that, unless you have write access to the `access-esm1.6-configs` repository, you will not be able to preview the changes rendered into a website or create whole new pages. <br>
+    This method has the advantage that it's *very quick* (<1 minute!). The caveat is that, unless you have write access to the `access-esm1.6-configs` repository, you will not be able to preview the changes rendered into a website or create whole new pages. <br>
 
 The simplest and fastest way to make a change to an _existing_ page is to click the edit "pencil" on the top-right corner. This will go to the relevant GitHub markdown file and clicking the top-right pencil again on GitHub will allow you to edit the file. Once complete, click `Commit changes...`. There are then _two_ possibilities, depending on whether you have  write access to [`access-esm1.6-configs`](https://github.com/ACCESS-NRI/access-esm1.6-configs): 
 
@@ -34,7 +34,7 @@ Create a new branch, e.g. `jblogs/doc-update`, make doc changes (the documentati
 
 ### Larger contributions (`mkdocs` offline)
 !!! tip
-    Similar to the above, this method allows you create whole new pages and to preview the changes rendered into a website. It works whether or not you have write access to [`access-esm1.6-configs`](https://github.com/ACCESS-NRI/access-esm1.6-configs), but requires you to install `mkdocs` and takes the longest to set up.<br>
+    This method allows you create whole new pages and to preview the changes rendered into a website. It works whether or not you have write access to [`access-esm1.6-configs`](https://github.com/ACCESS-NRI/access-esm1.6-configs), but requires you to install `mkdocs` and takes the longest to set up.<br>
 
 Following [these instructions](https://docs.access-hive.org.au/about/contribute/contribute_on_github/) but noting the documentation sources are in [github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation). You'll need to fork and clone [github.com/ACCESS-NRI/access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) if you want to [write your own content](https://docs.access-hive.org.au/about/contribute/contribute_on_github/) (`mkdocs serve` should be invoked from within the `documentation` directory).
 

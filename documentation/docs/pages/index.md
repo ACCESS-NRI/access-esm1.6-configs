@@ -4,7 +4,7 @@
 Welcome to the documentation for the [ACCESS-ESM1.6 model configurations](https://github.com/ACCESS-NRI/access-ESM1.6-configs)! 
 
 
-## ACCESS-OM3 Documentation Overview
+## ACCESS-ESM1.6 Documentation Overview
 
 See the navigation links on the left. Some reading tips, see:
 
@@ -13,7 +13,7 @@ See the navigation links on the left. Some reading tips, see:
  - [Configuration choices/Configurations](/configurations/Overview/) 
  - [Infrastructure](/infrastructure/Architecture/) 
 
-## ACCESS-OM3-Configs Overview
+## access-ems1.6-configs Overview
 ACCESS-ESM1.6 configurations are provided via branches in the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository. The [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository contains several configurations using the following components:
 
 - [MOM5](https://github.com/ACCESS-NRI/mom5) ocean model
@@ -26,7 +26,7 @@ The [`main`](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main) bran
 
 Each configuration in [github.com/ACCESS-NRI/access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository is stored as a git branch. Most of the branches are named according to the following naming scheme:
 
-`{release}-{scenario}[+{modifier}]`
+`release-{scenario}[+{modifier}]`
 
 where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the base experimental design with optional modifiers. All configurations are assumed to be global extent with nominal 1 degree resolution.
 
@@ -49,7 +49,7 @@ These configurations are under active development:
 - [dev-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2)
 - [dev-amip](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-amip)
 
-Where changes are made, they should be applied to all these branches (where relevant). These comparisons can assist with understanding differences between configurations:
+Where changes are made, they should be applied to all these branches (where relevant) by pull requests. These comparisons can assist with understanding differences between configurations:
 
 - [dev-preindustrial+concentrations↔️dev-preindustrial+emissions
 ](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-preindustrial+emissions
