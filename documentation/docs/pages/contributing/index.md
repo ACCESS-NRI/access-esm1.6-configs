@@ -30,11 +30,11 @@ The simplest and fastest way to make a change to an _existing_ page is to click 
 !!! tip
     This method allows you create whole new pages, and to preview the changes rendered into a website. It does not require you to install any software, but is **only available for people with write access to [`access-esm1.6-configs`](https://github.com/ACCESS-NRI/access-esm1.6-configs)**.<br>
 
-Create a new branch, e.g. `jblogs/doc-update`, make doc changes (the documentation sources are in [github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation)), then open a related PR and a GitHub preview will be made automatically.
+Create a new branch, e.g. `jblogs/doc-update`, make doc changes (the documentation sources are in [github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation)), then open a related PR and a GitHub preview will be made automatically. 
 
 ### Larger contributions (`mkdocs` offline)
 !!! tip
     This method allows you create whole new pages and to preview the changes rendered into a website. It works whether or not you have write access to [`access-esm1.6-configs`](https://github.com/ACCESS-NRI/access-esm1.6-configs), but requires you to install `mkdocs` and takes the longest to set up.<br>
 
-Following [these instructions](https://docs.access-hive.org.au/about/contribute/contribute_on_github/) but noting the documentation sources are in [github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation). You'll need to fork and clone [github.com/ACCESS-NRI/access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) if you want to [write your own content](https://docs.access-hive.org.au/about/contribute/contribute_on_github/) (`mkdocs serve` should be invoked from within the `documentation` directory).
+Following [these instructions](https://docs.access-hive.org.au/about/contribute/#lets-get-started) but noting the documentation sources are in [github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main/documentation). You'll need to [fork](https://docs.access-hive.org.au/about/contribute/#clone-the-forked-access-hive-docs-github-repository-locally) and clone [github.com/ACCESS-NRI/access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) if you want to write your own content (`mkdocs serve` should be invoked from within the `documentation` directory).
 
