@@ -87,7 +87,4 @@ and replace `<experiment>` with the branch name or tag of the experiment you wis
 
 This repository makes use of GitHub Actions to perform reproducibility checks on model config branches.
 
-#### Config Branches
-
-Config branches are branches that store model configurations of the form: `release-<config>` or `dev-<config>`, for example: `release-historical+concentration`. For more information on creating your own config branches, or for understanding the PR process in this repository.
 
