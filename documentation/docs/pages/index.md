@@ -13,7 +13,7 @@ See the navigation links on the left. Some reading tips, see:
  - [Configuration choices/Configurations](/configurations/Overview/) 
  - [Infrastructure](/infrastructure/Architecture/) 
 
-## access-ems1.6-configs Overview
+## access-esm1.6-configs Overview
 ACCESS-ESM1.6 configurations are provided via branches in the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository. The [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository contains several configurations using the following components:
 
 - [MOM5](https://github.com/ACCESS-NRI/mom5) ocean model
