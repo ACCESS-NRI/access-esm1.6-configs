@@ -64,12 +64,9 @@ plugins:
   - bibtex:
       bib_file: references.bib
       csl_file: https://raw.githubusercontent.com/citation-style-language/styles/26eccff9e537f71494a4da7b91afac1adf571dc9/apa.csl
-<<<<<<< HEAD
-=======
   - mkdocs-jupyter:
       include_requirejs: true
       custom_mathjax_url: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"
->>>>>>> f7cd2e1 (today work)
 
 markdown_extensions: 
   - attr_list
