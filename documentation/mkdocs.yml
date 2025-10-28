@@ -59,7 +59,6 @@ plugins:
       enable_creation_date: false
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - mkdocs-jupyter
   - macros
   - bibtex:
       bib_file: references.bib
@@ -158,6 +157,5 @@ watch:
   - mkdocs.yml
   - overrides/
 
-# hooks:
-# To-do: fix for mkdocs-jupyter
-  # - hooks/hide_pages_url_segment.py
+hooks:
+  - hooks/hide_pages_url_segment.py
