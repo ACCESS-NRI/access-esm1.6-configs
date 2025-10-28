@@ -4,7 +4,7 @@
 
 ## About
 
-This repo will contain standard global configurations for ACCESS-ESM1.6, the ACCESS Coupled Earth System Model.
+This repository will contain standard global configurations for ACCESS-ESM1.6, the ACCESS Coupled Earth System Model. See the [ACCESS-ESM1.6 configuration docs](https://access-nri.github.io/access-esm1.6-configs/) for more information on the supported configurations.
 
 This is an "omnibus repository": it contains multiple related configurations, and each
 configuration is stored in a separate branch.
