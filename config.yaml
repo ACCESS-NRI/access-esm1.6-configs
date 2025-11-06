@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: amip
+jobname: Oct-B-AMIP-revised-paramers
 queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
@@ -28,9 +28,9 @@ platform:
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/2025.07.001
+      - access-esm1p6/pr148-13
 
 # Model configuration
 model: access-esm1.6
@@ -96,12 +96,12 @@ calendar:
 runspersub: 1
 
 # Misc
-restart_freq: 10YS
+restart_freq: 1YS
 
 runlog: true
 manifest:
   reproduce:
-    exe: True
+    exe: False
 
 stacksize: unlimited
 
@@ -120,6 +120,7 @@ sync:
 
 
 userscripts:
+    setup: bash ./copy_nmls.sh
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 
