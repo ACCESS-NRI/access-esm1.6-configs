@@ -154,7 +154,7 @@
 # that this keyword NOT be used in production runs. It exists to provide a quick shortcut for running
 # technical tests. Note that if $NNOREST is true but the restart file nonetheless exists, it will be used.
 $NNOREST
-  F
+  T
 ###########################################
 $SEQMODE
 $CHANNEL
