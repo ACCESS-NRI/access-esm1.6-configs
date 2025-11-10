@@ -32,7 +32,29 @@ What ad-hoc testing was done? How are you convinced this change is correct (plot
 
 Is this reproducible with the previous commit? (If not, why not?)
 - [ ] Yes
-- [ ] No - `!test repro commit` has been run. <!-- add detail below for why it's answer changing --> 
+- [ ] No - `!test repro commit` has been run. <!-- add detail below for why it's answer changing -->
+
+**8. Manifests**
+
+Have you changed the executable, the input files and/or the restart files?
+- [ ] Yes
+- [ ] No
+
+If yes, have you updated the manifests?
+- [ ] Yes
+- [ ] No
+
+To update the manifests, run payu setup (in a cloned copy of your feature branch) with reproducibility tests turned off:
+
+```yaml
+manifest:
+  reproduce:
+    exe: false
+    input: false
+    restart: false
+```
+Then commit the newly created manifest files (under manifests/) only to the branch for this PR.
+
 
 **7. Documentation**
 <!--Does this impact documentation? -->
