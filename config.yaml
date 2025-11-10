@@ -28,9 +28,9 @@ platform:
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/2025.09.002
+      - access-esm1p6/pr162-2
 
 # Model configuration
 model: access-esm1.6
@@ -70,7 +70,7 @@ submodels:
     - name: ocean
       model: mom
       ncpus: 196
-      exe: mom5_access_cm 
+      exe: mom5_access_cm
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/biogeochemistry/global.1deg/2025.09.22/SFe_Hamiltonetal2020_monthly_clim.nc
