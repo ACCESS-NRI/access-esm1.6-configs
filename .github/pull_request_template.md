@@ -1,3 +1,5 @@
+<!-- This template was created to cover the most complex case of new changes to the configuration. As such, all sections may not be suitable for other types of changes (e.g. documentation changes, cherry-picking changes between configurations). Please fill in all the sections you believe are suitable to your case. The reviewer(s) will ask for any missing information. Please do not delete any empty sections. -->
+
 **1. Summary**:
 
 What has changed?
