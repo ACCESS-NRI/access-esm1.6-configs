@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: test-PIspinup-Oct-B
+jobname: pre-industrial
 queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
@@ -145,7 +145,7 @@ qsub_flags: -W umask=027
 mpi:
   flags:
     - --mca mpi_yield_when_idle true
-payu_minimum_version: 1.1.7
+payu_minimum_version: 1.2.0
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
