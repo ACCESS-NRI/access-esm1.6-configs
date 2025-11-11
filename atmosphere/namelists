@@ -388,7 +388,7 @@
  L_HYDROLOGY=.TRUE.,
  L_SOIL_SAT_DOWN=.TRUE.,
  L_SCVARY=.false.,
- L_VOLCTS=.true.,
+ L_VOLCTS_VARY=.false.,
  l_anthrop_heat_src=.FALSE.,
  L_ICOUNT=.FALSE.,
  L_UKCA=.FALSE.,
@@ -905,7 +905,7 @@
 
  &FILENATFORCE
  FILE_SCVARY  = '',
- FILE_VOLCTS  = 'INPUT/volcts_18502000ave.dat'
+ FILE_VOLCTS  = ''
  /
 
  &PPRINTXN
