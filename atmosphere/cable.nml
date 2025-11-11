@@ -4,12 +4,6 @@
 !! cable_user flags
 !
   cable_user%GS_SWITCH = 'medlyn' ! alternative is 'leuning' - used for ESM1.5
-  cable_user%CABLE_RUNTIME_COUPLED = .TRUE. ! controls whether snow initialised if
-                                            ! ktau_gl=1
-                                            ! must be set true for coupled run
-                                            ! use true for atmosphere only runs if
-                                            ! want to take snow from start dump
-                                            ! default is .false.
   cable_user%FWSOIL_SWITCH = 'Haverd2013' ! Controls root water uptake function
                                         ! choices are: 
                                         ! 'standard' - used for ESM1.5
