@@ -97,7 +97,7 @@ manifest:
 
 stacksize: unlimited
 qsub_flags: -W umask=027
-payu_minimum_version: 1.1.7
+payu_minimum_version: 1.2.0
 
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
