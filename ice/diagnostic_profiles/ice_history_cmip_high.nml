@@ -50,24 +50,13 @@
     f_siflsensbot      = 'md',  ! Net sensible heat flux at base of sea ice
     f_sihc             = 'md',  ! Heat content in sea ice
     f_simass           = 'm',   ! Sea ice mass
-    f_sisnconc         = 'm',   ! Snow area percentage over sea ice, 
-                                ! this is not prognostic in access-esm1.6
-                                ! averaged only when sea ice is present
     f_sisndmassdyn     = 'm',   ! Snow mass change due to sea ice dynamics
-                                ! averaged only when sea ice is present
     f_sisndmassmelt    = 'm',   ! Snow mass change due to snow melt
-                                ! averaged only when sea ice is present
     f_sisndmasssi      = 'm',   ! Snow mass change due to flooding with sea water
-                                ! averaged only when sea ice is present
     f_sisndmasssnf     = 'm',   ! Snow mass change due to snow fall
-                                ! averaged only when sea ice is present
     f_sisndmasssubl    = 'm',   ! Snow mass change due to evaporation and sublimation, 
-                                ! averaged only when sea ice is present
     f_sisnhc           = 'md',  ! Heat content in snow on sea ice
     f_sisnmass         = 'm',   ! Mass of snow on sea ice
-                                ! averaged only when sea ice is present
-    f_sisnthick        = 'md',  ! Thickness of snow on sea ice
-                                ! averaged only when sea ice is present
     f_sispeed          = 'md',  ! Sea ice speed (non directional)
     f_sistrxdtop       = 'm',  f_sistrydtop       = 'm',
                                 ! Atmospheric surface stress on sea ice
@@ -101,14 +90,15 @@
     f_siitdconc        = 'md',  ! Sea ice area fraction in thickness categories
 
     !-----------------------------------
-    ! Some CICE variables to check conservation
+    ! Some CICE variables
     !-----------------------------------
     f_dvsdtt    = 'md', f_dvsdtd     = 'md',
+    f_aice      = 'x', ! we need this to calculate time-weighted averages
+
 
     !-----------------------------------
     ! These fields are on by default but lets turn them off
     !-----------------------------------
-    f_aice      = 'x',
     f_hi        = 'x', f_hs         = 'x',
     f_Tsfc      = 'x',
     f_uvel      = 'x', f_vvel       = 'x',
