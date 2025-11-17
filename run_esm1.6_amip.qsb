@@ -89,7 +89,7 @@ ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/bi
 ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/global.N96/2021.06.22/ozone_1849_2015_ESM1.anc .
 ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/pftlookup_cable3_1213_exp6_c4crop.csv .
-ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2025.09.18/atmosphere/restart_dump.astart .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2025.10.01/atmosphere/restart_dump.astart .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/scycl_1849_2015_ESM1_v4.anc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on .
@@ -97,7 +97,7 @@ ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/resolution_independent/2021.06.22/volcts_cmip6.dat .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/STASHmaster .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/stasets .
-ln -s /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2025.09.18/atmosphere/restart_dump.astart AM-09-t1.astart-19780101
+ln -s /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2025.10.01/atmosphere/restart_dump.astart AM-09-t1.astart-19780101
 
 cd ..
 ln -s ../atmosphere/* .
