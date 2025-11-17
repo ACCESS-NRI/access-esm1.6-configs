@@ -7,7 +7,7 @@
 #PBS -l wd
 
 module use /g/data/vk83/modules
-module load access-esm1p6/dev_2025.11.000
+module load access-esm1p6/2025.11.001
 module load openmpi
 
 # Environment variables
