@@ -7,7 +7,7 @@
 #PBS -l wd
 
 module use /g/data/vk83/modules
-module load access-esm1p6/dev_2025.04.000
+module load access-esm1p6/dev_2025.06.000
 module load openmpi
 
 # Environment variables
@@ -82,13 +82,13 @@ ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosp
 ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p5/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_seaice_n96_greg.pp .
 ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p5/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_sst_n96_greg.pp .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38 .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/vegetation/global.N96/2024.07.04/cableCMIP6_LC_1850-2015.nc .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/vegetation/global.N96/2020.05.19/cable_vegfunc_N96.anc .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2025.09.01/LUH3.1.1_states_remap_normed_to_pfts_1850-2023_v5.nc .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_soil_params.txt .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_veg_params.txt .
-ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeochemistry/resolution_independent/2020.05.19/modis_phenology_csiro.txt .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/global.N96/2021.06.22/ozone_1849_2015_ESM1.anc .
-ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2024.12.18/pftlookup_cable3.csv .
+ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/pftlookup_cable3_1213_exp6_c4crop.csv .
 ln -sf /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/restart/2023.03.13/atmosphere/restart_dump.astart .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/scycl_1849_2015_ESM1_v4.anc .
 ln -sf /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on .
