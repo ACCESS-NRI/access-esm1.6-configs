@@ -93,7 +93,7 @@
     ! Some CICE variables
     !-----------------------------------
     f_dvsdtt    = 'md', f_dvsdtd     = 'md',
-    f_aice      = 'x', ! we need this to calculate time-weighted averages
+    f_aice      = 'md', ! we need this to calculate time-weighted averages
 
 
     !-----------------------------------
