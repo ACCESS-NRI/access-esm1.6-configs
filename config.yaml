@@ -38,7 +38,7 @@ model: access-esm1.6
 submodels:
     - name: atmosphere
       model: um
-      ncpus: 208
+      ncpus: 256
       exe: um_hg3.exe
       input:
         # Aerosols
@@ -68,7 +68,7 @@ submodels:
 
     - name: ocean
       model: mom
-      ncpus: 196
+      ncpus: 240
       exe: mom5_access_cm 
       input:
         # Biogeochemistry
