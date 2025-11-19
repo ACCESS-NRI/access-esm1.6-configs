@@ -1,0 +1,69 @@
+&setup_nml
+    use_leap_years = .true.
+    year_init      = 0001
+    dt             = 3600
+    restart_dir    = './RESTART/'
+    restart_format = 'nc'
+    use_restart_time = .true.
+    pointer_file   = './RESTART/ice.restart_file'
+    dumpfreq       = 'x' !only for extra restarts, payu sets `dump_last=.true.`
+    diagfreq       = 1e6
+    print_global   = .false.
+    diag_type      = 'file'
+    history_dir    = './'
+    history_deflate_level = 1 !see other history settings in `ice_history.nml`
+    runtype        = 'continue'
+/
+
+&grid_nml
+    grid_format  = 'nc'
+    grid_type    = 'tripole'
+    grid_file    = './INPUT/grid.nc'
+    kmt_file     = './INPUT/kmt.nc'
+    kcatbound    = 0
+/
+
+&domain_nml
+    nprocs = 12
+    processor_shape   = 'slenderX1'
+    distribution_type = 'cartesian'
+    distribution_wght = 'latitude'
+    ew_boundary_type  = 'cyclic'
+    ns_boundary_type  = 'tripole'
+    maskhalo_bound    = .true.
+    maskhalo_dyn      = .true.
+    maskhalo_remap    = .true.
+/
+
+&tracer_nml
+/
+
+&thermo_nml
+    chio = 0.004
+    conduct = 'bubbly'
+    ktherm = 0
+    saltmax = 9.6
+    ice_ref_salinity = 4
+/
+
+&dynamics_nml
+    cosw            = 0.96
+    sinw            = 0.28
+/
+
+&shortwave_nml
+/
+
+&ponds_nml
+/
+
+&zbgc_nml
+/
+
+&forcing_nml
+    calc_strair     = .false. !wind stress calculated in the UM
+    calc_tsfc       = .false. !ice skin temperature calculated in the UM
+    ustar_min       = 0.0005
+    tfrz_option     = 'linear_salt'
+    update_ocn_f    = .true.
+/
