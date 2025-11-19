@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: amip
+jobname: historical
 queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
@@ -56,17 +56,16 @@ submodels:
         # Land
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/biogeochemistry/global.N96/2021.06.22/Ndep_1849_2015.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.11.18/pftlookup_cable3_OctB_update.csv
-        # COE amip configuration omitted this – is it unused?
-        #  - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         # Spectral
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
-        # COE amip configuration omitted these – are they unused?
-          # - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
-          # - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
+        # Grids
+        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
+        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
         # STASH
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/
 
@@ -118,6 +117,9 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2025.08.06/rmp_um1u_to_cice_CONSERV_FRACNNEI.nc
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/remapping_weights/global.oi_1deg.a_N96/2025.08.06/rmp_um1v_to_cice_CONSERV_FRACNNEI.nc
 
+# Collation
+collate:
+    enable: false
 
 restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2025.11.18
 
@@ -141,6 +143,9 @@ manifest:
 
 stacksize: unlimited
 qsub_flags: -W umask=027
+mpi:
+  flags:
+    - --mca mpi_yield_when_idle true
 payu_minimum_version: 1.2.0
 
 # Sync options for automatically copying data from ephemeral scratch space to
