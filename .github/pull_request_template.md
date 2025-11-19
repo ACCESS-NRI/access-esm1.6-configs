@@ -12,14 +12,12 @@ Why was this done?
 
 **3. Dependencies (e.g. on payu, or model)**
 
-This change requires changes to (note pull request where true):
-- [ ] payu:
-- [ ] ACCESS-ESM1.6:
-- [ ] UM7:
-- [ ] MOM5:
-- [ ] CICE5:
-- [ ] CABLE:
-- [ ] GCOM4:
+This change requires changes to (note pull request(s) where relevant):
+- [ ] workflow manager (payu):
+- [ ] model deployment (ACCESS-ESM1.6):
+- [ ] model component or library dependencie:
+- [ ] input workflow:
+
 <!-- Describe and link to the related changes to dependencies -->
 
 **4. Ad-hoc Testing**
@@ -61,7 +59,7 @@ Then commit the newly created manifest files (under manifests/) only to the bran
 **7. Documentation**
 <!--Does this impact documentation? -->
 
-The documentation is updated?
+Is the documentation updated?
 - [ ] Yes
 - [ ] N/A
 
