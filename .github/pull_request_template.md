@@ -15,7 +15,7 @@ Why was this done?
 This change requires changes to (note pull request(s) where relevant):
 - [ ] workflow manager (payu):
 - [ ] model deployment (ACCESS-ESM1.6):
-- [ ] model component or library dependencie:
+- [ ] model component or library dependency:
 - [ ] input workflow:
 
 <!-- Describe and link to the related changes to dependencies -->
@@ -52,6 +52,7 @@ manifest:
     exe: false
     input: false
     restart: false
+runlog: false
 ```
 Then commit the newly created manifest files (under manifests/) only to the branch for this PR.
 
