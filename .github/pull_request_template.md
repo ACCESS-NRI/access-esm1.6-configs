@@ -52,7 +52,8 @@ manifest:
     exe: false
     input: false
     restart: false
-runlog: false
+runlog:
+  enable: false
 ```
 Then commit the newly created manifest files (under manifests/) only to the branch for this PR.
 
