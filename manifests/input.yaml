@@ -16,11 +16,11 @@ work/atmosphere/INPUT/DMS_conc.N96:
   hashes:
     binhash: da1baa25e78ec281c82ea4588e30a340
     md5: 7e8ec8de832c0b9b8c1d9f0eda4d54e5
-work/atmosphere/INPUT/Ndep_1850_ESM1.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2020.05.19/Ndep_1850_ESM1.anc
+work/atmosphere/INPUT/Ndep_1850_cmip7.anc:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2025.11.18/Ndep_1850_cmip7.anc
   hashes:
-    binhash: 47374849ef42f83e3c02629827a482ee
-    md5: 48462cfa1aeed200c3b8d0bf1b49654a
+    binhash: abdeb4239bb38126280fa2e58eb6f7b9
+    md5: 8341bf43665cdf8d754507885e3abfa8
 work/atmosphere/INPUT/OCFF_1850_cmip7.anc:
   fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/OCFF_1850_cmip7.anc
   hashes:
@@ -76,11 +76,11 @@ work/atmosphere/INPUT/ozone_1850_ESM1.anc:
   hashes:
     binhash: 7e82d4a83bf18e59277f026cbbee4c74
     md5: a64a01e3b092085fca308524a75a1cee
-work/atmosphere/INPUT/pftlookup_cable3_1213_exp6_c4crop.csv:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/pftlookup_cable3_1213_exp6_c4crop.csv
+work/atmosphere/INPUT/pftlookup_cable3_OctB_update.csv:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.11.18/pftlookup_cable3_OctB_update.csv
   hashes:
-    binhash: 28cb640d1f82c866fb2da732ee61a018
-    md5: c67bdd681339f6d9c72223f9f8aaf1b7
+    binhash: 9c4c143d53559b2ac70ea8eb37af48c2
+    md5: bf80c75ce38f147dd46323323d3039e2
 work/atmosphere/INPUT/qrparm.mask:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
   hashes:
@@ -216,11 +216,6 @@ work/atmosphere/INPUT/vertlevs_G3:
   hashes:
     binhash: 67eeeb98a7de5eee305f026a20482cc7
     md5: 58ca02de69b16bd59771c81e06c4c21a
-work/atmosphere/INPUT/volcts_18502000ave.dat:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/forcing/resolution_independent/2020.05.19/volcts_18502000ave.dat
-  hashes:
-    binhash: 34b64995370a775e276c7a270aa659a7
-    md5: 47bd369c750be55d706ab60c78bc7aee
 work/coupler/areas.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/grids/global.oi_1deg.a_N96/2025.07.29/areas.nc
   hashes:
@@ -272,19 +267,16 @@ work/coupler/rmp_um1v_to_cice_CONSERV_FRACNNEI.nc:
     binhash: df320c62a9f91bc48c09172eb56c03d8
     md5: 2a5817b8136e8820fbdd4ed28cfb4098
 work/ice/INPUT/grid.nc:
-  copy: true
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/grid.nc
   hashes:
     binhash: fe44237f8bbe8cbcbe8fadef8957f35c
     md5: ff163d91fb6f3e1f5536c8a109d5c04c
 work/ice/INPUT/kmt.nc:
-  copy: true
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/kmt.nc
   hashes:
     binhash: c733037d8edd737e43df4335edecb6e8
     md5: f9d11b6fd3c66d6e16a4afde99eec937
 work/ice/INPUT/lice_discharge_iceberg.nc:
-  copy: true
   fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2025.09.16/lice_discharge_iceberg.nc
   hashes:
     binhash: 02e5fe73a134ce5674b3aa6712443e66
