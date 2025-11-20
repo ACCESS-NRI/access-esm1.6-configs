@@ -36,6 +36,10 @@
 /
 
 &tracer_nml
+    tr_iage      = .true. ! ice age
+    restart_age  = .true. ! ice age restart
+    tr_FY        = .true. ! first year ice
+    restart_FY   = .true. 
 /
 
 &thermo_nml
