@@ -52,7 +52,7 @@ submodels:
         # Forcing
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/global.N96/2021.06.22/ozone_1849_2015_ESM1.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/resolution_independent/2021.06.22/volcts_cmip6.dat
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/resolution_independent/2021.06.22/TSI_CMIP6_ESM_v2
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
         # Land
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/biogeochemistry/global.N96/2021.06.22/Ndep_1849_2015.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
@@ -91,7 +91,7 @@ restart_freq: 10YS
 runlog: true
 manifest:
   reproduce:
-    exe: True
+    exe: true
     input: true
 
 stacksize: unlimited
