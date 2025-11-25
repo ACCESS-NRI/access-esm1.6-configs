@@ -1,6 +1,11 @@
 format: yamanifest
 version: 1.0
 ---
+work/atmosphere/INPUT/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
+  hashes:
+    binhash: a22f8247bfe47d9f8cea67f73a1d7657
+    md5: 91e2f9f2ac9e7e6ed308cd414ee78ef2
 work/atmosphere/INPUT/BC_hi_1849_2015_ESM1.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/BC_hi_1849_2015_ESM1.anc
   hashes:
@@ -16,11 +21,6 @@ work/atmosphere/INPUT/DMS_conc.N96:
   hashes:
     binhash: da1baa25e78ec281c82ea4588e30a340
     md5: 7e8ec8de832c0b9b8c1d9f0eda4d54e5
-work/atmosphere/INPUT/LUH3.1.1_states_remap_normed_to_pfts_1850-2023_v5.nc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2025.09.01/LUH3.1.1_states_remap_normed_to_pfts_1850-2023_v5.nc
-  hashes:
-    binhash: 89311c4d2e05ef9c2b398449ad2f5aef
-    md5: 9c3e8799f0c424b516693404c110aa6e
 work/atmosphere/INPUT/Ndep_1849_2015.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/biogeochemistry/global.N96/2021.06.22/Ndep_1849_2015.anc
   hashes:
@@ -61,11 +61,11 @@ work/atmosphere/INPUT/STASHmaster/STASHsections_A:
   hashes:
     binhash: 9401083e4199439b77254fc490b6597d
     md5: 8525fd107dbea6184db74089f1d55fd9
-work/atmosphere/INPUT/TSI_CMIP6_ESM_v2:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/resolution_independent/2021.06.22/TSI_CMIP6_ESM_v2
+work/atmosphere/INPUT/TSI_CMIP7_ESM:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
   hashes:
-    binhash: 32f787c9ffdf8902cf642fe218ff76d5
-    md5: 15aa13632aa616dcf079b152a5cbd120
+    binhash: 61204ba958920f80aefa03c4689834e3
+    md5: 635295693e07ae1079753d0835a6ad07
 work/atmosphere/INPUT/biogenic_351sm.N96L38:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
   hashes:
