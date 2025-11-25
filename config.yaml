@@ -93,7 +93,6 @@ manifest:
   reproduce:
     exe: True
     input: true
-    restart: true
 
 stacksize: unlimited
 qsub_flags: -W umask=027
