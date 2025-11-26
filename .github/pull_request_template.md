@@ -65,14 +65,14 @@ runlog:
 Then commit the newly created manifest files (under manifests/) only to the branch for this PR.
 
 
-**7. Documentation**
+**9. Documentation**
 <!--Does this impact documentation? -->
 
 Is the documentation updated?
 - [ ] Yes
 - [ ] N/A
 
-**9. Merge Strategy**
+**10. Merge Strategy**
 <!-- What is the planned merge strategy (Merge commit, Rebase and merge, or squash) ?
 If not squash, link to the related issue in the commit descriptions -->
 
