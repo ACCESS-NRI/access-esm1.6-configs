@@ -1,6 +1,11 @@
 format: yamanifest
 version: 1.0
 ---
+work/atmosphere/INPUT/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
+  hashes:
+    binhash: a22f8247bfe47d9f8cea67f73a1d7657
+    md5: 91e2f9f2ac9e7e6ed308cd414ee78ef2
 work/atmosphere/INPUT/BC_hi_1849_2015_ESM1.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/BC_hi_1849_2015_ESM1.anc
   hashes:
@@ -56,11 +61,11 @@ work/atmosphere/INPUT/STASHmaster/STASHsections_A:
   hashes:
     binhash: 9401083e4199439b77254fc490b6597d
     md5: 8525fd107dbea6184db74089f1d55fd9
-work/atmosphere/INPUT/TSI_CMIP6_ESM_v2:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/resolution_independent/2021.06.22/TSI_CMIP6_ESM_v2
+work/atmosphere/INPUT/TSI_CMIP7_ESM:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
   hashes:
-    binhash: 32f787c9ffdf8902cf642fe218ff76d5
-    md5: 15aa13632aa616dcf079b152a5cbd120
+    binhash: 61204ba958920f80aefa03c4689834e3
+    md5: 635295693e07ae1079753d0835a6ad07
 work/atmosphere/INPUT/amip_seaice_n96_greg.pp:
   fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p5/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_seaice_n96_greg.pp
   hashes:
@@ -76,41 +81,26 @@ work/atmosphere/INPUT/biogenic_351sm.N96L38:
   hashes:
     binhash: 35f8585c3290dfc25ed19e7d93f6a1bb
     md5: 55eb75f602a4639fb3c8ff40e36eb661
-work/atmosphere/INPUT/cableCMIP6_LC_1850-2015.nc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/vegetation/global.N96/2024.07.04/cableCMIP6_LC_1850-2015.nc
-  hashes:
-    binhash: fc03d315746c6a0b254a7632dc28295c
-    md5: 78ddfbdc9d9551cf6c6c39fe734716a4
 work/atmosphere/INPUT/cable_vegfunc_N96.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/vegetation/global.N96/2020.05.19/cable_vegfunc_N96.anc
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
   hashes:
-    binhash: b590c62f20575a65f1f5ee83ec687304
-    md5: 7a8cb16191ad29b081514657893530c6
-work/atmosphere/INPUT/def_soil_params.txt:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_soil_params.txt
+    binhash: 6463172e2ec728967ec86f0cb4ba50a3
+    md5: d36f7104db31c372fbbf1cdc90a4e4f4
+work/atmosphere/INPUT/modis_phenology_csiro_13evergreen.txt:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
   hashes:
-    binhash: f6bbe84fb16971f00d2ba34eef542976
-    md5: 93107e8c37e04ccf97471fd2ac8f63eb
-work/atmosphere/INPUT/def_veg_params.txt:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/land/biogeophysics/resolution_independent/2020.05.19/def_veg_params.txt
-  hashes:
-    binhash: 22ce1f400a832868aefeaa9721ac3a48
-    md5: 1f9a27f0e252bf6c466100573c126789
-work/atmosphere/INPUT/modis_phenology_csiro_nophase.txt:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.06.06/modis_phenology_csiro_nophase.txt
-  hashes:
-    binhash: fa3895eef407ca32fdd36817452f75b8
-    md5: 490d889ddfed508c6cfe3d62a225384e
+    binhash: 9062c9c2e90980bce48ea7c7046d512d
+    md5: c8f344d7371949fb6aac7f71e1e003d6
 work/atmosphere/INPUT/ozone_1849_2015_ESM1.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/global.N96/2021.06.22/ozone_1849_2015_ESM1.anc
   hashes:
     binhash: d0f4f5fa148594a325854548f84b82eb
     md5: b85f5374d1b89cf23cff05b6c35c4d0f
-work/atmosphere/INPUT/pftlookup_cable3.csv:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2024.12.18/pftlookup_cable3.csv
+work/atmosphere/INPUT/pftlookup_cable3_OctB_update.csv:
+  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.11.18/pftlookup_cable3_OctB_update.csv
   hashes:
-    binhash: 004f14bafcd8b80befb28e93b28c537c
-    md5: 815c9662b2f6a09c820c2b47caaab678
+    binhash: 9c4c143d53559b2ac70ea8eb37af48c2
+    md5: bf80c75ce38f147dd46323323d3039e2
 work/atmosphere/INPUT/scycl_1849_2015_ESM1_v4.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/scycl_1849_2015_ESM1_v4.anc
   hashes:
