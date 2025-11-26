@@ -1,64 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="5087.317" timestamp="2025-03-28T15:30:58.395056+11:00" hostname="gadi-login-05.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_bit_repro_historical" time="5086.518"><failure message="AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/dev-amip/checksum/historical-24hr-checksum.json.&#10;assert None == {'output': {'Final Absolute Norm': ['8.330092119085326E-003', '8.320398062666089E-003', '9.839575853801916E-003', '9.854502350545613E-003', '7.968561198583465E-003', '8.212614301520755E-003', ...]}, 'schema_version': '1-0-0'}">self = &lt;model_config_tests.test_bit_reproducibility.TestBitReproducibility object at 0x7f31cc71f520&gt;
-output_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/dev-amip')
-control_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/dev-amip/base-experiment')
-checksum_path = None, keep_archive = False
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1095.594" timestamp="2025-11-26T16:20:31.836590+11:00" hostname="gadi-login-09.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_historical" time="1093.555"><failure message="AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical/checksum/historical-24hr-checksum.json.&#10;assert {'output': {'...ion': '1-0-0'} == {'output': {'...ion': '1-0-0'}&#10;  &#10;  Omitting 1 identical items, use -vv to show&#10;  Differing items:&#10;  {'output': {'Final Absolute Norm': ['8.152139654762455E-003', '7.719163252730094E-003', '8.702483598336560E-003', '7.983158113034306E-003', '7.213017097697780E-003', '7.776356377115519E-003', ...]}} != {'output': {'Advection of u': ['4285061999084278385', '2650223201865872395'], 'Advection of v': ['2169634967076007290'...onal velocity': ['-5170632961632844400', '-3132249112450531530'], 'Thickness%depth_st': ['-2190684862846133371'], ...}}&#10;  Use -v to get more diff">self = &lt;test_bit_reproducibility.TestBitReproducibility object at 0x7fb6679c4f40&gt;
+output_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical')
+control_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical/base-experiment')
+experiments = &lt;model_config_tests.exp_test_helper.Experiments object at 0x7fb667a567d0&gt;
+checksum_path = None
 
     @pytest.mark.repro
     @pytest.mark.repro_historical
-    def test_bit_repro_historical(
+    @pytest.mark.experiments(
+        {
+            EXP_DEFAULT_RUNTIME: {"n_runs": 1},
+        }
+    )
+    def test_repro_historical(
         self,
         output_path: Path,
         control_path: Path,
+        experiments: Experiments,
         checksum_path: Optional[Path],
-        keep_archive: Optional[bool],
     ):
         """
-        Test that a run reproduces historical checksums
+        Historical reproducibility test that confirms results from a model
+        run match a stored previous result. Any generated results are
+        added to a "checksum" subdirectory in the output directory.
     
-        Parameters (these are fixtures defined in conftest.py)
+        Parameters
         ----------
         output_path: Path
             Output directory for test output and where the control and
             lab directories are stored for the payu experiments. Default is
-            set in conftest.py
+            set in conftest.py.
         control_path: Path
             Path to the model configuration to test. This is copied for
             for control directories in experiments. Default is set in
-            conftests.py
+            conftests.py.
+        experiments: Experiments
+            Class that manages the shared experiments. This is a fixture
+            defined in this file.
         checksum_path: Optional[Path]
             Path to checksums to compare model output against. Default is
-            set to checksums saved on model configuration (set in )
-        keep_archive: Optional[bool]
-            This flag is used in testing for test code to use a previous test
-            archive, and to disable running the model with payu
+            set to checksums saved on model configuration. This is a
+            fixture defined in conftests.py
         """
-        # Setup checksum output directory
+        # Get output directory for the checksums
         checksum_output_dir = set_checksum_output_dir(output_path=output_path)
     
-        # Setup experiment
-        exp = setup_exp(
-            control_path, output_path, "test_bit_repro_historical", keep_archive
-        )
+        # Use default runtime experiment to get the historical checksums
+        experiments.check_experiments([EXP_DEFAULT_RUNTIME])
+        exp = experiments.get_experiment(EXP_DEFAULT_RUNTIME)
     
-        # Set model runtime using the configured default
-        exp.model.set_model_runtime()
-    
-        # Run the experiment using payu
-        status, stdout, stderr, output_files = exp.setup_and_run()
-    
-        if status != 0 or not exp.model.output_exists():
-            # Log the run information
-            exp.print_run_logs(status, stdout, stderr, output_files)
-    
-        assert status == 0, (
-            "There was an error running the experiment. "
-            "See the logs for more infomation on the experiment run"
-        )
-    
-        assert exp.model.output_exists(), (
-            "Output file for the model does not exist. "
-            "See the logs for more information on the experiment run"
-        )
+        assert (
+            exp.model.output_exists()
+        ), "Output file required for model checksums does not exist"
     
         # Set the checksum output filename using the model default runtime
         runtime_hours = exp.model.default_runtime_seconds // HOUR_IN_SECONDS
@@ -88,7 +80,12 @@ checksum_path = None, keep_archive = False
 &gt;       assert (
             hist_checksums == checksums
         ), f"Checksums were not equal. The new checksums have been written to {checksum_output_file}."
-E       AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/dev-amip/checksum/historical-24hr-checksum.json.
-E       assert None == {'output': {'Final Absolute Norm': ['8.330092119085326E-003', '8.320398062666089E-003', '9.839575853801916E-003', '9.854502350545613E-003', '7.968561198583465E-003', '8.212614301520755E-003', ...]}, 'schema_version': '1-0-0'}
+E       AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical/checksum/historical-24hr-checksum.json.
+E       assert {'output': {'...ion': '1-0-0'} == {'output': {'...ion': '1-0-0'}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'output': {'Final Absolute Norm': ['8.152139654762455E-003', '7.719163252730094E-003', '8.702483598336560E-003', '7.983158113034306E-003', '7.213017097697780E-003', '7.776356377115519E-003', ...]}} != {'output': {'Advection of u': ['4285061999084278385', '2650223201865872395'], 'Advection of v': ['2169634967076007290'...onal velocity': ['-5170632961632844400', '-3132249112450531530'], 'Thickness%depth_st': ['-2190684862846133371'], ...}}
+E         Use -v to get more diff
 
-../test-venv/lib/python3.10/site-packages/model_config_tests/test_bit_reproducibility.py:132: AssertionError</failure></testcase></testsuite></testsuites>
+../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:225: AssertionError</failure></testcase></testsuite></testsuites>
