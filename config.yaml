@@ -110,6 +110,8 @@ sync:
 #  manually run `payu sync` from the command line.
 
 userscripts:
+    # Apply thinning before each run
+    setup: ./scripts/update_thinning_driver.sh
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 

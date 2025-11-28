@@ -1,9 +1,14 @@
 import um_replace_field
+import xarray
+import argparse
 import mule
+import tempfile
+import shutil
 
 def _parse_args():
     parser = argparse.ArgumentParser(
-            description('Update wood thinning ancillary for current year')
+            description='Update wood thinning ancillary for current year'
+            )
 
     parser.add_argument(
         '--restart-file',
@@ -25,7 +30,7 @@ if __name__ == "__main__":
 
     um_file = um_replace_field.open_fields_file(
         args.restart_file,
-        "./atmosphere/prefix.PRESM_a",
+        "atmosphere/prefix.PRESM_A",
         0
         )
 
@@ -33,13 +38,17 @@ if __name__ == "__main__":
     model_year = um_file.fixed_length_header.t2_year
     t_index = model_year - ref_year
 
-    thinning_file = xarray.open_dataset(args.thinning_file)
+    thinning_file = xarray.open_dataset(args.thinning_file, decode_times=False)
 
+    # Create a temporary file to write to
+    tmp = tempfile.NamedTemporaryFile()
     um_replace_field.replace_field(
         um_file,
         "WOOD THINNING",
         thinning_file,
         "fractions",
-        args.restart_file,
+        tmp.name,
         t_index
         )
+
+    shutil.copy(tmp.name, args.restart_file)

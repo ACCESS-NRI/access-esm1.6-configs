@@ -1,6 +1,7 @@
 import xarray
 import mule
 import argparse
+import numpy
 
 def _parse_args():
     parser = argparse.ArgumentParser(
@@ -111,6 +112,9 @@ def swap_field(um_file, field, nc_var):
                     missing_dims="ignore"
                     ).to_numpy()
 
+            # Assign NaN data to fill
+            new_data = numpy.where(numpy.isnan(new_data), 1e20, new_data)
+            print(new_data)
             data_prov = mule.ArrayDataProvider(new_data)
             field.set_data_provider(data_prov)
 
@@ -171,6 +175,7 @@ def open_fields_file(um_file, stash, section):
 
     base_stash = mule.STASHmaster()
     for supp_stash in stash.split(","):
+        print(f"Opening {supp_stash} as Stashmaster")
         sm = mule.STASHmaster.from_file(supp_stash.strip())
         base_stash.update(sm)
 
