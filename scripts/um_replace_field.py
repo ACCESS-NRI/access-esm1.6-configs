@@ -114,7 +114,6 @@ def swap_field(um_file, field, nc_var):
 
             # Assign NaN data to fill
             new_data = numpy.where(numpy.isnan(new_data), 1e20, new_data)
-            print(new_data)
             data_prov = mule.ArrayDataProvider(new_data)
             field.set_data_provider(data_prov)
 
