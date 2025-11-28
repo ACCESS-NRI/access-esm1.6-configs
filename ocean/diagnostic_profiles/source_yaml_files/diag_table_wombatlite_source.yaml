@@ -15,7 +15,7 @@
 # You're unlikely to need to change any of the global_defaults.
 global_defaults:
 # global_section:
-    title: ACCESS-ESM_CMIP6  # any string
+    title: ACCESS-ESM_1p6  # any string
     base_date: [ 0001, 1, 1, 0, 0, 0 ]  # reference time used for the time units. six integers: year, month, day, hour, minute, second
 # file section:
     file_name:  # String, or list of components, for file name (without trailing ".nc").
@@ -323,7 +323,6 @@ diag_table:
             fprec:
             evap:
             runoff:
-            melt:
             pme_river:
             sfc_salt_flux_ice:
             sfc_salt_flux_runoff:
