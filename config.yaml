@@ -25,12 +25,19 @@ platform:
   nodesize: 104
   nodemem: 512
 
+storage:
+  gdata:
+      - xp65
+      - p66
+
 # Modules for loading model executables
 modules:
   use:
       - /g/data/vk83/modules
+      - /g/data/xp65/public/modules
   load:
       - access-esm1p6/2025.11.002
+      - conda/analysis3-25.09
 
 # Model configuration
 model: access-esm1.6
@@ -111,7 +118,7 @@ sync:
 
 userscripts:
     # Apply thinning before each run
-    setup: ./scripts/update_thinning_driver.sh
+    setup: python ./scripts/update_thinning.py --restart-file="./atmosphere/restart_dump.astart" --thinning-file="/g/data/p66/tfl561/thinning/harvest_frac/cable_thinning_frac_1850-2015.nc"
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 
