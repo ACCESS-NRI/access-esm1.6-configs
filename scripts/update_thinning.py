@@ -1,3 +1,5 @@
+#!/g/data/vk83/apps/payu/1.1.5/bin/python
+
 import um_replace_field
 import xarray
 import argparse
@@ -51,4 +53,5 @@ if __name__ == "__main__":
         t_index
         )
 
+    shutil.move(args.restart_file, args.restart_file + "_orig")
     shutil.copy(tmp.name, args.restart_file)
