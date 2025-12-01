@@ -40,9 +40,10 @@ Is this reproducible with the previous commit? (If not, why not?)
 Has the model performance (say, throughput of model-years/wall-day) changed? 
 - [ ] Yes
 - [ ] No
-- [ ] N/A
+- [ ] N/A (if selected, please add a brief explanation why performance testing is not necessary for this PR)
 
 If yes, provide the numbers from your testing. Is the performance better or worse?
+
 **8. Manifests**
 
 Have you changed the executable, the input files and/or the restart files?
