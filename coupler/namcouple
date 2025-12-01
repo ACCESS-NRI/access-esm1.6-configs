@@ -40,13 +40,13 @@
 #   OIA
 # $END
 ##########################################################################
- $NBMODEL
+#  $NBMODEL
 # This gives you the number of models running in this experiment +
 # their names (character*6, exactly!) + , in option, the maximum Fortran unit
 # number used by each model; 1024 will be used if none are given.
 #
-  3    um7.3x    mom5xx    cicexx   99  99  99
- $END
+#   3    um7.3x    mom5xx    cicexx   99  99  99
+#  $END
 ###########################################################################
  $RUNTIME
 # This gives you the total simulated time for this run in seconds 
@@ -54,7 +54,7 @@
 #   86400    ! 1  day
 # 2678400    ! 31 days
  86400
- $END
+#  $END
 ###########################################################################
 # unused in mct $INIDATE
 # This is the initial date of the run. This is important only if
@@ -74,8 +74,95 @@
  $NLOGPRT
 # Index of printing level in output file cplout: 0 = no printing
 #  1 = main routines and field names when treated, 2 = complete output
- 0
- $END
+# Set to 0 for oasis3-mct v2.0
+# 0
+# oa3-mct v5.0 has multiple options for this
+# $NLOGPRT: The first, second and third numbers on the line below this keyword refer to (i) the
+# debug verbosity, (ii) internal timing statistics and (iii) component load balancing analysis. The
+# information is written by OASIS3-MCT for each component and (optionnally) for each process.
+# The first number (that can be modified at runtime with the oasis set debug routine, see section
+# 2.2.9) may be:
+# – 0 : production mode. One file debug.root.xx is open by the master process of each component
+# and one file debug notroot.xx is open for all the other processes of each component to write
+# only error information.
+# – 1 : one file debug.root.xx is open by the master process of each component to write informa-
+# tion equivalent to level 10 (see below) and also to write memory usage information; one file
+# debug notroot.xx is open for all the other processes of each component to write error informa-
+# tion.
+# – 2 : one file debug.yy.xxxxxx is open by each process of each component (with “yy” being the
+# component number and “xxxxxx” the process number) to write normal production diagnostics
+# and memory usage information
+# – 5 : as for 2 with in addition some initial debug info
+# – 10: as for 5 with in addition the routine calling tree
+# – 12: as for 10 with in addition some routine calling notes
+# – 15: as for 12 with even more debug diagnostics
+# – 20: as for 15 with in addition some extra runtime analysis
+# – 30: full debug information
+# The second number defines how time statistics are written out to file comp name.timers xxxx (with
+# comp name being the component name, see section 2.2.2); it can be:
+# – 0 : nothing is calculated or written.
+# – 1 : some time statistics are calculated and written in a single file by the processor 0 as well as
+# the min and the max times over all the processors.
+# – 2 : some time statistics are calculated and each processor writes its own file ; processor 0 also
+# writes the min and the max times over all the processors in its file.
+# – 3 : some time statistics are calculated and each processor writes its own file ; processor 0 also
+# writes in its file the min and the max times over all processors and also writes in its file all the
+# results for each processor.
+# For more information on the time statistics written out, see section 6.4.2.
+# The third number (new in OASIS3-MCT 5.0) can be set to 1 to activate a load balancing diagnostic.
+# An efficient use of the allocated computing resources in a coupled system requires the harmonisation
+# of the components speed. This operation, called load balancing, is often neglected, either because of
+# the apparent resource abundance and practical difficulties. To facilitates this work, OASIS3-MCT
+# can output the full timeline of all coupling related events, for any of the allocated resources. This
+# timeline is saved in one netCDF file per coupled component (timeline XXX component.nc).
+# It provides the comprehensive sequence of any operations related to the coupling (field exchange
+# through MPI, field output on disk, field interpolation and mapping, field reading on disk, restart
+# writing, initialisation and termination phase of the OASIS3-MCT setup) so that any simulation slow
+# down in link with the use of the OASIS library can be identified. The analysis of the coupling
+# field exchanges, amongst all the coupling events, allows not only to identify the resources waste of
+# components which are recurrently waiting for their coupling fields but it also reveals other bottle-
+# necks such as disk access, OS interruptions or model internal load imbalance. The full picture of
+# these events makes possible an optimum load balancing, even for the most complex configurations.
+# For a detailed information on load balancing analysis and timeline visualisation see respectively
+# [Maisonnave et al 2020] and in [Piacentini and Maisonnave 2020]. In addition to the timeline, com-
+# puting information (time to solution, speed, cost) and a synthesis of the time spent on MPI routines
+# for each coupled component can also help, in the simpler cases, to allocate resources in a balanced
+# way ( see file load balancing info.txt ).
+ 0 0 0
+#  $END
+###########################################################################
+ $NCDFTYP
+# Optional (new in OASIS3-MCT 5.0); on the line below this keyword is a character
+# string that indicates the NetCDF file type for all (i.e. mapping, restart, output) new NetCDF files
+# generated by OASIS3. The options are cdf1, cdf2, and cdf5. The mode cdf1 is also known as
+# classic mode, cdf2 as large file format or 64bit offset and supports larger files, cdf5 as 64bit data
+# and supports both larger files and larger variables. More information about these file types can be
+# found in NetCDF documentation. Because cdf5 may not be generally available in all NetCDF
+# installations, use of this option requires that the C preprocessor directive CDF 64BIT DATA be
+# used when compiling OASIS3-MCT. If that preprocessor is not used, cdf5 is not a valid option.
+# The file format for any NetCDF file can be diagnosed by using “ncdump -k filename”. $NCDFTYP
+# only affects new files created by OASIS3-MCT. NetCDF will read and/or overwrite existing files of
+# any NetCDF file type, and the file type will remain unchanged in that case
+  cdf2
+#  $END
+###########################################
+# $NNOREST: Optional (new in OASIS3-MCT 4.0); on the line below this keyword is a character
+# string that can override the requirement that restart files must exist if they are needed. If the character
+# string value starts with T, t, .T, or .t (as in true), then OASIS3-MCT will initialise with zero any
+# variable that normally requires a restart (for instance, variables with LAG > 0) if the restart file does
+# not exist. By default, missing restart files will cause the model to abort. It is strongly recommended
+# that this keyword NOT be used in production runs. It exists to provide a quick shortcut for running
+# technical tests. Note that if $NNOREST is true but the restart file nonetheless exists, it will be used.
+$NNOREST
+  F
+###########################################
+$SEQMODE
+$CHANNEL
+$JOBNAME
+$NBMODEL
+$INIDATE
+$MODINFO
+$CALTYPE
 ###########################################################################
 # unused in mct  $CALTYPE
 # Calendar type :  0      = 365 day calendar (no leap years)
@@ -102,32 +189,32 @@
 #                      ATMOSPHERE  --->>>  ICE
 #                      -----------------------
 # -- 01: 
-heatflux thflx_i 5 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+heatflux thflx_i 5 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 02: 
-pen_sol pswflx_i 38 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+pen_sol pswflx_i 38 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 03: 
-runoff runoff_i 32 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+runoff runoff_i 32 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 DESTAREA FIRST
 # -- 04: 
-wme wme_i 37 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+wme wme_i 37 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
@@ -135,176 +222,176 @@ INSTANT
 CONSERV LR SCALAR LATLON 10 DESTAREA FIRST
 #
 # -- 05: 
-train rain_i 27 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+train rain_i 27 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 DESTAREA FIRST
 # -- 06: 
-tsnow snow_i 40 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+tsnow snow_i 40 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 DESTAREA FIRST
 # -- 07: 
-evap2d evap_i 25 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+evap2d evap_i 25 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 DESTAREA FIRST
 # -- 08: 
-lhflx lhflx_i 355 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+lhflx lhflx_i 355 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 09: 
-tmlt01 tmlt01_i 467 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+tmlt01 tmlt01_i 467 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 10: 
-tmlt02 tmlt02_i 467 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+tmlt02 tmlt02_i 467 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 11: 
-tmlt03 tmlt03_i 467 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+tmlt03 tmlt03_i 467 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 12: 
-tmlt04 tmlt04_i 467 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+tmlt04 tmlt04_i 467 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 13: 
-tmlt05 tmlt05_i 466 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+tmlt05 tmlt05_i 466 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 14: 
-bmlt01 bmlt01_i 466 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+bmlt01 bmlt01_i 466 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 15: 
-bmlt02 bmlt02_i 466 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+bmlt02 bmlt02_i 466 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 16: 
-bmlt03 bmlt03_i 466 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+bmlt03 bmlt03_i 466 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 17: 
-bmlt04 bmlt04_i 466 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+bmlt04 bmlt04_i 466 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 18: 
-bmlt05 bmlt05_i 466 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+bmlt05 bmlt05_i 466 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 19: 
-taux taux_i 23 10800 2 a2i.nc EXPORTED
-um1u cice LAG=+1800 SEQ=+1
+taux taux_i 23 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1u cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 20: 
-tauy tauy_i 24 10800 2 a2i.nc EXPORTED
-um1v cice LAG=+1800 SEQ=+1
+tauy tauy_i 24 10800 4 a2i.nc EXPORTED
+192 144 360 300 um1v cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 21: 
-swflx swflx_i 367 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+swflx swflx_i 367 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 22: 
-lwflx lwflx_i 366 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+lwflx lwflx_i 366 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 23: 
-shflx shflx_i 362 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+shflx shflx_i 362 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 24: 
-press press_i 33 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+press press_i 33 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 25: 
-co2_a co2_ai 33 10800 2 a2i.nc EXPORTED
-um1t cice LAG=+1800 SEQ=+1
+co2_a co2_ai 33 10800 4 a2i.nc EXPORTED
+192 145 360 300 um1t cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 26: 
-wnd_a wnd_ai 33 10800 2 a2i.nc EXPORTED
-um1v cice LAG=+1800 SEQ=+1
+wnd_a wnd_ai 33 10800 4 a2i.nc EXPORTED
+192 144 360 300 um1v cice LAG=+1800 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
@@ -561,120 +648,120 @@ LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 02:
-icecon01 ofrzn01 31 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icecon01 ofrzn01 31 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 03:
-icecon02 ofrzn02 31 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icecon02 ofrzn02 31 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 04:
-icecon03 ofrzn03 31 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icecon03 ofrzn03 31 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 05:
-icecon04 ofrzn04 31 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icecon04 ofrzn04 31 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 06:
-icecon05 ofrzn05 31 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icecon05 ofrzn05 31 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 07:
-snwthk01 osnwtn01 373 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+snwthk01 osnwtn01 373 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 08:
-snwthk02 osnwtn02 373 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+snwthk02 osnwtn02 373 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 09:
-snwthk03 osnwtn03 373 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+snwthk03 osnwtn03 373 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 10:
-snwthk04 osnwtn04 373 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+snwthk04 osnwtn04 373 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 11:
-snwthk05 osnwtn05 373 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+snwthk05 osnwtn05 373 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 12:
-icethk01 ohicn01 468 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icethk01 ohicn01 468 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 13:
-icethk02 ohicn02 468 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icethk02 ohicn02 468 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 14:
-icethk03 ohicn03 468 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icethk03 ohicn03 468 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 15:
-icethk04 ohicn04 468 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icethk04 ohicn04 468 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 16:
-icethk05 ohicn05 468 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+icethk05 ohicn05 468 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
@@ -697,16 +784,16 @@ LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 19:
-co2_i2 co2_ia 1 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+co2_i2 co2_ia 1 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
 INSTANT
 CONSERV LR SCALAR LATLON 10 FRACNNEI FIRST
 # -- 20:
-co2fx_i2 co2fx_ia 31 10800 2 i2a.nc EXPORTED
-cice um1t LAG=+3600 SEQ=+1
+co2fx_i2 co2fx_ia 31 10800 4 i2a.nc EXPORTED
+360 300 192 145 cice um1t LAG=+3600 SEQ=+1
 P 0 P 0
 #
 LOCTRANS SCRIPR
