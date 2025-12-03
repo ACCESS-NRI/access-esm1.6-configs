@@ -85,7 +85,7 @@ Rename the `iced.YYYY-MM-DD-00000.nc` with new date. The year, month, and day sh
 
 Edit the `ice.restart` pointer file to use the new file name:
 <terminal-window static>
-<terminal-line>echo ./RESTART/iced.YYYY-MM-DD-00000.nc   >  ice.restart</terminal-line>
+<terminal-line>echo ./RESTART/iced.YYYY-MM-DD-00000.nc   >  ice.restart_file</terminal-line>
 </terminal-window>
 
 Replace the `year`, `nyr`, `month`, and `mday` global attributes using `nco` (in most cases, only the year will need to be changed):
