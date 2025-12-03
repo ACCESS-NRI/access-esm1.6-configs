@@ -34,6 +34,16 @@ Is this reproducible with the previous commit? (If not, why not?)
 - [ ] Yes
 - [ ] No - `!test repro commit` has been run. <!-- add detail below for why it's answer changing -->
 
+**7. Performance**
+<!-- check the throughput of the model by running 6 months with and without your changes and recording the walltime-->
+
+Has the model performance (say, throughput of model-years/wall-day) changed? 
+- [ ] Yes
+- [ ] No
+- [ ] N/A (if selected, please add a brief explanation why performance testing is not necessary for this PR)
+
+If yes, provide the numbers from your testing. Is the performance better or worse?
+
 **8. Manifests**
 
 Have you changed the executable, the input files and/or the restart files?
@@ -58,14 +68,14 @@ runlog:
 Then commit the newly created manifest files (under manifests/) only to the branch for this PR.
 
 
-**7. Documentation**
+**9. Documentation**
 <!--Does this impact documentation? -->
 
 Is the documentation updated?
 - [ ] Yes
 - [ ] N/A
 
-**9. Merge Strategy**
+**10. Merge Strategy**
 <!-- What is the planned merge strategy (Merge commit, Rebase and merge, or squash) ?
 If not squash, link to the related issue in the commit descriptions -->
 
