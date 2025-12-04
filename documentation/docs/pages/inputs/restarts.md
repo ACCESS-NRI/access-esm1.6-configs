@@ -4,9 +4,12 @@ ESM1.6 restart files contain copies of complete model states, allowing for exper
 ## Structure of the ESM1.6 restart directory
 
 An ESM1.6 restart directory contains separate restart files for each component. These are organised into the following directories:
+
 ```
 atmosphere  coupler  ice  ocean  README
 ```
+
+An example restart directory is available in `/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2025.11.2`.
 
 ### Atmosphere
 The atmosphere restart directory contains the following files
@@ -51,9 +54,13 @@ a2i.nc  i2a.nc  o2i.nc
 
 ### Changing the date of restart files
 
-It's commonly required to change the date for a restart file. For example when setting up a historical experiment, a restart might be taken from a pre-industrial simulation and the date changed to 1850.
+It's commonly required to change the date for a restart file. For example when setting up a historical experiment, a restart might be taken from a pre-industrial simulation and the date changed to 1850. Another example is when combining ocean and atmosphere restarts from two different experiments into a single restart, where it is necessary to make sure the dates for the different components match.
 
 The following instructions outline how to modify the date for each component. It's important to apply the updates to all components consistently, as inconsistencies in the model dates can cause crashes.
+
+!!! info
+    Before starting any manipulation, copy the restart folders you want to modify to a new location of your choice.
+
 
 #### Atmosphere:
 Navigate to the `restart/atmosphere` directory:
@@ -112,3 +119,11 @@ Then add this to the restart file using `nco`:
 <terminal-window static>
 <terminal-line>ncatted -O -a time,global,o,d,66400905600 iced.YYYY-MM-DD-00000.nc</terminal-line>
 </terminal-window>
+
+#### Update the configuration
+
+Update the payu configuration file, `config.yaml`, with the path to the new restart files:
+
+```yaml
+restart: <path_to_new_restarts>
+```
