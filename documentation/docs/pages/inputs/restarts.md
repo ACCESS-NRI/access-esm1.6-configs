@@ -3,7 +3,7 @@ ESM1.6 restart files contain copies of complete model states, allowing for exper
 
 ## Structure of the ESM1.6 restart directory
 
-An ESM1.6 restart directory contains separate restart files for each component. These are are organised into the following directories:
+An ESM1.6 restart directory contains separate restart files for each component. These are organised into the following directories:
 ```
 atmosphere  coupler  ice  ocean  README
 ```
@@ -13,18 +13,18 @@ The atmosphere restart directory contains the following files
 ```
 restart_dump.astart  um.res.yaml
 ```
-`restart_dump.astart` is the main UM restart file, containing the atmospheric state in addition to static boundary information such as the land-sea mask, vegetation maps and orography.
+`restart_dump.astart` is the main UM restart file, containing the atmospheric and land state in addition to static boundary information such as the land-sea mask, vegetation maps and orography.
 
-`um.res.yaml` is a separate calendar file which holds the date and time associated with the restart. Information in this file is copied by `payu` into the model namelist files at runtime.
+`um.res.yaml` is a separate calendar file which holds the date and time associated with the restart. Information in this file is copied by [Payu](https://payu.readthedocs.io) into the model namelist files at runtime.
 
 
 ### Ocean
-The ocean restart files are organised into seperate groups of variables:
+The ocean restart files are organised into separate groups of variables:
 ```
 ocean_age.res.nc  ocean_density.res.nc  ...  ocean_solo.res
 ```
 
-The netCDF files contain snapshots of the model state while `ocean_solo.res` is a text file specifying the model date and time.
+These netCDF files contain snapshots of the model state while `ocean_solo.res` is a text file specifying the model date and time.
 
 ### Ice
 
@@ -39,7 +39,7 @@ a pointer file used by CICE when finding the correct restart file to read. `mice
 at the beginning of the next run.
 
 ### Coupler
-The coupler restart directory contains data sent from each component at the termination of the previous run, allowing for the submodels to access the required boundary conditions at the beginning of the next run.
+The coupler restart directory contains data sent from each component at the termination of the previous run, allowing for the submodels to restart with the same boundary conditions at the beginning of the next run.
 
 ```
 a2i.nc  i2a.nc  o2i.nc
@@ -49,7 +49,7 @@ a2i.nc  i2a.nc  o2i.nc
 
 ## Common restart manipulations
 
-### Changing the date of a restart file
+### Changing the date of restart files
 
 It's commonly required to change the date for a restart file. For example when setting up a historical experiment, a restart might be taken from a pre-industrial simulation and the date changed to 1850.
 
