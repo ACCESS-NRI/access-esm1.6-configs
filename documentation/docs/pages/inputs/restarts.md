@@ -34,7 +34,7 @@ These netCDF files contain snapshots of the model state while `ocean_solo.res` i
 The ice restart directory contains the following files:
 
 ```
-cice_in.nml  iced.2145-01-01-00000.nc  ice.restart_file  mice.nc
+iced.2145-01-01-00000.nc  ice.restart_file  mice.nc
 ```
 
 The `iced.YYYY-MM-DD-00000.nc` holds the model state and also carries the date and time in the global attributes. `ice.restart_file` is 
