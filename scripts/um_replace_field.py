@@ -76,7 +76,7 @@ def replace_field(
     nc_var = nc_file[nc_var]
 
     # Take the time dimension if necessary
-    if time_index:
+    if time_index is not None:
         nc_var = nc_var.isel(
                 time=int(time_index),
                 drop=True,
