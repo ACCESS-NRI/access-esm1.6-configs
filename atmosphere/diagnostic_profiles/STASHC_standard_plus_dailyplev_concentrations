@@ -1,5 +1,5 @@
  ### Start of user STASH requests for ATMOS ### 
- &STASHNUM NUM_REQ=290, NUM_DOM=38,  NUM_TIM=22, NUM_USE=12 /
+ &STASHNUM NUM_REQ=291, NUM_DOM=38,  NUM_TIM=22, NUM_USE=12 /
 
  # Monthly - 3D variables on model levels #
  &STREQ IMOD= 1, ISEC=0, ITEM=10, IDOM=2, ITIM=5, IUSE=2 /
@@ -295,7 +295,10 @@
  &STREQ IMOD= 1, ISEC=8, ITEM=223, IDOM=5, ITIM=1, IUSE=1 /  
  &STREQ IMOD= 1, ISEC=8, ITEM=225, IDOM=5, ITIM=1, IUSE=1 / 
  
-# Daily - 3D variables on pressure levels #
+ # Daily - variables on tiles #
+ &STREQ IMOD= 1, ISEC=3, ITEM=893, IDOM=10, ITIM=1, IUSE=1 /
+
+ # Daily - 3D variables on pressure levels #
  &STREQ IMOD= 1, ISEC=30, ITEM=201, IDOM=36, ITIM=1, IUSE=1 /
  &STREQ IMOD= 1, ISEC=30, ITEM=202, IDOM=36, ITIM=1, IUSE=1 /
  &STREQ IMOD= 1, ISEC=30, ITEM=204, IDOM=36, ITIM=1, IUSE=1 /
