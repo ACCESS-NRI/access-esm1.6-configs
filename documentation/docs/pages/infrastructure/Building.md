@@ -33,10 +33,12 @@ This method is explained on the ACCESS-Hive page for [creating pre-releases and 
 
 !!! warning
 
-    This method to build the model only works if your modifications are committed in branches of the model repositories listed in the [software structure](#software-structure). This method can not be used if your modifications sits in a fork of one of the repositories.
+    This method to build the model only works if your modifications are committed in branches of the model repositories listed in the [software structure](#software-structure). This method can not be used if your modifications sit in a fork of one of the repositories.
 
 ## Local build of ACCESS-ESM1.6
 
-The Spack infrastructure allows you to create your own local build on _Gadi_ for ACCESS-ESM1.6. Once setup, this might be faster than using the deployment infrastructure, especially when you want a lot of small incremental builds during development. It also allows to build the model with debugging symbols for the debugger. However, this method has several drawbacks. It requires users to install the Spack software which can make it harder for ACCESS-NRI to provide support. It requires users to have at least _read permissions_ on all the repositories required by ACCESS-ESM1.6 (see [Software structure](#software-structure)). It builds the model in the user space on _Gadi_ thus limiting the shareability of the build and consuming a potentially non-insignificant amount of inodes. Finally, contrary to the deployment infrastructure, it does not provide an easy way to access several test builds from the same model component branch at the same time.
+The Spack infrastructure allows you to create your own local build on _Gadi_ for ACCESS-ESM1.6. Once setup, this might be faster than using the deployment infrastructure, especially when you want a lot of small incremental builds during development. It also allows to build the model with debugging symbols for the debugger. 
+
+However, this method has several drawbacks. It requires users to install the Spack software which can make it harder for ACCESS-NRI to provide support. It requires users to have at least _read permissions_ on all the repositories required by ACCESS-ESM1.6 (see [Software structure](#software-structure)). It builds the model in the user space on _Gadi_ thus limiting the shareability of the build and consuming a potentially non-insignificant amount of inodes. Finally, contrary to the deployment infrastructure, it does not provide an easy way to access several test builds from the same model component branch at the same time.
 
 This method is explained on the ACCESS-Hive page for [modifying an ACCESS model's source code](https://docs.access-hive.org.au/models/build_a_model/build_source_code/). 
