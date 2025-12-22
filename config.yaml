@@ -30,7 +30,7 @@ modules:
   use:
       - /g/data/vk83/modules
   load:
-      - access-esm1p6/2025.11.002
+      - access-esm1p6/2025.12.000
 
 # Model configuration
 model: access-esm1.6
@@ -50,7 +50,7 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
         # Forcing
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/pre-industrial/atmosphere/forcing/global.N96/2020.05.19/ozone_1850_ESM1.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/forcing/global.N96/2025.12.09/ozone_1850_cmip7.anc
         # Emissions
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/flat10/atmosphere/forcing/global.N96/2025.12.05/CO2_fluxes_flat10.anc
         # Land
@@ -66,7 +66,7 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
         # STASH
-        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/stash/2020.05.19/
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2025.12.19/
 
     - name: ocean
       model: mom

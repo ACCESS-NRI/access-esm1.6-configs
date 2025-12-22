@@ -5,7 +5,7 @@ DATAW: '{work_path}'
 FASTRUN: 'true'
 IDEALISE: ''
 PAREXE: ''
-PRINT_STATUS: PrStatus_Diag
+PRINT_STATUS: PrStatus_Normal
 RPSEED: ''
 RUNID: PI-01
 TYPE: NRUN
@@ -44,7 +44,7 @@ CHEMOXID: INPUT/sulpc_oxidants_N96_L38
 DMSCONC: INPUT/DMS_conc.N96
 NDEPFIL: INPUT/Ndep_1850_cmip7.anc
 OCFFEMIS: INPUT/OCFF_1850_cmip7.anc
-OZONE: INPUT/ozone_1850_ESM1.anc
+OZONE: INPUT/ozone_1850_cmip7.anc
 SOOTEMIS: INPUT/BC_1850_cmip7.anc
 SULPEMIS: INPUT/scycl_1850_cmip7.anc
 VEGINIT: INPUT/cable_vegfunc_N96.anc
