@@ -2,17 +2,17 @@ format: yamanifest
 version: 1.0
 ---
 work/atmosphere/um_hg3.exe:
-  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-19.0.3.199/um7-git.access-esm1.6-2025.06.000_access-esm1.6-eqtlwbkbfqe5dl4fysji4uatbe3k5cfg/bin/um_hg3.exe
+  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/oneapi-2025.2.0/um7-git.2025.12.000_access-esm1.6-n4khgi6wnko6nn2wzqqk4575wetqbyjx/bin/um_hg3.exe
   hashes:
-    binhash: de48b736ea1d61b8c33b4fa9050a7217
-    md5: 1b0f226bd4dcb630b8056315642ae484
-work/ice/cice_access_360x300_12x1_12p.exe:
-  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-19.0.3.199/cice4-git.access-esm1.6-2025.04.000_access-esm1.5-ehk25va4ib5ohs7puldvht6mcdnxo3sl/bin/cice_access_360x300_12x1_12p.exe
+    binhash: 4d919699451f3a66650390b1d7f8c321
+    md5: 77e66471e73ae272e6b548f2bc5f2794
+work/ice/cice_access-esm1.6_360x300_12x1_12p.exe:
+  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/oneapi-2025.2.0/cice5-git.access-esm1.6-2025.11.001_access-esm1.6-6umbsy5dlepupzm7lxm2ubyb4rsxwetj/bin/cice_access-esm1.6_360x300_12x1_12p.exe
   hashes:
-    binhash: 2e2e2f1aa48c23a5a61732faa86eddc2
-    md5: 67b8c14d69aa2b22dfb2e543d5c9167b
-work/ocean/fms_ACCESS-ESM.x:
-  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/intel-19.0.3.199/mom5-git.dev-2025.03.001_access-esm1.6-dhww7jgsd5oskneizdumsuzspgabogq6/bin/fms_ACCESS-ESM.x
+    binhash: 7c99150ca50ce68b1e59d11ca869660e
+    md5: 1b2bdff3029668fa3249f69207e2d690
+work/ocean/mom5_access_cm:
+  fullpath: /g/data/vk83/apps/spack/0.22/restricted/ukmo/release/linux-rocky8-x86_64_v4/oneapi-2025.2.0/mom5-git.2025.05.000_access-esm1.6-tzlv4hwxcbh4u2alvbiwnpnxjg67crnu/bin/mom5_access_cm
   hashes:
-    binhash: d41a3ca60d1b2b33e003741d51897c50
-    md5: d82d6e1cbc1fd21d6de111a6122c94d7
+    binhash: c54fa44a8d0c20975b42bdd915ff7bef
+    md5: 8e404189b0972fb1beb916ed0dcba88c
