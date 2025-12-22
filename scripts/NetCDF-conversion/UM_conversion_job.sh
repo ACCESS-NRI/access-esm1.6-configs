@@ -3,7 +3,7 @@
 #PBS -l mem=20GB
 #PBS -l jobfs=0GB
 #PBS -q normal
-#PBS -l walltime=00:40:00
+#PBS -l walltime=01:30:00
 #PBS -l wd
 #PBS -W umask=027
 
