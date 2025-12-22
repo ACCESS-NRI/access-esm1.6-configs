@@ -15,7 +15,7 @@
 # You're unlikely to need to change any of the global_defaults.
 global_defaults:
 # global_section:
-    title: ACCESS-ESM_CMIP6  # any string
+    title: ACCESS-ESM_1p6  # any string
     base_date: [ 0001, 1, 1, 0, 0, 0 ]  # reference time used for the time units. six integers: year, month, day, hour, minute, second
 # file section:
     file_name:  # String, or list of components, for file name (without trailing ".nc").
@@ -158,11 +158,6 @@ diag_table:
         fields:
             tx_trans_rho:
             tx_trans_rho_gm: 
-            tx_trans_gm:
-            tx_trans:
-            tz_trans:
-            tx_trans_submeso:
-            ty_trans_submeso:
             tz_trans_sq:
             rho_dzt:
             pot_rho_0:
@@ -197,7 +192,6 @@ diag_table:
             salt_zflux_adv:
             lap_fric_u:
             lap_fric_v:
-            wt:
             wrhot:
 
 
@@ -214,12 +208,18 @@ diag_table:
             press:
             rho:
             bv_freq:
+            tx_trans:
+            tx_trans_gm:
+            tx_trans_submeso:
             ty_trans:
             ty_trans_gm:
+            ty_trans_submeso:
             ty_trans_rho:
             ty_trans_rho_gm:
+            tz_trans:
             u:
             v:
+            wt:
             temp_tendency:
             salt_tendency:
             dzt:
@@ -248,59 +248,27 @@ diag_table:
             dic:
             alk:
             dicr:
-            dicp:
             fe:
             pprod_gross:
             zprod_gross:
             radbio:
-            radmid:
-            radmld:
             phy_mu:
             phy_mumax:
-            pchl_mu:
-            pchl_lpar:
-            phy_kni:
-            phy_kfe:
             phy_lpar:
             phy_lnit:
             phy_lfer:
-            phy_dfeupt:
-            phy_feupreg:
-            phy_fedoreg:
-            feIII:
-            felig:
-            fecol:
             fesources:
             fesinks:
-            feprecip:
-            fescaven:
-            fescadet:
-            feloss:
-            fecoag2det:
             htotal:
-            ahtotal:
-            phygrow:
-            phyresp:
-            phymort:
             zooeps:
             zoograzphy:
             zoograzdet:
-            zooresp:
-            zoomort:
-            zooslopphy:
-            zooslopdet:
-            zooexcrphy:
-            zooexcrdet:
-            reminr:
-            detremi:
             caldiss:
             pic2poc:
             omega_ara:
             omega_cal:
-            co3:
-            co2_star:
-            htotal:
             det_vmove:
+            caco3_vmove:
             alk_correct:
             dic_correct:
 
@@ -323,7 +291,6 @@ diag_table:
             fprec:
             evap:
             runoff:
-            melt:
             pme_river:
             sfc_salt_flux_ice:
             sfc_salt_flux_runoff:
@@ -408,10 +375,9 @@ diag_table:
         fields:
             o2_stf:
             dic_stf:
-            dicp_stf:
+            no3_stf:
             fe_stf:
             pco2:
-            paco2:
             pprod_gross_2d:
             export_prod:
             export_inorg:
@@ -437,7 +403,7 @@ diag_table:
             surface_phy:
             surface_alk:
             surface_dic:
-            surface_dicp:
+            surface_pchl:
             surface_dicr:
             surface_o2:
             
@@ -467,7 +433,6 @@ diag_table:
             dic_global_ave:
             alk_global_ave:
             dicr_global_ave:
-            dicp_global_ave:
             caco3_global_ave:
             det_global_ave:
             phy_global_ave:
@@ -500,10 +465,17 @@ diag_table:
             dic_surface_ave:
             alk_surface_ave:
             dicr_surface_ave:
-            dicp_surface_ave:
             caco3_surface_ave:
             det_surface_ave:
             phy_surface_ave:
             pchl_surface_ave:
             zoo_surface_ave:
 
+    'daily 2d ocean fields':
+        defaults:  # these can be overridden for individual fields below
+            file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
+            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
+            output_freq_units: days  # time units for output: years, months, days, hours, minutes, or seconds
+        fields:
+            surface_temp:
+            squared_surface_temp:
