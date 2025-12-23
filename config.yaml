@@ -42,9 +42,10 @@ submodels:
       exe: um_hg3.exe
       input:
         # Aerosols
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/OCFF_1849_2015_ESM1.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/BC_hi_1849_2015_ESM1.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/scycl_1849_2015_ESM1_v4.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2025.12.19/BC_1849_2023_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2025.12.19/Bio_1849_2023_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2025.12.19/OCFF_1849_2023_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2025.12.19/scycl_1849_2023_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/Bio_1849_2015_ESM1.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
@@ -54,7 +55,7 @@ submodels:
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.12.01/volcts_cmip7.dat
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
         # Land
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/land/biogeochemistry/global.N96/2021.06.22/Ndep_1849_2015.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2025.12.19/Ndep_1849_2023_cmip7.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
