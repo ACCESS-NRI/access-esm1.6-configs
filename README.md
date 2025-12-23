@@ -10,7 +10,7 @@ When set correctly the output file `atm.fort6.pe0` for the first year should hav
 GHG concentrations (mmr) for model year  YYYY
 CO2     0.43621E-03
 ```
-i.e. 1.01 * initial value of 4.3189e-04. This is the value used by the radiation.BGC (land and ocean).
+i.e. 1.01 * initial value of 4.3189e-04. This is the value used by the radiation.
 
 For the 1pctCO2-rad experiment the next line should be
 ```
