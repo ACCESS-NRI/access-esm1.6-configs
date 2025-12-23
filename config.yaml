@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: pre-industrial
+jobname: flat10
 queue: normalsr
 walltime: 2:30:00
 jobfs: 1500MB
@@ -120,7 +120,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial-emissions/restart/2025.11.28
+restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial-emissions/restart/2025.12.22
 
 # Timing controls
 calendar:
