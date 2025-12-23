@@ -157,6 +157,7 @@ sync:
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,
 #  manually run `payu sync` from the command line.
 
-# userscripts:
+userscripts:
+    setup: scripts/check_co2_year.py
 
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
