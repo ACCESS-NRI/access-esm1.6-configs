@@ -1,4 +1,4 @@
-# preindustrial+concentrations
+# 1pctCO2-rad
 Test configuration for a coupled CO<sub>2</sub> concentration driven [ACCESS-ESM1.6](https://github.com/ACCESS-NRI/ACCESS-ESM1.6)  with 1% year CO2 increase seen by radiation only.
 
 Note that CLIM_FCG_YEARS(1,1) in `atmosphere/namelists` must be set to one year less than the initial year of the run so that the first increase is applied at the start of the new run.
