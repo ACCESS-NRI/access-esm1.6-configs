@@ -2,144 +2,144 @@ format: yamanifest
 version: 1.0
 ---
 work/atmosphere/restart_dump.astart:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/atmosphere/restart_dump.astart
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/atmosphere/restart_dump.astart
   hashes:
-    binhash: 8242b707822258a2984c87989f47bd0d
-    md5: 500ea53f99e5d0d6bb0f25c62659d9b6
+    binhash: 7182306e641722079af0ae80af4aab46
+    md5: 903370e1f19bb2caf1b5aaea8447ee11
 work/atmosphere/um.res.yaml:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/atmosphere/um.res.yaml
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/atmosphere/um.res.yaml
   hashes:
-    binhash: b71e306b5c1b3ff32ab7fa00fe8e3aef
-    md5: 336b256dcf31dd99b7dd041caf003473
+    binhash: b04c9103b426963724c01bb85e284fe7
+    md5: 9e2764888d7b9f9e2d86a9e52f5993f7
 work/coupler/a2i.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/coupler/a2i.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/coupler/a2i.nc
   hashes:
-    binhash: 8a4967fafb61bc6a1ecccfb2bc22ca14
-    md5: e36547e1c4965efa1fba769a503d8013
+    binhash: a253ab317cb7083ba9b9b160eb098480
+    md5: d52c6647718718c3c01af82faea6c4eb
 work/coupler/i2a.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/coupler/i2a.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/coupler/i2a.nc
   hashes:
-    binhash: 553ee793d55d43e1a1d0285cd60f9cf0
-    md5: f21397428b2c48be6f6042d3f865ecee
+    binhash: 26a602485ba2218256583cd5fce676b7
+    md5: c3b7fac389063608382f0a3250d3b51b
 work/coupler/o2i.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/coupler/o2i.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/coupler/o2i.nc
   hashes:
-    binhash: ec2310899b41d162b668e436ab8fcd80
-    md5: af4c45e75aed241d14c76d2844e9dce1
+    binhash: b01bf89fc6fece90506e10fc7dac93b2
+    md5: 228a0d37437a505ddbb081158ed43813
 work/ice/RESTART/cice_in.nml:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ice/cice_in.nml
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ice/cice_in.nml
   hashes:
-    binhash: 4365cf2ccd90a8769f0b465af6f1c1e2
+    binhash: 39474e55261b38585591181a178df48f
     md5: f27d1348905f57fd090b3add437f7d49
 work/ice/RESTART/ice.restart_file:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ice/ice.restart_file
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ice/ice.restart_file
   hashes:
-    binhash: 29e21d074ba6206278b903220bba9a02
-    md5: ebd1ef4b68f4e37508134aefdeb34289
-work/ice/RESTART/iced.2769-01-01-00000.nc:
+    binhash: c326af099734fb1d2fceaaf461fd5136
+    md5: 43d0c4638b195ddef695d71958625097
+work/ice/RESTART/iced.2770-01-01-00000.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ice/iced.2769-01-01-00000.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ice/iced.2770-01-01-00000.nc
   hashes:
-    binhash: 7ecbbc106b4b0c470e60d0464745cc7a
-    md5: be2d48706c77a2461857a1ca1c590589
+    binhash: fe274c0ef0e736e2d6d2ba220fddd526
+    md5: 915686f04fc6ba606969d593238677c7
 work/ice/RESTART/mice.nc:
   copy: true
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ice/mice.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ice/mice.nc
   hashes:
-    binhash: cebb704071f16d2675f8b0b7ee2a1196
-    md5: c22d5cda2756624c793c9c23bc081bf0
+    binhash: 795b157d32e75317cede7c3f7b207760
+    md5: 236752f034e8707d0c40915b3463bc5c
 work/ocean/INPUT/ocean_age.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_age.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_age.res.nc
   hashes:
-    binhash: 49b3db90aa079506efd2dc89a50943de
-    md5: 87ffdd9007de91f0b34c5f4284157cde
+    binhash: d606df0f54a2d792d07207996c3e3247
+    md5: 16604aa5edde64c6c812a1f55701bf1f
 work/ocean/INPUT/ocean_barotropic.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_barotropic.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_barotropic.res.nc
   hashes:
-    binhash: 7806db9edce8c0b2cada7c8eb6832912
-    md5: 9b124f57b4e283b14743a24f7f5e0d74
+    binhash: 15cdad7dabb69a34cd2ca36d526cf863
+    md5: fa64e46b231b6e079a538d71cc11de81
 work/ocean/INPUT/ocean_bih_friction.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_bih_friction.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_bih_friction.res.nc
   hashes:
-    binhash: 52e5047f9c14ca9fd297ad6028c50c25
-    md5: 307ddabde3dcf30ca249ccb0ec50ecf3
+    binhash: 147812386e012765f37f8d4b96504b43
+    md5: 39e2088211ae1514401e0fcbc446d80a
 work/ocean/INPUT/ocean_density.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_density.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_density.res.nc
   hashes:
-    binhash: fa669b759d43695a3de43c13e2e69c56
-    md5: 50106e30002e98b87d6afb7e9af7a45b
+    binhash: 62e42e775e17a796312ced57ec6fd22d
+    md5: e55c1f7f290546a65fd2ff00dda78206
 work/ocean/INPUT/ocean_frazil.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_frazil.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_frazil.res.nc
   hashes:
-    binhash: 672a105df926b2833fa52a4a5b8bcc4b
-    md5: 75effd413f453a87d4f5932a6f3d3dcb
+    binhash: 6ed4dbdf18986a07265f992ef558251b
+    md5: ad145902c68cb900bed8652d734d5cd4
 work/ocean/INPUT/ocean_lap_friction.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_lap_friction.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_lap_friction.res.nc
   hashes:
-    binhash: 9889ae140034c3935bf72248d8fa86e5
-    md5: 5832f20e9532ed8ed1342f07f428aa08
+    binhash: 9c0d14713ec7a4268e156c2d4020099a
+    md5: 44c3a0de10d45d2a02e05c3296e1d4b7
 work/ocean/INPUT/ocean_neutral.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_neutral.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_neutral.res.nc
   hashes:
-    binhash: 2e48dcd015802a9045038078e5418d21
-    md5: 3551c1670fa301bb240565fa5890980a
+    binhash: fdb7c91dbdda8d3e83aa38551c1d7e59
+    md5: 18b55c27de683d45e60ece5eaf2897c3
 work/ocean/INPUT/ocean_pot_temp.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_pot_temp.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_pot_temp.res.nc
   hashes:
-    binhash: 4d47d87515fa6a407d7cc7447f55a68f
-    md5: a0134e4592ece03d2f2fb219b6bcd54b
+    binhash: eecbf93ed9f56fef74511a8562d6bcb2
+    md5: f52e95d5cd422c9adcf2dda34bdb19f5
 work/ocean/INPUT/ocean_sbc.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_sbc.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_sbc.res.nc
   hashes:
-    binhash: fd717217f22e00f886c380633a31c61d
-    md5: 7096bbb2bca921fadb867fa1fcf9760f
+    binhash: e6368fac76042a02e5a39846d41746c1
+    md5: 72644f9ee5e94e5e914270b03fbd2145
 work/ocean/INPUT/ocean_sigma_transport.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_sigma_transport.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_sigma_transport.res.nc
   hashes:
-    binhash: 9368e61fd352f27d7f41c05f44d9c4ff
+    binhash: ee3aacdb4a7dac9931c8f1e26ba7ea4a
     md5: 5ff03bcf0c1ee96e07df055846ed2d04
 work/ocean/INPUT/ocean_solo.res:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_solo.res
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_solo.res
   hashes:
-    binhash: 3a28386445ae82977c00a39e0f8bcf08
-    md5: 953679c17bd98c853ba2f9a26830e4b4
+    binhash: 3ae5e9ff0f49c4c04f43ae78dc89916d
+    md5: 24598496a5ccc8fe357ab3e060a6ecf9
 work/ocean/INPUT/ocean_temp_salt.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_temp_salt.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_temp_salt.res.nc
   hashes:
-    binhash: 46ad5194f73a9bdd256d97a6466d9d0d
-    md5: 11b844772c6f91f50d295c371efd9092
+    binhash: 7fda97a71e678104438742ae78755da3
+    md5: f964927acca52090a50fb38d9656c2ec
 work/ocean/INPUT/ocean_thickness.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_thickness.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_thickness.res.nc
   hashes:
-    binhash: bb3edc7981ae64cd0bea71f25ac08f69
-    md5: 98826d75137b56afbbf1468a15489aaf
+    binhash: 17986572e68c27822ac3201fbe16aef2
+    md5: ad2ed93eb68bca7c6daa745fd19ac466
 work/ocean/INPUT/ocean_tracer.res:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_tracer.res
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_tracer.res
   hashes:
-    binhash: da69e13bd7f26f4f9b158b412f1d1e1f
-    md5: 8eeb10f4dc573b043a366fa89e856402
+    binhash: 8323303125ded3b1bdc2b37e9b842a6f
+    md5: 587675a5be2722ec18f0d67a05e579f0
 work/ocean/INPUT/ocean_velocity.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_velocity.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_velocity.res.nc
   hashes:
-    binhash: c980634c7524db4fde8540b6d02802d5
-    md5: 5276fb212365ab278074cb4599dd6a25
+    binhash: 478ed4ae87cd280676feee7c0d9c2715
+    md5: 0bfef2d5fba2095ee21c6b1b5c508360
 work/ocean/INPUT/ocean_velocity_advection.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_velocity_advection.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_velocity_advection.res.nc
   hashes:
-    binhash: 730ad75654e758bbaedb42bd7eabdd9b
-    md5: 5df6de5ed2d4157b1f4088e497d5552f
+    binhash: b203bd1b5cdb178b531bb61fd13e20fa
+    md5: 1aba199c9aabae536869cc2bfe59ded9
 work/ocean/INPUT/ocean_wombatlite.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_wombatlite.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_wombatlite.res.nc
   hashes:
-    binhash: 649fd2cc509deafdc56a7f2ecf2ace8d
-    md5: 2dcd01fb8b160c030e5f9f6941da2522
+    binhash: 51f09387813e9508f92d900b1677abf7
+    md5: f077c9361445d192789e18f348b3c688
 work/ocean/INPUT/ocean_wombatlite_airsea_flux.res.nc:
-  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart092/ocean/ocean_wombatlite_airsea_flux.res.nc
+  fullpath: /scratch/p66/jxs599/access-esm/archive/Dec25-spinup-Dec25-spinup-87bd039c/restart093/ocean/ocean_wombatlite_airsea_flux.res.nc
   hashes:
-    binhash: c3ec86391b85068dc8bb598b55e6f87c
-    md5: cd013911c51033522f578f7e28b141e9
+    binhash: 2d704fba5c8dcd38e8c2efdfb6d182a3
+    md5: 1e4df1fcc3fa86d1f95fab3c90d65f73
