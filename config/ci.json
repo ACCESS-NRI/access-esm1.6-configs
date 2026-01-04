@@ -2,7 +2,19 @@
     "$schema": "https://raw.githubusercontent.com/ACCESS-NRI/schema/main/au.org.access-nri/model/configuration/ci/2-0-0.json",
     "scheduled": {
         "default": {
-            "markers": "repro and (not slow)"
+            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
+        },
+        "dev-preindustrial+concentrations": {
+            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
+        },
+        "dev-4xCO2+concentrations": {
+            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
+        },
+        "dev-1pctCO2": {
+            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
+        },
+        "dev-historical+concentrations": {
+            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
         }
     },
     "reproducibility": {
