@@ -4,18 +4,10 @@
         "default": {
             "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
         },
-        "dev-preindustrial+concentrations": {
-            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
-        },
-        "dev-4xCO2+concentrations": {
-            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
-        },
-        "dev-1pctCO2": {
-            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
-        },
-        "dev-historical+concentrations": {
-            "markers": "(repro and (not repro_restart)) or access_esm1p6 or config"
-        }
+        "dev-preindustrial+concentrations": { },
+        "dev-4xCO2+concentrations": { },
+        "dev-1pctCO2": { },
+        "dev-historical+concentrations": { }
     },
     "reproducibility": {
         "default": {
