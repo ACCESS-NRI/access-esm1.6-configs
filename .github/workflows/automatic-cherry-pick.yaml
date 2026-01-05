@@ -206,10 +206,6 @@ jobs:
         id: cherry-pick
         continue-on-error: true
         run: |
-          # We use the github-actions bot account for creating the commits. Note that this will not work if the repository requires signed commits.
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        
           git checkout -b ${{ steps.info.outputs.new_branch }} origin/${{ matrix.branch }}
           git cherry-pick ${{ needs.process_comment.outputs.commits }}
 
