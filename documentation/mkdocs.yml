@@ -9,7 +9,10 @@ site_url: !ENV READTHEDOCS_CANONICAL_URL
 # Git repository (Adds a link to the GitHub repository at the top)
 repo_url: https://github.com/ACCESS-NRI/access-esm1.6-configs
 repo_name: ACCESS-NRI/access-esm1.6-configs
-edit_uri: blob/main/documentation/docs/ #hopefully will fix the edit button from 404'ing, https://github.com/mkdocs/mkdocs/issues/2416
+
+edit_uri: !ENV [EDIT_URI, ""]
+# EDIT_URI is set within the website build (ReadTheDocs) through the ACCESS-Hive-Docs repo script
+# https://github.com/ACCESS-NRI/ACCESS-Hive-Docs/blob/main/.readthedocs/scripts/custom_build.sh
  
 # Theme
 theme:
@@ -111,6 +114,7 @@ nav:
         - Sea ice:    pages/inputs/seaice.md
         - Atmosphere:    pages/inputs/atmosphere.md
         - Land:    pages/inputs/land.md
+        - Restarts: pages/inputs/restarts.md
 
   - Configurations and Experiments:
         - Configuration:    pages/configs_experiments/overviewconfiguration.md
