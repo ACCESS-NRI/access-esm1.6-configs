@@ -1,0 +1,18 @@
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# ReadtheDocs config version
+version: 2
+
+# Set the ReadtheDocs Docker image OS, Python version, and other tools you might need
+build:
+  os: ubuntu-24.04
+  tools:
+    python: "3.13"
+  jobs:
+    post_checkout: # cancel the RTD build in configuration branches
+      - exit 183
+
+# Build documentation with Mkdocs
+mkdocs:
+  configuration: documentation/mkdocs.yml # MODIFY IF NEEDED: path to mkdocs.yml
