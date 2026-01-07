@@ -10,7 +10,7 @@ build:
   tools:
     python: "3.13"
   jobs:
-    post_checkout: # cancel the RTD build
+    post_checkout: # cancel the RTD build in configuration branches
       - exit 183
 
 # Build documentation with Mkdocs
