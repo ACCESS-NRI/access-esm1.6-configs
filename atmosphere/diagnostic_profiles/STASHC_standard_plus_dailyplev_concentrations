@@ -1,5 +1,5 @@
  ### Start of user STASH requests for ATMOS ### 
- &STASHNUM NUM_REQ=292, NUM_DOM=38,  NUM_TIM=22, NUM_USE=12 /
+ &STASHNUM NUM_REQ=293, NUM_DOM=38,  NUM_TIM=22, NUM_USE=12 /
 
  # Monthly - 3D variables on model levels #
  &STREQ IMOD= 1, ISEC=0, ITEM=10, IDOM=2, ITIM=5, IUSE=2 /
@@ -310,9 +310,10 @@
  &STREQ IMOD= 1, ISEC=30, ITEM=301, IDOM=36, ITIM=1, IUSE=1 /
 
  # 6hrly - 3D variables on pressure levels #
- &STREQ IMOD= 1, ISEC=30, ITEM=201, IDOM=37, ITIM=4, IUSE=5 / #check working
+ &STREQ IMOD= 1, ISEC=30, ITEM=201, IDOM=37, ITIM=4, IUSE=5 /
  &STREQ IMOD= 1, ISEC=30, ITEM=202, IDOM=37, ITIM=4, IUSE=5 / 
  &STREQ IMOD= 1, ISEC=30, ITEM=204, IDOM=37, ITIM=4, IUSE=5 / 
+ &STREQ IMOD= 1, ISEC=30, ITEM=301, IDOM=37, ITIM=4, IUSE=5 /
 
  # 6hrly - 2D surface variables #
  &STREQ IMOD= 1, ISEC=3, ITEM=245, IDOM=1, ITIM=21, IUSE=5 / # Need to check that 6h mean works
@@ -325,7 +326,7 @@
  &STREQ IMOD= 1, ISEC=5, ITEM=216, IDOM=1, ITIM=8, IUSE=4 / 
 
  # 1hrly - 2D surface variables #
- &STREQ IMOD= 1, ISEC=5, ITEM=216, IDOM=1, ITIM=22, IUSE=7 /  # Need to check if 1h mean works
+ &STREQ IMOD= 1, ISEC=5, ITEM=216, IDOM=1, ITIM=22, IUSE=7 /
 
 
 
