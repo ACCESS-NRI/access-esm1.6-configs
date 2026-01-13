@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # FIXME: Modify based on how often one wants to run these scheduled checks
-    - cron: '0 0 1 * *'  # once a month
+    - cron: '53 3 * * 0'  # At 03:53 on Sunday
 jobs:
   checks:
     name: Check
