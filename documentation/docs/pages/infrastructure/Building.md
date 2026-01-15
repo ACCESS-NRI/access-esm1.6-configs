@@ -1,21 +1,8 @@
 # Build infrastructure
 
-Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this page.
+Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this page. For more information on the available deployed builds, check the [Deployment](/documentation/docs/pages/infrastructure/Deployment.md) page. 
 
 ACCESS-NRI is using [Spack](https://spack.io/), a build from source package manager designed for use with high performance computing. Spack already contains support for compiling thousands of common software packages. 
-
-## Existing deployments
-
-ACCESS-ESM1.6 releases come with a pre-deployed executable on Gadi. Deployed builds are stored under the project `vk83` (hence requiring [membership to this project](https://my.nci.org.au/mancini/project/vk83/join) for access). You can see all deployed builds via:
-
-```bash
-module use /g/data/vk83/modules
-module avail access-esm1p6
-```
-
-There are development releases (identified with a `dev_` prefix to the date tag) and full releases (identified with only a date tag). We recommend new users start with the newest full release (i.e. with the most recent date tag). 
-
-These builds are optimised for the Sapphire-Rapid hardware from Intel (i.e., the *normalsr* queue), and may not run on Cascade-Lake (i.e., the *normal* queue) or older hardware.
 
 ## Software structure
 
