@@ -4,6 +4,19 @@ Most users of ACCESS-ESM1.6 will not need to build the model. Released versions 
 
 ACCESS-NRI is using [Spack](https://spack.io/), a build from source package manager designed for use with high performance computing. Spack already contains support for compiling thousands of common software packages. 
 
+## Existing deployments
+
+ACCESS-ESM1.6 releases come with a pre-deployed executable on Gadi. Deployed builds are stored under the project `vk83` (hence requiring [membership to this project](https://my.nci.org.au/mancini/project/vk83/join) for access). You can see all deployed builds via:
+
+```bash
+module use /g/data/vk83/modules
+module avail access-esm1p6
+```
+
+There are development releases (identified with a `dev_` prefix to the date tag) and full releases (identified with only a date tag). We recommend new users start with the newest full release (i.e. with the most recent date tag). 
+
+These builds are optimised for the Sapphire-Rapid hardware from Intel (i.e., the *normalsr* queue), and may not run on Cascade-Lake (i.e., the *normal* queue) or older hardware.
+
 ## Software structure
 
 ACCESS-ESM1.6 being a Earth System model, it is constituted of several model components, each residing in its own repository on GitHub. In addition, some model components need other utilities at compilation time that are stored in separate repositories. This results in a complex software structure involving a large number of repositories:
@@ -33,7 +46,7 @@ This method is explained on the ACCESS-Hive page for [creating pre-releases and 
 
 !!! warning
 
-    This method to build the model only works if your modifications are committed in branches of the model repositories listed in the [software structure](#software-structure). This method can not be used if your modifications sit in a fork of one of the repositories.
+    This method to build the model only works if your modifications are committed in branches of the model repositories on GitHub listed in the [software structure](#software-structure). This method can not be used if your modifications sit in a fork of one of the repositories or a local clone.
 
 ## Local build of ACCESS-ESM1.6
 
