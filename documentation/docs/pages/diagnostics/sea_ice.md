@@ -7562,8 +7562,8 @@ of these diagnostics available in ACCESS-ESM1.6</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>$$ siflcondtop * \frac{siconc}{100} = \frac{\displaystyle\sum_{n=0}^N (aice * T_{surface})}{\displaystyle\sum_{n=0}^N (aice)} *  \frac{\displaystyle\sum_{n=0}^N (aice)} {N} 
-= \frac{\displaystyle\sum_{n=0}^N (aice * T_{surface})} {N}
+<p>$$ siflcondtop * \frac{siconc}{100} = \frac{\displaystyle\sum_{n=0}^N (aice * fcondtop)}{\displaystyle\sum_{n=0}^N (aice)} *  \frac{\displaystyle\sum_{n=0}^N (aice)} {N} 
+= \frac{\displaystyle\sum_{n=0}^N (aice * fcondtop)} {N}
 $$</p>
 </div>
 </div>
@@ -7675,7 +7675,7 @@ same or similar descriptions but be masked differently.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Mass-/-Concentrations-/-Age">Mass / Concentrations / Age<a class="anchor-link" href="#Mass-/-Concentrations-/-Age">¶</a></h2>
+<h2 id="Mass-/-Concentrations">Mass / Concentrations<a class="anchor-link" href="#Mass-/-Concentrations">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7686,7 +7686,7 @@ same or similar descriptions but be masked differently.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We use <a href="https://github.com/ACCESS-NRI/cice5/blob/62dcb7ee19f6e0a71d4b8e3e548b8cece0b930cf/drivers/access/ice_constants.F90#L22-L29">fixed densities</a> for sea ice, sea water and snow:</p>
+<p>ACCESS-ESM1.6 use <a href="https://github.com/ACCESS-NRI/cice5/blob/62dcb7ee19f6e0a71d4b8e3e548b8cece0b930cf/drivers/access/ice_constants.F90#L22-L29">fixed densities</a> for sea ice, sea water and snow:</p>
 </div>
 </div>
 </div>
@@ -7755,7 +7755,7 @@ same or similar descriptions but be masked differently.</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92472339-1ca6-4963-89aa-d3cd93b5326c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ebb1b0d1-23ac-4943-b082-97dc72c78b27">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7764,9 +7764,9 @@ same or similar descriptions but be masked differently.</p>
 <p>Using these densities, mass and volume terms balance :</p>
 <ul>
 <li>$sivol*rhoi = simass$  (sivol and simass are extensive)</li>
-<li>$sisnthick*rhos = sisnmass$. (sisnthick and sisnmass are intensive)</li>
+<li>$sisnthick*siconc*rhos = sisnmass$. (sisnthick is intensive and sisnmass is extensive)</li>
 </ul>
-<p>We use <a href="https://github.com/ACCESS-NRI/access-esm1.6-configs/blob/c150adbad53b3dc8ed4079fe2136cbb767fa0a63/ice/cice_in.nml#L46">fixed salinity</a>
+<p>ACCESS-ESM1.6 use <a href="https://github.com/ACCESS-NRI/access-esm1.6-configs/blob/c150adbad53b3dc8ed4079fe2136cbb767fa0a63/ice/cice_in.nml#L46">fixed salinity</a>
 for sea ice of 4 g/kg. Therefore:</p>
 <ul>
 <li>$sisalt = simass * 0.004$</li>
@@ -7837,7 +7837,7 @@ On the RHS we have mass of sea water displaced, calculated as the volume of sea 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Note that the atmoshpere diagnostic for <code>surface_temperature</code> uses Tfreeze (-1.8C) for ocean</p>
+<p>Note that the atmosphere diagnostic for <code>surface_temperature</code> uses Tfreeze (-1.8C) for ocean</p>
 </div>
 </div>
 </div>
@@ -7953,7 +7953,7 @@ The sea ice thermodynamic model is zero-layer, so top and bottom conductive heat
 <tr>
 <td>rsus</td>
 <td style="text-align:left">Surface Upwelling Shortwave Radiation</td>
-<td>s01i211</td>
+<td>*</td>
 </tr>
 <tr>
 <td>rlds</td>
@@ -7963,7 +7963,7 @@ The sea ice thermodynamic model is zero-layer, so top and bottom conductive heat
 <tr>
 <td>rlus</td>
 <td style="text-align:left">Surface Upwelling Longwave Radiation</td>
-<td>?</td>
+<td>*</td>
 </tr>
 <tr>
 <td>hfss</td>
@@ -7977,8 +7977,8 @@ The sea ice thermodynamic model is zero-layer, so top and bottom conductive heat
 </tr>
 </tbody>
 </table>
-<p>These are extensive diagnostics on the atmoshpere grid, the intensive form is not provided (i.e.
-<em>sifllattop, sifllwdtop, sifllwutop, siflsenstop, siflswdtop, siflswutop</em> are not provided)</p>
+<p>These are extensive diagnostics on the atmosphere grid, which include the ocean, sea ice and land fraction in the same variable. The intensive form, as requested for SIMIP variables, is not available (i.e.
+<em>sifllattop, sifllwdtop, sifllwutop, siflsenstop, siflswdtop, siflswutop</em> are not provided). Where marked with <code>*</code> - variables are only available through post-processing.</p>
 </div>
 </div>
 </div>
@@ -7989,7 +7989,7 @@ The sea ice thermodynamic model is zero-layer, so top and bottom conductive heat
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><code>siflsensbot</code>, <code>siflcontop</code> and <code>siflcondbot</code> are available (note they intensive diagnostic, energy flow per sea ice area)</p>
+<p>The heat fluxes <code>siflsensbot</code>, <code>siflcondtop</code> and <code>siflcondbot</code> are available (note they intensive diagnostics)</p>
 </div>
 </div>
 </div>
@@ -8002,7 +8002,7 @@ The sea ice thermodynamic model is zero-layer, so top and bottom conductive heat
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Salt-/-Water-Fluxes">Salt / Water Fluxes<a class="anchor-link" href="#Salt-/-Water-Fluxes">¶</a></h2><p>The sea ice diagnostic <code>siflfwbot</code> (Freshwater Flux from Sea Ice) is intensive, and different from
 the ocean diagnostic <code>fsitherm</code> (Water Flux into Sea Water Due to Sea Ice Thermodynamics)
-which is extensive. We do not include snow melt in <code>siflfwbot</code>. We attempt to balance sea and ice diagnostics of salt and water fluxes below. They are close but not an exact match.</p>
+which is extensive. We attempt to balance sea and ice diagnostics of salt and water fluxes below. They are close but not an exact match.</p>
 <p>We use split <code>fsitherm</code> into <code>wfimelt</code> and <code>wfiform</code> for water fluxes associated with melting (of sea ice and snow) and forming sea ice. (i.e. $fsitherm = wfimelt + wfiform$)</p>
 <p>Open some ocean diagnostics:</p>
 </div>
@@ -8136,7 +8136,7 @@ which is extensive. We do not include snow melt in <code>siflfwbot</code>. We at
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Salt is only transferred between the ocean and sea ice, there is no salt fluxes into or out of the atmosphere. ACCESS-ESM1.6 uses fixed salinity in sea ice, therefore all mass change in sea ice has a corresponding salt flux in the ocean (even though mass change can occur without a freshwater flux, e.g. if due to sno-&gt;ice conversion or evaporation/sublimation).</p>
-<p>The sea ice diagnostic <code>sidmassth</code> equals the ocean diagnostic <code>sfc_salt_flux_ice</code> divided by 0.004. This is should be true in all areas - we see differences in the order of $1e-6 kg/m^2$ (~5%) in cells around the outer ice edge.</p>
+<p>The sea ice diagnostic <code>sidmassth</code> equals the ocean diagnostic <code>sfc_salt_flux_ice</code> divided by 0.004. This is should be true in all areas - we see differences in the order of $1e-6 kg/m^2$ (~5%) in cells around the outer ice edge, possibly as the sea ice and ocean diagnostics will be <a href="https://github.com/ACCESS-NRI/access-esm1.6-configs/pull/234#issuecomment-3752924581">offset</a> by one model timestep from each other.</p>
 </div>
 </div>
 </div>
@@ -8407,7 +8407,7 @@ velocity in the relevant corners of the cell to reflect a average velocity acros
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Thermodynamics">Thermodynamics<a class="anchor-link" href="#Thermodynamics">¶</a></h2><p>The diagnostic for evaporation and sublimation can be positive in some model cells (i.e. mass gain) whilst as the sum for each hemisphere is negative (mass loss). This is for two reasons, firstly (<code>sidmassevapsubl</code>) can include condensation and deposition (desublimation). In addition, the evaporation flux is calculated within the atmosphere model, on the atmosphere grid, and conservatively regrid to the sea ice grid. Conservative regridding can lead to sign changes in some cells.</p>
+<h2 id="Thermodynamics">Thermodynamics<a class="anchor-link" href="#Thermodynamics">¶</a></h2><p>The diagnostic for evaporation and sublimation can be positive in some model cells (i.e. mass gain) whilst as the sum for each hemisphere is negative (mass loss). This is for two reasons, firstly (<code>sidmassevapsubl</code>) can include condensation and deposition (desublimation). In addition, the evaporation flux is calculated within the atmosphere model, on the atmosphere grid, and conservatively regridded to the sea ice grid. Conservative regridding can lead to sign changes in some cells.</p>
 </div>
 </div>
 </div>
@@ -8524,7 +8524,7 @@ velocity in the relevant corners of the cell to reflect a average velocity acros
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Similarly, <code>siflfwbot</code> should balances with the relevant <code>sidmass</code> terms. This is not an exact match, so maybe the sidmassterms are missing snow into the ocean due to ridging and rain on sea-ice which do get included into <code>siflfwbot</code>. Rain passes straight through the sea ice and into the ocean, so <code>sipr</code> is not provided.</p>
+<p>Similarly, <code>siflfwbot</code> should balance with the relevant <code>sidmass</code> terms. This is not an exact match, so maybe the sidmassterms are missing snow into the ocean due to ridging and rain on sea-ice which do get included into <code>siflfwbot</code>. Rain passes straight through the sea ice and into the ocean, so <code>sipr</code> is not provided, however <code>siflfwbot</code> includes rain passing through the sea-ice.</p>
 </div>
 </div>
 </div>
@@ -8680,7 +8680,7 @@ velocity in the relevant corners of the cell to reflect a average velocity acros
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>In CICE, Snow-to-Ice conversion only occurs when the weight of the snow pushes the sea ice below the water level
 (i.e. freeboard is negative) and the mass of snow is directly converted to a mass of sea ice. The process is adiabiatic,
-there is no energy exchanged in the process. However <code>sidmassgrowthsi</code> is not equal to <code>sidmassgrowthsi</code> is extensive and <code>sisndmasssi</code> is intensive:</p>
+there is no energy exchanged in the process. However <code>sidmassgrowthsi</code> is not equal to <code>sisndmasssi</code> as <code>sidmassgrowthsi</code> is extensive and <code>sisndmasssi</code> is intensive.</p>
 </div>
 </div>
 </div>
