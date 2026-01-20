@@ -1,8 +1,8 @@
 # Build infrastructure
 
-Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this page. For more information on the available deployed builds, check the [Deployment](/documentation/docs/pages/infrastructure/Deployment.md) page. 
+Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. Check the [Deployment page](/documentation/docs/pages/infrastructure/Deployment.md) to learn about available deployments. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this Builing page.
 
-ACCESS-NRI is using [Spack](https://spack.io/), a build from source package manager designed for use with high performance computing. Spack already contains support for compiling thousands of common software packages. 
+ACCESS-NRI is using [Spack](https://spack.io/), a build from source package manager designed for use with high performance computing. 
 
 ## Software structure
 
