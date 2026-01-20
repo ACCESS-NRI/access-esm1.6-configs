@@ -10,7 +10,36 @@ site_url: !ENV [SITE_URL, "http://access-nri.github.io/access-esm1.6-configs/"]
 repo_url: https://github.com/ACCESS-NRI/access-esm1.6-configs
 repo_name: ACCESS-NRI/access-esm1.6-configs
 edit_uri: blob/main/documentation/docs/ #hopefully will fix the edit button from 404'ing, https://github.com/mkdocs/mkdocs/issues/2416
- 
+
+# Navigation
+nav:
+  - Home:                            pages/index.md
+  - Contributing:          
+        - Contributing overview:     pages/contributing/index.md   
+  - Model Components:
+        - MOM - ocean:      pages/model_components/mom.md
+        - WOMBAT - ocean biogeochem.:   pages/model_components/wombat.md
+        - CICE - sea ice:     pages/model_components/cice.md
+        - UM - atmosphere:       pages/model_components/um.md
+        - CABLE - land:    pages/model_components/cable.md
+        - CASA - land biogeochem.:     pages/model_components/casa.md
+  - Inputs:
+        - Ocean:    pages/inputs/ocean.md
+        - Sea ice:    pages/inputs/seaice.md
+        - Atmosphere:    pages/inputs/atmosphere.md
+        - Land:    pages/inputs/land.md
+
+  - Configurations and Experiments:
+        - Configuration:    pages/configs_experiments/overviewconfiguration.md
+        - Experiments:    pages/configs_experiments/experiments.md
+
+  - Diagnostics:        pages/diagnostics/index.md
+  - Infrastructure:    
+        - Architecture:          pages/infrastructure/Architecture.md
+        - Deployment:            pages/infrastructure/Deployment.md
+        - Building:              pages/infrastructure/Building.md
+        - Git practices:         pages/infrastructure/Git-practices.md
+
 # Theme
 theme:
   name: material
@@ -94,33 +123,6 @@ markdown_extensions:
       title: On this page
       permalink: true
 
-# Navigation
-nav:
-  - Home:                            pages/index.md
-  - Contributing:          
-        - Contributing overview:     pages/contributing/index.md   
-  - Model Components:
-        - MOM - ocean:      pages/model_components/mom.md
-        - WOMBAT - ocean biogeochem.:   pages/model_components/wombat.md
-        - CICE - sea ice:     pages/model_components/cice.md
-        - UM - atmosphere:       pages/model_components/um.md
-        - CABLE - land:    pages/model_components/cable.md
-        - CASA - land biogeochem.:     pages/model_components/casa.md
-  - Inputs:
-        - Ocean:    pages/inputs/ocean.md
-        - Sea ice:    pages/inputs/seaice.md
-        - Atmosphere:    pages/inputs/atmosphere.md
-        - Land:    pages/inputs/land.md
-
-  - Configurations and Experiments:
-        - Configuration:    pages/configs_experiments/overviewconfiguration.md
-        - Experiments:    pages/configs_experiments/experiments.md
-
-  - Diagnostics:        pages/diagnostics/index.md
-  - Infrastructure:    
-        - Architecture:          pages/infrastructure/Architecture.md
-        - Building:              pages/infrastructure/Building.md
-        - Git practices:         pages/infrastructure/Git-practices.md
 
 # Footer
 extra:
