@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     um_file = um_replace_field.open_fields_file(
         args.restart_file,
-        "atmosphere/prefix.PRESM_A",
+        "work/atmosphere/INPUT/STASHmaster/STASHmaster_A",
         0
         )
 
