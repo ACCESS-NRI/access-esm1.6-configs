@@ -34,15 +34,12 @@ These netCDF files contain snapshots of the model state while `ocean_solo.res` i
 The ice restart directory contains the following files:
 
 ```
-cice_in.nml iced.2145-01-01-00000.nc  ice.restart_file  mice.nc
+iced.2145-01-01-00000.nc  ice.restart_file  mice.nc
 ```
 
 The `iced.YYYY-MM-DD-00000.nc` holds the model state and also carries the date and time in the global attributes. `ice.restart_file` is 
 a pointer file used by CICE when finding the correct restart file to read. `mice.nc` contains ice coupling data to be sent to the ocean model
 at the beginning of the next run.
-
-!!! info
-    The `cice_in.nml` file in the restart directory is not used by the model. This file will be removed from the restart directory when [Payu](https://payu.readthedocs.io) version 1.2.1 is released.
 
 ### Coupler
 The coupler restart directory contains data sent from each component at the termination of the previous run, allowing for the submodels to restart with the same boundary conditions at the beginning of the next run.
