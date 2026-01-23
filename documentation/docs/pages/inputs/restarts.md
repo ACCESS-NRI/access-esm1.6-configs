@@ -85,7 +85,7 @@ In the `restart/ocean` directory, edit `ocean_solo.res`:
 
 Replace the date in the 3rd line, taking care to preserve the column alignment. The entries should not be zero-padded.
 
-#### Ice:
+#### Sea-ice:
 In the `restart/ice` directory:
 
 Rename the `iced.YYYY-MM-DD-00000.nc` with new date. The year, month, and day should be zero padded. 
@@ -95,7 +95,7 @@ Edit the `ice.restart` pointer file to use the new file name:
 <terminal-line>echo ./RESTART/iced.YYYY-MM-DD-00000.nc   >  ice.restart_file</terminal-line>
 </terminal-window>
 
-Replace the `year`, `nyr`, `month`, and `mday` global attributes using `nco` (in most cases, only the year will need to be changed):
+Replace the `year`, `nyr`, `month`, and `mday` global attributes using `nco` (in most cases, only the `year` and `nyr` attributes will need to be changed. These should be given the same value.):
 <terminal-window static>
 <terminal-line>module load nco</terminal-line>
 <terminal-line>ncatted -O -a year,global,o,l,<span style="color:red">YYYY</span> iced.YYYY-MM-DD-00000.nc</terminal-line>
