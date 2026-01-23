@@ -64,12 +64,12 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
         # STASH
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2025.12.19/
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/
 
     - name: ocean
       model: mom
       ncpus: 240
-      exe: mom5_access_cm 
+      exe: mom5_access_cm
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/biogeochemistry/global.1deg/2025.09.22/SFe_Hamiltonetal2020_monthly_clim.nc
