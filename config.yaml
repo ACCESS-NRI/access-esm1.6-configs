@@ -89,7 +89,7 @@ submodels:
     - name: ice
       model: cice5
       ncpus: 12
-      exe: cice_access-esm1.6_360x300_12x1_12p.exe
+      exe: cice_access_360x300_36x300.exe
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/kmt.nc
