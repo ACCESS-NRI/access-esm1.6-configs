@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "global/date_created.json",
+  "title": "date_created",
+  "description": "Date and time the file was created. Follow ISO 8601, i.e. 'YYYY-MM-DDTHH:MM:SSZ'",
+  "$comment": "",
+  "examples": [ "2025-10-07T11:10:00Z" ],
+  "type": "string",
+  "pattern": "^\\d{4}-(1[012]|0[1-9])-(3[01]|[12][0-9]|0[1-9])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]Z$"
+}

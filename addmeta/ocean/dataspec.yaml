@@ -1,0 +1,3 @@
+global:
+    # Transform oceanbgc into accepted dictionary term, otherwise use value from file regex
+    realm: "{{ 'ocnBgchem' if __file__.realm == 'oceanbgc' else __file__.realm }}" 

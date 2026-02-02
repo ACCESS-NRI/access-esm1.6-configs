@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "variable/_FillValue.json",
+  "title": "_FillValue",
+  "description": "Value assigned to portions of the variable fields that are \"missing\".",
+  "examples": [ -2147483647, -9999 ],
+  "type": "number"
+}

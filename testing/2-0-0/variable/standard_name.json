@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "variable/standard_name.json",
+  "title": "standard_name",
+  "description": "Where posisble use the CF standard_name of the variable, otherwise use a unique short phrase separated by underscores to describe the variable.",
+  "examples": [
+    "air_pressure_at_sea_level",
+    "latitude",
+    "water_potential_evaporation_flux"
+  ],
+  "type": "string"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "variable/cell_methods.json",
+  "title": "cell_methods",
+  "description": "A string comprising a list of space-separated pairs, \"name:method\", which indicate that for axis \"name\" the values representing the fields have been determined by \"method\".",
+  "examples": [
+    "time: point",
+    "time: mean (interval: 1 hour)",
+    "time: maximum (interval: 1D) time: mean (interval: 1M)"
+  ],
+  "type": "string"
+}
