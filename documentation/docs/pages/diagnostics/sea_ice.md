@@ -7686,7 +7686,7 @@ same or similar descriptions but be masked differently.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>ACCESS-ESM1.6 uses <a href="https://github.com/ACCESS-NRI/cice5/blob/62dcb7ee19f6e0a71d4b8e3e548b8cece0b930cf/drivers/access/ice_constants.F90#L22-L29">fixed densities</a> for sea ice, sea water and snow:</p>
+<p>The CICE5 configuration of ACCESS-ESM1.6 uses <a href="https://github.com/ACCESS-NRI/cice5/blob/62dcb7ee19f6e0a71d4b8e3e548b8cece0b930cf/drivers/access/ice_constants.F90#L22-L29">fixed densities</a> for sea ice, sea water and snow:</p>
 </div>
 </div>
 </div>
