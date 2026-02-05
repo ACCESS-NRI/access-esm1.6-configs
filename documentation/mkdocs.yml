@@ -63,8 +63,6 @@ plugins:
   - bibtex:
       bib_file: references.bib
       csl_file: https://raw.githubusercontent.com/citation-style-language/styles/26eccff9e537f71494a4da7b91afac1adf571dc9/apa.csl
-  - events:
-      events_dir: community_resources/events/events
 
 markdown_extensions: 
   - attr_list
@@ -108,7 +106,7 @@ nav:
         - CASA - land biogeochem.:     pages/model_components/casa.md
   - Inputs:
         - Ocean:    pages/inputs/ocean.md
-        - Sea ice:    pages/inputs/seaice.md
+        - Sea Ice: pages/inputs/sea_ice.md 
         - Atmosphere:    pages/inputs/atmosphere.md
         - Land:    pages/inputs/land.md
         - Restarts: pages/inputs/restarts.md
@@ -117,7 +115,9 @@ nav:
         - Configuration:    pages/configs_experiments/overviewconfiguration.md
         - Experiments:    pages/configs_experiments/experiments.md
 
-  - Diagnostics:        pages/diagnostics/index.md
+  - Diagnostics:        
+        - Sea Ice: pages/diagnostics/sea_ice.md #do not edit directly, change 
+          # sea_ice_source.ipynb then export as HTML and rename that file to sea_ice.md
   - Infrastructure:    
         - Architecture:          pages/infrastructure/Architecture.md
         - Building:              pages/infrastructure/Building.md
