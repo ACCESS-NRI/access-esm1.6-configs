@@ -5,11 +5,11 @@ In ACCESS-ESM1.6, the sea ice component is CICE5 [@hunke2015cice] updated from C
 
 Scientifically the sea ice model is configured the same as ESM1.5 [@Ziehn2020]. The scientific configuration is summarised as follows:
 
-- Zero-layer thermodynamics (Semtner 1976)
+- Zero-layer thermodynamics [@Semtner1976]
     - One layer of snow and one layer of ice
     - UM calculates ice surface temperature, and conductive heat flux into the sea-ice
-- Ice transport - Lipscomb (2001) and ridging – Rothrock (1975)
-- Internal Ice Stress follow EVP (Hunke and Dukowicz, 2002)
+- Ice transport [@Lipscomb2001] and ridging [@Rothrock1975]
+- Internal Ice Stress follow EVP [@Hunke2002]
 
 There are significant improvements to diagnostics to support CMIP style diagnostics [@notz_cmip6_2016][@egusphere-2025-3083] natively and error handling.
 
