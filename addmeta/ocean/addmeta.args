@@ -5,8 +5,8 @@
 # Common global metadata
 -m=../dataspec.yaml
 # Ocean model specific global metadata
---datavar='realm=atmosphere'
+--datavar="realm=ocean"
 # Extract frequency from filename
---fnregex=.*_(?P<freq>[a-z]{3})\.nc
+--fnregex=(ocean|oceanbgc)-.d-(?P<var>(.*))-(?P<freq>(1monthly|1yearly))-(mean|max|ym).*\.nc
 # Files to process
-${PAYU_CURRENT_OUTPUT_DIR}/atmosphere/aiihca.p*.nc
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/*.nc
