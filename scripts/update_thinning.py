@@ -48,7 +48,7 @@ if __name__ == "__main__":
         um_file,
         "WOOD THINNING",
         thinning_file,
-        "fractions",
+        "fraction",
         tmp.name,
         t_index
         )
