@@ -1,5 +1,5 @@
 # Reuse some experiment level metadata as template variables
--d=../metadata.yaml
+-d=../../metadata.yaml
 # Use environment data as template variables
 -d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
 # Common global metadata
