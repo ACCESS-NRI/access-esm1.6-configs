@@ -6,7 +6,7 @@
 -m=../dataspec.yaml
 # Ocean model specific global metadata
 --datavar=realm=ocean
-# Extract frequency from filename
---fnregex=(ocean|oceanbgc)-.d-(?P<var>(.*))-(?P<freq>(1monthly|1yearly))-(mean|max|ym).*\.nc
+# Extract variable name, and frequency from filename
+--fnregex=ocean-.d-(?P<var>(.*))-(?P<freq>\d)(?P<frequnit>(hourly|daily|monthly|yearly))-(mean|snap)-ym_\d{4}_\d{2}\.nc
 # Files to process
-${PAYU_CURRENT_OUTPUT_DIR}/ocean/*.nc
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-*.nc
