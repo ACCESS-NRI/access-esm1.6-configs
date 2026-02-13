@@ -22,9 +22,10 @@ which addmeta
 
 # Clean up global metatdata to meet ACCESS-NRI dataspec standards
 # https://access-output-data-specifications--2.org.readthedocs.build/en/2/
-addmeta -v -c ocean/addmeta.args
-addmeta -v -c atmosphere/addmeta.args
-addmeta -v -c ice/addmeta.args
+addmeta -v -c addmeta/ocean/addmeta.args
+addmeta -v -c addmeta/atmosphere/addmeta_monthly.args
+addmeta -v -c addmeta/atmosphere/addmeta_daily.args
+addmeta -v -c addmeta/ice/addmeta.args
 
 # Validate
 # validatemeta -v -s testing/2-0-0/2-0-0.json ${PAYU_CURRENT_OUTPUT_DIR}/{ocean,ice,atmosphere/netCDF}/*.nc
