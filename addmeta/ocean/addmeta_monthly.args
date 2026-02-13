@@ -10,6 +10,7 @@
 --datavar=realm=ocean
 --datavar=frequnit=mon
 # Extract variable name, and frequency from filename
---fnregex=ocean-\dd-(?P<var>(.*))-(?P<freq>\d)monthly-.*-ym_\d{4}_\d{2}\.nc
+--fnregex=(?P<realm>(ocean|oceanbgc))-(scalar|\dd-(?P<var>(.*)))-(?P<freq>\d)monthly-(.*-)?ym_\d{4}_\d{2}\.nc
 # Files to process
-${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-?d-*monthly*.nc
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-scalar-*.nc
+# ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-?d-*monthly*.nc
