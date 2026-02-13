@@ -4,9 +4,8 @@
 -d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
 # Common global metadata
 -m=../dataspec.yaml
-# Ocean model specific global metadata
---datavar="realm=atmosphere"
-# Extract frequency from filename
---fnregex=.*_(?P<freq>[a-z]{3})\.nc
+# Set realm and frequency
+--datavar=realm=atmosphere
+--datavar=frequency=1daily
 # Files to process
-${PAYU_CURRENT_OUTPUT_DIR}/atmosphere/netCDF/aiihca.p*.nc
+${PAYU_CURRENT_OUTPUT_DIR}/atmosphere/netCDF/aiihca.p*_dai.nc
