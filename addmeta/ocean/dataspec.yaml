@@ -1,0 +1,4 @@
+global:
+    # The number of the frequency is derived from the filename, and the base unit is hard-coded
+    # for each frequency group
+    frequency: "{{ __file__.freq ~ __argdata__.frequnit }}" 
