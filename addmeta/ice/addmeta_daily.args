@@ -4,9 +4,8 @@
 -d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
 # Common global metadata
 -m=../dataspec.yaml
-# Ocean model specific global metadata
+# Specify realm and frequency
 =-datavar=realm=seaIce
-# Extract frequency from filename
---fnregex=.*iceh-(?P<freq>.+)-mean_.*\.nc
+=-datavar=frequency=1day
 # Files to process
-${PAYU_CURRENT_OUTPUT_DIR}/ice/*.nc
+${PAYU_CURRENT_OUTPUT_DIR}/ice/iceh-1daily-*.nc
