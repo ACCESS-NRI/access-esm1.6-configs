@@ -77,11 +77,11 @@ global_defaults:
     file_name_separator: "-"  # used to separate filename components; best not to use "_" to avoid confusion with fields and dates
     file_name_omit_empty: true  # whether to omit empty filename components to avoid duplicate file_name_separator
     file_name_substitutions:  # string replacements for filename components
-        years: yearly
-        months: monthly
-        days: daily
-        hours: hourly
-        none: snap  # careful! will apply to both reduction_method and regional_section
+        years: yr
+        months: mon
+        days: day
+        hours: hr
+        none: fx  # careful! will apply to both reduction_method and regional_section
         'False': snap
         average: mean
         'True': mean
