@@ -1,0 +1,13 @@
+# Reuse some experiment level metadata as template variables
+-d=../metadata.yaml
+# Use environment data as template variables
+-d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
+# Common global metadata
+-m=../dataspec.yaml
+# Set realm and frequency unit
+--datavar=realm=ocean
+--datavar=frequnit=day
+# Extract variable name, and frequency from filename
+--fnregex=ocean-\dd-(?P<var>(.*))-(?P<freq>\d)daily-(mean|snap)-ym_\d{4}_\d{2}\.nc
+# Files to process
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-?d-*daily*.nc

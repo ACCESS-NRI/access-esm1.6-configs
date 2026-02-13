@@ -1,0 +1,13 @@
+# Reuse some experiment level metadata as template variables
+-d=../metadata.yaml
+# Use environment data as template variables
+-d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
+# Common global metadata
+-m=../dataspec.yaml
+# Set realm and frequency unit
+--datavar=realm=ocean
+--datavar=frequnit=fx
+# Match variable name in filename
+--fnregex=ocean-\dd-(?P<var>([a-z_]+))\.nc
+# Files to process: excludes all files with a digit as last character
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-?d-*[^0-9].nc
