@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "global/realm.json",
+  "title": "realm",
+  "description": "Realm where the data variable is defined",
+  "examples": [ "atmos", "landIce" ],
+  "type": "string",
+  "enum": [
+    "aerosol",
+    "atmos",
+    "atmosChem",
+    "land",
+    "landIce",
+    "none",
+    "ocean",
+    "ocnBgchem",
+    "seaIce",
+    "unknown"
+  ]
+}

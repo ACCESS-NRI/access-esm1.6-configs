@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "global/variable_id.json",
+  "title": "variable_id",
+  "description": "A list of short variable names, separated by commas, for the data variable/s that appear in this file. These names should match the netCDF variable names.",
+  "examples": [ "huss", "uas,vas" ],
+  "type": "string"
+}

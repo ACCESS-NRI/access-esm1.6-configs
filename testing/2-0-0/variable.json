@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "variable.json",
+  "title": "Output variable",
+  "description": "A coordinate or data output variable",
+  "type": "object",
+  "properties": {
+    "_FillValue": {
+      "$ref": "variable/_FillValue.json"
+    },
+    "cell_methods": {
+      "$ref": "variable/cell_methods.json"
+    },
+    "long_name": {
+      "$ref": "variable/long_name.json"
+    },
+    "standard_name": {
+      "$ref": "variable/standard_name.json"
+    },
+    "units": {
+      "$ref": "variable/units.json"
+    }
+  }
+}

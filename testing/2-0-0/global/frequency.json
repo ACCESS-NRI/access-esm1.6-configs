@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "global/frequency.json",
+  "title": "frequency",
+  "description": "Sampling frequency of the data",
+  "examples": [ "12hr", "1day", "1yr" ],
+  "type": "string",
+  "oneOf": [
+    {
+      "pattern": "^fx$"
+    },
+    {
+      "pattern": "^subhr$"
+    },
+    {
+      "pattern": "^\\d+min$"
+    },
+    {
+      "pattern": "^\\d+hr$"
+    },
+    {
+      "pattern": "^\\d+day$"
+    },
+    {
+      "pattern": "^\\d+mon$"
+    },
+    {
+      "pattern": "^\\d+yr$"
+    },
+    {
+      "pattern": "^\\d+dec$"
+    }
+  ]
+}
