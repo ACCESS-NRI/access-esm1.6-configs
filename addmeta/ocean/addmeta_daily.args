@@ -12,4 +12,4 @@
 # Extract variable name, and frequency from filename
 --fnregex=(?P<realm>(ocean|oceanbgc))-(scalar|\dd-(?P<var>(.*)))-(?P<freq>\d)daily-(.*-)?ym_\d{4}_\d{2}\.nc
 # Files to process
-${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-?d-*daily*.nc
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-*daily*.nc
