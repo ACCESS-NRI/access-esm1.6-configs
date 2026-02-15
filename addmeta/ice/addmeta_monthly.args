@@ -1,11 +1,13 @@
 # Reuse some experiment level metadata as template variables
--d=../metadata.yaml
+-d=../../metadata.yaml
 # Use environment data as template variables
 -d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
 # Common global metadata
 -m=../dataspec.yaml
+# Icea only metadata
+-m=dataspec.yaml
 # Specify realm and frequency
-=-datavar=realm=seaIce
-=-datavar=frequency=1mon
+--datavar=realm=seaIce
+--datavar=freq=1mon
 # Files to process
 ${PAYU_CURRENT_OUTPUT_DIR}/ice/iceh-1monthly-*.nc

@@ -1,11 +1,13 @@
 # Reuse some experiment level metadata as template variables
--d=../metadata.yaml
+-d=../../metadata.yaml
 # Use environment data as template variables
 -d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
 # Common global metadata
 -m=../dataspec.yaml
+# Atmospere specific metadata
+-m=dataspec.yaml
 # Set realm and frequency
---datavar=realm=atmosphere
---datavar=frequency=1daily
+--datavar=realm=atmos
+--datavar=freq=1day
 # Files to process
 ${PAYU_CURRENT_OUTPUT_DIR}/atmosphere/netCDF/aiihca.p*_dai.nc
