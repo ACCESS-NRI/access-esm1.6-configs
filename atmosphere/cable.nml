@@ -45,7 +45,7 @@
   l_luc = .FALSE.
   l_thinforest = .FALSE. 
   l_casacnp = .TRUE. ! redundant? actually controlled by icycle
-  icycle = 3 ! Controls whether CASA-CNP is run and for which species
+  icycle = 2 ! Controls whether CASA-CNP is run and for which species
              ! Choices are:
              ! 0 CASA-CNP not run
              ! 1 Carbon only
