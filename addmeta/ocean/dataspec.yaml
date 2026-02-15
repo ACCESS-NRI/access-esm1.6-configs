@@ -1,6 +1,3 @@
 global:
-    # The number of the frequency is derived from the filename, and the base unit is hard-coded
-    # for each frequency group
-    frequency: "{{ __file__.freq ~ __argdata__.frequnit }}" 
     # Transform oceanbgc into accepted dictionary term, otherwise use value from file regex
     realm: "{{ 'ocnBgchem' if __file__.realm == 'oceanbgc' else __file__.realm }}" 

@@ -6,10 +6,7 @@
 -m=../dataspec.yaml
 # Ocean only metadata
 -m=dataspec.yaml
-# Set realm and frequency unit
---datavar=realm=ocean
---datavar=frequnit=day
 # Extract variable name, and frequency from filename
---fnregex=(?P<realm>(ocean|oceanbgc))-(scalar|\dd-(?P<var>(.*)))-(?P<freq>\d)daily-(.*-)?ym_\d{4}_\d{2}\.nc
-# Files to process
-${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-*daily*.nc
+--fnregex=(?P<realm>(ocean|oceanbgc))-(scalar|\dd-(?P<var>(.*)))-(?P<freq>\d[a-z]{2,3})-(.*-)?ym_\d{4}_\d{2}\.nc
+# Files to process (omit any of the fixed files)
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean*[0-9][0-9].nc

@@ -8,8 +8,8 @@
 --datavar=realm=ocean
 --datavar=frequnit=fx
 # Match variable name in filename
---fnregex=ocean-\dd-(?P<var>([a-z_]+))\.nc
-# Files to process: excludes all files with a digit as last character
+--fnregex=ocean-\dd-(?P<var>.*)\.nc
+# Files to process:
 ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-area*.nc
 ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-geo*_?.nc
 ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-h?.nc
@@ -17,3 +17,4 @@ ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-km?.nc
 ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-roughness_*.nc
 ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-tide_*.nc
 ${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-visc_crit_bih.nc
+${PAYU_CURRENT_OUTPUT_DIR}/ocean/ocean-2d-pbot0.nc
