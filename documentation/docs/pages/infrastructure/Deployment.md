@@ -1,18 +1,15 @@
 # Deployment
 
-All released versions of ACCESS-ESM1.6 come with a pre-deployed build on _Gadi_. Deployed builds are stored under the project `vk83` (hence requiring [membership to this project](https://my.nci.org.au/mancini/project/vk83/join) for access). You can see all deployed builds via:
+All released versions of ACCESS-ESM1.6 configurations come with a pre-deployed build on _Gadi_. Deployed builds are stored under the project `vk83`. You can see all deployed builds via:
 
 ```bash
 module use /g/data/vk83/modules
 module avail access-esm1p6
 ```
 
-There are development releases (identified with a `dev_` prefix to the date tag) and full releases (identified with only a date tag). We recommend new users start with the newest full release (i.e., with the most recent date tag). 
+There are development releases (identified with a `dev_` prefix to the date tag) and full releases (identified with only a date tag). Up-to-date configurations use the latest full released build. 
 
-These builds are optimised for the Sapphire-Rapid hardware from Intel (i.e., the *normalsr* queue), and may not run on Cascade-Lake (i.e., the *normal* queue) or older hardware.
-
-The ACCESS-ESM1.6 model configurations released by ACCESS-NRI are setup to use the proper model release and will be updated when necessary.
-
+These builds are only tested on the Sapphire-Rapid hardware from Intel (i.e., the *normalsr* queue), and may not run on Cascade-Lake (i.e., the *normal* queue) or older hardware.
 
 ## Release information
 
