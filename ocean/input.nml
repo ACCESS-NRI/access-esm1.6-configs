@@ -212,6 +212,7 @@
       cmip_units=.true.
       debug=.false.
       do_wave=.true.
+      impose_init_from_restart=.true.
 /
 
 &mpp_io_nml
