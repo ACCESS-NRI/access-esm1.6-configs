@@ -19,7 +19,7 @@ laboratory: access-esm
 jobname: historical
 queue: normalsr
 walltime: 2:30:00
-jobfs: 1500MB
+jobfs: 15GB
 
 platform:
   nodesize: 104
@@ -30,7 +30,7 @@ modules:
   use:
       - /g/data/vk83/modules
   load:
-      - access-esm1p6/2025.12.000
+      - access-esm1p6/2026.02.000
 
 # Model configuration
 model: access-esm1.6
@@ -54,13 +54,14 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/forcing/global.N96/2021.06.22/ozone_1849_2015_ESM1.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.12.01/volcts_cmip7.dat
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical-emissions/atmosphere/forcing/global.N96/2026.01.07/CO2_fluxes_1849_2023_cmip7.anc
         # Land
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2025.12.19/Ndep_1849_2023_cmip7.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.11.18/pftlookup_cable3_OctB_update.csv
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
         # Spectral
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
@@ -93,7 +94,7 @@ submodels:
     - name: ice
       model: cice5
       ncpus: 12
-      exe: cice_access-esm1.6_360x300_12x1_12p.exe
+      exe: cice_access_360x300_30x300.exe
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/kmt.nc
@@ -122,7 +123,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/restart/2025.12.22
+restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/restart/2026.02.23
 
 # Timing controls
 calendar:
