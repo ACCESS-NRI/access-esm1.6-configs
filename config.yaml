@@ -58,7 +58,7 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.11.18/pftlookup_cable3_OctB_update.csv
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
         # Spectral
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
@@ -66,12 +66,12 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
         - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
         # STASH
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2025.12.19/
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/
 
     - name: ocean
       model: mom
       ncpus: 240
-      exe: mom5_access_cm 
+      exe: mom5_access_cm
       input:
         # Biogeochemistry
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/biogeochemistry/global.1deg/2025.09.22/SFe_Hamiltonetal2020_monthly_clim.nc
@@ -91,7 +91,7 @@ submodels:
     - name: ice
       model: cice5
       ncpus: 12
-      exe: cice_access-esm1.6_360x300_12x1_12p.exe
+      exe: cice_access_360x300_30x300.exe
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/kmt.nc
