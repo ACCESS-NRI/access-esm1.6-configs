@@ -1,6 +1,6 @@
 # Build infrastructure
 
-Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. Check the [Deployment page](/infrastructure/Deployment.md) to learn about available deployments. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this Building page.
+Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. Check the [Deployment page](/infrastructure/Deployment/) to learn about available deployments. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this Building page.  
 
 !!! info
 
@@ -31,7 +31,7 @@ ACCESS-ESM1.6 being a Earth System model, it is constituted of several model com
 
 !!! note
 
-    ACCESS-ESM1.6 has other dependencies such as Fortran compilers, netCDF and more. These are not listed above as they are more generic tools that we never modify. The build infrastructure we provide will find these dependencies for you.
+    ACCESS-ESM1.6 has other dependencies such as Fortran compilers, netCDF and more. These dependencies are considered model infrastructure and are rarely changed by end-users. The build infrastructure we provide will find these dependencies for you.  
 
 ## Building ACCESS-ESM1.6 using the deployment infrastructure
 

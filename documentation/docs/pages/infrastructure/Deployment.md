@@ -7,17 +7,18 @@ module use /g/data/vk83/modules
 module avail access-esm1p6
 ```
 
-There are development releases (identified with a `dev_` prefix to the date tag) and full releases (identified with only a date tag). Up-to-date configurations use the latest full released build. 
+There are builds deployed for development only (identified with a `dev_` prefix to the date tag) and released deployments (identified with only a date tag). Up-to-date model configurations use the latest full released build. 
 
-These builds are only tested on the Sapphire-Rapid hardware from Intel (i.e., the *normalsr* queue), and may not run on Cascade-Lake (i.e., the *normal* queue) or older hardware.
+These deployments are optimised for the Sapphire-Rapid hardware from Intel (i.e., the *normalsr* queue), and will run slower on Cascade-Lake (i.e., the *normal* queue). In general, these deployments won't run on other NCI hardware.  
+
 
 ## Release information
 
 The deployment process creates a GitHub release with the same tag as the deployed module. All releases are available under the [Releases page](https://github.com/ACCESS-NRI/ACCESS-ESM1.6/releases). Each release has a changelog and meta-data with detailed information about the build and deployment, including:
 
-- paths on Gadi to all executables built in the deployment process (spack.location)
-- a spack.lock file, which is a complete build provenance document, listing all the components that were built and their dependencies, versions, compiler version, build flags and build architecture
-- the environment spack.yaml file used for deployment
+- paths on Gadi to all executables built in the deployment process (_spack.location_ file)
+- a _spack.lock_ file, which is a complete build provenance document, listing all the components that were built and their dependencies, versions, compiler version, build flags and build architecture
+- the environment file _spack.yaml_ used for the deployment
 
 ## Deployment process
 
