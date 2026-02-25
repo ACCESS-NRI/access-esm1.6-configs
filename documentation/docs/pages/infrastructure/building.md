@@ -1,6 +1,6 @@
 # Build infrastructure
 
-Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. Check the [Deployment page](/infrastructure/Deployment/) to learn about available deployments. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this Building page.  
+Most users of ACCESS-ESM1.6 will not need to build the model. Released versions of the model are deployed by ACCESS-NRI to Gadi and available to users. Check the [Deployment page](/infrastructure/deployment/) to learn about available deployments. If you require your own build of the model, typically because you need to modify one or several model components, you will find the required information on this Building page.  
 
 !!! info
 
