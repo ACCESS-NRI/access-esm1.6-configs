@@ -22,6 +22,6 @@ The deployment process creates a GitHub release with the same tag as the deploye
 
 ## Deployment process
 
-The deployment is managed via GitHub Actions that are triggered when a new version of the spack.yaml file is committed to the `main` branch or a dedicated `backport/VERSION` branch of the [ACCESS-NRI/ACCESS-ESM1.6](https://github.com/ACCESS-NRI/ACCESS-ESM1.6) repository. Refer to the [Building page](/infrastructure/building) for information on creating new model build versions.
+The deployment is managed via GitHub Actions that are triggered when a new version of the spack.yaml file is committed to the `main` branch or a dedicated `backport/VERSION` branch of the [ACCESS-NRI/ACCESS-ESM1.6](https://github.com/ACCESS-NRI/ACCESS-ESM1.6) repository. Refer to the [Building page](/infrastructure/Building) for information on creating new model build versions.
 
 No manual deployments will be accepted.
