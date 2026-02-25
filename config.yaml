@@ -118,7 +118,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial/restart/2026.02.20
+restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/pre-industrial+CN/restart/2026.02.20
 
 # Timing controls
 calendar:
@@ -137,7 +137,6 @@ manifest:
   reproduce:
     exe: true
     input: true
-
 
 stacksize: unlimited
 qsub_flags: -W umask=027
