@@ -10,7 +10,39 @@ site_url: !ENV READTHEDOCS_CANONICAL_URL
 repo_url: https://github.com/ACCESS-NRI/access-esm1.6-configs
 repo_name: ACCESS-NRI/access-esm1.6-configs
 edit_uri: blob/main/documentation/docs/ #hopefully will fix the edit button from 404'ing, https://github.com/mkdocs/mkdocs/issues/2416
- 
+
+# Navigation
+nav:
+  - Home:                            pages/index.md
+  - Contributing:          
+        - Contributing overview:     pages/contributing/index.md   
+  - Model Components:
+        - MOM - Ocean:      pages/model_components/mom.md
+        - WOMBAT - Ocean Biogeochem.:   pages/model_components/wombat.md
+        - CICE - Sea Ice:     pages/model_components/cice.md
+        - UM - Atmosphere:       pages/model_components/um.md
+        - CABLE - Land:    pages/model_components/cable.md
+        - CASA - Land Biogeochem.:     pages/model_components/casa.md
+  - Inputs:
+        - Ocean:    pages/inputs/ocean.md
+        - Sea ice:    pages/inputs/seaice.md
+        - Atmosphere:    pages/inputs/atmosphere.md
+        - Land:    pages/inputs/land.md
+        - Restarts: pages/inputs/restarts.md
+
+  - Configurations and Experiments:
+        - Configuration:    pages/configs_experiments/overviewconfiguration.md
+        - Experiments:    pages/configs_experiments/experiments.md
+
+  - Diagnostics: 
+        - Sea Ice: pages/diagnostics/sea_ice.md #do not edit directly, change 
+          # sea_ice_source.ipynb then export as HTML and rename that file to sea_ice.md
+  - Infrastructure:    
+        - Architecture:  pages/infrastructure/architecture.md
+        - Deployment:    pages/infrastructure/deployment.md
+        - Building:      pages/infrastructure/building.md
+        - Git practices: pages/infrastructure/git-practices.md
+
 # Theme
 theme:
   name: material
@@ -91,37 +123,6 @@ markdown_extensions:
   - toc:
       title: On this page
       permalink: true
-
-# Navigation
-nav:
-  - Home:                            pages/index.md
-  - Contributing:          
-        - Contributing overview:     pages/contributing/index.md   
-  - Model Components:
-        - MOM - Ocean:      pages/model_components/mom.md
-        - WOMBAT - Ocean Biogeochem.:   pages/model_components/wombat.md
-        - CICE - Sea Ice:     pages/model_components/cice.md
-        - UM - Atmosphere:       pages/model_components/um.md
-        - CABLE - Land:    pages/model_components/cable.md
-        - CASA - Land Biogeochem.:     pages/model_components/casa.md
-  - Inputs:
-        - Ocean:    pages/inputs/ocean.md
-        - Sea Ice: pages/inputs/sea_ice.md 
-        - Atmosphere:    pages/inputs/atmosphere.md
-        - Land:    pages/inputs/land.md
-        - Restarts: pages/inputs/restarts.md
-
-  - Configurations and Experiments:
-        - Configuration:    pages/configs_experiments/overviewconfiguration.md
-        - Experiments:    pages/configs_experiments/experiments.md
-
-  - Diagnostics:        
-        - Sea Ice: pages/diagnostics/sea_ice.md #do not edit directly, change 
-          # sea_ice_source.ipynb then export as HTML and rename that file to sea_ice.md
-  - Infrastructure:    
-        - Architecture:          pages/infrastructure/Architecture.md
-        - Building:              pages/infrastructure/Building.md
-        - Git practices:         pages/infrastructure/Git-practices.md
 
 # Footer
 extra:
