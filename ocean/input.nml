@@ -218,6 +218,7 @@
 &mpp_io_nml
     deflate_level     = 4
     shuffle           = 1
+    cf_compliance=.true.
 /
 
  &ocean_momentum_source_nml
