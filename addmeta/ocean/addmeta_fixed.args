@@ -6,7 +6,7 @@
 -m=../dataspec.yaml
 # Set realm and frequency unit
 --datavar=realm=ocean
---datavar=frequnit=fx
+--datavar=freq=fx
 # Match variable name in filename
 --fnregex=ocean-\dd-(?P<var>.*)\.nc
 # Files to process:
