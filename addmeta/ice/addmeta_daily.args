@@ -4,7 +4,7 @@
 -d=${PAYU_CURRENT_OUTPUT_DIR}/env.yaml
 # Common global metadata
 -m=../dataspec.yaml
-# Icea only metadata
+# Ice only metadata
 -m=dataspec.yaml
 # Specify realm and frequency
 --datavar=realm=seaIce
