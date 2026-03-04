@@ -24,7 +24,7 @@ esm1p5_convert_nc $PAYU_CURRENT_OUTPUT_DIR --delete-ff
 # https://access-output-data-specifications--2.org.readthedocs.build/en/2/
 for cmdfile in addmeta/{ocean,ice,atmosphere}/addmeta*.args
 do
-  addmeta -v -c ${cmdfile}
+  addmeta -v -s -c ${cmdfile}
 done
 
 # Validate
