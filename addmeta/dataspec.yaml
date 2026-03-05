@@ -15,7 +15,6 @@ global:
     id: "{{ metadata.experiment_uuid }}"
     title: "{{ metadata.name }}"
     model_version: "{{ metadata.version }}"
-    experiment_url: "{{ metadata.url }}"
+    experiment_repo: "{{ metadata.url }}"
     grid: "access-1deg-global"
-    naming_authority: "au.org.access-nri"
     realm: "{{ __argdata__.realm }}"
