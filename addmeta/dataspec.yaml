@@ -7,7 +7,7 @@ global:
     date_created: "{{ __file__.mtime }}"
     date_metadata_modified: "{{ __datetime__.now }}"
     frequency: "{{ __file__.freq if __file__.freq is defined else 'fx'}}" 
-    licence: "{{ metadata.license }}"
+    license: "{{ metadata.license }}"
     run_id: "{{ env.PAYU_RUN_ID }}"
     variable_id: "{{ __file__.var if __file__.var is defined }}" 
     model: "{{ metadata.model }}"
