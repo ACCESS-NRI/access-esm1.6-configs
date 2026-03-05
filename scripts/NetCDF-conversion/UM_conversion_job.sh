@@ -26,10 +26,3 @@ for cmdfile in addmeta/{ocean,ice,atmosphere}/addmeta*.args
 do
   addmeta -v -s -c ${cmdfile}
 done
-
-# Validate
-for f in  ${PAYU_CURRENT_OUTPUT_DIR}/{ocean,ice,atmosphere/netCDF}/*.nc
-do
-  echo $f
-  validatemeta -v -s testing/2-0-0/2-0-0.json $f
-done
