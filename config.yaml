@@ -25,6 +25,12 @@ platform:
   nodesize: 104
   nodemem: 512
 
+storage:
+  gdata:
+    - access
+  scratch:
+    - p66
+
 # Modules for loading model executables
 modules:
   use:
@@ -123,7 +129,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/restart/2026.02.23
+restart: /scratch/p66/txz599/access-esm/archive/pi-esm-01-expt-2c021aa7/restart100
 
 # Timing controls
 calendar:
@@ -163,6 +169,7 @@ sync:
 
 userscripts:
     # Apply land use changes after each run
-    run: ./scripts/update_landuse_driver.sh
+    run: ./scripts/restart_1850_cleanup.sh && ./scripts/update_landuse_driver.sh
+    setup: ./scripts/set_restart_1850.sh
 
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
