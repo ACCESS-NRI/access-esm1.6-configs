@@ -162,6 +162,7 @@ sync:
 #  manually run `payu sync` from the command line.
 
 userscripts:
+    setup: ./scripts/initial_hist_restart.sh 
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 
