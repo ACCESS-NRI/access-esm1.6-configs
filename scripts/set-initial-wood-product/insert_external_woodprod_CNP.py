@@ -36,6 +36,12 @@ def parse_args():
         help="Path to external wood product netCDF"
     )
     parser.add_argument(
+        "--output",
+        required=True,
+        help="Path to write output UM restart file to"
+    )
+
+    parser.add_argument(
         "--stash-base",
         required=True,
         help="Path to base STASHMaster_A file"
@@ -66,13 +72,12 @@ if __name__ == "__main__":
     external_nc_path = args.woodfile
     stashmaster_base_path = args.stash_base
     stashmaster_ext_path = args.stash_prefix
-
-
+    output_path = args.output
 
     print("Starting UM restart file modification...")
     # Load UM restart file
     ff = mule.FieldsFile.from_file(restart_path)
-    
+
     print("Loading STASHmaster base file")
     # Load and attach STASHmaster files
     stash_base = mule.STASHmaster.from_file(stashmaster_base_path)
@@ -82,11 +87,11 @@ if __name__ == "__main__":
     stash_base.update(stash_ext)
     print("Attaching STASHmaster info")
     ff.attach_stashmaster_info(stash_base.by_section(0))  # Section 0 = prognostic
-    
+
     print("Loading external netcdf data")
     # Load external NetCDF data
     external_nc = xr.open_dataset(external_nc_path)
-    
+
     # Mapping of restart/STASH field names to external netcdf file variable names 
     var_targets = {"WOOD HARVEST CARBON3(CASA-CNP)": "wood_product_c",
             "WOOD HARVEST NITROG3(CASA-CNP)": "wood_product_n",
@@ -103,12 +108,12 @@ if __name__ == "__main__":
             if f.stash and f.stash.name and target_name in f.stash.name:
                 stash_code = f.lbuser4
                 break
-        
+
         if stash_code is None:
             raise RuntimeError(f"Couldn't find any field named like {target_name}")
-        
+
         print("Using stash_code from file:", stash_code)
-        
+
         # 2) now update all matching tiles
         for pft_index in range(external_data.shape[2]):
             data_slice = external_data[:, :, pft_index]
@@ -121,11 +126,8 @@ if __name__ == "__main__":
                 print("No matching field for tile", pft_index + 1)
 
     # Save modified restart
-    print(f"\nSaving modified restart file to: {restart_path}")
+    print(f"\nSaving modified restart file to: {output_path}")
     ff.to_file = to_file
 
-    temp = tempfile.NamedTemporaryFile()
-    ff.to_file(ff, temp.name)
-    os.unlink(restart_path)
-    shutil.copy(temp.name, restart_path)
-    print(f"Modified restart file written to '{restart_path}'")
+    ff.to_file(ff, output_path)
+    print(f"Modified restart file written to '{output_path}'")
