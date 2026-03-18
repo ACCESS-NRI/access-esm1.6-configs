@@ -1,0 +1,19 @@
+variables:
+  time:
+    axis: "T"
+    bounds: "time_bounds"
+    calendar: "proleptic_gregorian"
+    calendar_type:
+    long_name: "time"
+    standard_name: "time"
+
+  # time_bounds should have no attributes
+  # these are known attrs that should be removed
+  time_bounds:
+    axis:
+    calendar:
+    long_name:
+    standard_name:
+    units:
+    missing_value:
+    _FillValue:
