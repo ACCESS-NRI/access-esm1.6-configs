@@ -163,8 +163,9 @@ sync:
 #  manually run `payu sync` from the command line.
 
 userscripts:
-    # Apply thinning before each run
-    setup: ./scripts/update_thinning_driver.sh
+    # Setup the initial restart: Set its year to 1850 and insert the initial wood product.
+    # Apply thinning at the start of each run.
+    setup: ./scripts/initial_hist_restart.sh && ./scripts/update_thinning_driver.sh
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 
