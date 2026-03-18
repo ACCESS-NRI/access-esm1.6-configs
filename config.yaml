@@ -162,8 +162,8 @@ sync:
 #  manually run `payu sync` from the command line.
 
 userscripts:
-    setup: ./scripts/initial_hist_restart.sh 
+    setup: ./scripts/set_restart_1850.sh && ./scripts/initial_wood_product.sh
     # Apply land use changes after each run
-    run: ./scripts/update_landuse_driver.sh
+    run: ./scripts/restart_1850_cleanup.sh && ./scripts/update_landuse_driver.sh
 
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
