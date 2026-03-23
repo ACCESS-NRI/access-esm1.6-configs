@@ -127,3 +127,11 @@ Update the payu configuration file, `config.yaml`, with the path to the new rest
 ```yaml
 restart: <path_to_new_restarts>
 ```
+
+### Changing the land cover
+
+The land surface is characterised by land cover types- each grid cell comprises of multiple "tiles" of different land cover types, each occupying a percentage of the grid cell. There are many reasons one may want to change the land cover e.g. reduce ice coverage, change forest distributions or modifying farming patterns. The land cover has the stash code 216, named "FRACTIONS OF SURFACE TYPES". Unfortunately, to effectively change the land cover requires more than only changing this field, due to way the CABLE land model handles tiles.
+
+CABLE models each tile on a grid cell completely independently- different tiles on a single grid cell *have absolutely no direct influence on each other* (but do indirectly due to their influence on the local climate). CABLE does not model all tiles on every single grid cell, only the tiles that have a fraction greater than zero are modeled. This means that the state variables e.g. soil moisture content, snow depth, carbon stocks on inactive tiles do not contain any meaningful data, and are typically set to 0.0.
+
+To address this, use the [adjust_restart_for_new_land_cover](https://github.com/ACCESS-NRI/esm1.6-scripts/tree/main/adjust_restart_for_new_land_cover) tool. Supply the restart file to adjust and the new land cover dataset in `run_adjust_restart.sh`, run the job, and update the payu configuration to use the generated restart. See the linked documentation for a detailed explanation of the tool.
