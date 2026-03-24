@@ -7,7 +7,7 @@
 # Atmospere specific metadata
 -m=dataspec.yaml
 # Time and time bounds attrs (atmos uses time_bnds)
--m=../time_bnds.yaml
+-m=../time.yaml
 # Set realm and frequency
 --datavar=realm=atmos
 --datavar=freq=1day

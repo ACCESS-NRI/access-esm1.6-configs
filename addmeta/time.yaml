@@ -1,3 +1,15 @@
+rename:
+  variables:
+    # ice files use "time_bounds", rename to "time_bnds"
+    time_bounds: time_bnds
+    # ocean files have second "time_bnds" dimension as a variable too
+    nv: bnds
+  dimensions:
+    # ice files use "d2" as the second dimension for "time_bnds"
+    d2: bnds
+    # ocean files use "nv" as the second dimension for "time_bnds"
+    nv: bnds
+
 variables:
   time:
     axis: "T"
