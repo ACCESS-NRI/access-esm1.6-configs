@@ -6,7 +6,7 @@
 -m=../dataspec.yaml
 # Ocean only metadata
 -m=dataspec.yaml
-# Time and time bounds attrs (ocean uses time_bnds)
+# Time and time bounds attrs
 -m=../time.yaml
 # Extract variable name, and frequency from filename
 --fnregex=(?P<realm>(ocean|oceanbgc))-(scalar|\dd-(?P<var>(.*)))-(?P<freq>\d[a-z]{2,3})-(.*-)?ym_\d{4}_\d{2}\.nc
