@@ -6,8 +6,6 @@
 -m=../dataspec.yaml
 # Ice only metadata
 -m=dataspec.yaml
-# Time and time bounds attrs
--m=../time.yaml
 # Specify realm and frequency
 --datavar=realm=seaIce
 --datavar=freq=1mon
