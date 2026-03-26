@@ -2,12 +2,8 @@
     histfreq       = 'd','m','x','x','x'
     histfreq_n     = 1, 1, 1, 1, 1
     hist_avg       = .true.
+    hist_file_freq = 'm','m','m','x','x'
 /
-
-! Please note, the following diagnostics are affected by
-! issues in ACCESS ESM1.5 and have been disabled from the output:
-! fsalt_ai, daidtd, daidtt, dvidtd, congel, frazil, meltl, meltb,
-! meltt, snoice, dvidtt, fswthru_ai, Tsfc.
 
 &icefields_nml
     f_tmask        = .true.
@@ -68,16 +64,16 @@
     f_tair         = 'x'
     f_tref         = 'x'
     f_qref         = 'x'
-    f_congel       = 'x'
-    f_frazil       = 'x'
-    f_snoice       = 'x'
-    f_meltt        = 'x'
-    f_meltb        = 'x'
-    f_meltl        = 'x'
+    f_congel       = 'm'
+    f_frazil       = 'm'
+    f_snoice       = 'm'
+    f_meltt        = 'm'
+    f_meltb        = 'm'
+    f_meltl        = 'm'
     f_fresh        = 'x'
     f_fresh_ai     = 'm'
     f_fsalt        = 'x'
-    f_fsalt_ai     = 'x'
+    f_fsalt_ai     = 'm'
     f_fhocn        = 'x'
     f_fhocn_ai     = 'm'
     f_fswthru      = 'x'
@@ -100,10 +96,10 @@
     f_shear        = 'm'
     f_sig1         = 'x'
     f_sig2         = 'x'
-    f_dvidtt       = 'x'
-    f_dvidtd       = 'x'
-    f_daidtt       = 'x'
-    f_daidtd       = 'x'
+    f_dvidtt       = 'dm'
+    f_dvidtd       = 'dm'
+    f_daidtt       = 'dm'
+    f_daidtd       = 'dm'
     f_mlt_onset    = 'm'
     f_frz_onset    = 'm'
     f_hisnap       = 'x'
