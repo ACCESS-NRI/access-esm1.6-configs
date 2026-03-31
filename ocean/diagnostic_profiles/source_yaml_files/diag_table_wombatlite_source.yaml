@@ -227,7 +227,7 @@ diag_table:
             dzt:
             temp_vdiffuse_impl:
             salt_vdiffuse_impl:
-
+            rho_dzt:
 
     'monthly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
@@ -479,5 +479,7 @@ diag_table:
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: days  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
+            sea_level:
             surface_temp:
+            surface_salt:
             squared_surface_temp:
