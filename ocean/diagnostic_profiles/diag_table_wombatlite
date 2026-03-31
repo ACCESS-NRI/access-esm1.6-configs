@@ -250,6 +250,9 @@ ACCESS-ESM_1p6
 "ocean-3d-salt_vdiffuse_impl-1mon-mean-y%4yr", 1, "months", 1, "days", "time", 1, "years"
 "ocean_model", "salt_vdiffuse_impl", "salt_vdiffuse_impl", "ocean-3d-salt_vdiffuse_impl-1mon-mean-y%4yr", "all", "average", "none", 2
 
+"ocean-3d-rho_dzt-1mon-mean-y%4yr", 1, "months", 1, "days", "time", 1, "years"
+"ocean_model", "rho_dzt", "rho_dzt", "ocean-3d-rho_dzt-1mon-mean-y%4yr", "all", "average", "none", 2
+
 
 # monthly 3d BGC fields
 
@@ -758,8 +761,14 @@ ACCESS-ESM_1p6
 
 # daily 2d ocean fields
 
+"ocean-2d-sea_level-1day-mean-y%4yr", 1, "days", 1, "days", "time", 1, "years"
+"ocean_model", "sea_level", "sea_level", "ocean-2d-sea_level-1day-mean-y%4yr", "all", "average", "none", 2
+
 "ocean-2d-surface_temp-1day-mean-y%4yr", 1, "days", 1, "days", "time", 1, "years"
 "ocean_model", "surface_temp", "surface_temp", "ocean-2d-surface_temp-1day-mean-y%4yr", "all", "average", "none", 2
+
+"ocean-2d-surface_salt-1day-mean-y%4yr", 1, "days", 1, "days", "time", 1, "years"
+"ocean_model", "surface_salt", "surface_salt", "ocean-2d-surface_salt-1day-mean-y%4yr", "all", "average", "none", 2
 
 "ocean-2d-squared_surface_temp-1day-mean-y%4yr", 1, "days", 1, "days", "time", 1, "years"
 "ocean_model", "squared_surface_temp", "squared_surface_temp", "ocean-2d-squared_surface_temp-1day-mean-y%4yr", "all", "average", "none", 2
