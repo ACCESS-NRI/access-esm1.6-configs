@@ -32,22 +32,27 @@ where release signifies this is the release branch that is tested, versioned and
 
 Some examples of possible values of the specifiers:
 
-- scenario: `historical`, `preindustrial`, `ssp126`
-- modifier: `concentration`, `interactiveC`, `noLUC`
+- scenario: `historical`, `preindustrial`, `4xCO2`,
+- modifier: `concentration`, `emissions`
 
-where scenario is typically a CMIP experiment identifier, concentration and interactiveC describe the CO2 cycling protocol, and noLUC is no land-use change.
+where scenario is typically a CMIP experiment identifier, concentration and emissions describe the CO2 cycling protocol, and noLUC is no land-use change.
 
 #### Supported configurations
 
 All available configurations are browsable under [the list of release branches](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=release-). There are currently no released configurations.
 
-
 These configurations are under active development:
+
+- [dev-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2)
+- [dev-1pctCO2-bgc](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2-bgc)
+- [dev-1pctCO2-rad](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2-rad)
+- [dev-4xCO2+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-4xCO2%2Bconcentrations)
+- [dev-amip](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-amip)
+- [dev-flat10](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-flat10)
 - [dev-preindustrial+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bconcentrations)
 - [dev-preindustrial+emissions](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bemissions)
-- [dev-4xCO2+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-4xCO2%2Bconcentrations)
-- [dev-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2)
-- [dev-amip](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-amip)
+- [dev-historical+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical%2Bconcentrations)
+- [dev-historical+emissions](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical%2Bemissions)
 
 Where changes are made, they should be applied to all these branches (where relevant) by pull requests. These comparisons can assist with understanding differences between configurations:
 
@@ -63,6 +68,18 @@ Where changes are made, they should be applied to all these branches (where rele
 ](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-1pctCO2
 )
 
+There were some configurations previously under development and have now been archived. 
+There were `+CN` only, without a phosporus cycle in the land. These are available for reference:
+
+- [archive-amip+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-amip%2BCN)
+- [archive-1pctCO2-bgc+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2-bgc%2BCN)
+- [archive-1pctCO2-rad+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2-rad%2BCN)
+- [archive-1pctCO2+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2%2BCN)
+- [archive-4xCO2+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-4xCO2%2Bconcentrations%2BCN)
+- [archive-flat10+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-flat10%2BCN)
+- [archive-historical+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-historical%2Bconcentrations%2BCN)
+- [archive-preindustrial+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bconcentrations%2BCN)
+- [archive-preindustrial+emissions+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bemissions%2BCN)
 
 
 #### How to use this repository to run a model
