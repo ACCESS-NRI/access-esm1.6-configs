@@ -28,14 +28,17 @@ Each configuration in [github.com/ACCESS-NRI/access-esm1.6-configs](https://gith
 
 `release-{scenario}[+{modifier}]`
 
-where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the base experimental design with optional modifiers. All configurations are assumed to be global extent with nominal 1 degree resolution.
+where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the base experimental design with optional modifiers. All configurations are global with nominal 1 degree resolution.
 
 Some examples of possible values of the specifiers:
 
-- scenario: `historical`, `preindustrial`, `4xCO2`,
+- scenario: `historical`, `preindustrial`, `4xCO2`
 - modifier: `concentration`, `emissions`
 
-where scenario is typically a CMIP experiment identifier, concentration and emissions describe the CO2 cycling protocol, and noLUC is no land-use change.
+where scenario is typically a CMIP experiment identifier and concentration and emissions describe the CO2 cycling protocol.
+
+These names do not exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7), we use `+concentration` modifier for concentration driven experiments (these are more similar to CMIP6 experiments, and do not have `esm` in their names) and `+emissions` for emissions driven experiments (those with the `esm-` prefix in their CMIP7 name).
+
 
 #### Supported configurations
 
@@ -68,8 +71,8 @@ Where changes are made, they should be applied to all these branches (where rele
 ](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-1pctCO2
 )
 
-There were some configurations previously under development and have now been archived. 
-There were `+CN` only, without a phosporus cycle in the land. These are available for reference:
+There were some configurations previously under development that have now been archived. 
+These were `+CN` only, without a phosporus cycle in the land and are available for reference:
 
 - [archive-amip+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-amip%2BCN)
 - [archive-1pctCO2-bgc+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2-bgc%2BCN)
@@ -80,6 +83,9 @@ There were `+CN` only, without a phosporus cycle in the land. These are availabl
 - [archive-historical+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-historical%2Bconcentrations%2BCN)
 - [archive-preindustrial+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bconcentrations%2BCN)
 - [archive-preindustrial+emissions+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bemissions%2BCN)
+
+If you would like to run these, please use the ACCESS-Hive forum for support on how to sync these configurations up with 
+the latest changes in the configurations under active development.
 
 
 #### How to use this repository to run a model
