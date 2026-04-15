@@ -84,8 +84,9 @@ These were `+CN` only, without a phosporus cycle in the land and are available f
 - [archive-preindustrial+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bconcentrations%2BCN)
 - [archive-preindustrial+emissions+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bemissions%2BCN)
 
-If you would like to run these, please use the ACCESS-Hive forum for support on how to sync these configurations up with 
-the latest changes in the configurations under active development.
+If you would like to run these archived configurations, please use the 
+[ACCESS-Hive forum for support](https://forum.access-hive.org.au/new-topic?category=esm&tags=access-nri-help) on how to 
+update these configurations up with the latest changes in the configurations under active development.
 
 
 #### How to use this repository to run a model
