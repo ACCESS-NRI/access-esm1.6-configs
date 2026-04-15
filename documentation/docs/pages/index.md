@@ -30,14 +30,9 @@ Each configuration in [github.com/ACCESS-NRI/access-esm1.6-configs](https://gith
 
 where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the base experimental design with optional modifiers. All configurations are global with nominal 1 degree resolution.
 
-Some examples of possible values of the specifiers:
+`scenario` is based around the CMIP experiment identifiers, examples include `historical`, `preindustrial`, `4xCO2`.
 
-- scenario: 
-- modifier: `concentrations`, `emissions`, `CN`
-
-Scenario is based around the CMIP experiment identifiers, examples include `historical`, `preindustrial`, `4xCO2`.
-
-The modifier can be `concentrations` or `emissions` to describe the CO2 cycling protocol, or `CN` to include the carbon and nitrogen cycles but excluding the phosphorus cycle in the land.
+The `modifier` can be `concentrations` or `emissions` to describe the CO2 cycling protocol, or `CN` to include the carbon and nitrogen cycles but excluding the phosphorus cycle in the land.
 
 These names do not exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7), we use `+concentrations` modifier for concentration driven experiments (these are more similar to CMIP6 experiments, and do not have `esm` in their names) and `+emissions` for emissions driven experiments (those with the `esm-` prefix in their CMIP7 name).
 
