@@ -33,11 +33,11 @@ where release signifies this is the release branch that is tested, versioned and
 Some examples of possible values of the specifiers:
 
 - scenario: `historical`, `preindustrial`, `4xCO2`
-- modifier: `concentration`, `emissions`
+- modifier: `concentrations`, `emissions`
 
-where scenario is typically a CMIP experiment identifier and concentration and emissions describe the CO2 cycling protocol.
+where scenario is typically a CMIP experiment identifier and `concentrations` and `emissions` describe the CO2 cycling protocol.
 
-These names do not exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7), we use `+concentration` modifier for concentration driven experiments (these are more similar to CMIP6 experiments, and do not have `esm` in their names) and `+emissions` for emissions driven experiments (those with the `esm-` prefix in their CMIP7 name).
+These names do not exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7), we use `+concentrations` modifier for concentration driven experiments (these are more similar to CMIP6 experiments, and do not have `esm` in their names) and `+emissions` for emissions driven experiments (those with the `esm-` prefix in their CMIP7 name).
 
 
 #### Supported configurations
@@ -72,7 +72,7 @@ Where changes are made, they should be applied to all these branches (where rele
 )
 
 There were some configurations previously under development that have now been archived. 
-These were `+CN` only, without a phosporus cycle in the land and are available for reference:
+These were `+CN` only, i.e. including the carbon and nitrogen cycles but excluding the phosphorus cycle in the land and are available for reference:
 
 - [archive-amip+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-amip%2BCN)
 - [archive-1pctCO2-bgc+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2-bgc%2BCN)
