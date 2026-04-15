@@ -32,10 +32,12 @@ where release signifies this is the release branch that is tested, versioned and
 
 Some examples of possible values of the specifiers:
 
-- scenario: `historical`, `preindustrial`, `4xCO2`
-- modifier: `concentrations`, `emissions`
+- scenario: 
+- modifier: `concentrations`, `emissions`, `CN`
 
-where scenario is typically a CMIP experiment identifier and `concentrations` and `emissions` describe the CO2 cycling protocol.
+Scenario is based around the CMIP experiment identifiers, examples include `historical`, `preindustrial`, `4xCO2`.
+
+The modifier can be `concentrations` or `emissions` to describe the CO2 cycling protocol, or `CN` to include the carbon and nitrogen cycles but excluding the phosphorus cycle in the land.
 
 These names do not exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7), we use `+concentrations` modifier for concentration driven experiments (these are more similar to CMIP6 experiments, and do not have `esm` in their names) and `+emissions` for emissions driven experiments (those with the `esm-` prefix in their CMIP7 name).
 
@@ -84,10 +86,8 @@ These were `+CN` only, i.e. including the carbon and nitrogen cycles but excludi
 - [archive-preindustrial+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bconcentrations%2BCN)
 - [archive-preindustrial+emissions+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bemissions%2BCN)
 
-If you would like to run these archived configurations, please use the 
-[ACCESS-Hive forum for support](https://forum.access-hive.org.au/new-topic?category=esm&tags=access-nri-help) on how to 
-update these configurations up with the latest changes in the configurations under active development.
-
+If you need assistance to use git to update these configurations, please ask on the 
+[ACCESS-Hive forum](https://forum.access-hive.org.au/new-topic?category=esm&tags=access-nri-help).
 
 #### How to use this repository to run a model
 
