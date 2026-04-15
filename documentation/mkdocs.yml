@@ -31,7 +31,16 @@ nav:
         - Restarts: pages/inputs/restarts.md
 
   - Configurations and Experiments:
-        - Configuration:    pages/configs_experiments/overviewconfiguration.md
+        - Configurations:
+            - 1pctCO2:    pages/configs_experiments/configurations/1pctCO2.md
+            - 4xCO2+concentrations:   pages/configs_experiments/configurations/4xCO2+concentrations.md
+            - amip:       pages/configs_experiments/configurations/amip.md
+            - flat10:     pages/configs_experiments/configurations/flat10.md
+            - historical+concentrations:    pages/configs_experiments/configurations/historical+concentrations.md
+            - historical+emissions:      pages/configs_experiments/configurations/historical+emissions.md 
+            - preindustrial+concentrations:   pages/configs_experiments/configurations/preindustrial+concentrations.md
+            - preindustrial+emissions:   pages/configs_experiments/configurations/preindustrial+emissions.md
+
         - Experiments:    pages/configs_experiments/experiments.md
 
   - Diagnostics:
