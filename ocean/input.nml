@@ -509,7 +509,7 @@
       remap_depth_to_s_init=.false.
       zero_tracer_source=.false.
       limit_age_tracer=.true.
-      age_tracer_max_init=0.
+      age_tracer_max_init=1000000
       frazil_heating_after_vphysics=.true.
       frazil_heating_before_vphysics=.false.
 /
