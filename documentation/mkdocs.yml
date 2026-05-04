@@ -4,13 +4,45 @@
 site_name: ACCESS-ESM1.6-Configs
 
 # Site URL
-site_url: !ENV [SITE_URL, "http://access-nri.github.io/access-esm1.6-configs/"]
+site_url: !ENV READTHEDOCS_CANONICAL_URL
 
 # Git repository (Adds a link to the GitHub repository at the top)
 repo_url: https://github.com/ACCESS-NRI/access-esm1.6-configs
 repo_name: ACCESS-NRI/access-esm1.6-configs
 edit_uri: blob/main/documentation/docs/ #hopefully will fix the edit button from 404'ing, https://github.com/mkdocs/mkdocs/issues/2416
- 
+
+# Navigation
+nav:
+  - Home:                            pages/index.md
+  - Contributing:          
+        - Contributing overview:     pages/contributing/index.md   
+  - Model Components:
+        - MOM - Ocean:      pages/model_components/mom.md
+        - WOMBAT - Ocean Biogeochem.:   pages/model_components/wombat.md
+        - CICE - Sea Ice:     pages/model_components/cice.md
+        - UM - Atmosphere:       pages/model_components/um.md
+        - CABLE - Land:    pages/model_components/cable.md
+        - CASA - Land Biogeochem.:     pages/model_components/casa.md
+  - Inputs:
+        - Ocean:    pages/inputs/ocean.md
+        - Sea ice:    pages/inputs/seaice.md
+        - Atmosphere:    pages/inputs/atmosphere.md
+        - Land:    pages/inputs/land.md
+        - Restarts: pages/inputs/restarts.md
+
+  - Configurations and Experiments:
+        - Configuration:    pages/configs_experiments/overviewconfiguration.md
+        - Experiments:    pages/configs_experiments/experiments.md
+
+  - Diagnostics:
+        - Sea Ice: pages/diagnostics/sea_ice.md #do not edit directly, change 
+          # sea_ice_source.ipynb then export as HTML and rename that file to sea_ice.md
+  - Infrastructure:    
+        - Architecture:          pages/infrastructure/architecture.md
+        - Deployment:            pages/infrastructure/deployment.md
+        - Building:              pages/infrastructure/building.md
+        - Git practices:         pages/infrastructure/git-practices.md
+
 # Theme
 theme:
   name: material
@@ -93,34 +125,6 @@ markdown_extensions:
       title: On this page
       permalink: true
 
-# Navigation
-nav:
-  - Home:                            pages/index.md
-  - Contributing:          
-        - Contributing overview:     pages/contributing/index.md   
-  - Model Components:
-        - MOM - ocean:      pages/model_components/mom.md
-        - WOMBAT - ocean biogeochem.:   pages/model_components/wombat.md
-        - CICE - sea ice:     pages/model_components/cice.md
-        - UM - atmosphere:       pages/model_components/um.md
-        - CABLE - land:    pages/model_components/cable.md
-        - CASA - land biogeochem.:     pages/model_components/casa.md
-  - Inputs:
-        - Ocean:    pages/inputs/ocean.md
-        - Sea ice:    pages/inputs/seaice.md
-        - Atmosphere:    pages/inputs/atmosphere.md
-        - Land:    pages/inputs/land.md
-
-  - Configurations and Experiments:
-        - Configuration:    pages/configs_experiments/overviewconfiguration.md
-        - Experiments:    pages/configs_experiments/experiments.md
-
-  - Diagnostics:        pages/diagnostics/index.md
-  - Infrastructure:    
-        - Architecture:          pages/infrastructure/Architecture.md
-        - Building:              pages/infrastructure/Building.md
-        - Git practices:         pages/infrastructure/Git-practices.md
-
 # Footer
 extra:
   generator: false
@@ -134,6 +138,7 @@ extra:
 
 extra_css:
   - "https://fonts.googleapis.com/icon?family=Material+Icons"   # Material Icons Reference - https://material.io/resources/icons/?style=baseline
+  - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   - fontello/css/fontello-codes.css
   - fontello/css/fontello-ie7-codes.css
   - fontello/css/fontello-ie7.css
