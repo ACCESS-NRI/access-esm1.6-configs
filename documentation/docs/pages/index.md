@@ -9,7 +9,6 @@ Welcome to the documentation for the [ACCESS-ESM1.6 model configurations](https:
 See the navigation links on the left. Some reading tips, see:
 
  - [Contributing](/contributing) 
- - [Inputs](/inputs/Forcing-data-models) 
  - [Infrastructure](/infrastructure/building/) 
 
 ## access-esm1.6-configs Overview
