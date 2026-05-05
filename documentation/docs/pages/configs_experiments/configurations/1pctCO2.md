@@ -1,7 +1,8 @@
 The 1pctCO2 configuration simulates the climate under a yearly 1% increase in CO2 concentrations, starting from preindustrial conditions.
 
 The configuration matches the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration with changes for prescribing the yearly CO2 increase.
-This configuration is used for the CMIP7 1pctCO2 experiment.
+
+This configuration is used for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
 
 
 ## Inputs

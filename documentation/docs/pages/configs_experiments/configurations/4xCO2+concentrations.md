@@ -1,7 +1,7 @@
 The 4xCO2+concentrations configuration simulates the climate under an abrupt quadrupling of atmospheric CO2 concentrations compared to the preindustrial level.
 
 The configuration is identical to the preindustrial+concentrations configuration aside from an increased CO2 mass mixing ratio and the restart file used.
-This configuration is used for the CMIP7 abrupt-4xCO2 experiment.
+This configuration is used for the [CMIP7 abrupt-4xCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/rec5WFkbODaOVdx9s).
 
 
 ## Inputs

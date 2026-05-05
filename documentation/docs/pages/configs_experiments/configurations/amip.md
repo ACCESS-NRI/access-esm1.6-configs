@@ -2,7 +2,7 @@ The amip configuraton is an uncoupled atmosphere only configuration of ESM1.6, u
 
 The amip configuration is set up from the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration by deactivating ocean and sea ice models and disabling the coupling.
 
-This configuration is used for the CMIP7 amip experiment.
+This configuration is used for the [CMIP7 amip experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recPovziGiiALZQUj).
 
 
 ## Inputs

@@ -2,7 +2,7 @@ The preindustrial+emissions configuration of ESM1.6 simulates the climate prior 
 
 This configuration largely matches the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration, with changes to activate the interactive carbon cycle and remove the prescribed CO2 concentrations.
 
-This configuration is used for the CMIP7 esm-piControl experiment.
+This configuration is used for the [CMIP7 esm-piControl experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recXseEQjRxRbwnOT).
 
 
 ## Inputs

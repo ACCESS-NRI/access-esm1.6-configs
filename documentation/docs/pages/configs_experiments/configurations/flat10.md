@@ -1,6 +1,6 @@
 The flat10 configuration simulates the climate under constant anthropogenic emissions of 10PgC/year using a fully interactive carbon cycle, with preindustrial values used for all other atmospheric forcings.
 
-This configuration is used for the CMIP7 esm-flat10 experiment.
+This configuration is used for the [CMIP7 esm-flat10 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recwxXNVh0JIDr1B9).
 
 
 ## Inputs

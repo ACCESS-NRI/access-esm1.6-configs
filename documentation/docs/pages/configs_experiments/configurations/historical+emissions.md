@@ -1,6 +1,6 @@
 The historical+emissions configuration simulates the climate from 1850-2022 using a fully interactive carbon cycle and historical CO2 anthropogenic emissions data.
 
-This configuration is used for the CMIP7 esm-historical experiment.
+This configuration is used for the [CMIP7 esm-historical experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recIoJ9zT1p7yrD6w).
 
 ## Inputs
 The same input files as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration are used to provide the model with time varying aerosol, ozone, nitrogen deposition, volcanic forcing, solar irradiance and land use change data.

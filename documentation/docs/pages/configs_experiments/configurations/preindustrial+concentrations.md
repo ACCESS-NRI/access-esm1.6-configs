@@ -1,7 +1,7 @@
 The preindustrial+concentrations configuration simulates the climate prior to the preindustrial revolution using prescribed CO2 concentrations and atmospheric forcings
 estimated for the year 1850.
 
-This configuration is used for the CMIP7 piControl experiment.
+This configuration is used for the [CMIP7 piControl experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/rec2OC1Xh1nh4lsNB).
 
 
 ## Inputs
