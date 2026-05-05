@@ -35,12 +35,11 @@ nav:
         - Experiments:    pages/configs_experiments/experiments.md
 
   - Diagnostics:
-        - Sea Ice: pages/diagnostics/sea_ice.md #do not edit directly, change 
+        - Sea Ice: pages/diagnostics/sea_ice.md # do not edit directly, change 
           # sea_ice_source.ipynb then export as HTML and rename that file to sea_ice.md
   - Infrastructure:    
-        - Architecture:          pages/infrastructure/architecture.md
-        - Deployment:            pages/infrastructure/deployment.md
         - Building:              pages/infrastructure/building.md
+        - Deployment:            pages/infrastructure/deployment.md
         - Git practices:         pages/infrastructure/git-practices.md
 
 # Theme
@@ -95,7 +94,8 @@ plugins:
   - bibtex:
       bib_file: references.bib
       csl_file: https://raw.githubusercontent.com/citation-style-language/styles/26eccff9e537f71494a4da7b91afac1adf571dc9/apa.csl
-
+  - resolve-absolute-urls
+   
 markdown_extensions: 
   - attr_list
   - abbr
