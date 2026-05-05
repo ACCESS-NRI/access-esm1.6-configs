@@ -10,8 +10,7 @@ See the navigation links on the left. Some reading tips, see:
 
  - [Contributing](/contributing) 
  - [Inputs](/inputs/Forcing-data-models) 
- - [Configuration choices/Configurations](/configurations/Overview/) 
- - [Infrastructure](/infrastructure/Architecture/) 
+ - [Infrastructure](/infrastructure/building/) 
 
 ## access-esm1.6-configs Overview
 ACCESS-ESM1.6 configurations are provided via branches in the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository. The [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository contains several configurations using the following components:
