@@ -57,6 +57,7 @@ submodels:
         # Land
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1849_2023_cmip7_v2_0.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2026.05.08/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
@@ -161,6 +162,8 @@ sync:
 #  manually run `payu sync` from the command line.
 
 userscripts:
+    # Apply thinning before each run
+    setup: ./scripts/update_thinning_driver.sh
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 
