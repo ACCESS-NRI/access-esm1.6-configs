@@ -1,12 +1,14 @@
-The amip configuraton is an uncoupled atmosphere only configuration of ESM1.6, used to simulate atmospheric conditions between 1979-2022 using prescribed sea surface temperatures, sea ice concentrations, and atmospheric forcings.
+The amip configuraton is an atmosphere only configuration of ESM1.6, used to simulate atmospheric conditions between 1979-2022 using prescribed sea surface temperatures, sea ice concentrations, and atmospheric forcings. This configuration does not include interactive ocean and sea ice models.
 
 The amip configuration is set up from the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration by deactivating ocean and sea ice models and disabling the coupling.
 
 This configuration is used for the [CMIP7 amip experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recPovziGiiALZQUj).
 
+Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriprions below are included to aid in understanding of the configuration and to assist with making modifications.
+
 
 ## Inputs
-The amip configuration uses the same input files as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration to provide time varying forcings to the the atmosphere and land models for years 1979-2022. Two additional files prescribe observed sea surface temperatures and sea ice concentrations:
+The amip configuration uses the same atmosphere and land input files as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration to provide time varying forcings to the the atmosphere and land models for years 1979-2022. Two additional files prescribe observed sea surface temperatures and sea ice concentrations:
 
 * amip_sst_n96_greg.pp: Sea surface temperatures
 * amip_seaice_n96_greg.pp: Sea ice concentrations

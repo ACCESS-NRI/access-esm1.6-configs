@@ -2,6 +2,8 @@ The historical+concentrations configuration simulates the climate from 1850-2022
 
 This configuration is used for the [CMIP7 historical experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recssLjHtzInmosrl).
 
+Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriprions below are included to aid in understanding of the configuration and to assist with making modifications.
+
 ## Inputs
 The following input files provide time varying external conditions to the atmosphere and land models for years 1850-2022:
 
