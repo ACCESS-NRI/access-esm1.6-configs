@@ -4,6 +4,8 @@
 # for an historical experiment.
 # See https://forum.access-hive.org.au/t/change-the-date-in-an-esm1-6-restart/5615
 
+set -eu
+
 # This is only going to work if the payu run numbers hasn't been changed
 if [[ $PAYU_CURRENT_RUN != 0 ]]; then
   echo "Skipping restart changes"
