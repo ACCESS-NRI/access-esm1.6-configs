@@ -139,6 +139,10 @@ runspersub: 1
 # Misc
 restart_freq: 10YS
 
+storage:
+  gdata:
+    - access
+
 runlog: true
 manifest:
   reproduce:
