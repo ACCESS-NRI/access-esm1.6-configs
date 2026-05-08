@@ -46,11 +46,14 @@ EOF
 
 module load nco
 
-# CICE files are copies rather than links, so modify directly
+
 echo './RESTART/iced.1850-01-01-00000.nc' > work/ice/RESTART/ice.restart_file
 # Keep the original file because payu archiving wants to remove it
-cp work/ice/RESTART/iced*nc work/ice/RESTART/iced.1850-01-01-00000.nc
+cp  work/ice/RESTART/iced*nc $TMPDIR/iced.1850-01-01-00000.nc
 # 1850 time
-ncatted -O -a year,global,o,l,1850 work/ice/RESTART/iced.1850-01-01-00000.nc
-ncatted -O -a nyr,global,o,l,1850 work/ice/RESTART/iced.1850-01-01-00000.nc
-ncatted -O -a time,global,o,d,58348771200 work/ice/RESTART/iced.1850-01-01-00000.nc
+ncatted -O -a year,global,o,l,1850 $TMPDIR/iced.1850-01-01-00000.nc
+ncatted -O -a nyr,global,o,l,1850 $TMPDIR/iced.1850-01-01-00000.nc
+# 58348771200 = seconds from (y m d) 1 1 1 to 1850 1 1 in proleptic Gregorian calendar
+ncatted -O -a time,global,o,d,58348771200 $TMPDIR/iced.1850-01-01-00000.nc
+
+cp -n $TMPDIR/iced.1850-01-01-00000.nc work/ice/RESTART/
