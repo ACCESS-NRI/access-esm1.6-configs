@@ -4,7 +4,7 @@ The configuration matches the [preindustrial+concentrations](/configs_experiment
 
 This configuration is used for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
 
-Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriprions below are included to aid in understanding of the configuration and to assist with making modifications.
+Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
 The 1pctCO2 configuration uses the same input files as the preindustrial+concentrations configuration.
@@ -40,4 +40,8 @@ With these settings, the model applies a 1% increase in CO2 concentrations for e
 The values for other greenhouse gas concentrations, volcanic forcings, and the solar constant are indentical to the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration.
 
 ## Configuration scripts
-The 1pctCO2 configuration includes a `check_co2_year.py` userscript which is run during the payu setup stage. This checks during the first run that the restart year is one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, and produces an error otherwise. Note that this check will not work properly if the payu run index is customised with the `payu run -i` option.
+The 1pctCO2 configuration includes a `check_co2_year.py` userscript which is run during the payu setup stage. This checks during the first run that the restart year is one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, and produces an error otherwise. 
+
+!!! warning
+
+    This check will not work properly if the payu run index is customised with the `payu run -i` option.

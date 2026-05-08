@@ -1,6 +1,6 @@
 The amip configuraton is an atmosphere only configuration of ESM1.6, used to simulate atmospheric conditions between 1979-2022 using prescribed sea surface temperatures, sea ice concentrations, and atmospheric forcings. This configuration does not include interactive ocean and sea ice models.
 
-The amip configuration is set up from the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration by deactivating ocean and sea ice models and disabling the coupling.
+The amip configuration is set up from the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration by deactivating ocean and sea ice models and disabling the coupler.
 
 This configuration is used for the [CMIP7 amip experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recPovziGiiALZQUj).
 
@@ -60,7 +60,7 @@ The above settings point the model to the SST and sea ice concentration ancillar
 
 ### Deactivating tracers
 Coupled ESM1.6 configurations include two 3D atmospheric tracers which track atmospheric CO2 originating from the land and ocean respectively.
-These tracers aren't aren't used in the amip configuration and are deactivated with the following changes:
+These tracers aren't used in the amip configuration and are deactivated with the following changes:
 
 #### atmosphere/namelists
 ```diff
