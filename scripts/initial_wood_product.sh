@@ -19,7 +19,7 @@ prep_dir=$(mktemp -d)
 
 python ./scripts/set-initial-wood-product/insert_external_woodprod_CNP.py --restart work/atmosphere/restart_dump.astart \
                     --output $prep_dir/restart_dump.astart \
-                    --woodfile /g/data/tm70/sw6175/development/esm1p6/access-esm1.6-configs/scripts/set-initial-wood-product/access-esm16_wood_prod_initial_1850_40PgC.nc \
+                    --woodfile work/atmosphere/INPUT/access-esm16_wood_prod_initial_1850_20PgC.nc \
                     --stash-base work/atmosphere/INPUT/STASHmaster/STASHmaster_A \
                     --stash-prefix ./work/atmosphere/prefix.PRESM_A
 

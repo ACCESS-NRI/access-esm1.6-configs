@@ -74,6 +74,10 @@ if __name__ == "__main__":
     stashmaster_ext_path = args.stash_prefix
     output_path = args.output
 
+    # Check if output file already exists before continuing
+    if os.path.exists(output_path):
+        raise FileExistsError(f"Output file '{output_path}' already exists. Aborting to prevent overwrite.")
+
     print("Starting UM restart file modification...")
     # Load UM restart file
     ff = mule.FieldsFile.from_file(restart_path)
