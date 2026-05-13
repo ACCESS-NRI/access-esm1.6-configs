@@ -9,9 +9,9 @@ This repository contains standard global configurations for ACCESS-ESM1.6, the A
 The developers of ACCESS-ESM1.6 request that users of these model configurations
 
 1. Cite https://doi.org/10.1071/ES19035A model description paper. An new paper for ACCESS-ESM1.6 is in preperation.
-2. Follow the [guidelines for acknowledging ACCESS-NRI](https://www.access-nri.org.au/resources/acknowledging-us/) and also acknowlege the ongoing science developments led by CSIRO, by including a statement such as:
+2. Follow the [guidelines for acknowledging ACCESS-NRI](https://www.access-nri.org.au/resources/acknowledging-us/) and also acknowledge the ongoing science developments led by CSIRO, by including a statement such as:
 "This research used the ACCESS-ESM1.6 model infrastructure provided by ACCESS-NRI, which is enabled by the Australian Government’s National Collaborative Research Infrastructure Strategy (NCRIS). Science development of ACCESS-ESM1.6 was led by CSIRO with support from the Australian Government's National Environmental Science Program Climate Systems Hub."
-3. Have an Met Office Science Repository Service (MOSRS) account as described on [ACCESS-Hive Docs](https://docs.access-hive.org.au/models/run_a_model/run_access-esm/#prerequisites).
+3. Have a Met Office Science Repository Service (MOSRS) account as described on [ACCESS-Hive Docs](https://docs.access-hive.org.au/models/run_a_model/run_access-esm/#prerequisites).
 
 
 ## CI and Reproducibility Checks
