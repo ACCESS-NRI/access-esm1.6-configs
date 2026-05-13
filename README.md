@@ -1,72 +1,18 @@
 # ACCESS-ESM1.6 Model Configurations
 
-**Note, these configurations are still being actively developed and are not intended for general use**
-
 ## About
 
-This repository will contain standard global configurations for ACCESS-ESM1.6, the ACCESS Coupled Earth System Model. See the [ACCESS-ESM1.6 configuration docs](https://access-nri.github.io/access-esm1.6-configs/) for more information on the supported configurations.
+This repository contains standard global configurations for ACCESS-ESM1.6, the ACCESS Coupled Earth System Model. See the [ACCESS-ESM1.6 configuration docs](https://access-nri.github.io/access-esm1.6-configs/) for more information on the supported configurations and how to run the model.
 
-This is an "omnibus repository": it contains multiple related configurations, and each
-configuration is stored in a separate branch.
+## Conditions of use
 
-Branches utilise a simple naming scheme:
+The developers of ACCESS-ESM1.6 request that users of these model configurations
 
-`{release}-{scenario}[+{modifier}]`
+1. Cite https://doi.org/10.1071/ES19035A model description paper. An new paper for ACCESS-ESM1.6 is in preperation.
+2. Follow the [guidelines for acknowledging ACCESS-NRI](https://www.access-nri.org.au/resources/acknowledging-us/) and also acknowlege the ongoing science developments led by CSIRO, by including a statement such as:
+"This research used the ACCESS-ESM1.6 model infrastructure provided by ACCESS-NRI, which is enabled by the Australian Government’s National Collaborative Research Infrastructure Strategy (NCRIS). Science development of ACCESS-ESM1.6 was led by CSIRO with support from the Australian Government's National Environmental Science Program Climate Systems Hub."
+3. Have an Met Office Science Repository Service (MOSRS) account as described on [ACCESS-Hive Docs](https://docs.access-hive.org.au/models/run_a_model/run_access-esm/#prerequisites).
 
-where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the base experimental design with optional modifiers. All configurations are assumed to be global extent with nominal 1 degree resolution.
-
-Some examples of possible values of the specifiers:
-
-- scenario: `historical`, `preindustrial`, `ssp126`
-- modifier: `concentration`, `interactiveC`, `noLUC`
-
-where scenario is typically a CMIP experiment identifier, concentration and interactiveC describe the CO2 cycling protocol, and noLUC is no land-use change.
-
-## Supported configurations
-
-All available configurations are browsable under [the list of release branches](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=release-). There are currently no released configurations.
-
-
-These configurations are under active development:
-- [dev-preindustrial+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bconcentrations)
-- [dev-preindustrial+emissions](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bemissions)
-- [dev-4xCO2+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-4xCO2%2Bconcentrations)
-- [dev-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2)
-- [dev-amip](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-amip)
-
-Where changes are made, they should be applied to all these branches (where relevant). These comparisons can assist with understanding differences between configurations:
-
-~ [dev-preindustrial+concentrations↔️dev-preindustrial+emissions
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-preindustrial+emissions
-)
-
-~ [dev-preindustrial+concentrations↔️dev-4xCO2+concentrations
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-4xCO2+concentrations
-)
-
-~ [dev-preindustrial+concentrations↔️dev-1pctCO2
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-1pctCO2
-)
-
-
-
-## How to use this repository to run a model
-
-All configurations use [payu](https://github.com/payu-org/payu) to run the model.
-
-This repository contains many related experimental configurations to make support
-and discovery easier. As a user it does not necessarily make sense to clone all the
-configurations at once.
-
-In most cases only a single experiment is required. If that is the case, choose which experiment and then run
-
-```sh
-git clone -b <experiment> https://github.com/ACCESS-NRI/access-esm1.6-configs <experiment>
-```
-
-and replace `<experiment>` with the branch name or tag of the experiment you wish to run.
-
-[ACCESS-Hive](https://access-hive.org.au/) contains [detailed instructions for how to configure and run ACCESS models with `payu`](https://access-hive.org.au/models/run-a-model).
 
 ## CI and Reproducibility Checks
 
@@ -118,8 +64,3 @@ For example, if a pull-request changes `dev-preindustrial+concentrations`, to ap
 <branch> would be `dev-4xCO2+concentrations` in this example
 
 This will attempt to make a new pull-request with the request commit(s), and leave a comment on the initial-pull request with the outcome.
-
-
-## Conditions of use
-
-`<TO DO>`
