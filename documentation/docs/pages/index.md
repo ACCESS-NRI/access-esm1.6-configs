@@ -24,14 +24,11 @@ The [`main`](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main) bran
 
 Each configuration in [github.com/ACCESS-NRI/access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository is stored as a git branch. Most of the branches are named according to the following naming scheme:
 
-`release-{scenario}[+{modifier}]`
+`release-{scenario}`
 
-where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the base experimental design with optional modifiers. All configurations are global with nominal 1 degree resolution.
+where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the CMIP7 experiment. All configurations are global with nominal 1 degree resolution.
 
-- `scenario` is based around the CMIP experiment identifiers, examples include `historical`, `preindustrial`, `4xCO2`.
-- `modifier` can be `concentrations` or `emissions` to describe the CO2 cycling protocol, or `CN` to include the carbon and nitrogen cycles but excluding the phosphorus cycle in the land.
-
-These names do not exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7), we use `+concentrations` modifier for concentration driven experiments (these are more similar to CMIP6 experiments, and do not have `esm` in their names) and `+emissions` for emissions driven experiments (those with the `esm-` prefix in their CMIP7 name).
+Scenario names exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7).
 
 
 #### Supported configurations
@@ -40,30 +37,29 @@ All available configurations are browsable under [the list of release branches](
 
 These configurations are under active development:
 
+- [dev-abrupt-0p5xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-0p5xCO2)
+- [dev-abrupt-2xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-2xCO2)
+- [dev-abrupt-4xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-4xCO2)
 - [dev-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2)
 - [dev-1pctCO2-bgc](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2-bgc)
 - [dev-1pctCO2-rad](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2-rad)
-- [dev-4xCO2+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-4xCO2%2Bconcentrations)
 - [dev-amip](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-amip)
-- [dev-flat10](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-flat10)
-- [dev-preindustrial+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bconcentrations)
-- [dev-preindustrial+emissions](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-preindustrial%2Bemissions)
-- [dev-historical+concentrations](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical%2Bconcentrations)
-- [dev-historical+emissions](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical%2Bemissions)
+- [dev-esm-flat10](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-flat10)
+- [dev-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-piControl)
+- [dev-esm-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-piControl)
+- [dev-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical)
+- [dev-esm-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-historical)
 
 Where changes are made, they should be applied to all these branches (where relevant) by pull requests. These comparisons can assist with understanding differences between configurations:
 
-- [dev-preindustrial+concentrations↔️dev-preindustrial+emissions
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-preindustrial+emissions
-)
+- [dev-piControl↔️dev-esm-piControl
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-piControl..dev-esm-piControl)
 
-- [dev-preindustrial+concentrations↔️dev-4xCO2+concentrations
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-4xCO2+concentrations
-)
+- [dev-piControl↔️dev-abrupt-4xCO2
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-piControl..dev-abrupt-4xCO2)
 
-- [dev-preindustrial+concentrations↔️dev-1pctCO2
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-preindustrial+concentrations..dev-1pctCO2
-)
+- [dev-piControl↔️dev-1pctCO2
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-piControl..dev-1pctCO2)
 
 There were some configurations previously under development that have now been archived. 
 These were `+CN` only, i.e. including the carbon and nitrogen cycles but excluding the phosphorus cycle in the land and are available for reference:
