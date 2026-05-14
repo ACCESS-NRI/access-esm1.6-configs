@@ -36,6 +36,7 @@ Scenario names exactly match [CMIP7 experiment names](https://airtable.com/embed
 All available configurations are browsable under [the list of release branches](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=release-). There are currently no released configurations.
 
 These configurations are under active development:
+
 - [dev-abrupt-0p5xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-0p5xCO2)
 - [dev-abrupt-2xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-2xCO2)
 - [dev-abrupt-4xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-4xCO2)
@@ -46,7 +47,7 @@ These configurations are under active development:
 - [dev-esm-flat10](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-flat10)
 - [dev-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-piControl)
 - [dev-esm-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-piControl)
-- [dev-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical%)
+- [dev-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical)
 - [dev-esm-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-historical)
 
 Where changes are made, they should be applied to all these branches (where relevant) by pull requests. These comparisons can assist with understanding differences between configurations:
