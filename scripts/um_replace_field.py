@@ -75,14 +75,13 @@ def replace_field(
 
     nc_var = nc_file[nc_var]
 
-    # Take the time dimension if necessary
-    if time_index is not None:
-        nc_var = nc_var.isel(
-                time=int(time_index),
-                drop=True,
-                missing_dims="ignore"
-                )
-    
+    # Take the time dimension
+    nc_var = nc_var.isel(
+            time=int(time_index),
+            drop=True,
+            missing_dims="ignore"
+            )
+
     # Work out whether the shape of the NetCDF is compliant with the specified
     # shape
     nc_var = make_consistent(nc_var, field_shape)
@@ -107,7 +106,6 @@ def swap_field(um_file, field, nc_var):
         if field.lbuser4 == stash_code:
             new_data = nc_var.isel(
                     pseudo=field.lbuser5-1,
-                    time=field.lbtim-1,
                     drop=True,
                     missing_dims="ignore"
                     ).to_numpy()
@@ -119,7 +117,7 @@ def swap_field(um_file, field, nc_var):
 
 def make_consistent(nc_var, field_shape):
     """Make sure a DataArray is of consistent shape with the UM field."""
-    # Make sure that lat, lon are the first 2 dimensions.
+    # Make sure that lat, lon are the last 2 dimensions.
     dim_order = {}
 
     # Since dict ordering is guaranteed in python3.7+
@@ -160,10 +158,17 @@ def determine_shape(um_file, field):
             "lon": um_file.integer_constants.num_cols,
             }
 
+    times = set()
     for field in um_file.fields:
         if field.lbuser4 == stash_code:
             shape["pseudo"] = max(shape["pseudo"], field.lbuser5)
-            shape["time"] = max(shape["time"], field.lbuser6)
+            times.add((field.lbyr, field.lbmon, field.lbdat, field.lbmin))
+
+    if len(times) != 1:
+        raise RuntimeError(
+            f"UM file contains multiple times for stash code {stash_code}. "
+            "Only files with single times are supported."
+        )
 
     return shape
 
