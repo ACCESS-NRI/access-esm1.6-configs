@@ -62,5 +62,7 @@ For example, if a pull-request changes `dev-preindustrial+concentrations`, to ap
 
 <commit> must exist in `dev-preindustrial+concentrations`. This can be one or multiple commit hashes seperated by spaces.
 <branch> would be `dev-4xCO2+concentrations` in this example
+\<commit> must exist in `dev-preindustrial+concentrations`. This can be one or multiple commit hashes seperated by spaces.
+\<branch> would be `dev-4xCO2+concentrations` in this example
 
 This will attempt to make a new pull-request with the request commit(s), and leave a comment on the initial-pull request with the outcome.
