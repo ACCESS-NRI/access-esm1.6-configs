@@ -1,4 +1,4 @@
-The historical+concentrations configuration simulates the climate from 1850-2022 using prescribed atmospheric CO2 concentrations and forcings.
+The historical configuration simulates the climate from 1850-2022 using prescribed atmospheric CO2 concentrations and forcings.
 
 This configuration is used for the [CMIP7 historical experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recssLjHtzInmosrl).
 
@@ -17,7 +17,7 @@ The following input files provide time varying external conditions to the atmosp
 * Ndep_1849_2023_cmip7.anc: Nitrogen deposition **TO CHECK**
 * ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc: Land surface type fractions
 
-The following files are carried over from the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration and provide 12 months of data which
+The following files are carried over from the [piControl](/configs_experiments/configurations/piControl) configuration and provide 12 months of data which
 are repeated in the model:
 
 * biogenic_351sm.N96L38: Biogenic aerosols? **TO CHECK**
@@ -31,7 +31,7 @@ The historical configuration uses a restart from the piControl experiment.
 ## Key settings
 
 ### Greenhouse gas concentrations
-To implement time varying greenhouse gas concentrations, the constant concentrations in the *&RUN_Radiation* section are replaced with unused placeholder values. The following differences are shown with respect to the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration:
+To implement time varying greenhouse gas concentrations, the constant concentrations in the *&RUN_Radiation* section are replaced with unused placeholder values. The following differences are shown with respect to the [piControl](/configs_experiments/configurations/piControl) configuration:
 
 #### atmosphere/namelists
 ```diff
@@ -112,7 +112,7 @@ and paths to the input files (relative to the atmosphere work directory) are set
 ```
 
 ### Land use change
-The historical+concentrations configuration includes a land use change (LUC) scheme, where land surface type fractions in the model are updated each year with data based on the LUH3 dataset. This is activated in the CABLE model namelist `atmosphere/cable.nml`:
+The historical configuration includes a land use change (LUC) scheme, where land surface type fractions in the model are updated each year with data based on the LUH3 dataset. This is activated in the CABLE model namelist `atmosphere/cable.nml`:
 
 #### atmosphere/cable.nml
 ```diff
@@ -125,7 +125,7 @@ The land use change scheme also requires a userscript to update the land surface
 
 ## Configuration scripts
 
-Land use change data is not directly read by the model during simulations. Instead, new surface type fractions need to be inserted into the atmospheric restart produced at the end of each year. The historical+concentrations configuration applies this using the following payu userscript:
+Land use change data is not directly read by the model during simulations. Instead, new surface type fractions need to be inserted into the atmospheric restart produced at the end of each year. The historical configuration applies this using the following payu userscript:
 
 #### config.yaml
 ```yaml

@@ -1,11 +1,11 @@
-The historical+emissions configuration simulates the climate from 1850-2022 using a fully interactive carbon cycle and historical CO2 anthropogenic emissions data.
+The esm-historical configuration simulates the climate from 1850-2022 using a fully interactive carbon cycle and historical CO2 anthropogenic emissions data.
 
 This configuration is used for the [CMIP7 esm-historical experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recIoJ9zT1p7yrD6w).
 
 Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
-The same input files as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration are used to provide the model with time varying aerosol, ozone, nitrogen deposition, volcanic forcing, solar irradiance and land use change data.
+The same input files as the [historical](/configs_experiments/configurations/historical) configuration are used to provide the model with time varying aerosol, ozone, nitrogen deposition, volcanic forcing, solar irradiance and land use change data.
 An additional input file contains time varying anthropogenic CO2 emissions:
 
 * CO2_fluxes_1849_2023_cmip7.anc
@@ -13,10 +13,10 @@ An additional input file contains time varying anthropogenic CO2 emissions:
 The esm-historical configuration uses a restart from the esm-piControl experiment.
 
 ## Key settings
-The historical+emissions configuration uses the same settings as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration, with changes for activating the interactive carbon cycle and external emissions file. 
+The esm-historical configuration uses the same settings as the [historical](/configs_experiments/configurations/historical) configuration, with changes for activating the interactive carbon cycle and external emissions file. 
 
 ### Greenhouse gas emissions and concentrations
-As with the [preindustrial+emissions](/configs_experiments/configurations/preindustrial+emissions) configuration, the following settings activate the interactive carbon cycle. The following differences are shown with respect to the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration:
+As with the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, the following settings activate the interactive carbon cycle. The following differences are shown with respect to the [historical](/configs_experiments/configurations/historical) configuration:
 
 #### atmosphere/namelists
 ```diff
@@ -34,7 +34,7 @@ To enable an external CO2 emissions file, the following lines are added:
 ```
 The UM linearly interpolates input data supplied at monthly frequencies to higher frequencies for use during the simulation. The line `&UPANCA ANC_REF_NO=78, PERIOD=4, INTERVAL=1 /` controls this interpolation for the CO2 emissions ancillary file (`ANC_REF_NO=78`). The `PERIOD` setting specifies the units for the update frequency (`1`: years, `2`: months, `3`: days, `4`: hours) and the `INTERVAL` specifies the update frequency in these units. Here, the CO2 emissions data are updated in the model via linear interpolation every 1 hour.
 
-All other greenhouse gas concentrations are prescribed and use the same values as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration. For clarity, the specification of the CO2 concentrations is removed:
+All other greenhouse gas concentrations are prescribed and use the same values as the [historical](/configs_experiments/configurations/historical) configuration. For clarity, the specification of the CO2 concentrations is removed:
 
 #### atmosphere/namelists
 ```diff
@@ -48,7 +48,7 @@ All other greenhouse gas concentrations are prescribed and use the same values a
 ```
 
 ## Configuration scripts
-The historical+emissions configuration uses the same land use change userscript as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration to update surface type fractions at the end of each year:
+The esm-historical configuration uses the same land use change userscript as the [historical](/configs_experiments/configurations/historical) configuration to update surface type fractions at the end of each year:
 
 #### config.yaml
 ```yaml

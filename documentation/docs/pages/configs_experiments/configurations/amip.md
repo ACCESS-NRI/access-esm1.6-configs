@@ -1,6 +1,6 @@
 The amip configuraton is an atmosphere only configuration of ESM1.6, used to simulate atmospheric conditions between 1979-2022 using prescribed sea surface temperatures, sea ice concentrations, and atmospheric forcings. This configuration does not include interactive ocean and sea ice models.
 
-The amip configuration is set up from the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration by deactivating ocean and sea ice models and disabling the coupler.
+The amip configuration is set up from the [historical](/configs_experiments/configurations/historical) configuration by deactivating ocean and sea ice models and disabling the coupler.
 
 This configuration is used for the [CMIP7 amip experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recPovziGiiALZQUj).
 
@@ -8,19 +8,19 @@ Please note that the settings described below are implemented in the configurati
 
 
 ## Inputs
-The amip configuration uses the same atmosphere and land input files as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration to provide time varying forcings to the the atmosphere and land models for years 1979-2022. Two additional files prescribe observed sea surface temperatures and sea ice concentrations:
+The amip configuration uses the same atmosphere and land input files as the [historical](/configs_experiments/configurations/historical) configuration to provide time varying forcings to the the atmosphere and land models for years 1979-2022. Two additional files prescribe observed sea surface temperatures and sea ice concentrations:
 
 * amip_sst_n96_greg.pp: Sea surface temperatures
 * amip_seaice_n96_greg.pp: Sea ice concentrations
 
-The amip configuration uses a restart from the historical+concentrations experiment.
+The amip configuration uses a restart from the historical experiment.
 
 ## Key settings
 
-Settings are copied from the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration with changes to deactivate the coupling, to add prescribed SSTs and sea ice concentrations, and to deactivate the coupled CO2 tracers.
+Settings are copied from the [historical](/configs_experiments/configurations/historical) configuration with changes to deactivate the coupling, to add prescribed SSTs and sea ice concentrations, and to deactivate the coupled CO2 tracers.
 
 
-The following differences are shown with respect to the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration:
+The following differences are shown with respect to the [historical](/configs_experiments/configurations/historical) configuration:
 
 ### Prescribed SSTs and sea ice
 
@@ -50,7 +50,7 @@ The following settings configure the atmospheric model to use prescribed SSTs an
 + &UPANCA ANC_REF_NO=28, PERIOD=3, INTERVAL=1 /
 + &UPANCA ANC_REF_NO=29, PERIOD=3, INTERVAL=1 /
 ```
-The `L_SICE/L_SSICE` options control how the sea ice albedo is calculated in the atmosphere model. The `&UPANCA` lines set the frequency at which the atmosphere model updates its sea ice fraction (`ANC_REF_NO=27`) and sea surface temperature (`ANC_REF_NO=28`) via linear interpolation. Sea ice depth (`ANC_REF_NO=29`) is calculated in the model based on the prescribed concentration, and is also updated at the frequency specified here. See the [historical+emissions](/configs_experiments/configurations/historical+emissions/#greenhouse-gas-emissions-and-concentrations) configuration for details on controling the linear interpolation.
+The `L_SICE/L_SSICE` options control how the sea ice albedo is calculated in the atmosphere model. The `&UPANCA` lines set the frequency at which the atmosphere model updates its sea ice fraction (`ANC_REF_NO=27`) and sea surface temperature (`ANC_REF_NO=28`) via linear interpolation. Sea ice depth (`ANC_REF_NO=29`) is calculated in the model based on the prescribed concentration, and is also updated at the frequency specified here. See the [esm-historical](/configs_experiments/configurations/esm-historical/#greenhouse-gas-emissions-and-concentrations) configuration for details on controling the linear interpolation.
 
 
 #### atmosphere/um_env.yaml
@@ -111,7 +111,7 @@ The following settings relate to the oasis coupling used to couple the atmospher
 
 ## Configuration scripts
 
-The amip configuration uses the same land use change userscript as the [historical+concentrations](/configs_experiments/configurations/historical+concentrations) configuration to update surface type fractions at the end of each year:
+The amip configuration uses the same land use change userscript as the [historical](/configs_experiments/configurations/historical) configuration to update surface type fractions at the end of each year:
 
 #### config.yaml
 ```yaml

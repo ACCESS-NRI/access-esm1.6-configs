@@ -1,18 +1,18 @@
 The 1pctCO2 configuration simulates the climate under a yearly 1% increase in CO2 concentrations, starting from preindustrial conditions.
 
-The configuration matches the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
+The configuration matches the [piControl](/configs_experiments/configurations/piControl) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
 
 This configuration is used for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
 
 Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
-The 1pctCO2 configuration uses the same input files as the preindustrial+concentrations configuration other than the initial conditions, which are taken from the 100th restart from the piControl experiment.
+The 1pctCO2 configuration uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration other than the initial conditions, which are taken from the 100th restart from the piControl experiment.
 
 ## Key settings
 The yearly 1% increase in atmospheric CO2 concentrations is configured in the `atmosphere/namelists` file. Under the `&CLIMCHFG` section, an initial concentration and year are specified along with a rate of increase to apply for the following years.
 
-The following differences are shown with respect to the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration:
+The following differences are shown with respect to the [piControl](/configs_experiments/configurations/piControl) configuration:
 
 #### atmosphere/namelists
 ```diff
@@ -37,7 +37,7 @@ In the above:
 
 With these settings, the model applies a 1% increase in CO2 concentrations for each year following the calendar year set in `CLIM_FCG_YEARS(1,1)=200`, so that calendar year 201 uses a concentration of `4.3189e-04*1.01=4.362089e-04`, calendar year 202 uses `4.3189e-04*1.01^2=4.4057098e-04` and so on. The year in the namelist has been set to 200, as the initial restart files used by the configuration have a calendar year of 201. It's important for the dates in the initial restart to be one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, otherwise the incorrect increases in CO2 concentrations will be applied.
 
-The values for other greenhouse gas concentrations, volcanic forcings, and the solar constant are indentical to the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration.
+The values for other greenhouse gas concentrations, volcanic forcings, and the solar constant are indentical to the [piControl](/configs_experiments/configurations/piControl) configuration.
 
 ## Configuration scripts
 The 1pctCO2 configuration includes a `check_co2_year.py` userscript which is run during the payu setup stage. This checks during the first run that the restart year is one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, and produces an error otherwise. 
