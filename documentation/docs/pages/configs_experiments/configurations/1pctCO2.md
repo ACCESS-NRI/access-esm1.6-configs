@@ -1,13 +1,13 @@
 The 1pctCO2 configuration simulates the climate under a yearly 1% increase in CO2 concentrations, starting from preindustrial conditions.
 
-The configuration matches the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration with changes for prescribing the yearly CO2 increase and uses different initial conditions.
+The configuration matches the [preindustrial+concentrations](/configs_experiments/configurations/preindustrial+concentrations) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
 
 This configuration is used for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
 
 Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
-The 1pctCO2 configuration uses the same input files as the preindustrial+concentrations configuration.
+The 1pctCO2 configuration uses the same input files as the preindustrial+concentrations configuration other than the initial conditions, which are taken from the 100th restart from the piControl experiment.
 
 ## Key settings
 The yearly 1% increase in atmospheric CO2 concentrations is configured in the `atmosphere/namelists` file. Under the `&CLIMCHFG` section, an initial concentration and year are specified along with a rate of increase to apply for the following years.

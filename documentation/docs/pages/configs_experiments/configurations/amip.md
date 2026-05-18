@@ -4,7 +4,7 @@ The amip configuration is set up from the [historical+concentrations](/configs_e
 
 This configuration is used for the [CMIP7 amip experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recPovziGiiALZQUj).
 
-Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriprions below are included to aid in understanding of the configuration and to assist with making modifications.
+Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 
 ## Inputs
@@ -12,6 +12,8 @@ The amip configuration uses the same atmosphere and land input files as the [his
 
 * amip_sst_n96_greg.pp: Sea surface temperatures
 * amip_seaice_n96_greg.pp: Sea ice concentrations
+
+The amip configuration uses a restart from the historical+concentrations experiment.
 
 ## Key settings
 
