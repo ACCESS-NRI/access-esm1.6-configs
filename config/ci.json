@@ -26,6 +26,10 @@
     "qa": {
         "default": {
             "markers": "access_esm1p6 or config"
+        },
+         "release-.*": {
+            "model-config-tests-version": "0.2.3",
+            "payu-version": "1.3.0"
         }
     },
     "default": {
