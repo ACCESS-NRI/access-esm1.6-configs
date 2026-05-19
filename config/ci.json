@@ -17,6 +17,10 @@
     "reproducibility": {
         "default": {
             "markers": "repro and (not repro_restart)"
+        },
+        "release-.*": {
+            "model-config-tests-version": "0.2.3",
+            "payu-version": "1.3.0"
         }
     },
     "qa": {
