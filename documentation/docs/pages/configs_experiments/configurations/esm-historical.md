@@ -6,10 +6,13 @@ Please note that the settings described below are implemented in the configurati
 
 ## Inputs
 The same input files as the [historical](/configs_experiments/configurations/historical) configuration are used to provide the model with time varying aerosol, ozone, nitrogen deposition, volcanic forcing, solar irradiance and land use change data.
-An additional input file contains time varying anthropogenic CO2 emissions:
+
+### Atmosphere
+An additional input file provides time varying anthropogenic CO2 emissions to the atmosphere model:
 
 * CO2_fluxes_1849_2023_cmip7.anc
 
+### Restart
 The esm-historical configuration uses a restart from the esm-piControl experiment.
 
 ## Key settings

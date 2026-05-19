@@ -1,4 +1,4 @@
-The amip configuraton is an atmosphere only configuration of ESM1.6, used to simulate atmospheric conditions between 1979-2022 using prescribed sea surface temperatures, sea ice concentrations, and atmospheric forcings. This configuration does not include interactive ocean and sea ice models.
+The amip configuraton is an atmosphere-land configuration of ESM1.6, used to simulate atmospheric conditions between 1979-2022 using prescribed sea surface temperatures, sea ice concentrations, and atmospheric forcings. This configuration does not include interactive ocean and sea ice models.
 
 The amip configuration is set up from the [historical](/configs_experiments/configurations/historical) configuration by deactivating ocean and sea ice models and disabling the coupler.
 
@@ -8,12 +8,16 @@ Please note that the settings described below are implemented in the configurati
 
 
 ## Inputs
-The amip configuration uses the same atmosphere and land input files as the [historical](/configs_experiments/configurations/historical) configuration to provide time varying forcings to the the atmosphere and land models for years 1979-2022. Two additional files prescribe observed sea surface temperatures and sea ice concentrations:
+The amip configuration uses the same atmosphere and land input files as the [historical](/configs_experiments/configurations/historical) configuration to provide time varying forcings to the atmosphere and land models for years 1979-2022.
+
+### Atmosphere
+Two additional files provide observed sea surface temperatures and sea ice concentrations to the atmosphere model:
 
 * amip_sst_n96_greg.pp: Sea surface temperatures
 * amip_seaice_n96_greg.pp: Sea ice concentrations
 
-The amip configuration uses a restart from the historical experiment.
+### Restart
+The amip configuration uses atmposphere restart files taken from the historical experiment.
 
 ## Key settings
 
@@ -66,6 +70,11 @@ These tracers aren't used in the amip configuration and are deactivated with the
 
 #### atmosphere/namelists
 ```diff
+&NLSIZES
+...
+-TR_VARS=0,
++TR_VARS=2,
+
 &STSHCOMP
 ...
 -TCA=2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

@@ -7,7 +7,9 @@ Please note that the settings described below are implemented in the configurati
 
 
 ## Inputs
-The following input files provide external forcings for 1850 to the atmosphere. Each file contains 12 months of data which are repeated each year in the model:
+
+### Atmosphere
+The following input files provide external forcings for 1850 to the atmosphere model. Each file contains 12 months of data which are repeated each year in the model:
 
 * OCFF_1850_cmip7.anc: Organic carbon? **TO CHECK**
 * BC_1850_cmip7.anc: Black carbon ? **TO CHECK**
@@ -17,9 +19,16 @@ The following input files provide external forcings for 1850 to the atmosphere. 
 * sulpc_oxidants_N96_L38:  ? **TO CHECK**
 * DMS_conc.N96: ? **TO CHECK**
 * ozone_1850_cmip7.anc: Zonal mean ozone mass mixing ratios
+
+### Land
+The following input files provide data to the CABLE land surface model:
+
 * Ndep_1850_cmip7.anc: Nitrogen deposition **TO CHECK**
 
 Land surface type mappings for 1850 are derived from the LUH3 dataset and are included directly in the UM restart file.
+
+### Restart file
+The piControl configuration uses a restart file from the end of the model spin up.
 
 ## Key settings
 Values for greenhouse gas concentrations, volcanic forcings, and the solar constant are set in the following atmosphere configuration files. Each value is treated as a global constant in the model.

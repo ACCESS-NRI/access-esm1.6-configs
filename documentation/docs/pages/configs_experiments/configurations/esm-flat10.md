@@ -5,9 +5,15 @@ This configuration is used for the [CMIP7 esm-flat10 experiment](https://airtabl
 Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
-The esm-flat10 configuration uses the same input files as the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, with changes to the initial conditions and  an extra file to provide the constant CO2 emissions data. The initial conditions are taken from the 200th restart from the esm-piControl experiment.
+The esm-flat10 configuration uses the same input files as the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, with changes for specifying CO2 emissions and a different initial condition.
+
+### Atmosphere:
+The following file is used to provide the constant CO2 emissions to the atmosphere model:
 
 * CO2_fluxes_flat10.anc
+
+### Restart
+The esm-flat10 configuration uses the restart from the end of the 200th year of the esm-piControl experiment.
 
 ## Key settings
 The following settings are used to read the CO2 emissions from the input file. Differences are shown with respect to the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration:

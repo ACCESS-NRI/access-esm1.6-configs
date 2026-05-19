@@ -5,7 +5,10 @@ This configuration is used for the [CMIP7 historical experiment](https://airtabl
 Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
-The following input files provide time varying external conditions to the atmosphere and land models for years 1850-2022:
+
+### Atmosphere
+
+The following input files provide time varying external conditions to the atmosphere model for years 1850-2022:
 
 * OCFF_1849_2023_cmip7.anc: Organic carbon ? **TO CHECK**
 * BC_1849_2023_cmip7.anc: Black carbon ? **TO CHECK**
@@ -14,8 +17,6 @@ The following input files provide time varying external conditions to the atmosp
 * ozone_1849_2023_cmip7.anc: Zonal mean ozone mass mixing ratios **TO CHECK**
 * volcts_cmip7.dat: Volcanic forcing **TO CHECK**
 * TSI_CMIP7_ESM: Total solar irradiance **TO CHECK**
-* Ndep_1849_2023_cmip7.anc: Nitrogen deposition **TO CHECK**
-* ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc: Land surface type fractions
 
 The following files are carried over from the [piControl](/configs_experiments/configurations/piControl) configuration and provide 12 months of data which
 are repeated in the model:
@@ -24,7 +25,13 @@ are repeated in the model:
 * sulpc_oxidants_N96_L38:  **TO CHECK**
 * DMS_conc.N96: Ocean surface DMS concentrations ? **TO CHECK**
 
+### Land
+The following input files provide time varying conditions to the land model for years 1850-2022:
 
+* Ndep_1849_2023_cmip7.anc: Nitrogen deposition **TO CHECK**
+* ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc: Land surface type fractions
+
+### Restart
 The historical configuration uses a restart from the piControl experiment.
 
 

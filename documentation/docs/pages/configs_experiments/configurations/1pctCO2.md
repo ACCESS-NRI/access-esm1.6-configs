@@ -7,7 +7,10 @@ This configuration is used for the [CMIP7 1pctCO2 experiment](https://airtable.c
 Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
-The 1pctCO2 configuration uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration other than the initial conditions, which are taken from the 100th restart from the piControl experiment.
+The 1pctCO2 configuration uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration other than the initial conditions.
+
+### Restart
+The 1pctCO2 configuration uses the restart from the end of the 100th year of the piControl experiment.
 
 ## Key settings
 The yearly 1% increase in atmospheric CO2 concentrations is configured in the `atmosphere/namelists` file. Under the `&CLIMCHFG` section, an initial concentration and year are specified along with a rate of increase to apply for the following years.
@@ -31,7 +34,7 @@ In the above:
 * `L_CLMCHFCG=.TRUE.` enables time varying prescribed greenhouse gas concentrations.
 * `CLIM_FCG_NYEARS(1)= 1` indicates that one year of prescribed CO2 concentrations will be provided.
 * `CLIM_FCG_YEARS(1,1)=200` indicates that the CO2 concentrations are provided for calendar year 200.
-* `CLIM_FCG_LEVLS(1,1)=4.3189e-04` sets the CO2 mass mixing ratio for calendar year 200.
+* `CLIM_FCG_LEVLS(1,1)=4.3189e-04` sets the CO2 mass mixing ratio for calendar year 200 to equal the value used in the [piControl](/configs_experiments/configurations/piControl) configuration.
 * `CLIM_FCG_RATES(1,1)= 1.00000` tells the model to apply a 1% increase to the CO2 concentration for each year after the last provided prescribed value.
 * `CLIM_FCG_NYEARS(2:11)=10*0` tells the model that time varying values are not being provided for the other greenhouse gasses. Their values are instead taken from the `&RUN_Radiation` section.
 

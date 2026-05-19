@@ -6,9 +6,12 @@ This configuration is used for the [CMIP7 esm-piControl experiment](https://airt
 
 Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
-
 ## Inputs
 The esm-piControl configuration uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration in order to provide the model with 1850 atmospheric forcings.
+
+### Restart
+The esm-piControl configuration uses a restart from the end of the emissions driven model spinup.
+
 
 ## Key settings
 Values for non-CO2 greenhouse gas concentrations, the solar constant, and the volcanic forcing are identical to the [piControl](/configs_experiments/configurations/piControl) configuration.
