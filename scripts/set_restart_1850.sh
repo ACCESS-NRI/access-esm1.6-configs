@@ -44,8 +44,6 @@ cat > work/ocean/INPUT/ocean_solo.res << EOF
   1850     1     1     0     0     0        Current model time: year, month, day, hour, minute, second
 EOF
 
-module load nco
-
 
 echo './RESTART/iced.1850-01-01-00000.nc' > work/ice/RESTART/ice.restart_file
 # Keep the original file because payu archiving wants to remove it
