@@ -120,13 +120,4 @@ The following settings relate to the oasis coupling used to couple the atmospher
 
 ## Configuration scripts
 
-The amip configuration uses the same land use change userscript as the [historical](/configs_experiments/configurations/historical) configuration to update surface type fractions at the end of each year:
-
-#### config.yaml
-```yaml
-userscripts:
-    # Apply land use changes after each run
-    run: ./scripts/update_landuse_driver.sh
-```
-Note that this script requires the run length to be 1 year in order to work properly. 
-
+The amip configuration uses the same land use change userscript as the [historical](/configs_experiments/configurations/historical) configuration to update surface type fractions at the end of each year.

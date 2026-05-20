@@ -18,10 +18,17 @@ The esm-flat10 configuration uses the restart from the end of the 200th year of 
 ## Key settings
 The following settings are used to read the CO2 emissions from the input file. Differences are shown with respect to the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration:
 
+#### um_env.yaml
+````diff
++CO2EMITS: INPUT/CO2_fluxes_flat10.anc
+````
+The above setting points the model to the CO2 emissions ancillary file in the `payu` work directory.
+
 #### atmosphere/namelists 
 ```diff
 + L_CO2_EMITS= .TRUE.,
 ...
 + &UPANCA ANC_REF_NO=78, PERIOD=4, INTERVAL=1 /
 ```
-See the [esm-historical](/configs_experiments/configurations/esm-historical/#greenhouse-gas-emissions-and-concentrations) configuration for details on controling the linear interpolation of ancillary data.
+The above settings activate the CO2 emissions fluxes and control the linear interpolation of the CO2 emissions ancillary data. See the [esm-historical](/configs_experiments/configurations/esm-historical/#greenhouse-gas-emissions-and-concentrations) configuration for details on controling the linear interpolation.
+

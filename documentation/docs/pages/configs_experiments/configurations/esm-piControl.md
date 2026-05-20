@@ -14,10 +14,9 @@ The esm-piControl configuration uses a restart from the end of the emissions dri
 
 
 ## Key settings
-Values for non-CO2 greenhouse gas concentrations, the solar constant, and the volcanic forcing are identical to the [piControl](/configs_experiments/configurations/piControl) configuration.
+The esm-piControl configuration uses the same settings as the [piControl](/configs_experiments/configurations/piControl) configuration, with changes for activating the interactive carbon cycle.
 
-The following settings are changed in the atmosphere configuration files in order to switch on the interactive carbon cycle. The differences are shown with respect to the
-[piControl](/configs_experiments/configurations/piControl) configuration.
+The following settings are changed, with respect to the [piControl](/configs_experiments/configurations/piControl) configuration, in order to switch on the interactive carbon cycle.
 
 
 #### atmosphere/namelists

@@ -17,13 +17,13 @@ The following input files provide external forcings for 1850 to the atmosphere m
 * Bio_1850_cmip7.anc: Biomass burning emissions **TO CHECK**
 * biogenic_351sm.N96L38: Biogenic aerosols? **TO CHECK**
 * sulpc_oxidants_N96_L38:  ? **TO CHECK**
-* DMS_conc.N96: ? **TO CHECK**
+* DMS_conc.N96: Dimethyl sulphide concentration in seawater
 * ozone_1850_cmip7.anc: Zonal mean ozone mass mixing ratios
 
 ### Land
 The following input files provide data to the CABLE land surface model:
 
-* Ndep_1850_cmip7.anc: Nitrogen deposition **TO CHECK**
+* Ndep_1850_cmip7.anc: Nitrogen deposition
 
 Land surface type mappings for 1850 are derived from the LUH3 dataset and are included directly in the UM restart file.
 

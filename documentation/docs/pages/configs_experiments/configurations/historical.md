@@ -28,7 +28,7 @@ are repeated in the model:
 ### Land
 The following input files provide time varying conditions to the land model for years 1850-2022:
 
-* Ndep_1849_2023_cmip7.anc: Nitrogen deposition **TO CHECK**
+* Ndep_1849_2023_cmip7.anc: Nitrogen deposition
 * ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc: Land surface type fractions
 
 ### Restart
@@ -140,4 +140,8 @@ userscripts:
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 ```
-Note that this script requires the run length to be 1 year in order to work properly. 
+
+!!! warning
+
+    This script requires the run length to be 1 year in order to work properly. 
+

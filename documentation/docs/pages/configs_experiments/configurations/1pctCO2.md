@@ -45,6 +45,12 @@ The values for other greenhouse gas concentrations, volcanic forcings, and the s
 ## Configuration scripts
 The 1pctCO2 configuration includes a `check_co2_year.py` userscript which is run during the payu setup stage. This checks during the first run that the restart year is one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, and produces an error otherwise. 
 
+#### config.yaml
+```yaml
+userscripts:
+    setup: scripts/check_co2_year.py
+```
+
 !!! warning
 
     This check will not work properly if the payu run index is customised with the `payu run -i` option.

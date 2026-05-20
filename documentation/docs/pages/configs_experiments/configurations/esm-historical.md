@@ -21,6 +21,12 @@ The esm-historical configuration uses the same settings as the [historical](/con
 ### Greenhouse gas emissions and concentrations
 As with the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, the following settings activate the interactive carbon cycle. The following differences are shown with respect to the [historical](/configs_experiments/configurations/historical) configuration:
 
+#### um_env.yaml
+````diff
++CO2EMITS: INPUT/CO2_fluxes_1849_2023_cmip7.anc
+````
+The above setting points the model to the CO2 emissions ancillary file in the `payu` work directory.
+
 #### atmosphere/namelists
 ```diff
 - L_CO2_INTERACTIVE=.FALSE.,
@@ -39,7 +45,6 @@ The UM linearly interpolates input data supplied at monthly frequencies to highe
 
 All other greenhouse gas concentrations are prescribed and use the same values as the [historical](/configs_experiments/configurations/historical) configuration. For clarity, the specification of the CO2 concentrations is removed:
 
-#### atmosphere/namelists
 ```diff
 &CLMCHFCG
 ...
@@ -51,12 +56,4 @@ All other greenhouse gas concentrations are prescribed and use the same values a
 ```
 
 ## Configuration scripts
-The esm-historical configuration uses the same land use change userscript as the [historical](/configs_experiments/configurations/historical) configuration to update surface type fractions at the end of each year:
-
-#### config.yaml
-```yaml
-userscripts:
-    # Apply land use changes after each run
-    run: ./scripts/update_landuse_driver.sh
-```
-Note that this script requires the run length to be 1 year in order to work properly. 
+The esm-historical configuration uses the same land use change userscript as the [historical](/configs_experiments/configurations/historical) configuration to update surface type fractions at the end of each year.
