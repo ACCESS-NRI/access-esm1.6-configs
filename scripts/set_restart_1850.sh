@@ -12,10 +12,16 @@ if [[ $PAYU_CURRENT_RUN != 0 ]]; then
   exit 0
 fi
 
+# Leap years cause issues as the run length is calculated prior to the restart modification.
+# Produce an error if a leap year is being used.
+python check_leap_year.py work/atmosphere/um.res.yaml
+
+
+#### Atmosphere ####
 cp work/atmosphere/restart_dump.astart $TMPDIR
-python ~access/apps/pythonlib/umfile_utils/access_cm2/change_dump_date.py $TMPDIR/restart_dump.astart <<< "1850 01 01"
+python scripts/change_dump_date.py $TMPDIR/restart_dump.astart -o $TMPDIR/new_restart -y 1850 -m 1 -d 1
 rm work/atmosphere/restart_dump.astart
-mv $TMPDIR/restart_dump.astart work/atmosphere/restart_dump.astart
+mv $TMPDIR/new_restart work/atmosphere/restart_dump.astart
 
 rm work/atmosphere/um.res.yaml
 echo "end_date: 1850-01-01 00:00:00" > work/atmosphere/um.res.yaml
@@ -37,6 +43,8 @@ w
 q
 EOF
 
+
+#### Ocean ####
 rm work/ocean/INPUT/ocean_solo.res
 cat > work/ocean/INPUT/ocean_solo.res << EOF
      3        (Calendar: no_calendar=0, thirty_day_months=1, julian=2, gregorian=3, noleap=4)
@@ -45,6 +53,7 @@ cat > work/ocean/INPUT/ocean_solo.res << EOF
 EOF
 
 
+#### Ice ####
 echo './RESTART/iced.1850-01-01-00000.nc' > work/ice/RESTART/ice.restart_file
 # Keep the original file because payu archiving wants to remove it
 cp  work/ice/RESTART/iced*nc $TMPDIR/iced.1850-01-01-00000.nc
