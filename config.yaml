@@ -151,7 +151,7 @@ payu_minimum_version: 1.3.0
 sync:
     enable: False # set path below and change to true
     restarts: True
-    base_path: null # Set to location on /g/data or a remote server and path (rsync syntax)
+    base_path: null # Set to location on /g/data (e.g., /g/data/$PROJECT/$USER/)
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,
