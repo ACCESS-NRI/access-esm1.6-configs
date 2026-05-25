@@ -14,7 +14,7 @@ fi
 
 # Leap years cause issues as the run length is calculated prior to the restart modification.
 # Produce an error if a leap year is being used.
-python check_leap_year.py work/atmosphere/um.res.yaml
+python scripts/check_leap_year.py work/atmosphere/um.res.yaml
 
 
 #### Atmosphere ####
