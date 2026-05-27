@@ -2,7 +2,7 @@
 set -eu
 
 # Set the size of the initial wood carbon nitrogen and phosphorous pools
-# for an emissions driven historical simulation. This modifies the atmospheric
+# for historical simulations. This modifies the atmospheric
 # restart file in the work directory prior to the start of the simulation.
 
 # Wood product should only be initialised in the first simulation.
