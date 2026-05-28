@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: pre-industrial
+jobname: esm-flat10-zec
 queue: normalsr
 walltime: 2:30:00
 jobfs: 15GB
@@ -51,8 +51,6 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
         # Forcing
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/forcing/global.N96/2025.12.09/ozone_1850_cmip7.anc
-        # Emissions
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/flat10/atmosphere/forcing/global.N96/2025.12.05/CO2_fluxes_flat10.anc
         # Land
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1850_cmip7_v2_0.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
@@ -120,7 +118,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/flat10/restart/2026.04.28
+restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/flat10-zec/restart/2026.05.27
 
 # Timing controls
 calendar:
