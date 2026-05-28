@@ -1,7 +1,7 @@
 contact: anton-seaice
 email: anton.steketee@anu.edu.au
 created: '2026-05-28'
-description: |
+description: ""
 notes: |-
   The developers of ACCESS-ESM1.6 request that users of these model configurations:
    (a) Cite https://doi.org/10.1071/ES19035
@@ -10,14 +10,14 @@ notes: |-
    ACCESS-NRI requests users follow the guidelines for acknowledging ACCESS-NRI and include a statement such as:
    "This research used the ACCESS-ESM1.6 model infrastructure provided by ACCESS-NRI, which is enabled by the Australian Government's National Collaborative Research Infrastructure Strategy (NCRIS)."
 keywords:
-- global
-- access-esm1.6
+  - global
+  - access-esm1.6
 realm:
-- atmos
-- land
-- ocean
-- ocnBgchem
-- seaIce
+  - atmos
+  - land
+  - ocean
+  - ocnBgchem
+  - seaIce
 nominal_resolution: 100 km
 reference: https://doi.org/10.1071/ES19035
 license: CC-BY-4.0
@@ -25,3 +25,4 @@ model: ACCESS-ESM1.6
 url: https://github.com/access-nri/access-esm1.6-configs
 experiment_uuid: edb0de50-95f0-4a1d-9f5d-6efd3dc6ce14
 name: access-esm1.6-configs-release-esm-historical-edb0de50
+version: "1.0"

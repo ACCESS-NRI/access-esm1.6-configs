@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="1095.594" timestamp="2025-11-26T16:20:31.836590+11:00" hostname="gadi-login-09.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_historical" time="1093.555"><failure message="AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical/checksum/historical-24hr-checksum.json.&#10;assert {'output': {'...ion': '1-0-0'} == {'output': {'...ion': '1-0-0'}&#10;  &#10;  Omitting 1 identical items, use -vv to show&#10;  Differing items:&#10;  {'output': {'Final Absolute Norm': ['8.152139654762455E-003', '7.719163252730094E-003', '8.702483598336560E-003', '7.983158113034306E-003', '7.213017097697780E-003', '7.776356377115519E-003', ...]}} != {'output': {'Advection of u': ['4285061999084278385', '2650223201865872395'], 'Advection of v': ['2169634967076007290'...onal velocity': ['-5170632961632844400', '-3132249112450531530'], 'Thickness%depth_st': ['-2190684862846133371'], ...}}&#10;  Use -v to get more diff">self = &lt;test_bit_reproducibility.TestBitReproducibility object at 0x7fb6679c4f40&gt;
-output_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical')
-control_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical/base-experiment')
-experiments = &lt;model_config_tests.exp_test_helper.Experiments object at 0x7fb667a567d0&gt;
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="269.877" timestamp="2026-05-28T12:54:35.327734+10:00" hostname="gadi-login-03.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_historical" time="267.046"><failure message="AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/generate-checksums/release-esm-historical/c28477e08f63288efccfa7711539d655873e9534/checksum/historical-24hr-checksum.json.&#10;assert {'output': {'...ion': '1-0-0'} == {'output': {'...ion': '1-0-0'}&#10;  &#10;  Omitting 1 identical items, use -vv to show&#10;  Differing items:&#10;  {'output': {'Advection of u': ['2791611964849277595', '6166800879995094735'], 'Advection of v': ['5278653760776676483'...ional velocity': ['-4712201097904976433', '3551573892418388558'], 'Thickness%depth_st': ['-2190684862846133371'], ...}} != {'output': {'Advection of u': ['5569632269117372324', '-8540222466249447741'], 'Advection of v': ['8769555779522084554...dional velocity': ['6364762707310870105', '1181618618043701408'], 'Thickness%depth_st': ['-2190684862846133371'], ...}}&#10;  Use -v to get more diff">self = &lt;test_bit_reproducibility.TestBitReproducibility object at 0x7ff0f4492260&gt;
+output_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/generate-checksums/release-esm-historical/c28477e08f63288efccfa7711539d655873e9534')
+control_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/generate-checksums/release-esm-historical/c28477e08f63288efccfa7711539d655873e9534/base-experiment')
+requested_experiments = {'exp_default_runtime': &lt;model_config_tests.exp_test_helper.ExpTestHelper object at 0x7ff102e4d720&gt;}
 checksum_path = None
 
     @pytest.mark.repro
@@ -15,7 +15,7 @@ checksum_path = None
         self,
         output_path: Path,
         control_path: Path,
-        experiments: Experiments,
+        requested_experiments: dict[str, ExpTestHelper],
         checksum_path: Optional[Path],
     ):
         """
@@ -33,9 +33,9 @@ checksum_path = None
             Path to the model configuration to test. This is copied for
             for control directories in experiments. Default is set in
             conftests.py.
-        experiments: Experiments
-            Class that manages the shared experiments. This is a fixture
-            defined in this file.
+        requested_experiments: dict[str, ExpTestHelper]
+            A dictionary of requested experiments, where the key is the
+            experiment name and the value is an instance of ExpTestHelper.
         checksum_path: Optional[Path]
             Path to checksums to compare model output against. Default is
             set to checksums saved on model configuration. This is a
@@ -45,12 +45,7 @@ checksum_path = None
         checksum_output_dir = set_checksum_output_dir(output_path=output_path)
     
         # Use default runtime experiment to get the historical checksums
-        experiments.check_experiments([EXP_DEFAULT_RUNTIME])
-        exp = experiments.get_experiment(EXP_DEFAULT_RUNTIME)
-    
-        assert (
-            exp.model.output_exists()
-        ), "Output file required for model checksums does not exist"
+        exp = requested_experiments.get(EXP_DEFAULT_RUNTIME)
     
         # Set the checksum output filename using the model default runtime
         runtime_hours = exp.model.default_runtime_seconds // HOUR_IN_SECONDS
@@ -80,12 +75,12 @@ checksum_path = None
 &gt;       assert (
             hist_checksums == checksums
         ), f"Checksums were not equal. The new checksums have been written to {checksum_output_file}."
-E       AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/test-historical/checksum/historical-24hr-checksum.json.
+E       AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/generate-checksums/release-esm-historical/c28477e08f63288efccfa7711539d655873e9534/checksum/historical-24hr-checksum.json.
 E       assert {'output': {'...ion': '1-0-0'} == {'output': {'...ion': '1-0-0'}
 E         
 E         Omitting 1 identical items, use -vv to show
 E         Differing items:
-E         {'output': {'Final Absolute Norm': ['8.152139654762455E-003', '7.719163252730094E-003', '8.702483598336560E-003', '7.983158113034306E-003', '7.213017097697780E-003', '7.776356377115519E-003', ...]}} != {'output': {'Advection of u': ['4285061999084278385', '2650223201865872395'], 'Advection of v': ['2169634967076007290'...onal velocity': ['-5170632961632844400', '-3132249112450531530'], 'Thickness%depth_st': ['-2190684862846133371'], ...}}
+E         {'output': {'Advection of u': ['2791611964849277595', '6166800879995094735'], 'Advection of v': ['5278653760776676483'...ional velocity': ['-4712201097904976433', '3551573892418388558'], 'Thickness%depth_st': ['-2190684862846133371'], ...}} != {'output': {'Advection of u': ['5569632269117372324', '-8540222466249447741'], 'Advection of v': ['8769555779522084554...dional velocity': ['6364762707310870105', '1181618618043701408'], 'Thickness%depth_st': ['-2190684862846133371'], ...}}
 E         Use -v to get more diff
 
-../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:225: AssertionError</failure></testcase></testsuite></testsuites>
+../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:234: AssertionError</failure></testcase></testsuite></testsuites>
