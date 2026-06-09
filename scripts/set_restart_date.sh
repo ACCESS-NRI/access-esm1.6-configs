@@ -48,11 +48,11 @@ mv $RESTARTDIR/ice/iced.????-??-??-00000.nc $RESTARTDIR/ice/$iced_file
 
 echo "./RESTART/$iced_file" > $RESTARTDIR/ice/ice.restart_file
 
-ncatted -O -a year,global,o,l,$YEAR $RESTARTDIR/ice/$iced_file
-ncatted -O -a nyr,global,o,l,$YEAR $RESTARTDIR/ice/$iced_file
-ncatted -O -a month,global,o,l,$MONTH $RESTARTDIR/ice/$iced_file
-ncatted -O -a mday,global,o,l,$DAY $RESTARTDIR/ice/$iced_file
+ncatted -h -O -a year,global,o,l,$YEAR $RESTARTDIR/ice/$iced_file
+ncatted -h -O -a nyr,global,o,l,$YEAR $RESTARTDIR/ice/$iced_file
+ncatted -h -O -a month,global,o,l,$MONTH $RESTARTDIR/ice/$iced_file
+ncatted -h -O -a mday,global,o,l,$DAY $RESTARTDIR/ice/$iced_file
 
 # Calculate total seconds from 1/1/1 to specified date
 seconds=$( python scripts/calc_seconds.py -y $YEAR -m $MONTH -d $DAY)
-ncatted -O -a time,global,o,d,$seconds $RESTARTDIR/ice/$iced_file
+ncatted -h -O -a time,global,o,d,$seconds $RESTARTDIR/ice/$iced_file
