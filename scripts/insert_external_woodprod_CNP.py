@@ -8,8 +8,6 @@ import tempfile
 import os
 
 
-
-
 def parse_args():
     parser = argparse.ArgumentParser(
         prog="insert_external_woodprod_CNP",
@@ -37,8 +35,8 @@ def parse_args():
     )
     parser.add_argument(
         "--output",
-        required=True,
-        help="Path to write output UM restart file to"
+        required=False,
+        help="Path to write output UM restart file to. If unspecified, restart is modified in place"
     )
 
     parser.add_argument(
@@ -64,19 +62,7 @@ def to_file(self, output_file_or_path):
         self._write_to_file(output_file_or_path)
 
 
-if __name__ == "__main__":
-
-    args = parse_args()
-
-    restart_path = args.restart
-    external_nc_path = args.woodfile
-    stashmaster_base_path = args.stash_base
-    stashmaster_ext_path = args.stash_prefix
-    output_path = args.output
-
-    # Check if output file already exists before continuing
-    if os.path.exists(output_path):
-        raise FileExistsError(f"Output file '{output_path}' already exists. Aborting to prevent overwrite.")
+def insert_woodprod(restart_path, external_nc_path, stashmaster_base_path, stashmaster_ext_path, output_path):
 
     print("Starting UM restart file modification...")
     # Load UM restart file
@@ -131,7 +117,20 @@ if __name__ == "__main__":
 
     # Save modified restart
     print(f"\nSaving modified restart file to: {output_path}")
+
+    # Create a temporary file to write to
+    tmp = tempfile.NamedTemporaryFile()
     ff.to_file = to_file
 
-    ff.to_file(ff, output_path)
+    ff.to_file(ff, tmp.name)
+    shutil.copy(tmp.name, output_path)
     print(f"Modified restart file written to '{output_path}'")
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    if args.output is not None:
+        output_path = args.output
+    else:
+        output_path = args.restart
+    insert_woodprod(args.restart, args.woodfile, args.stash_base, args.stash_prefix, args.output)
