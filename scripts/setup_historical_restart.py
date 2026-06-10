@@ -5,6 +5,7 @@ from pathlib import Path
 import shutil
 import shlex
 import subprocess
+import re
 
 import insert_external_woodprod_CNP
 import update_thinning
@@ -33,10 +34,27 @@ def parse_args():
         '--output-restart',
         help='Path for saving modified output ESM1.6 restart directory.',
         type=Path,
-        required=True
+        required=False
         )
 
     return parser.parse_args()
+
+
+def get_archive_path():
+    """Get the archive path for the current experiment."""
+    repo = git.Repo(".")
+    current_branch = repo.active_branch.name
+
+    cmd = f"payu checkout {current_branch}"
+    checkout_output = subprocess.run(shlex.split(cmd), check=True, capture_output=True, text=True).stdout
+
+    pattern = r"\nAdded archive symlink to (?P<archive>.*)\n"
+    if match := re.search(pattern, checkout_output):
+        archive_path = Path(match.group('archive'))
+    else:
+        raise RuntimeError("Unable to get experiment archive path.")
+
+    return archive_path
 
 
 def copy_restart(input, output):
@@ -79,15 +97,22 @@ def commit_config(input_restart, output_restart):
 
 if __name__ == "__main__":
     args = parse_args()
+
+    output_restart = args.output_restart
+    if output_restart is None:
+        output_restart = get_archive_path() / "initial_restart"
+
+    output_restart = output_restart.resolve()
+
     config = YAML().load(Path("config.yaml"))
     input_restart = config["restart"]
-    copy_restart(input_restart, args.output_restart)
+    copy_restart(input_restart, output_restart)
 
     # Set restart date to 1850 01 01
-    set_restart_date(args.output_restart, year=1850, month=1, day=1)
+    set_restart_date(output_restart, year=1850, month=1, day=1)
 
     # Insert initial wood product into atmosphere restart
-    atm_restart = args.output_restart/"atmosphere"/"restart_dump.astart"
+    atm_restart = output_restart/"atmosphere"/"restart_dump.astart"
     insert_external_woodprod_CNP.insert_woodprod(
         restart_path=str(atm_restart),
         external_nc_path=EXTERNAL_NC_PATH,
@@ -102,5 +127,5 @@ if __name__ == "__main__":
         thinning_file=THINNING_FILE,
         stashmaster_file=STASHMASTER_BASE_PATH
     )
-    update_config(args.output_restart, config)
-    commit_config(input_restart, args.output_restart)
+    update_config(output_restart, config)
+    commit_config(input_restart, output_restart)
