@@ -32,7 +32,7 @@ def parse_args():
     )
     parser.add_argument(
         '--output-restart',
-        help='Path for saving modified output ESM1.6 restart directory.',
+        help='Path for saving modified output ESM1.6 restart directory. Defaults to archive/initial_restart.',
         type=Path,
         required=False
         )
