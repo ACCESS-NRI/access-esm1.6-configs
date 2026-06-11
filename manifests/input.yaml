@@ -2,14 +2,14 @@ format: yamanifest
 version: 1.0
 ---
 work/atmosphere/INPUT/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
   hashes:
-    binhash: a22f8247bfe47d9f8cea67f73a1d7657
+    binhash: 47e5d30c68d865d0037a760f37f46ad5
     md5: 91e2f9f2ac9e7e6ed308cd414ee78ef2
 work/atmosphere/INPUT/BC_1849_2023_cmip7.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/BC_1849_2023_cmip7.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/BC_1849_2023_cmip7.anc
   hashes:
-    binhash: 2a0d414aeacff9563ebb990abd6524d5
+    binhash: c5ce9bdbd5bc7a53495fb06ccbbd5bd6
     md5: 1f5905bdfcbda0c0611759edc3bc6eff
 work/atmosphere/INPUT/Bio_1849_2015_ESM1.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/Bio_1849_2015_ESM1.anc
@@ -17,14 +17,14 @@ work/atmosphere/INPUT/Bio_1849_2015_ESM1.anc:
     binhash: 3d1bbeea23f49ee75e7cc9c0f41c9db5
     md5: fb650ff10a39596b92f67b1393c15289
 work/atmosphere/INPUT/Bio_1849_2023_cmip7.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/Bio_1849_2023_cmip7.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/Bio_1849_2023_cmip7.anc
   hashes:
-    binhash: 190348d0e59c67f5e18172f4c6513efc
+    binhash: f500982a87f69247c3272281d8b87d79
     md5: 4833f61b70851198aacb73ab3297a846
 work/atmosphere/INPUT/CO2_fluxes_1849_2023_cmip7.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical-emissions/atmosphere/forcing/global.N96/2026.01.07/CO2_fluxes_1849_2023_cmip7.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical-emissions/atmosphere/forcing/global.N96/2026.01.07/CO2_fluxes_1849_2023_cmip7.anc
   hashes:
-    binhash: 1e6a405e29e9d084595a87640ceed5a4
+    binhash: 30fcb13482c01b65d7122b788aeb8164
     md5: 5cdc9df341e9f14a8c28930f0f61b6b6
 work/atmosphere/INPUT/DMS_conc.N96:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
@@ -32,79 +32,84 @@ work/atmosphere/INPUT/DMS_conc.N96:
     binhash: da1baa25e78ec281c82ea4588e30a340
     md5: 7e8ec8de832c0b9b8c1d9f0eda4d54e5
 work/atmosphere/INPUT/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2026.05.08/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2026.05.08/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc
   hashes:
-    binhash: c7ad97a13444b00b63652aa2d639efe6
+    binhash: f1fdb2086513600bebfc3fb1ff18293e
     md5: 4fe37dc3a0222f63f657ae5dad9643a7
 work/atmosphere/INPUT/Ndep_1849_2023_cmip7_v2_0.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1849_2023_cmip7_v2_0.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1849_2023_cmip7_v2_0.anc
   hashes:
-    binhash: b55dfdbe9216630af7cd68c3e08e4aea
+    binhash: 8246c7eb1a6b57994cf0c6e940714c75
     md5: 6e52abfc4ebea29d0ae8fdfd241df406
 work/atmosphere/INPUT/OCFF_1849_2023_cmip7.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/OCFF_1849_2023_cmip7.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/OCFF_1849_2023_cmip7.anc
   hashes:
-    binhash: 573f5f47b4f53efa8acfac75799af010
+    binhash: 449b218265a03566458459ff0e5758cd
     md5: 04394cfbeba09f463929406065fb5d14
 work/atmosphere/INPUT/STASHmaster/README:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/README
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/README
   hashes:
-    binhash: dd48aaec06d8a65d764c0595b6748f03
+    binhash: b83a0a9996df33aa034983d989696061
     md5: 68d47be694979b827a9f68088d8d5800
 work/atmosphere/INPUT/STASHmaster/STASHmaster_A:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A
   hashes:
-    binhash: 69257dc3199aee9b47c48ad2a532cd9e
+    binhash: 5cb00fc6f6d0a235522ab8cd8176e340
     md5: 808dac1f259bf3e3fb468462ccbbee81
 work/atmosphere/INPUT/STASHmaster/STASHmaster_O:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_O
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_O
   hashes:
-    binhash: 76c188f1b29929a1a4cfc66a2a1bde93
+    binhash: 19606c7f321baddeed74d3ae7a2d7fd6
     md5: 5a65d77c62d55e3b62e35ad9662d32a9
 work/atmosphere/INPUT/STASHmaster/STASHmaster_S:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_S
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_S
   hashes:
-    binhash: e10f471a240cbb6ab47d9941850ae31a
+    binhash: 17313250832ceddf9d771766b925ec7f
     md5: 85ff5d563968cf24d1be595b05b4e52d
 work/atmosphere/INPUT/STASHmaster/STASHmaster_W:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_W
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_W
   hashes:
-    binhash: c131e6e7d9b00472b083b4290644341e
+    binhash: 7d0f5c2837a4570522cf6cc5c94a02fe
     md5: 1e4391ea1f6234b33c33168bd7089d06
 work/atmosphere/INPUT/STASHmaster/STASHsections_A:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHsections_A
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHsections_A
   hashes:
-    binhash: 2af3017149d587a0ba600d22024f7c0f
+    binhash: 7cf9456d4d36eafd1ace4e9f127c91b6
     md5: 8525fd107dbea6184db74089f1d55fd9
 work/atmosphere/INPUT/TSI_CMIP7_ESM:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
   hashes:
-    binhash: 61204ba958920f80aefa03c4689834e3
+    binhash: 6aa7e61e4ae674e1782dda9046f4331e
     md5: 635295693e07ae1079753d0835a6ad07
+work/atmosphere/INPUT/access-esm16_wood_prod_initial_1850_20PgC.nc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.05.08/access-esm16_wood_prod_initial_1850_20PgC.nc
+  hashes:
+    binhash: 7f0bf4a5492c81eff69eb25859cc90db
+    md5: 845c15552a720966971c16b14d73dd04
 work/atmosphere/INPUT/biogenic_351sm.N96L38:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
   hashes:
     binhash: 35f8585c3290dfc25ed19e7d93f6a1bb
     md5: 55eb75f602a4639fb3c8ff40e36eb661
 work/atmosphere/INPUT/cable_vegfunc_N96.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
   hashes:
-    binhash: 6463172e2ec728967ec86f0cb4ba50a3
+    binhash: a3264254e656d49eabb828adb861c93f
     md5: d36f7104db31c372fbbf1cdc90a4e4f4
 work/atmosphere/INPUT/modis_phenology_csiro_13evergreen.txt:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
   hashes:
-    binhash: 9062c9c2e90980bce48ea7c7046d512d
+    binhash: 301907643ca1dfecfdcecd5f65dfd5e6
     md5: c8f344d7371949fb6aac7f71e1e003d6
 work/atmosphere/INPUT/ozone_1849_2023_cmip7.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/global.N96/2026.03.03/ozone_1849_2023_cmip7.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/global.N96/2026.03.03/ozone_1849_2023_cmip7.anc
   hashes:
-    binhash: 501b96b0c04d96afb69ba043fd96b046
+    binhash: 836ab6769fe6d7109edcfa111b41493f
     md5: 9acc7eacb5d77eba93a0751113db4e32
 work/atmosphere/INPUT/pftlookup_cable3_Pfix.csv:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
   hashes:
-    binhash: a8d18513f014fe1fb4d57f36f9a53321
+    binhash: fe0c4ad208586a2ccf2cb113919a8332
     md5: d9a4d71ee8038029739c23a1b829ab6a
 work/atmosphere/INPUT/qrparm.mask:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
@@ -117,9 +122,9 @@ work/atmosphere/INPUT/qrparm.soil_igbp_vg:
     binhash: 51560dde970f7123a7250cc6bdc8f3ef
     md5: 26ce57f462dd574fe49f290ab7877112
 work/atmosphere/INPUT/scycl_1849_2023_cmip7.anc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/scycl_1849_2023_cmip7.anc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/scycl_1849_2023_cmip7.anc
   hashes:
-    binhash: 9839a9ae59360f43a89dd8053237358b
+    binhash: 532153e267ee06b4a6c93e10500ffd46
     md5: 9ed52e5de4e55f10baeec1b35c75d1a8
 work/atmosphere/INPUT/spec3a_lw_hadgem1_6on:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
@@ -132,104 +137,104 @@ work/atmosphere/INPUT/spec3a_sw_hadgem1_6on:
     binhash: 149899ecc54ed754ab8c6f05cb99f140
     md5: 0e74c13cf3333132f38d8c5c52e1c7eb
 work/atmosphere/INPUT/stasets/X01001218:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01001218
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01001218
   hashes:
-    binhash: e5c100e78082bd07ea0d5d299a973356
+    binhash: 31ad5018def8692ff4fd1c147251717d
     md5: 7293caa27798d235bd5520eede9700fb
 work/atmosphere/INPUT/stasets/X01002207:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01002207
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01002207
   hashes:
-    binhash: 50a73eef1f79b1449325dbf7e40cb579
+    binhash: 5a15975e876b56375fd56d4058c31ddc
     md5: 448daeebba685950d0c347d0493b5fc4
 work/atmosphere/INPUT/stasets/X01003236:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003236
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003236
   hashes:
-    binhash: 5630ac65d4e2a72e68fd693559d60f72
+    binhash: 15113460723c9cbb80d47fd816f9fe7f
     md5: 71a2288ee0a7d0fc89dafe95653c128a
 work/atmosphere/INPUT/stasets/X01003237:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003237
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003237
   hashes:
-    binhash: 61c20338fd23e02926d12cb21b1ad17d
+    binhash: e90b9e7718ba31b7318f9b10820b8d10
     md5: 4efd39ac9a917525bbc35146d6770e3b
 work/atmosphere/INPUT/stasets/X01003254:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003254
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003254
   hashes:
-    binhash: 8a1daadc09eae1018a72273320e7b576
+    binhash: a118be515a8e248fd7f671dded21768b
     md5: 1b5f7755f752c2ee2086ac6eba886ca3
 work/atmosphere/INPUT/stasets/X01003255:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003255
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003255
   hashes:
-    binhash: 05f279a0fede7a9d5f9cab5b34678567
+    binhash: 123cd6ecc51b1ab879ba0b463695b0a8
     md5: f23a78b048f0cb52ed0e2beb57f00fa8
 work/atmosphere/INPUT/stasets/X01003274:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003274
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003274
   hashes:
-    binhash: e21b1e2f8504cdfc2a366becdf0c143d
+    binhash: 74c2f9ab3626013fa887be54621ff2f6
     md5: 032190f23c926eb47199da6e1f054bf1
 work/atmosphere/INPUT/stasets/X01003275:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003275
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003275
   hashes:
-    binhash: 6f0991ba269c7fd2eef285c844a5eae6
+    binhash: 3ce8c2a5e46c4acdc8c5dda83806b81e
     md5: 120694f3d078b9ade033b56217e9ed85
 work/atmosphere/INPUT/stasets/X01003276:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003276
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003276
   hashes:
-    binhash: ed36f30479fd39213deb3e5c32fae431
+    binhash: d4e27033f83091ab5828d12b38cafd49
     md5: 61afb6eb4e76efb2171c56d02742e9ad
 work/atmosphere/INPUT/stasets/X01003277:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003277
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003277
   hashes:
-    binhash: 447fd0016956c4ab1920d68426acd77a
+    binhash: f3c7ee4d380b4945fdfdfa7fb1be6170
     md5: d8cced93214dd8e84c0c9d06259412ab
 work/atmosphere/INPUT/stasets/X01003278:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003278
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003278
   hashes:
-    binhash: 46d73862b86b80866a94e3d6bbcabc83
+    binhash: 234f48372415f86d7fcf1ee48e92bd43
     md5: 032190f23c926eb47199da6e1f054bf1
 work/atmosphere/INPUT/stasets/X01003279:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003279
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003279
   hashes:
-    binhash: f5f44da1995cbb07755dbc3012f066e2
+    binhash: cd4742ce8f909c30aa079873a3dcb544
     md5: 120694f3d078b9ade033b56217e9ed85
 work/atmosphere/INPUT/stasets/X01003280:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003280
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003280
   hashes:
-    binhash: b9f346dae64f793b24844f4ff5f90a12
+    binhash: 5b94b44b27c245d032a7f4d6f39def9f
     md5: 61afb6eb4e76efb2171c56d02742e9ad
 work/atmosphere/INPUT/stasets/X01003281:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003281
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003281
   hashes:
-    binhash: 2216fb97ea72cb8056b985732853d3e4
+    binhash: 5ccbe8c93e97f377c381f2892267c0bc
     md5: d8cced93214dd8e84c0c9d06259412ab
 work/atmosphere/INPUT/stasets/X01003286:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003286
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01003286
   hashes:
-    binhash: 58e976a5d2780b10f92d0d925363da0b
+    binhash: b3a5d3577f1e64fe502d4cb55a3495fe
     md5: 062ab130605e4771a89b2a300a6154bf
 work/atmosphere/INPUT/stasets/X01005207:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005207
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005207
   hashes:
-    binhash: 936fa5a2a4185914412b4d3377805854
+    binhash: 23abda824c98f9ccb3107ea0528a89c0
     md5: 3d1ccb47257c379b909e8d6098ab95a0
 work/atmosphere/INPUT/stasets/X01005208:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005208
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005208
   hashes:
-    binhash: 894598be8f19e566e523022875949962
+    binhash: 9e7c792aa9aa34e871a09a0f31344bbb
     md5: 8685052394200b839f115a667e7890ff
 work/atmosphere/INPUT/stasets/X01005222:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005222
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005222
   hashes:
-    binhash: 87367a6d692826d2343926c4a4e688c5
+    binhash: 8ff456c8104c3d8080375c3dc288edb9
     md5: 3edd8e46166dbed4102c329991a7a497
 work/atmosphere/INPUT/stasets/X01005223:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005223
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01005223
   hashes:
-    binhash: 2a6d7ff04dcf89c2241ae1df46129db4
+    binhash: 4055c7d1461e9c586f4bd75c384c2b56
     md5: 4633fea316272fd71cd823881d100c14
 work/atmosphere/INPUT/stasets/X01010206:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01010206
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01010206
   hashes:
-    binhash: 96a108bea8d960fa65987115a58621eb
+    binhash: 0f0fe82f1108c9d3da2c9c03ed3b6e30
     md5: 7d5e82e70a2f3936743eb957462d41aa
 work/atmosphere/INPUT/sulpc_oxidants_N96_L38:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
@@ -242,9 +247,9 @@ work/atmosphere/INPUT/vertlevs_G3:
     binhash: 67eeeb98a7de5eee305f026a20482cc7
     md5: 58ca02de69b16bd59771c81e06c4c21a
 work/atmosphere/INPUT/volcts_cmip7.dat:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.12.01/volcts_cmip7.dat
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.12.01/volcts_cmip7.dat
   hashes:
-    binhash: 7af83bb201b6b22a4d7735c41061f509
+    binhash: 0a36e587f17b1b9bef4b3bbe9d4731dc
     md5: 89a3d931712da3805369894e068280b3
 work/coupler/areas.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/coupler/grids/global.oi_1deg.a_N96/2025.07.29/areas.nc
@@ -307,9 +312,9 @@ work/ice/INPUT/kmt.nc:
     binhash: c733037d8edd737e43df4335edecb6e8
     md5: f9d11b6fd3c66d6e16a4afde99eec937
 work/ice/INPUT/lice_discharge_iceberg.nc:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2025.09.16/lice_discharge_iceberg.nc
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/iceberg/global.1deg/2025.09.16/lice_discharge_iceberg.nc
   hashes:
-    binhash: 02e5fe73a134ce5674b3aa6712443e66
+    binhash: 474e9879714bfece42672880bc854729
     md5: 6257b68d0a6704e99c16ded8d65f9096
 work/ocean/INPUT/SFe_Hamiltonetal2020_monthly_clim.nc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ocean/biogeochemistry/global.1deg/2025.09.22/SFe_Hamiltonetal2020_monthly_clim.nc
