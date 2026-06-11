@@ -123,7 +123,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/restart/2026.05.29
+restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/restart/2026.06.11
 
 # Timing controls
 calendar:
@@ -162,9 +162,7 @@ sync:
 #  manually run `payu sync` from the command line.
 
 userscripts:
-    # Apply thinning before each run
-    setup: ./scripts/update_thinning_driver.sh
-    # Apply land use changes after each run
-    run: ./scripts/update_landuse_driver.sh
+    # Apply land use and thinning changes after each run
+    run: ./scripts/update_landuse_driver.sh && ./scripts/update_thinning_driver.sh
 
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
