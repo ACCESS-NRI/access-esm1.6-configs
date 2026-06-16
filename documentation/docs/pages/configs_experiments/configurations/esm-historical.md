@@ -10,7 +10,7 @@ The same input files as the [historical](/configs_experiments/configurations/his
 ### Atmosphere
 An additional input file provides time varying anthropogenic CO2 emissions to the atmosphere model:
 
-* CO2_fluxes_1849_2023_cmip7.anc
+* CO2_fluxes_1849_2023_cmip7.anc: Gridded anthropogenic CO2 emissions in units kg(CO2) m-2 s-1.
 
 ### Restart
 The esm-historical configuration uses a restart from the esm-piControl experiment.

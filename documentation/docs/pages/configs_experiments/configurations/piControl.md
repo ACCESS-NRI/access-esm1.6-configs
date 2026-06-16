@@ -11,19 +11,19 @@ Please note that the settings described below are implemented in the configurati
 ### Atmosphere
 The following input files provide external forcings for 1850 to the atmosphere model. Each file contains 12 months of data which are repeated each year in the model:
 
-* OCFF_1850_cmip7.anc: Organic carbon? **TO CHECK**
-* BC_1850_cmip7.anc: Black carbon ? **TO CHECK**
-* scycl_1850_cmip7.anc: SO2 concentrations given as the max mixing ratio of of S **TO CHECK**
-* Bio_1850_cmip7.anc: Biomass burning emissions **TO CHECK**
-* biogenic_351sm.N96L38: Biogenic aerosols? **TO CHECK**
-* sulpc_oxidants_N96_L38:  ? **TO CHECK**
-* DMS_conc.N96: Dimethyl sulphide concentration in seawater
-* ozone_1850_cmip7.anc: Zonal mean ozone mass mixing ratios
+* OCFF_1850_cmip7.anc: Organic carbon (OC) anthropogenic emissions in kg(C) m-2 s-1.
+* BC_1850_cmip7.anc: Black carbon (BC) anthropogenic emissions in kg(C) m-2 s-1.
+* scycl_1850_cmip7.anc: SO2 anthropogenic emissions, reported in kg(S) m-2 s-1. Split into emissions for low and high model levels. Also contains a separate variable for climatological anthropogenic DMS emissions.
+* Bio_1850_cmip7.anc: Fire emissions of OC and BC in kg(C) m-2 s-1. Split into emissions for low and high model levels.
+* biogenic_351sm.N96L38: Climatological mass mixing ratios of biogenic aerosols.
+* sulpc_oxidants_N96_L38:  Climatological OH, HO2, H2O2, and Ozone MMRs, used in sulphur cycle chemistry calculations.
+* DMS_conc.N96: Dimethyl sulphide concentration in seawater given in nmol l-1.
+* ozone_1850_cmip7.anc: Zonal mean ozone mass mixing ratio used in atmosphere radiation calculations.
 
 ### Land
 The following input files provide data to the CABLE land surface model:
 
-* Ndep_1850_cmip7.anc: Nitrogen deposition
+* Ndep_1850_cmip7.anc: Nitrogen deposition in g(N) m-2 day-1.
 
 Land surface type mappings for 1850 are derived from the LUH3 dataset and are included directly in the UM restart file.
 
