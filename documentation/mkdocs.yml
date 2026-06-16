@@ -31,17 +31,18 @@ nav:
         - Restarts: pages/inputs/restarts.md
 
   - Configurations and Experiments:
+        - Overview:   pages/configs_experiments/overview.md
         - Configurations:
-            - 1pctCO2:    pages/configs_experiments/configurations/1pctCO2.md
-            - abrupt-4xCO2:   pages/configs_experiments/configurations/abrupt-4xCO2.md
             - amip:       pages/configs_experiments/configurations/amip.md
-            - esm-flat10:     pages/configs_experiments/configurations/esm-flat10.md
             - historical:    pages/configs_experiments/configurations/historical.md
             - esm-historical:      pages/configs_experiments/configurations/esm-historical.md 
             - piControl:   pages/configs_experiments/configurations/piControl.md
             - esm-piControl:   pages/configs_experiments/configurations/esm-piControl.md
 
-        - Experiments:    pages/configs_experiments/experiments.md
+        - Experiments:
+            - 1pctCO2:    pages/configs_experiments/experiments/1pctCO2.md
+            - abrupt-4xCO2:   pages/configs_experiments/experiments/abrupt-4xCO2.md
+            - esm-flat10:     pages/configs_experiments/experiments/esm-flat10.md
 
   - Diagnostics:
         - Sea Ice: pages/diagnostics/sea_ice.md # do not edit directly, change 

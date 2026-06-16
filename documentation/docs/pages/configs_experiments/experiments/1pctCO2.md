@@ -1,16 +1,20 @@
-The 1pctCO2 configuration simulates the climate under a yearly 1% increase in CO2 concentrations, starting from preindustrial conditions.
+!!! warning
 
-The configuration matches the [piControl](/configs_experiments/configurations/piControl) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
+    The ACCESS-ESM1.6 1pctCO2 experiment does not have a released and maintained configuration. These notes describe how the CMIP7 experiment was set up and are for reference only. If you would like to run a 1pctCO2 experiment with the latest configuration updates, please create a *help request* on the [ACCESS Hive Forum](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021).
 
-This configuration is used for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
 
-Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
+The 1pctCO2 experiment simulates the climate under a yearly 1% increase in CO2 concentrations, starting from preindustrial conditions.
+
+The experimental setup matches the [piControl](/configs_experiments/configurations/piControl) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
+
+This experiment has been run for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
+
 
 ## Inputs
-The 1pctCO2 configuration uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration other than the initial conditions.
+The 1pctCO2 experiment uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration other than the initial conditions.
 
 ### Restart
-The 1pctCO2 configuration uses the restart from the end of the 100th year of the piControl experiment.
+The 1pctCO2 experiment uses the restart from the end of the 100th year of the piControl experiment.
 
 ## Key settings
 The yearly 1% increase in atmospheric CO2 concentrations is configured in the `atmosphere/namelists` file. Under the `&CLIMCHFG` section, an initial concentration and year are specified along with a rate of increase to apply for the following years.
@@ -43,7 +47,7 @@ With these settings, the model applies a 1% increase in CO2 concentrations for e
 The values for other greenhouse gas concentrations, volcanic forcings, and the solar constant are indentical to the [piControl](/configs_experiments/configurations/piControl) configuration.
 
 ## Configuration scripts
-The 1pctCO2 configuration includes a `check_co2_year.py` userscript which is run during the payu setup stage. This checks during the first run that the restart year is one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, and produces an error otherwise. 
+The 1pctCO2 experiment uses a `check_co2_year.py` userscript which is run during the payu setup stage. This checks during the first run that the restart year is one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, and produces an error otherwise. 
 
 #### config.yaml
 ```yaml

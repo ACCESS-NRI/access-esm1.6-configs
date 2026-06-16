@@ -1,11 +1,11 @@
-The esm-flat10 configuration simulates the climate under constant anthropogenic emissions of 10PgC/year using a fully interactive carbon cycle, with preindustrial values used for all other atmospheric forcings.
+!!! warning
 
-This configuration is used for the [CMIP7 esm-flat10 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recwxXNVh0JIDr1B9).
+    The ACCESS-ESM1.6 esm-flat10 experiment does not have a released and maintained configuration. These notes describe how the CMIP7 experiment was set up and are for reference only. If you would like to run an esm-flat10 experiment with the latest configuration updates, please create a *help request* on the [ACCESS Hive Forum](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021).
 
-Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
+The esm-flat10 experiment simulates the climate under constant anthropogenic emissions of 10PgC/year using a fully interactive carbon cycle, with preindustrial values used for all other atmospheric forcings. This experiment is run for the [CMIP7 esm-flat10 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recwxXNVh0JIDr1B9).
 
 ## Inputs
-The esm-flat10 configuration uses the same input files as the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, with changes for specifying CO2 emissions and a different initial condition.
+The esm-flat10 experiment uses the same input files as the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, with changes for specifying CO2 emissions and a different initial condition.
 
 ### Atmosphere:
 The following file is used to provide the constant CO2 emissions to the atmosphere model:
@@ -13,7 +13,7 @@ The following file is used to provide the constant CO2 emissions to the atmosphe
 * CO2_fluxes_flat10.anc
 
 ### Restart
-The esm-flat10 configuration uses the restart from the end of the 200th year of the esm-piControl experiment.
+The esm-flat10 experiment uses the restart from the end of the 200th year of the esm-piControl experiment.
 
 ## Key settings
 The following settings are used to read the CO2 emissions from the input file. Differences are shown with respect to the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration:
