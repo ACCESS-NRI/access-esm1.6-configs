@@ -41,9 +41,10 @@ def subset_atmosphere_restart(restart_dump):
     """Remove coupling fields from a UM restart. Replaces the input file."""
     exclude_list = "95,171,172,173,174,176,177,178,179,180,181,184,185,186,187,188,189,192,250,413,414,415,416,33001,33002"
     tmp = tempfile.NamedTemporaryFile()
-    cmd = f"python scripts/um_fields_subset.py {restart_dump} --exclude {exclude_list} --output {tmp}"
+    cmd = f"python scripts/um_fields_subset.py {restart_dump} --exclude {exclude_list} --output {tmp.name}"
+    print(cmd)
     subprocess.check_call(shlex.split(cmd))
-    shutil.copy(tmp, restart_dump)
+    shutil.copy(tmp.name, restart_dump)
 
 
 def get_archive_path():
