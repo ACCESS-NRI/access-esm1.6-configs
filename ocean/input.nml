@@ -524,6 +524,8 @@
     do_caco3_dynamics=.true.
     do_burial=.false.
     do_conserve_tracers=.false.
+    do_check_n_conserve=.false.
+    do_check_c_conserve=.false.
 /
 
  &ocean_velocity_advect_nml
