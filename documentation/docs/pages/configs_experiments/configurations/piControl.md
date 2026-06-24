@@ -13,7 +13,7 @@ The following input files provide external forcings for 1850 to the atmosphere m
 
 * OCFF_1850_cmip7.anc: Organic carbon (OC) anthropogenic emissions in kg(C) m-2 s-1.
 * BC_1850_cmip7.anc: Black carbon (BC) anthropogenic emissions in kg(C) m-2 s-1.
-* scycl_1850_cmip7.anc: SO2 anthropogenic emissions, reported in kg(S) m-2 s-1. Split into emissions for low and high model levels. Also contains a separate variable for climatological anthropogenic DMS emissions.
+* scycl_1850_cmip7.anc: SO2 anthropogenic emissions, reported in kg(S) m-2 s-1. Split into emissions for low and high model levels. Contains a separate variable for climatological anthropogenic DMS emissions in kg(S) m-2 s-1
 * Bio_1850_cmip7.anc: Fire emissions of OC and BC in kg(C) m-2 s-1. Split into emissions for low and high model levels.
 * biogenic_351sm.N96L38: Climatological mass mixing ratios of biogenic aerosols.
 * sulpc_oxidants_N96_L38:  Climatological OH, HO2, H2O2, and Ozone MMRs, used in sulphur cycle chemistry calculations.

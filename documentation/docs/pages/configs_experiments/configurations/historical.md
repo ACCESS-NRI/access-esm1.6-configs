@@ -12,7 +12,7 @@ The following input files provide time varying external conditions to the atmosp
 
 * OCFF_1849_2023_cmip7.anc: Organic carbon (OC) anthropogenic emissions in kg(C) m-2 s-1.
 * BC_1849_2023_cmip7.anc: Black carbon (BC) anthropogenic emissions in kg(C) m-2 s-1.
-* scycl_1849_2023_cmip7.anc: SO2 anthropogenic emissions, reported in kg(S) m-2 s-1. Split into emissions for low and high model levels. Also contains a separate variable for climatological anthropogenic DMS emissions.
+* scycl_1849_2023_cmip7.anc: SO2 anthropogenic emissions, reported in kg(S) m-2 s-1. Split into emissions for low and high model levels. Contains a separate variable for climatological anthropogenic DMS emissions in kg(S) m-2 s-1.
 * Bio_1849_2023_cmip7.anc: Fire emissions of OC and BC in kg(C) m-2 s-1. Split into emissions for low and high model levels.
 * ozone_1849_2023_cmip7.anc: Zonal mean ozone mass mixing ratio used in atmosphere radiation calculations.
 * volcts_cmip7.dat: Volcanic forcing given as optical depths for 550nm, multiplied by 10000.
