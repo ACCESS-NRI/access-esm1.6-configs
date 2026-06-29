@@ -74,13 +74,19 @@ We recommend using the following steps to apply and record a perturbation:
    $ python ~access/apps/pythonlib/umfile_utils/access_cm2/perturbIC.py -s <SEED> <path to restartXYZ>/atmosphere/restart_dump.astart
    ```
    here `<SEED>` can be any integer, and it's used to set the [random seed](https://en.wikipedia.org/wiki/Random_seed) for the perturbation. Specifying a random seed is important, as it allows for the exact same perturbation to be reapplied in the future. Make sure to keep track of whichever value you use.
-3. Make a record of the perturbation in the experiment runlogs. First navigate to the Payu control directory for the experiment and then run
+3. Make a record of the perturbation in the experiment runlogs. First `cd` into the Payu control directory for the experiment and run
+   ```
+   payu setup
+   ```
+   This will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
    ```bash
-   $ git commit --allow-empty -m "restartXYZ perturbed using command:  python ~access/apps/pythonlib/umfile_utils/access_cm2/perturbIC.py -s <SEED> <path to restartXYZ>/atmosphere/restart_dump.astart"
+   $ git commit -a -m "restartXYZ perturbed using command:  python ~access/apps/pythonlib/umfile_utils/access_cm2/perturbIC.py -s <SEED> <path to restartXYZ>/atmosphere/restart_dump.astart"
    ```
    filling in the correct information for `<SEED>` and `<path to restartXYZ>`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
 
    If you run the `git log` command, it should now include the above record.
+
+   You will finally need to run `payu sweep` to clear the work directory before setting off the next run.
 
 
 ### Changing the date of restart files
