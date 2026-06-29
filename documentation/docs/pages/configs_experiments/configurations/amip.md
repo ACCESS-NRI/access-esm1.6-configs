@@ -17,7 +17,7 @@ Two additional files provide observed sea surface temperatures and sea ice conce
 * seaice_amip_n96_gregorian.anc : Sea ice concentrations in units [0,1], with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
 
 ### Restart
-The amip configuration uses atmposphere restart files taken from the historical experiment.
+The amip configuration use the 1978 atmosphere restart file produced by the historical experiment. Ocean, sea ice, and coupler restart files are removed, and coupling related fields are removed from the atmosphere restart.
 
 ## Key settings
 
