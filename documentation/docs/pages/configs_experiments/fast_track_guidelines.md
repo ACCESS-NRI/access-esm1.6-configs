@@ -79,17 +79,11 @@ Output and restart files for ESM1.6 fast track experiments are being archived to
 
 
 ## Pushing completed experiments back to the repository
-Once your simulations are complete, you'll need to push the runlogs back up to the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository using the following steps:
+Once your simulations are complete, you'll need to push the runlogs back up to the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository using the following step:
 
-1.  First find the local branch name for each experiment by running the following command in the control directory:
-    ```bash
-    $ payu branch
-    * Current Branch: <experiment-branch-name>
-        experiment_uuid: 3e907528-b735-af72-b4v6-51c9b3l27960
-    ```
-2. Push the runlogs up to the repository:
+1. Push the runlogs up to the repository:
    ```
-   $ git push origin <experiment-branch-name>
+   $ git push origin HEAD
    ```
 
 !!! warning
