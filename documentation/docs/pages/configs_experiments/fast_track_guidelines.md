@@ -49,7 +49,7 @@ payu clone git@github.com:ACCESS-Community-Hub/access-esm1.6-dev-experiments.git
 !!! warning
     If you are cloning an experiment which has been set up for you on the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository, it's important that you don't change the local branch name using the `-b <local-branch-name>` option from the `payu clone` command.*
 
-Once the experiment has been cloned, you can navigate to the control directroy and run it using the usual `payu run -n <n runs>` command.
+Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <n runs>` command.
 
 !!! tip
     Some experiments will require a more complicated setup, such as scripts that need to be run before the initial simulation. Other experiments may need to be cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments). In these cases, ACCESS-NRI staff will provide you with specific instructions.
