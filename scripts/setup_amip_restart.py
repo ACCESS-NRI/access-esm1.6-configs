@@ -12,7 +12,7 @@ import tempfile
 def parse_args():
     parser = argparse.ArgumentParser(
         description=(
-            "Copy and modify a 1978 ESM1.6 historical restart directory for use as the"
+            "Copy and modify a 1978 ESM1.6 historical experiment restart directory for use as the"
             "initial condition in an amip simulation. This includes:\n"
             " - Removing the ocean, ice, and coupler restart files\n"
             " - Removing coupling fields from the atmosphere restart dump\n"
@@ -31,14 +31,15 @@ def parse_args():
 
 
 def remove_non_atm_restarts(restart_dir):
-    """Remove restart files for the non-atmosphere components."""
+    """Remove restart files for the ocean, ice and coupler."""
     shutil.rmtree(restart_dir / "ocean")
     shutil.rmtree(restart_dir / "ice")
     shutil.rmtree(restart_dir / "coupler")
 
 
 def subset_atmosphere_restart(restart_dump):
-    """Remove coupling fields from a UM restart. Replaces the input file."""
+    """Remove coupling fields from a UM restart. Changes file in place."""
+    # See https://forum.access-hive.org.au/t/create-an-amip-restart-from-a-coupled-restart/5261 for backround
     exclude_list = "95,171,172,173,174,176,177,178,179,180,181,184,185,186,187,188,189,192,250,413,414,415,416,33001,33002"
     tmp = tempfile.NamedTemporaryFile()
     cmd = f"python scripts/um_fields_subset.py {restart_dump} --exclude {exclude_list} --output {tmp.name}"
@@ -88,7 +89,7 @@ def commit_config(input_restart, output_restart):
         f"Restarts in {input_restart} copied to {output_restart} and modified\n"
         f"using {Path(__file__).name}\n"
         " * Ocean, sea ice and coupler restart files removed.\n"
-        " * Coupling fields removed from atmosphere restart file.\n"
+        " * Coupling fields removed from atmosphere restart file."
     )
     print(f"Commiting changes to config.yaml with message: '{msg}'")
     repo.index.commit(msg)

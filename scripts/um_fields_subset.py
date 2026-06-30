@@ -15,7 +15,11 @@ import warnings
 from textwrap import dedent
 from itertools import chain
 
-PROGNOSTIC_STASH_CODES = tuple(chain(range(1,999+1), range(33001,34999+1)))
+# Prognostic variables have section 0, 33 (tracers), or 34 (UKCA).
+# Tracer flux variables 3100 - 3129 are also treated as prognostic.
+PROGNOSTIC_STASH_CODES = tuple(chain(range(1,999+1), range(3100,3129+1), range(33001,34999+1), range(54000,54999+1)))
+# Tracer variables have section 33
+TRACER_STASH_CODES = tuple(range(33000, 33999+1))
 
 def convert_to_list(value: str):
     """
@@ -216,7 +220,111 @@ def filter_fieldsfile(input_file, prognostic, include_list, exclude_list):
 
     filtered_file.fields = include_fields(input_file.fields, include_list) if include_list is not None else exclude_fields(input_file.fields, exclude_list)
     return filtered_file
+
+
+def update_prognostic_count(fields_file):
+    """
+    Update the count of prognostic variables in a file's fixed length header.
+
+    Parameters
+    ----------
+    field: mule.ff.FieldsFile
+        mule fields file to be updated.
+
+    Returns
+    -------
+    None
+    """
+    previous_count = fields_file.fixed_length_header.total_prognostic_fields
+    updated_count = sum([is_prognostic(field) and is_instantaneous(field) for field in fields_file.fields])
+    if updated_count != previous_count:
+        print(f"Resetting no. of prognostic fields from {previous_count} to {updated_count}")
+        fields_file.fixed_length_header.total_prognostic_fields = updated_count
+
+
+def is_prognostic(field):
+    """
+    Check whether a field is a prognostic variable.
+
+    Parameters
+    ----------
+    field: mule.Field
+        The mule field to be checked
+
+    Returns
+    -------
+    bool
+        Whether the field is prognostic or not.
+    """
+    return field.lbuser4 in PROGNOSTIC_STASH_CODES
+
+
+def is_instantaneous(field):
+    """
+    Check that a field is instantaneous with no time aggregation or processing.
+
+    Parameters
+    ----------
+    field: mule.Field
+
+    Returns
+    -------
+    bool
+        whether a field is instantaneous.
+    """
+    # Check the field is instantaneous (lbtime < 10).
+    # Check the field has no time processing (lbproc == 0).
+    # Check the field is not a timeseries (lbcode < 30000).
+    return field.lbtim < 10 and field.lbproc == 0 and field.lbcode < 30000
+
+
+def update_tracer_count(fields_file):
+    """
+    Update the count of instantaneous tracer variables in a file's fixed length header.
+
+    Parameters
+    ----------
+    field: mule.ff.FieldsFile
+        mule fields file to be updated.
+
+    Returns
+    -------
+    None
+    """
+    previous_count = fields_file.integer_constants.num_passive_tracers
+    num_tracer_fields = sum([is_tracer(field)  and is_instantaneous(field) for field in fields_file.fields])
+    # Divide by number of levels for the number of tracer variables
+    if num_tracer_fields % fields_file.integer_constants.num_tracer_levels !=0:
+        raise ValueError(
+            f"Number of tracer levels {fields_file.integer_constants.num_tracer_levels} "
+            f"does not divide number of tracer fields {num_tracer_fields}. Number of "
+            "tracer variables cannot be determined."
+        )
+
+    updated_count = num_tracer_fields / fields_file.integer_constants.num_tracer_levels
+
+    if updated_count != previous_count:
+        print(f"Resetting no. of tracer fields from {previous_count} to {updated_count}")
+        fields_file.integer_constants.num_passive_tracers = updated_count
+
+
+
+def is_tracer(field):
+    """
+    Check that a field is a tracer field.
+    Parameters
+    ----------
+    field: mule.Field
+
+    Returns
+    -------
+    bool
+        whether a field is a tracer.
+    """
+    return field.lbuser4 in TRACER_STASH_CODES
     
+
+
 def main():
 
     # Parse the inputs and validate that they do not xlist or vlist are given.
@@ -233,6 +341,9 @@ def main():
     # Skip mule validation if the "--validate" option is not provided
     if not args.validate:
         filtered_file.validate = void_validation
+
+    update_prognostic_count(filtered_file)
+    update_tracer_count(filtered_file)
 
     filtered_file.to_file(output_filename)
 
