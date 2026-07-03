@@ -96,6 +96,16 @@ The 11 species are:
 * `10`: HFC-125
 * `11`: HFC-134A
 
+*[CO2]: Carbon dioxide
+*[CH4]: Methane
+*[N2O]: Nitrous oxide
+*[CFC-11]: Chlorofluorocarbon-11
+*[CFC-12]: Chlorofluorocarbon-12
+*[CFC-113]:  chlorofluorocarbon-113
+*[HCFC-22]: Chlorodifluoromethane
+*[HFC-125]: Pentafluoroethane
+*[HFC-134A]: 1,1,1,2-tetrafluoroethane
+
 Rates of increase (`CLIM_FCG_RATES`) for each greenhouse gas need to be set to a negative number. This ensures that the model uses the prescribed concentrations set in `CLIM_FCG_LEVLS` as negative rates are ignored.
 ```diff
 + CLIM_FCG_RATES(:,1) = -3.276800e+04, -3.276800e+04, -3.276800e+04, -3.276800e+04,...
