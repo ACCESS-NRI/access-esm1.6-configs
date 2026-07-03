@@ -13,11 +13,11 @@ The amip configuration uses the same atmosphere and land input files as the [his
 ### Atmosphere
 Two additional files provide observed sea surface temperatures and sea ice concentrations to the atmosphere model:
 
-* sst_amip_n96_gregorian.anc: Sea surface temperatures in units K, with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
-* seaice_amip_n96_gregorian.anc : Sea ice concentrations in units [0,1], with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
+* amip_sst_n96_greg.pp: Sea surface temperatures in units K, with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
+* amip_seaice_n96_greg.pp : Sea ice concentrations in units [0,1], with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
 
 ### Restart
-The amip configuration use the 1978 atmosphere restart file produced by the historical experiment. Ocean, sea ice, and coupler restart files are removed, and coupling related fields are removed from the atmosphere restart.
+The amip configuration uses the 1978 atmosphere restart file produced by the historical experiment after removal of the coupling related fields. Ocean, sea ice, and coupler restart files are removed.
 
 ## Key settings
 
