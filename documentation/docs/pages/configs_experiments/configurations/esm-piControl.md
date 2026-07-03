@@ -10,7 +10,7 @@ Please note that the settings described below are implemented in the configurati
 The esm-piControl configuration uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration in order to provide the model with 1850 atmospheric forcings.
 
 ### Restart
-The esm-piControl configuration uses a restart from the end of the emissions driven model spinup.
+The esm-piControl configuration uses a restart from the end of the emissions driven model spinup. The initial restart uses calendar year 101.
 
 
 ## Key settings

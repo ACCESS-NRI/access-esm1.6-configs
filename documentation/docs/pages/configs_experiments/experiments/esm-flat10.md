@@ -13,7 +13,7 @@ The following file is used to provide the constant CO2 emissions to the atmosphe
 * CO2_fluxes_flat10.anc: Constant gridded CO2 emissions in units kg(CO2) m-2 s-1, totalling 10Pg(C) year-1.
 
 ### Restart
-The esm-flat10 experiment uses the restart from the end of the 200th year of the esm-piControl experiment.
+The esm-flat10 experiment uses the restart from the esm-piControl experiment with calendar year 201.
 
 ## Key settings
 The following settings are used to read the CO2 emissions from the input file. Differences are shown with respect to the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration:

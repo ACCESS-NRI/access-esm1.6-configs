@@ -13,7 +13,7 @@ An additional input file provides time varying anthropogenic CO2 emissions to th
 * CO2_fluxes_1849_2023_cmip7.anc: Gridded anthropogenic CO2 emissions in units kg(CO2) m-2 s-1.
 
 ### Restart
-The esm-historical configuration uses a restart from the esm-piControl experiment.
+The esm-historical configuration uses the restart from the esm-piControl experiment with calendar year 201. The year in the restart has been changed to 1850 for use in the esm-historical configuration.
 
 ## Key settings
 The esm-historical configuration uses the same settings as the [historical](/configs_experiments/configurations/historical) configuration, with changes for activating the interactive carbon cycle and external emissions file. 

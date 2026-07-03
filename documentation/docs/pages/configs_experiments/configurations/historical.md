@@ -32,7 +32,7 @@ The following input files provide time varying conditions to the land model for 
 * ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc: Land surface type fractions derived from the LUH3 dataset.
 
 ### Restart
-The historical configuration uses a restart from the piControl experiment.
+The historical configuration uses the restart from the piControl experiment with calendar year 201. The year in the restart has been changed to 1850 for use in the historical configuration.
 
 
 ## Key settings

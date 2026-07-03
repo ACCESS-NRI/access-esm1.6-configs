@@ -14,7 +14,7 @@ This experiment has been run for the [CMIP7 1pctCO2 experiment](https://airtable
 The 1pctCO2 experiment uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration except for the initial conditions.
 
 ### Restart
-The 1pctCO2 experiment uses the restart from the end of the 100th year of the piControl experiment.
+The 1pctCO2 experiment uses the restart from the piControl experiment with calendar year 201.
 
 ## Key settings
 The yearly 1% increase in atmospheric CO2 concentrations is configured in the `atmosphere/namelists` file. Under the `&CLIMCHFG` section, an initial concentration and year are specified along with a rate of increase to apply for the following years.
@@ -37,12 +37,12 @@ In the above:
 
 * `L_CLMCHFCG=.TRUE.` enables time varying prescribed greenhouse gas concentrations.
 * `CLIM_FCG_NYEARS(1)= 1` indicates that one year of prescribed CO2 concentrations will be provided.
-* `CLIM_FCG_YEARS(1,1)=200` indicates that the CO2 concentrations are provided for calendar year 200.
-* `CLIM_FCG_LEVLS(1,1)=4.3189e-04` sets the CO2 mass mixing ratio for calendar year 200 to equal the value used in the [piControl](/configs_experiments/configurations/piControl) configuration.
+* `CLIM_FCG_YEARS(1,1)=200` indicates that the CO2 concentrations are provided for calendar year 200. This has been set to be one less than 201, the calendar year in the initial restart file. It's important for the year specified by `CLIM_FCG_YEARS(1,1)` to be exactly one year less than the year in the initial restart file, otherwise incorrect increases in CO2 concentrations will be applied.
+* `CLIM_FCG_LEVLS(1,1)=4.3189e-04` sets the CO2 mass mixing ratio for calendar year specified in `CLIM_FCG_YEARS(1,1)` to equal the value used in the [piControl](/configs_experiments/configurations/piControl) configuration.
 * `CLIM_FCG_RATES(1,1)= 1.00000` tells the model to apply a 1% increase to the CO2 concentration for each year after the last provided prescribed value.
 * `CLIM_FCG_NYEARS(2:11)=10*0` tells the model that time varying values are not being provided for the other greenhouse gasses. Their values are instead taken from the `&RUN_Radiation` section.
 
-With these settings, the model applies a 1% increase in CO2 concentrations for each year following the calendar year set in `CLIM_FCG_YEARS(1,1)=200`, so that calendar year 201 uses a concentration of `4.3189e-04*1.01=4.362089e-04`, calendar year 202 uses `4.3189e-04*1.01^2=4.4057098e-04` and so on. The year in the namelist has been set to 200, as the initial restart files used by the configuration have a calendar year of 201. It's important for the dates in the initial restart to be one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, otherwise the incorrect increases in CO2 concentrations will be applied.
+With these settings, the model applies a 1% increase in CO2 concentrations for each year following the calendar year set in `CLIM_FCG_YEARS(1,1)=200`, so that calendar year 201 uses a concentration of `4.3189e-04*1.01=4.362089e-04`, calendar year 202 uses `4.3189e-04*1.01^2=4.4057098e-04` and so on.
 
 The values for other greenhouse gas concentrations, volcanic forcings, and the solar constant are indentical to the [piControl](/configs_experiments/configurations/piControl) configuration.
 

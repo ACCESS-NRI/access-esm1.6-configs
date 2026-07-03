@@ -28,7 +28,7 @@ The following input files provide data to the CABLE land surface model:
 Land surface type mappings for 1850 are derived from the LUH3 dataset and are included directly in the UM restart file.
 
 ### Restart file
-The piControl configuration uses a restart file from the end of the model spin up.
+The piControl configuration uses a restart file from the end of the model spin up. This initial restart uses calendar year 101.
 
 ## Key settings
 Values for greenhouse gas concentrations, volcanic forcings, and the solar constant are set in the following atmosphere configuration files. Each value is treated as a global constant in the model.

@@ -11,7 +11,7 @@ The experiment uses the same settings as the [piControl](/configs_experiments/co
 The abrupt-4xCO2 experiment uses the same input files as the [piControl](/configs_experiments/configurations/piControl) other than the initial conditions.
 
 ### Restart
-The abrupt-4xCO2 experiment uses the restart from the end of the 100th year of the piControl experiment.
+The abrupt-4xCO2 experiment uses the restart from the piControl experiment with calendar year 201.
 
 
 ## Key settings
