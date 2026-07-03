@@ -18,7 +18,7 @@ The esm-flat10 experiment uses the restart from the esm-piControl experiment wit
 ## Key settings
 The following settings are used to read the CO2 emissions from the input file. Differences are shown with respect to the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration:
 
-#### um_env.yaml
+#### atmosphere/um_env.yaml
 ````diff
 +CO2EMITS: INPUT/CO2_fluxes_flat10.anc
 ````

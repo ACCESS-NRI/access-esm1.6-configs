@@ -23,7 +23,7 @@ The following differences are shown with respect to the [historical](/configs_ex
 ### Greenhouse gas emissions and concentrations
 As with the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, the following settings activate the interactive carbon cycle. 
 
-#### um_env.yaml
+#### atmosphere/um_env.yaml
 ````diff
 +CO2EMITS: INPUT/CO2_fluxes_1849_2023_cmip7.anc
 ````

@@ -112,7 +112,26 @@ Rates of increase (`CLIM_FCG_RATES`) for each greenhouse gas need to be set to a
 + CLIM_FCG_RATES(:,11) = -3.276800e+04, -3.276800e+04, -3.276800e+04, ...
 ```
 
-## Solar and volcanic forcings
+### Historical forcings
+Alongside corresponding filepath changes in the `config.yaml` file, the following swaps the climatological forcings from the [piControl](/configs_experiments/configurations/piControl) configuration with the longer historical forcing files:
+
+#### atmosphere/um_env.yaml
+```diff
+- INPUT/Bio_1850_cmip7.anc
+- NDEPFIL: INPUT/Ndep_1850_cmip7_v2_0.anc
+- OCFFEMIS: INPUT/OCFF_1850_cmip7.anc
+- OZONE: INPUT/ozone_1850_cmip7.anc
+- SOOTEMIS: INPUT/BC_1850_cmip7.anc
+- SULPEMIS: INPUT/scycl_1850_cmip7.anc
++ BIOMASS: INPUT/Bio_1849_2023_cmip7.anc
++ NDEPFIL: INPUT/Ndep_1849_2023_cmip7_v2_0.anc
++ OCFFEMIS: INPUT/OCFF_1849_2023_cmip7.anc
++ OZONE: INPUT/ozone_1849_2023_cmip7.anc
++ SOOTEMIS: INPUT/BC_1849_2023_cmip7.anc
++ SULPEMIS: INPUT/scycl_1849_2023_cmip7.anc
+```
+
+### Solar and volcanic forcings
 Time varying solar and volcanic forcings are activated in the `&NLSTCATM` section of the `atmosphere/namelists` file:
 
 #### atmosphere/namelists
