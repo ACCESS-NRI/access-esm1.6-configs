@@ -16,7 +16,7 @@ The following input files provide time varying external conditions to the atmosp
 * Bio_1849_2023_cmip7.anc: Fire emissions of OC and BC in kg(C) m-2 s-1. Split into emissions for low and high model levels.
 * ozone_1849_2023_cmip7.anc: Zonal mean ozone mass mixing ratio used in atmosphere radiation calculations.
 * volcts_cmip7.dat: Volcanic forcing given as optical depths for 550nm, multiplied by 10000.
-* TSI_CMIP7_ESM: Yearly mean total solar irradiance at 1 AU in units W m-2.
+* TSI_CMIP7_ESM: Yearly mean total solar irradiance at 1 astronomical unit from the sun in units W m-2.
 
 The following files are carried over from the [piControl](/configs_experiments/configurations/piControl) configuration and provide 12 months of data which
 are repeated in the model:
