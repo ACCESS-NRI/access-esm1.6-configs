@@ -11,7 +11,7 @@ This experiment has been run for the [CMIP7 1pctCO2 experiment](https://airtable
 
 
 ## Inputs
-The 1pctCO2 experiment uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration other than the initial conditions.
+The 1pctCO2 experiment uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration except for the initial conditions.
 
 ### Restart
 The 1pctCO2 experiment uses the restart from the end of the 100th year of the piControl experiment.

@@ -37,9 +37,10 @@ The historical configuration uses a restart from the piControl experiment.
 
 ## Key settings
 
-### Greenhouse gas concentrations
-To implement time varying greenhouse gas concentrations, the constant concentrations in the *&RUN_Radiation* section are replaced with unused placeholder values. The following differences are shown with respect to the [piControl](/configs_experiments/configurations/piControl) configuration:
+The following differences are shown with respect to the [piControl](/configs_experiments/configurations/piControl) configuration
 
+### Greenhouse gas concentrations
+To implement time varying greenhouse gas concentrations, the constant concentrations in the *&RUN_Radiation* section are replaced with unused placeholder values. 
 #### atmosphere/namelists
 ```diff
 &RUN_Radiation
@@ -82,6 +83,7 @@ and arrays are filled in for the number of years of data provided for each speci
 ```
 
 The 11 species are:
+
 * `1`: CO2
 * `2`: CH4
 * `3`: N2O

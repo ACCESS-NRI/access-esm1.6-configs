@@ -18,8 +18,10 @@ The esm-historical configuration uses a restart from the esm-piControl experimen
 ## Key settings
 The esm-historical configuration uses the same settings as the [historical](/configs_experiments/configurations/historical) configuration, with changes for activating the interactive carbon cycle and external emissions file. 
 
+The following differences are shown with respect to the [historical](/configs_experiments/configurations/historical) configuration.
+
 ### Greenhouse gas emissions and concentrations
-As with the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, the following settings activate the interactive carbon cycle. The following differences are shown with respect to the [historical](/configs_experiments/configurations/historical) configuration:
+As with the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, the following settings activate the interactive carbon cycle. 
 
 #### um_env.yaml
 ````diff

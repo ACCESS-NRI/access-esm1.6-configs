@@ -24,7 +24,7 @@ The amip configuration use the 1978 atmosphere restart file produced by the hist
 Settings are copied from the [historical](/configs_experiments/configurations/historical) configuration with changes to deactivate the coupling, to add prescribed SSTs and sea ice concentrations, and to deactivate the coupled CO2 tracers.
 
 
-The following differences are shown with respect to the [historical](/configs_experiments/configurations/historical) configuration:
+The following differences are shown with respect to the [historical](/configs_experiments/configurations/historical) configuration.
 
 ### Prescribed SSTs and sea ice
 
@@ -54,7 +54,7 @@ The following settings configure the atmospheric model to use prescribed SSTs an
 + &UPANCA ANC_REF_NO=28, PERIOD=3, INTERVAL=1 /
 + &UPANCA ANC_REF_NO=29, PERIOD=3, INTERVAL=1 /
 ```
-The `L_SICE/L_SSICE` options control how the sea ice albedo is calculated in the atmosphere model. The `&UPANCA` lines set the frequency at which the atmosphere model updates its sea ice fraction (`ANC_REF_NO=27`) and sea surface temperature (`ANC_REF_NO=28`) via linear interpolation. Sea ice depth (`ANC_REF_NO=29`) is calculated in the model based on the prescribed concentration, and is also updated at the frequency specified here. See the [esm-historical](/configs_experiments/configurations/esm-historical/#greenhouse-gas-emissions-and-concentrations) configuration for details on controling the linear interpolation.
+The `L_SICE/L_SSICE` options control how the sea ice albedo is calculated in the atmosphere model. The `&UPANCA` lines set the frequency at which the atmosphere model updates its sea ice fraction (`ANC_REF_NO=27`) and sea surface temperature (`ANC_REF_NO=28`) via linear interpolation (see details on the linear interpolation in the [esm-historical](/configs_experiments/configurations/esm-historical/#greenhouse-gas-emissions-and-concentrations) configuration). Sea ice depth (`ANC_REF_NO=29`) is calculated in the model, at the frequency specified here, based on the prescribed concentration. 
 
 
 #### atmosphere/um_env.yaml
@@ -92,7 +92,7 @@ These tracers aren't used in the amip configuration and are deactivated with the
 
 
 ### Deactivating coupling
-The following settings relate to the oasis coupling used to couple the atmosphere, ocean, and sea ice submodels. As the coupling isn't used in the amip configuration, they are either deactivated or removed:
+The following settings relate to the OASIS coupler used to couple the atmosphere, ocean, and sea ice submodels. As the coupling isn't used in the amip configuration, they are either deactivated or removed:
 
 #### atmosphere/um_env.yaml
 ```diff
