@@ -37,7 +37,7 @@ In the above:
 
 * `L_CLMCHFCG=.TRUE.` enables time varying prescribed greenhouse gas concentrations.
 * `CLIM_FCG_NYEARS(1)= 1` indicates that one year of prescribed CO2 concentrations will be provided.
-* `CLIM_FCG_YEARS(1,1)=200` indicates that the CO2 concentrations are provided for calendar year 200. This has been set to be one less than 201, the calendar year in the initial restart file. It's important for the year specified by `CLIM_FCG_YEARS(1,1)` to be exactly one year less than the year in the initial restart file, otherwise incorrect increases in CO2 concentrations will be applied.
+* `CLIM_FCG_YEARS(1,1)=200` indicates CO2 mass mixing ratios in the `CLIM_FCG_LEVLS(1,1)` setting are provided for calendar year 200. This has been set to be one less than 201, the calendar year in the initial restart file. It's important for this setting to be exactly one year less than the year in the initial restart file, otherwise incorrect increases in CO2 concentrations will be applied.
 * `CLIM_FCG_LEVLS(1,1)=4.3189e-04` sets the CO2 mass mixing ratio for calendar year specified in `CLIM_FCG_YEARS(1,1)` to equal the value used in the [piControl](/configs_experiments/configurations/piControl) configuration.
 * `CLIM_FCG_RATES(1,1)= 1.00000` tells the model to apply a 1% increase to the CO2 concentration for each year after the last provided prescribed value.
 * `CLIM_FCG_NYEARS(2:11)=10*0` tells the model that time varying values are not being provided for the other greenhouse gasses. Their values are instead taken from the `&RUN_Radiation` section.
