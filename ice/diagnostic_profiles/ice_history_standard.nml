@@ -28,10 +28,10 @@
     f_siconc           = 'x',  ! Sea Ice Area Percentage (Ocean Grid), this needs to be requested at all frequencies 
                                 ! other CMIP variables (e.g. those with `si` prefix) are requested
     f_siage            = 'x',  ! Age of Sea Ice
-    f_sicompstren      = 'x',   ! Compressive Sea Ice Strength
+    f_sicompstren      = 'm',   ! Compressive Sea Ice Strength
     f_sidconcdyn       = 'x',   ! Sea Ice Area Percentage Tendency Due to Dynamics
     f_sidconcth        = 'x',   ! Sea Ice Area Percentage Tendency Due to Thermodynamics
-    f_sidivvel         = 'x',   ! Divergence of the Sea Ice Velocity Field
+    f_sidivvel         = 'm',   ! Divergence of the Sea Ice Velocity Field
     f_sidmassdyn       = 'x',   ! Sea Ice Mass Change from Dynamics
     f_sidmassevapsubl  = 'x',   ! Sea Ice Mass Change Through Evaporation and Sublimation
     f_sidmassgrowthbot = 'x',   ! Sea Ice Mass Growth from Congelation
@@ -44,32 +44,32 @@
     f_sidmasstranx     = 'x', f_sidmasstrany    = 'x', 
                                 ! Sea Ice Mass Transport
     f_siflcondbot      = 'x',  ! Net conductive heat flux at base of sea ice
-    f_siflcondtop      = 'x',  ! Net conductive heat flux at top of sea ice
-    f_siflfwbot        = 'x',   ! Freshwater flux from sea ice 
+    f_siflcondtop      = 'm',  ! Net conductive heat flux at top of sea ice
+    f_siflfwbot        = 'm',   ! Freshwater flux from sea ice
                                 ! averaged only when sea ice is present
-    f_siflsensbot      = 'x',  ! Net sensible heat flux at base of sea ice
+    f_siflsensbot      = 'm',  ! Net sensible heat flux at base of sea ice
     f_sihc             = 'x',  ! Heat content in sea ice
     f_simass           = 'x',   ! Sea ice mass
     f_sisndmassdyn     = 'x',   ! Snow mass change due to sea ice dynamics
     f_sisndmassmelt    = 'x',   ! Snow mass change due to snow melt
     f_sisndmasssi      = 'x',   ! Snow mass change due to flooding with sea water
-    f_sisndmasssnf     = 'x',   ! Snow mass change due to snow fall
+    f_sisndmasssnf     = 'm',   ! Snow mass change due to snow fall
     f_sisndmasssubl    = 'x',   ! Snow mass change due to evaporation and sublimation, 
     f_sisnhc           = 'x',  ! Heat content in snow on sea ice
-    f_sisnmass         = 'x',   ! Mass of snow on sea ice
+    f_sisnmass         = 'm',   ! Mass of snow on sea ice
     f_sispeed          = 'x',  ! Sea ice speed (non directional)
-    f_sistrxdtop       = 'x',  f_sistrydtop       = 'x',
+    f_sistrxdtop       = 'm',  f_sistrydtop       = 'm',
                                 ! Atmospheric surface stress on sea ice
                                 ! averaged only when sea ice is present
-    f_sistrxubot       = 'x',  f_sistryubot       = 'x',
+    f_sistrxubot       = 'm',  f_sistryubot       = 'm',
                                 ! Ocean surface stress on sea ice
                                 ! averaged only when sea ice is present
-    f_sithick          = 'x',  ! Sea ice thickness
+    f_sithick          = 'm',  ! Sea ice thickness
                                 ! averaged only when sea ice is present
-    f_sitimefrac       = 'x',  ! Fraction of averaging interval when there is sea ice
-    f_siu              = 'x', f_siv              = 'x',
+    f_sitimefrac       = 'm',  ! Fraction of averaging interval when there is sea ice
+    f_siu              = 'm', f_siv              = 'm',
                                 ! Sea ice velocity
-    f_sivol            = 'x',   ! Sea ice volume per grid-cell area
+    f_sivol            = 'm',   ! Sea ice volume per grid-cell area
 
     !-----------------------------------
     ! CMIP7 other variables which are available
@@ -77,13 +77,13 @@
     f_sifb             = 'x',  ! Sea ice freeboard
     f_sitempbot        = 'x',  ! Sea ice basal temperature
                                 ! averaged only when sea ice is present
-    f_siforcecoriolx   = 'x', f_siforcecorioly = 'x',
+    f_siforcecoriolx   = 'm', f_siforcecorioly = 'm',
                                 ! Force on sea ice due to coriolis
                                 ! averaged only when sea ice is present
-    f_siforceintstrx   = 'x', f_siforceintstry = 'x',
+    f_siforceintstrx   = 'm', f_siforceintstry = 'm',
                                 ! Force on sea ice due to internal stress
                                 ! averaged only when sea ice is present
-    f_siforcetiltx     = 'x', f_siforcetilty   = 'x',
+    f_siforcetiltx     = 'm', f_siforcetilty   = 'm',
                                 ! Force on sea ice due to sea surface tilt
                                 ! averaged only when sea ice is present
     f_sisaltmass       = 'x',  ! Mass of salt in sea ice
@@ -94,13 +94,13 @@
     !-----------------------------------
     f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_aice      = 'm', ! we need this to calculate time-weighted averages
-    f_hi        = 'm', f_hs         = 'm',
+    f_hi        = 'x', f_hs         = 'x',
     f_Tsfc      = 'x',
-    f_uvel      = 'm', f_vvel       = 'm',
+    f_uvel      = 'x', f_vvel       = 'x',
     f_uatm      = 'x', f_vatm       = 'x',
     f_fswdn     = 'm', f_flwdn      = 'm',
     f_fswup     = 'x',
-    f_snow      = 'x', f_snow_ai    = 'm',
+    f_snow      = 'x', f_snow_ai    = 'x',
     f_rain      = 'x', f_rain_ai    = 'm',
     f_sst       = 'm', f_sss        = 'm',
     f_uocn      = 'x', f_vocn       = 'x',
@@ -123,17 +123,17 @@
     f_snoice    = 'x', f_dsnow      = 'x',
     f_meltt     = 'x', f_melts      = 'x',
     f_meltb     = 'x', f_meltl      = 'x',
-    f_fresh     = 'x', f_fresh_ai   = 'm',
+    f_fresh     = 'x', f_fresh_ai   = 'x',
     f_fsalt     = 'x', f_fsalt_ai   = 'x',
-    f_fhocn     = 'x', f_fhocn_ai   = 'm',
+    f_fhocn     = 'x', f_fhocn_ai   = 'x',
     f_fswthru   = 'x', f_fswthru_ai = 'x',
-    f_strairx   = 'm', f_strairy    = 'm',
-    f_strtltx   = 'm', f_strtlty    = 'm',
-    f_strcorx   = 'm', f_strcory    = 'm',
-    f_strocnx   = 'm', f_strocny    = 'm',
-    f_strintx   = 'm', f_strinty    = 'm',
-    f_strength  = 'm',
-    f_divu      = 'm', f_shear      = 'm',
+    f_strairx   = 'x', f_strairy    = 'x',
+    f_strtltx   = 'x', f_strtlty    = 'x',
+    f_strcorx   = 'x', f_strcory    = 'x',
+    f_strocnx   = 'x', f_strocny    = 'x',
+    f_strintx   = 'x', f_strinty    = 'x',
+    f_strength  = 'x',
+    f_divu      = 'x', f_shear      = 'm',
     f_sig1      = 'x', f_sig2       = 'x',
     f_dvidtt    = 'x', f_dvidtd     = 'x',
     !f_dvsdtt    = 'x', f_dvsdtd     = 'x',
@@ -143,10 +143,10 @@
     f_iage      = 'x', f_FY         = 'x',
     f_hisnap    = 'x', f_aisnap     = 'x',
     f_trsig     = 'x', 
-    f_fsurf_ai  = 'm', f_fcondtop_ai= 'm',
+    f_fsurf_ai  = 'm', f_fcondtop_ai= 'x',
     f_fmeltt_ai = 'm',
     f_Tn_top    = 'x', f_keffn_top  = 'x',
-    f_icepresent   = 'm',
+    f_icepresent   = 'x',
     f_aicen        = 'm', f_vicen        = 'm',
     f_fsurfn_ai    = 'm', f_fcondtopn_ai = 'm',
     f_fmelttn_ai   = 'm', f_flatn_ai     = 'm'

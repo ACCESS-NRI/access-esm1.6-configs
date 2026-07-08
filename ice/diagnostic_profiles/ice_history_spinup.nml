@@ -25,7 +25,7 @@
     !-----------------------------------
     ! CMIP7 Core and High Variables
     !-----------------------------------
-    f_siconc           = 'x',  ! Sea Ice Area Percentage (Ocean Grid), this needs to be requested at all frequencies 
+    f_siconc           = 'm',  ! Sea Ice Area Percentage (Ocean Grid), this needs to be requested at all frequencies 
                                 ! other CMIP variables (e.g. those with `si` prefix) are requested
     f_siage            = 'x',  ! Age of Sea Ice
     f_sicompstren      = 'x',   ! Compressive Sea Ice Strength
@@ -64,12 +64,12 @@
     f_sistrxubot       = 'x',  f_sistryubot       = 'x',
                                 ! Ocean surface stress on sea ice
                                 ! averaged only when sea ice is present
-    f_sithick          = 'x',  ! Sea ice thickness
+    f_sithick          = 'm',  ! Sea ice thickness
                                 ! averaged only when sea ice is present
     f_sitimefrac       = 'x',  ! Fraction of averaging interval when there is sea ice
-    f_siu              = 'x', f_siv              = 'x',
+    f_siu              = 'm', f_siv              = 'm',
                                 ! Sea ice velocity
-    f_sivol            = 'x',   ! Sea ice volume per grid-cell area
+    f_sivol            = 'm',   ! Sea ice volume per grid-cell area
 
     !-----------------------------------
     ! CMIP7 other variables which are available
@@ -94,9 +94,9 @@
     !-----------------------------------
     f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_aice      = 'm', ! we need this to calculate time-weighted averages
-    f_hi        = 'm', f_hs         = 'x',
+    f_hi        = 'x', f_hs         = 'x',
     f_Tsfc      = 'x',
-    f_uvel      = 'm', f_vvel       = 'm',
+    f_uvel      = 'x', f_vvel       = 'x',
     f_uatm      = 'x', f_vatm       = 'x',
     f_fswdn     = 'x', f_flwdn      = 'x',
     f_fswup     = 'x',
