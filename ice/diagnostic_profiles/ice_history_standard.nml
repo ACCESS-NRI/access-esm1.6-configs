@@ -33,7 +33,7 @@
     f_sidconcth        = 'x',   ! Sea Ice Area Percentage Tendency Due to Thermodynamics
     f_sidivvel         = 'm',   ! Divergence of the Sea Ice Velocity Field
     f_sidmassdyn       = 'x',   ! Sea Ice Mass Change from Dynamics
-    f_sidmassevapsubl  = 'x',   ! Sea Ice Mass Change Through Evaporation and Sublimation
+    f_sidmassevapsubl  = 'm',   ! Sea Ice Mass Change Through Evaporation and Sublimation
     f_sidmassgrowthbot = 'x',   ! Sea Ice Mass Growth from Congelation
     f_sidmassgrowthsi  = 'x',   ! Sea Ice Mass Growth from Snow Flooding
     f_sidmassgrowthwat = 'x',   ! Sea Ice Mass Growth from Frazil Heat Exchange
@@ -54,7 +54,7 @@
     f_sisndmassmelt    = 'x',   ! Snow mass change due to snow melt
     f_sisndmasssi      = 'x',   ! Snow mass change due to flooding with sea water
     f_sisndmasssnf     = 'm',   ! Snow mass change due to snow fall
-    f_sisndmasssubl    = 'x',   ! Snow mass change due to evaporation and sublimation, 
+    f_sisndmasssubl    = 'm',   ! Snow mass change due to evaporation and sublimation,
     f_sisnhc           = 'x',  ! Heat content in snow on sea ice
     f_sisnmass         = 'm',   ! Mass of snow on sea ice
     f_sispeed          = 'x',  ! Sea ice speed (non directional)
@@ -115,7 +115,7 @@
     f_flat      = 'x', f_flat_ai    = 'm',
     f_fsens     = 'x', f_fsens_ai   = 'x',
     f_flwup     = 'x', f_flwup_ai   = 'x',
-    f_evap      = 'x', f_evap_ai    = 'm',
+    f_evap      = 'x', f_evap_ai    = 'x',
     f_evap_ice_ai = 'x', f_evap_snow_ai = 'x',
     f_Tair      = 'x',
     f_Tref      = 'x', f_Qref       = 'x',
