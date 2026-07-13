@@ -4,6 +4,8 @@
 
 The esm-flat10 experiment simulates the climate under constant anthropogenic emissions of 10PgC/year using a fully interactive carbon cycle, with preindustrial values used for all other atmospheric forcings. This experiment is run for the [CMIP7 esm-flat10 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recwxXNVh0JIDr1B9).
 
+The experimental setup matches commit [2dc195a](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/2dc195a0ce8917b89831ce324bccb0648a987414) from the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration with changes for prescribing the flat CO2 emissions and the restart file used.
+
 ## Inputs
 The esm-flat10 experiment uses the same input files as the [esm-piControl](/configs_experiments/configurations/esm-piControl) configuration, with changes for specifying CO2 emissions and a different initial condition.
 

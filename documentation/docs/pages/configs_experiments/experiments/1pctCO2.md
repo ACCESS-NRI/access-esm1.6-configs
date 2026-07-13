@@ -5,7 +5,7 @@
 
 The 1pctCO2 experiment simulates the climate under a yearly 1% increase in CO2 concentrations, starting from preindustrial conditions.
 
-The experimental setup matches the [piControl](/configs_experiments/configurations/piControl) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
+The experimental setup matches commit [37d5312](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/37d5312847642f1ea574306d200449aa8b44fd39) from the [piControl](/configs_experiments/configurations/piControl) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
 
 This experiment has been run for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
 

@@ -5,7 +5,7 @@
 
 The abrupt-4xCO2 experiment simulates the climate under an abrupt quadrupling of atmospheric CO2 concentrations compared to the preindustrial level, and has been run for the [CMIP7 abrupt-4xCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/rec5WFkbODaOVdx9s)
 
-The experiment uses the same settings as the [piControl](/configs_experiments/configurations/piControl) configuration aside from an increased CO2 mass mixing ratio and the restart file used.
+The experimental setup matches commit [37d5312](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/37d5312847642f1ea574306d200449aa8b44fd39) from the [piControl](/configs_experiments/configurations/piControl) configuration with changes to the prescribed CO2 mass mixing ratio and the restart file used.
 
 ## Inputs
 The abrupt-4xCO2 experiment uses the same input files as the [piControl](/configs_experiments/configurations/piControl) other than the initial conditions.
