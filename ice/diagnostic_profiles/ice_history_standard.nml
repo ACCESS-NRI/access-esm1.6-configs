@@ -25,13 +25,13 @@
     !-----------------------------------
     ! CMIP7 Core and High Variables
     !-----------------------------------
-    f_siconc           = 'x',  ! Sea Ice Area Percentage (Ocean Grid), this needs to be requested at all frequencies 
+    f_siconc           = 'm',  ! Sea Ice Area Percentage (Ocean Grid), this needs to be requested at all frequencies 
                                 ! other CMIP variables (e.g. those with `si` prefix) are requested
     f_siage            = 'x',  ! Age of Sea Ice
-    f_sicompstren      = 'm',   ! Compressive Sea Ice Strength
+    f_sicompstren      = 'x',   ! Compressive Sea Ice Strength
     f_sidconcdyn       = 'x',   ! Sea Ice Area Percentage Tendency Due to Dynamics
     f_sidconcth        = 'x',   ! Sea Ice Area Percentage Tendency Due to Thermodynamics
-    f_sidivvel         = 'm',   ! Divergence of the Sea Ice Velocity Field
+    f_sidivvel         = 'x',   ! Divergence of the Sea Ice Velocity Field
     f_sidmassdyn       = 'x',   ! Sea Ice Mass Change from Dynamics
     f_sidmassevapsubl  = 'm',   ! Sea Ice Mass Change Through Evaporation and Sublimation
     f_sidmassgrowthbot = 'x',   ! Sea Ice Mass Growth from Congelation
@@ -69,7 +69,7 @@
     f_sitimefrac       = 'm',  ! Fraction of averaging interval when there is sea ice
     f_siu              = 'm', f_siv              = 'm',
                                 ! Sea ice velocity
-    f_sivol            = 'm',   ! Sea ice volume per grid-cell area
+    f_sivol            = 'x',   ! Sea ice volume per grid-cell area
 
     !-----------------------------------
     ! CMIP7 other variables which are available
