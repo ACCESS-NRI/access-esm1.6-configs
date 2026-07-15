@@ -4,7 +4,7 @@
 site_name: ACCESS-ESM1.6-Configs
 
 # Site URL
-site_url: !ENV READTHEDOCS_CANONICAL_URL
+site_url: !ENV [READTHEDOCS_CANONICAL_URL, https://access-esm1p6-configs.access-hive.org.au/]
 
 # Git repository (Adds a link to the GitHub repository at the top)
 repo_url: https://github.com/ACCESS-NRI/access-esm1.6-configs
