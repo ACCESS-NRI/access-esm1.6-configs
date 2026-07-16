@@ -93,7 +93,7 @@ git clone -b <experiment> https://github.com/ACCESS-NRI/access-esm1.6-configs <e
 
 and replace `<experiment>` with the branch name or tag of the experiment you wish to run.
 
-[ACCESS-Hive](https://access-hive.org.au/) contains [detailed instructions for how to configure and run ACCESS models with `payu`](https://access-hive.org.au/models/run-a-model).
+[ACCESS-Hive](https://access-hive.org.au/) contains [detailed instructions for how to configure and run ACCESS models with `payu`](https://access-hive.org.au/models/run_a_model).
 
 #### CI and Reproducibility Checks
 
