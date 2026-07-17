@@ -6,6 +6,7 @@ import six
 import shutil
 import tempfile
 import os
+import stat
 
 
 def parse_args():
@@ -124,6 +125,11 @@ def insert_woodprod(restart_path, external_nc_path, stashmaster_base_path, stash
 
     ff.to_file(ff, tmp.name)
     shutil.copy(tmp.name, output_path)
+
+    # tempfiles only have user read+write permissions.
+    # Set user read+write and group read permission
+    os.chmod(output_path, stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP)
+
     print(f"Modified restart file written to '{output_path}'")
 
 
