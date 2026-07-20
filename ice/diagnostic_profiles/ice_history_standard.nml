@@ -32,7 +32,7 @@
     f_sidconcdyn       = 'x',   ! Sea Ice Area Percentage Tendency Due to Dynamics
     f_sidconcth        = 'x',   ! Sea Ice Area Percentage Tendency Due to Thermodynamics
     f_sidivvel         = 'x',   ! Divergence of the Sea Ice Velocity Field
-    f_sidmassdyn       = 'x',   ! Sea Ice Mass Change from Dynamics
+    f_sidmassdyn       = 'm',   ! Sea Ice Mass Change from Dynamics
     f_sidmassevapsubl  = 'm',   ! Sea Ice Mass Change Through Evaporation and Sublimation
     f_sidmassgrowthbot = 'x',   ! Sea Ice Mass Growth from Congelation
     f_sidmassgrowthsi  = 'x',   ! Sea Ice Mass Growth from Snow Flooding
@@ -40,7 +40,7 @@
     f_sidmassmeltbot   = 'x',   ! Sea Ice Mass Loss from Basal Melt
     f_sidmassmeltlat   = 'x',   ! Sea Ice Mass Loss from Lateral Melt
     f_sidmassmelttop   = 'x',   ! Sea Ice Mass Loss from Top Melt
-    f_sidmassth        = 'x',   ! Sea Ice Mass Change Due to Thermodynamics
+    f_sidmassth        = 'm',   ! Sea Ice Mass Change Due to Thermodynamics
     f_sidmasstranx     = 'x', f_sidmasstrany    = 'x', 
                                 ! Sea Ice Mass Transport
     f_siflcondbot      = 'x',  ! Net conductive heat flux at base of sea ice
