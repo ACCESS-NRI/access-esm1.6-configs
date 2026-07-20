@@ -92,8 +92,13 @@
     !-----------------------------------
     ! Other CICE variables
     !-----------------------------------
-    f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_aice      = 'm', ! we need this to calculate time-weighted averages
+
+
+    !-----------------------------------
+    ! These fields are on by default (in ice_history_mechred.F90) but let's turn them off
+    !-----------------------------------
+    f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_hi        = 'x', f_hs         = 'x',
     f_Tsfc      = 'x',
     f_uvel      = 'x', f_vvel       = 'x',
@@ -153,6 +158,9 @@
 /
 
 &icefields_mechred_nml
+    !-----------------------------------
+    ! These fields are on by default (in ice_history_mechred.F90) but let's turn them off
+    !-----------------------------------
     f_ardg      = 'x', f_vrdg       = 'x',
     f_alvl      = 'x', f_vlvl       = 'x',
     f_dardg1dt  = 'x', f_dardg2dt   = 'x',
