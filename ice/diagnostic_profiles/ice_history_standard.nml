@@ -94,6 +94,17 @@
     !-----------------------------------
     f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_aice      = 'm', ! we need this to calculate time-weighted averages
+    f_rain_ai   = 'm',
+    f_flat_ai   = 'm',
+    f_fsurf_ai  = 'm',
+    f_fmeltt_ai = 'm',
+    f_aicen     = 'm',
+    f_vicen     = 'm',
+
+
+    !-----------------------------------
+    ! These fields are on by default but let's turn them off
+    !-----------------------------------
     f_hi        = 'x', f_hs         = 'x',
     f_Tsfc      = 'x',
     f_uvel      = 'x', f_vvel       = 'x',
@@ -101,7 +112,7 @@
     f_fswdn     = 'x', f_flwdn      = 'x',
     f_fswup     = 'x',
     f_snow      = 'x', f_snow_ai    = 'x',
-    f_rain      = 'x', f_rain_ai    = 'm',
+    f_rain      = 'x',
     f_sst       = 'x', f_sss        = 'x',
     f_uocn      = 'x', f_vocn       = 'x',
     f_sice      = 'x', f_frzmlt     = 'x',
@@ -112,7 +123,7 @@
     f_alvdf_ai  = 'x', f_alidf_ai   = 'x',
     f_albice    = 'x', f_albsno     = 'x',
     f_albpnd    = 'x', f_coszen     = 'x',
-    f_flat      = 'x', f_flat_ai    = 'm',
+    f_flat      = 'x',
     f_fsens     = 'x', f_fsens_ai   = 'x',
     f_flwup     = 'x', f_flwup_ai   = 'x',
     f_evap      = 'x', f_evap_ai    = 'x',
@@ -143,16 +154,17 @@
     f_iage      = 'x', f_FY         = 'x',
     f_hisnap    = 'x', f_aisnap     = 'x',
     f_trsig     = 'x', 
-    f_fsurf_ai  = 'm', f_fcondtop_ai= 'x',
-    f_fmeltt_ai = 'm',
+    f_fcondtop_ai= 'x',
     f_Tn_top    = 'x', f_keffn_top  = 'x',
     f_icepresent   = 'x',
-    f_aicen        = 'm', f_vicen        = 'm',
     f_fsurfn_ai    = 'x', f_fcondtopn_ai = 'x',
     f_fmelttn_ai   = 'x', f_flatn_ai     = 'x'
 /
 
 &icefields_mechred_nml
+    !-----------------------------------
+    ! These fields are on by default (in ice_history_mechred.F90) but let's turn them off
+    !-----------------------------------
     f_ardg      = 'x', f_vrdg       = 'x',
     f_alvl      = 'x', f_vlvl       = 'x',
     f_dardg1dt  = 'x', f_dardg2dt   = 'x',
