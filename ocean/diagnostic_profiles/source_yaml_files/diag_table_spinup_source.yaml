@@ -15,7 +15,7 @@
 # You're unlikely to need to change any of the global_defaults.
 global_defaults:
 # global_section:
-    title: ACCESS-ESM_CMIP6  # any string
+    title: ACCESS-ESM_1p6  # any string
     base_date: [ 0001, 1, 1, 0, 0, 0 ]  # reference time used for the time units. six integers: year, month, day, hour, minute, second
 # file section:
     file_name:  # String, or list of components, for file name (without trailing ".nc").
@@ -73,14 +73,14 @@ global_defaults:
 # extra things for constructing filename:
     file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
     file_name_prefix: ocean
-    file_name_date: "ym%4yr%2mo"  # run date/time of file opening; format: %, 1 digit (#digits), one of (yr, mo, dy, hr, mi, sc); date/time components will be separated by _ in filename.
+    file_name_date: "y%4yr"  # run date/time of file opening; format: %, 1 digit (#digits), one of (yr, mo, dy, hr, mi, sc); date/time components will be separated by _ in filename.
     file_name_separator: "-"  # used to separate filename components; best not to use "_" to avoid confusion with fields and dates
     file_name_omit_empty: true  # whether to omit empty filename components to avoid duplicate file_name_separator
     file_name_substitutions:  # string replacements for filename components
-        years: yearly
-        months: monthly
-        days: daily
-        hours: hourly
+        years: yr
+        months: mon
+        days: day
+        hours: hr
         none: snap  # careful! will apply to both reduction_method and regional_section
         'False': snap
         average: mean
@@ -127,6 +127,8 @@ diag_table:
                 - file_name_prefix
                 - file_name_dimension
                 - field_name  # substituted by field name in fields section below
+                - file_name_frequency # this is a hack to get 'fx' in the filename
+            file_name_frequency: fx
             reduction_method: snap  # mean, snap, rms, pow##, min, max, or diurnal##
             output_freq: -1  # Output frequency in output_freq_units (0: every timestep; -1: only at end of run)
             new_file_freq:  # optional integer: frequency (in new_file_freq_units) for closing the existing file, and creating a new file
@@ -149,6 +151,7 @@ diag_table:
             tide_speed_drag:
             tide_speed_mask:
 
+
     'yearly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
@@ -169,22 +172,23 @@ diag_table:
             ty_trans_gm:
             ty_trans_rho:
             ty_trans_rho_gm:
-            temp_vdiffuse_impl:
-            salt_vdiffuse_impl:
             u:
             v:
             dzt:
+            temp_vdiffuse_impl:
+            salt_vdiffuse_impl:
 
     'yearly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
+            module_name: generic_wombatlite
             file_name_prefix: oceanbgc
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
             output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
             no3:
-            phy:
             o2:
+            phy:
             det:
             zoo:
             caco3:
@@ -233,6 +237,7 @@ diag_table:
 
     'yearly 2d BGC fields':
         defaults:  # these can be overridden for individual fields below
+            module_name: generic_wombatlite
             file_name_prefix: oceanbgc
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
@@ -249,6 +254,14 @@ diag_table:
             wnd:
             det_sediment:
             caco3_sediment:
+
+    'yearly 2d BGC surface fields':
+        defaults:  # these can be overridden for individual fields below
+            file_name_prefix: oceanbgc
+            file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
+            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
+            output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
+        fields:
             surface_no3:
             surface_phy:
             surface_alk:
@@ -279,57 +292,6 @@ diag_table:
             tau_y:
             usurf:
             vsurf:
-
-    'monthly 1d ocean fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_dimension: 1d  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
-            file_name:
-                - file_name_prefix
-                - file_name_dimension
-                - output_freq
-                - '':
-                    - output_freq_units
-                - file_name_date
-        fields:
-            geolat_c: {reduction_method: 'snap'} # See https://github.com/ACCESS-NRI/access-esm1.5-configs/issues/74
-            temp_merid_flux_advect_global:
-            temp_merid_flux_over_global:
-            temp_merid_flux_gyre_global:
-            salt_merid_flux_advect_global:
-            salt_merid_flux_over_global:
-            salt_merid_flux_gyre_global:
-            temp_merid_flux_advect_southern:
-            temp_merid_flux_over_southern:
-            temp_merid_flux_gyre_southern:
-            salt_merid_flux_advect_southern:
-            salt_merid_flux_over_southern:
-            salt_merid_flux_gyre_southern:
-            temp_merid_flux_advect_atlantic:
-            temp_merid_flux_over_atlantic:
-            temp_merid_flux_gyre_atlantic:
-            salt_merid_flux_advect_atlantic:
-            salt_merid_flux_over_atlantic:
-            salt_merid_flux_gyre_atlantic:
-            temp_merid_flux_advect_pacific:
-            temp_merid_flux_over_pacific:
-            temp_merid_flux_gyre_pacific:
-            salt_merid_flux_advect_pacific:
-            salt_merid_flux_over_pacific:
-            salt_merid_flux_gyre_pacific:
-            temp_merid_flux_advect_arctic:
-            temp_merid_flux_over_arctic:
-            temp_merid_flux_gyre_arctic:
-            salt_merid_flux_advect_arctic:
-            salt_merid_flux_over_arctic:
-            salt_merid_flux_gyre_arctic:
-            temp_merid_flux_advect_indian:
-            temp_merid_flux_over_indian:
-            temp_merid_flux_gyre_indian:
-            salt_merid_flux_advect_indian:
-            salt_merid_flux_over_indian:
-            salt_merid_flux_gyre_indian:
             
     'monthly scalar ocean fields':
         defaults:  # these can be overridden for individual fields below
@@ -342,6 +304,7 @@ diag_table:
                 - output_freq
                 - '':
                     - output_freq_units
+                - reduction_method
                 - file_name_date
         fields:
             total_mass_seawater:
@@ -351,6 +314,17 @@ diag_table:
             pbot_adjust:
             temp_global_ave:
             salt_global_ave:
+            no3_global_ave:
+            fe_global_ave:
+            o2_global_ave:
+            dic_global_ave:
+            alk_global_ave:
+            dicr_global_ave:
+            caco3_global_ave:
+            det_global_ave:
+            phy_global_ave:
+            pchl_global_ave:
+            zoo_global_ave:
             total_ocean_pme_river:
             total_ocean_river:
             total_ocean_evap:
@@ -372,20 +346,16 @@ diag_table:
             pe_tot:
             temp_surface_ave:
             salt_surface_ave:
-
-    'monthly scalar BGC fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_prefix: oceanbgc
-            file_name_dimension: scalar  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
-            file_name:
-                - file_name_prefix
-                - file_name_dimension
-                - output_freq
-                - '':
-                    - output_freq_units
-                - file_name_date
-        fields:
+            no3_surface_ave:
+            fe_surface_ave:
+            o2_surface_ave:
+            dic_surface_ave:
+            alk_surface_ave:
+            dicr_surface_ave:
+            caco3_surface_ave:
+            det_surface_ave:
+            phy_surface_ave:
+            pchl_surface_ave:
+            zoo_surface_ave:
             total_co2_flux:
             total_aco2_flux:
