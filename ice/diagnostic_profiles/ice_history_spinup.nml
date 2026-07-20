@@ -25,86 +25,80 @@
     !-----------------------------------
     ! CMIP7 Core and High Variables
     !-----------------------------------
-    f_siconc           = 'md',  ! Sea Ice Area Percentage (Ocean Grid), this needs to be requested at all frequencies 
+    f_siconc           = 'm',  ! Sea Ice Area Percentage (Ocean Grid), this needs to be requested at all frequencies 
                                 ! other CMIP variables (e.g. those with `si` prefix) are requested
-    f_siage            = 'md',  ! Age of Sea Ice
-    f_sicompstren      = 'm',   ! Compressive Sea Ice Strength
-    f_sidconcdyn       = 'm',   ! Sea Ice Area Percentage Tendency Due to Dynamics
-    f_sidconcth        = 'm',   ! Sea Ice Area Percentage Tendency Due to Thermodynamics
-    f_sidivvel         = 'm',   ! Divergence of the Sea Ice Velocity Field
-    f_sidmassdyn       = 'm',   ! Sea Ice Mass Change from Dynamics
-    f_sidmassevapsubl  = 'm',   ! Sea Ice Mass Change Through Evaporation and Sublimation
-    f_sidmassgrowthbot = 'm',   ! Sea Ice Mass Growth from Congelation
-    f_sidmassgrowthsi  = 'm',   ! Sea Ice Mass Growth from Snow Flooding
-    f_sidmassgrowthwat = 'm',   ! Sea Ice Mass Growth from Frazil Heat Exchange
-    f_sidmassmeltbot   = 'm',   ! Sea Ice Mass Loss from Basal Melt
-    f_sidmassmeltlat   = 'm',   ! Sea Ice Mass Loss from Lateral Melt
-    f_sidmassmelttop   = 'm',   ! Sea Ice Mass Loss from Top Melt
-    f_sidmassth        = 'm',   ! Sea Ice Mass Change Due to Thermodynamics
-    f_sidmasstranx     = 'm', f_sidmasstrany    = 'm', 
+    f_siage            = 'x',  ! Age of Sea Ice
+    f_sicompstren      = 'x',   ! Compressive Sea Ice Strength
+    f_sidconcdyn       = 'x',   ! Sea Ice Area Percentage Tendency Due to Dynamics
+    f_sidconcth        = 'x',   ! Sea Ice Area Percentage Tendency Due to Thermodynamics
+    f_sidivvel         = 'x',   ! Divergence of the Sea Ice Velocity Field
+    f_sidmassdyn       = 'x',   ! Sea Ice Mass Change from Dynamics
+    f_sidmassevapsubl  = 'x',   ! Sea Ice Mass Change Through Evaporation and Sublimation
+    f_sidmassgrowthbot = 'x',   ! Sea Ice Mass Growth from Congelation
+    f_sidmassgrowthsi  = 'x',   ! Sea Ice Mass Growth from Snow Flooding
+    f_sidmassgrowthwat = 'x',   ! Sea Ice Mass Growth from Frazil Heat Exchange
+    f_sidmassmeltbot   = 'x',   ! Sea Ice Mass Loss from Basal Melt
+    f_sidmassmeltlat   = 'x',   ! Sea Ice Mass Loss from Lateral Melt
+    f_sidmassmelttop   = 'x',   ! Sea Ice Mass Loss from Top Melt
+    f_sidmassth        = 'x',   ! Sea Ice Mass Change Due to Thermodynamics
+    f_sidmasstranx     = 'x', f_sidmasstrany    = 'x', 
                                 ! Sea Ice Mass Transport
-    f_siflcondbot      = 'md',  ! Net conductive heat flux at base of sea ice
-    f_siflcondtop      = 'md',  ! Net conductive heat flux at top of sea ice
-    f_siflfwbot        = 'm',   ! Freshwater flux from sea ice 
+    f_siflcondbot      = 'x',  ! Net conductive heat flux at base of sea ice
+    f_siflcondtop      = 'x',  ! Net conductive heat flux at top of sea ice
+    f_siflfwbot        = 'x',   ! Freshwater flux from sea ice 
                                 ! averaged only when sea ice is present
-    f_siflsensbot      = 'md',  ! Net sensible heat flux at base of sea ice
-    f_sihc             = 'md',  ! Heat content in sea ice
-    f_simass           = 'm',   ! Sea ice mass
-    f_sisndmassdyn     = 'm',   ! Snow mass change due to sea ice dynamics
-    f_sisndmassmelt    = 'm',   ! Snow mass change due to snow melt
-    f_sisndmasssi      = 'm',   ! Snow mass change due to flooding with sea water
-    f_sisndmasssnf     = 'm',   ! Snow mass change due to snow fall
-    f_sisndmasssubl    = 'm',   ! Snow mass change due to evaporation and sublimation, 
-    f_sisnhc           = 'md',  ! Heat content in snow on sea ice
-    f_sisnmass         = 'm',   ! Mass of snow on sea ice
-    f_sispeed          = 'md',  ! Sea ice speed (non directional)
-    f_sistrxdtop       = 'm',  f_sistrydtop       = 'm',
+    f_siflsensbot      = 'x',  ! Net sensible heat flux at base of sea ice
+    f_sihc             = 'x',  ! Heat content in sea ice
+    f_simass           = 'x',   ! Sea ice mass
+    f_sisndmassdyn     = 'x',   ! Snow mass change due to sea ice dynamics
+    f_sisndmassmelt    = 'x',   ! Snow mass change due to snow melt
+    f_sisndmasssi      = 'x',   ! Snow mass change due to flooding with sea water
+    f_sisndmasssnf     = 'x',   ! Snow mass change due to snow fall
+    f_sisndmasssubl    = 'x',   ! Snow mass change due to evaporation and sublimation, 
+    f_sisnhc           = 'x',  ! Heat content in snow on sea ice
+    f_sisnmass         = 'x',   ! Mass of snow on sea ice
+    f_sispeed          = 'x',  ! Sea ice speed (non directional)
+    f_sistrxdtop       = 'x',  f_sistrydtop       = 'x',
                                 ! Atmospheric surface stress on sea ice
                                 ! averaged only when sea ice is present
-    f_sistrxubot       = 'm',  f_sistryubot       = 'm',
+    f_sistrxubot       = 'x',  f_sistryubot       = 'x',
                                 ! Ocean surface stress on sea ice
                                 ! averaged only when sea ice is present
-    f_sithick          = 'md',  ! Sea ice thickness
+    f_sithick          = 'm',  ! Sea ice thickness
                                 ! averaged only when sea ice is present
-    f_sitimefrac       = 'md',  ! Fraction of averaging interval when there is sea ice
-    f_siu              = 'md', f_siv              = 'md',
+    f_sitimefrac       = 'x',  ! Fraction of averaging interval when there is sea ice
+    f_siu              = 'm', f_siv              = 'm',
                                 ! Sea ice velocity
     f_sivol            = 'm',   ! Sea ice volume per grid-cell area
 
     !-----------------------------------
     ! CMIP7 other variables which are available
     !-----------------------------------
-    f_sifb             = 'md',  ! Sea ice freeboard
-    f_sitempbot        = 'md',  ! Sea ice basal temperature
+    f_sifb             = 'x',  ! Sea ice freeboard
+    f_sitempbot        = 'x',  ! Sea ice basal temperature
                                 ! averaged only when sea ice is present
-    f_siforcecoriolx   = 'md', f_siforcecorioly = 'md',
+    f_siforcecoriolx   = 'x', f_siforcecorioly = 'x',
                                 ! Force on sea ice due to coriolis
                                 ! averaged only when sea ice is present
-    f_siforceintstrx   = 'md', f_siforceintstry = 'md',
+    f_siforceintstrx   = 'x', f_siforceintstry = 'x',
                                 ! Force on sea ice due to internal stress
                                 ! averaged only when sea ice is present
-    f_siforcetiltx     = 'md', f_siforcetilty   = 'md',
+    f_siforcetiltx     = 'x', f_siforcetilty   = 'x',
                                 ! Force on sea ice due to sea surface tilt
                                 ! averaged only when sea ice is present
-    f_sisaltmass       = 'md',  ! Mass of salt in sea ice
-    f_siitdconc        = 'md',  ! Sea ice area fraction in thickness categories
+    f_sisaltmass       = 'x',  ! Mass of salt in sea ice
+    f_siitdconc        = 'x',  ! Sea ice area fraction in thickness categories
 
     !-----------------------------------
     ! Other CICE variables
     !-----------------------------------
-    f_dvsdtt    = 'md', f_dvsdtd     = 'md',
-    f_aice      = 'md', ! we need this to calculate time-weighted averages
-    f_rain_ai   = 'm',
-    f_flat_ai   = 'm',
-    f_fsurf_ai  = 'm',
-    f_fmeltt_ai = 'm',
-    f_aicen     = 'm',
-    f_vicen     = 'm',
+    f_aice      = 'm', ! we need this to calculate time-weighted averages
 
 
     !-----------------------------------
-    ! These fields are on by default but let's turn them off
+    ! These fields are on by default (in ice_history_mechred.F90) but let's turn them off
     !-----------------------------------
+    f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_hi        = 'x', f_hs         = 'x',
     f_Tsfc      = 'x',
     f_uvel      = 'x', f_vvel       = 'x',
@@ -112,7 +106,7 @@
     f_fswdn     = 'x', f_flwdn      = 'x',
     f_fswup     = 'x',
     f_snow      = 'x', f_snow_ai    = 'x',
-    f_rain      = 'x',
+    f_rain      = 'x', f_rain_ai    = 'x',
     f_sst       = 'x', f_sss        = 'x',
     f_uocn      = 'x', f_vocn       = 'x',
     f_sice      = 'x', f_frzmlt     = 'x',
@@ -123,7 +117,7 @@
     f_alvdf_ai  = 'x', f_alidf_ai   = 'x',
     f_albice    = 'x', f_albsno     = 'x',
     f_albpnd    = 'x', f_coszen     = 'x',
-    f_flat      = 'x',
+    f_flat      = 'x', f_flat_ai    = 'x',
     f_fsens     = 'x', f_fsens_ai   = 'x',
     f_flwup     = 'x', f_flwup_ai   = 'x',
     f_evap      = 'x', f_evap_ai    = 'x',
@@ -154,9 +148,11 @@
     f_iage      = 'x', f_FY         = 'x',
     f_hisnap    = 'x', f_aisnap     = 'x',
     f_trsig     = 'x', 
-    f_fcondtop_ai= 'x',
+    f_fsurf_ai  = 'x', f_fcondtop_ai= 'x',
+    f_fmeltt_ai = 'x',
     f_Tn_top    = 'x', f_keffn_top  = 'x',
     f_icepresent   = 'x',
+    f_aicen        = 'x', f_vicen        = 'x',
     f_fsurfn_ai    = 'x', f_fcondtopn_ai = 'x',
     f_fmelttn_ai   = 'x', f_flatn_ai     = 'x'
 /
