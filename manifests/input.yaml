@@ -76,16 +76,6 @@ work/atmosphere/INPUT/TSI_CMIP7_ESM:
   hashes:
     binhash: 61204ba958920f80aefa03c4689834e3
     md5: 635295693e07ae1079753d0835a6ad07
-work/atmosphere/INPUT/amip_seaice_n96_greg.pp:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p5/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_seaice_n96_greg.pp
-  hashes:
-    binhash: 81345cbc844a887e5eea04687dcc1e1c
-    md5: dee51bc6417e99297d70e557ac52632a
-work/atmosphere/INPUT/amip_sst_n96_greg.pp:
-  fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p5/modern/amip/atmosphere/boundary_conditions/global.N96/2021.07.08/amip_sst_n96_greg.pp
-  hashes:
-    binhash: c0268c388a150ceea10adbaa74c82fdc
-    md5: 47368fc3565d554200b0f1fe78e79416
 work/atmosphere/INPUT/biogenic_351sm.N96L38:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
   hashes:
@@ -116,6 +106,11 @@ work/atmosphere/INPUT/scycl_1849_2023_cmip7.anc:
   hashes:
     binhash: 9839a9ae59360f43a89dd8053237358b
     md5: 9ed52e5de4e55f10baeec1b35c75d1a8
+work/atmosphere/INPUT/seaice_amip_n96_gregorian.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/seaice_amip_n96_gregorian.anc
+  hashes:
+    binhash: 28d364df7ec24fe33fbc8dba05aca968
+    md5: 53e0c4db1ae8395f9563263de2824964
 work/atmosphere/INPUT/spec3a_lw_hadgem1_6on:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
   hashes:
@@ -126,6 +121,11 @@ work/atmosphere/INPUT/spec3a_sw_hadgem1_6on:
   hashes:
     binhash: 149899ecc54ed754ab8c6f05cb99f140
     md5: 0e74c13cf3333132f38d8c5c52e1c7eb
+work/atmosphere/INPUT/sst_amip_n96_gregorian.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/sst_amip_n96_gregorian.anc
+  hashes:
+    binhash: 827c4849342c01d94ff010fca178c9e4
+    md5: bcd85ae7b9f56b6e6482db9ac0e64156
 work/atmosphere/INPUT/stasets/X01001218:
   fullpath: /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/stasets/X01001218
   hashes:
