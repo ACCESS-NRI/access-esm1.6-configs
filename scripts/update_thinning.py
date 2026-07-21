@@ -4,7 +4,9 @@ import um_replace_field
 import xarray
 import argparse
 import tempfile
+import os
 import shutil
+import stat
 
 def _parse_args():
     parser = argparse.ArgumentParser(
@@ -58,6 +60,10 @@ def insert_thinning(restart_file, thinning_file, stashmaster_file):
         )
 
     shutil.copy(tmp.name, restart_file)
+
+    # tempfiles only have user read+write permissions.
+    # Set user read+write and group read permission
+    os.chmod(restart_file, stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP)
 
 
 if __name__ == "__main__":
