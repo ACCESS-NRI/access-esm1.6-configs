@@ -31,8 +31,18 @@ nav:
         - Restarts: pages/inputs/restarts.md
 
   - Configurations and Experiments:
-        - Configuration:    pages/configs_experiments/overviewconfiguration.md
-        - Experiments:    pages/configs_experiments/experiments.md
+        - pages/configs_experiments/index.md
+        - Configurations:
+            - amip:       pages/configs_experiments/configurations/amip.md
+            - historical:    pages/configs_experiments/configurations/historical.md
+            - esm-historical:      pages/configs_experiments/configurations/esm-historical.md 
+            - piControl:   pages/configs_experiments/configurations/piControl.md
+            - esm-piControl:   pages/configs_experiments/configurations/esm-piControl.md
+
+        - Experiments:
+            - 1pctCO2:    pages/configs_experiments/experiments/1pctCO2.md
+            - abrupt-4xCO2:   pages/configs_experiments/experiments/abrupt-4xCO2.md
+            - esm-flat10:     pages/configs_experiments/experiments/esm-flat10.md
 
   - Diagnostics:
         - Sea Ice: pages/diagnostics/sea_ice.md # do not edit directly, change 
@@ -76,6 +86,7 @@ theme:
     - search.share
     - content.code.copy         # for displaying copy icon at top right in code snippets
     - toc.follow                # the sidebar is automatically scrolled to the active anchor
+    - content.tooltips
 
   logo: assets/ACCESS_icon_HIVE.png
   favicon: assets/ACCESS_icon_HIVE.png
