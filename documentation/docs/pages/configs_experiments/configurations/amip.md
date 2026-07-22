@@ -13,8 +13,8 @@ The amip configuration uses the same atmosphere and land input files as the [his
 ### Atmosphere
 Two additional files provide observed sea surface temperatures and sea ice concentrations to the atmosphere model:
 
-* amip_sst_n96_greg.pp: Sea surface temperatures in units K, with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
-* amip_seaice_n96_greg.pp : Sea ice concentrations in units [0,1], with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
+* sst_amip_n96_gregorian.anc: Sea surface temperatures in units K, with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
+* seaice_amip_n96_gregorian.anc : Sea ice concentrations in units [0,1], with values adjusted via the [Karl Taylor procedure](https://pcmdi.llnl.gov/report/pdf/60.pdf).
 
 ### Restart
 The amip configuration uses the 1978 atmosphere restart file produced by the historical experiment after removal of the coupling related fields. Ocean, sea ice, and coupler restart files are removed.
@@ -59,8 +59,8 @@ The `L_SICE/L_SSICE` options control how the sea ice albedo is calculated in the
 
 #### atmosphere/um_env.yaml
 ```diff
-+ SSTIN: INPUT/amip_sst_n96_greg.pp
-+ SICEIN: INPUT/amip_seaice_n96_greg.pp
++ SSTIN: INPUT/sst_amip_n96_gregorian.anc
++ SICEIN: INPUT/seaice_amip_n96_gregorian.anc
 ```
 The above settings point the model to the SST and sea ice concentration ancillary files in the `payu` work directory.
 
