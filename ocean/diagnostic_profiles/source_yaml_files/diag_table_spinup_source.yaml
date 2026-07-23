@@ -151,84 +151,44 @@ diag_table:
             tide_speed_drag:
             tide_speed_mask:
 
-    'monthly 3d ocean fields':
+
+    'yearly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
             tx_trans_rho:
-            ty_trans_rho:
             tx_trans_rho_gm: 
-            ty_trans_rho_gm:
             tx_trans_gm:
-            ty_trans_gm:
             tx_trans:
-            ty_trans:
             tz_trans:
             tx_trans_submeso:
             ty_trans_submeso:
-            tz_trans_sq:
-            rho:
-            rho_dzt:
-            pot_rho_0:
-            dzt:
-            temp:
-            pot_temp:
-            salt:
-            age_global:
-            sw_heat:
-            sw_frac:
-            temp_rivermix:
-            temp_vdiffuse_impl:
-            salt_vdiffuse_impl:
-            temp_tendency:
-            temp_tendency_expl:
-            salt_tendency:
-            salt_tendency_expl:
-            temp_submeso:
-            salt_submeso:
             neutral_rho:
-            pot_rho_2:
-            press:
-            drhodtheta:
-            drhodsalinity:
-            cabbeling:
-            thermobaricity:
-            mixdownslope_temp:
-            mixdownslope_salt:
-            bv_freq:
-            diff_cbt_wave:
-            diff_cbt_drag:
-            mix_efficiency:
-            power_diss_wave:
-            power_diss_drag:
-            diff_cbt_kpp_t:
-            diff_cbt_kpp_s:
-            temp_xflux_adv:
-            temp_yflux_adv:
-            temp_zflux_adv:
-            salt_xflux_adv:
-            salt_yflux_adv:
-            salt_zflux_adv:
+            age_global:
+            rho:
+            ty_trans:
+            ty_trans_gm:
+            ty_trans_rho:
+            ty_trans_rho_gm:
             u:
             v:
-            lap_fric_u:
-            lap_fric_v:
-            wt:
-            wrhot:
+            dzt:
+            temp_vdiffuse_impl:
+            salt_vdiffuse_impl:
 
-    'monthly 3d BGC fields':
+    'yearly 3d BGC fields':
         defaults:  # these can be overridden for individual fields below
             module_name: generic_wombatlite
             file_name_prefix: oceanbgc
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
             no3:
-            phy:
             o2:
+            phy:
             det:
             zoo:
             caco3:
@@ -238,123 +198,69 @@ diag_table:
             fe:
             pprod_gross:
 
-    'monthly 2d ocean fields':
+    'yearly 2d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
-            pbot_t:
-            patm_t:
             sea_level:
-            sea_level_sq:
-            surface_temp:
-            squared_surface_temp:
-            surface_salt:
-            mld:
-            mld_sq:
             lprec:
             fprec:
             evap:
             runoff:
-            pme_river:
-            sfc_salt_flux_ice:
-            sfc_hflux_from_water_prec:
-            sfc_hflux_from_water_evap:
-            sfc_hflux_from_runoff:
-            fprec_melt_heat:
             lw_heat:
             evap_heat:
             sens_heat:
             swflx:
-            agm:
-            frazil_2d:
             pme:
             pme_sbc:
             river:
-            swflx_vis:
-            sfc_hflux_coupler:
             sfc_hflux_pme:
-            temp_runoff:
-            wfimelt:
-            wfiform:
-            anompb:
             eta_t:
-            conv_rho_ud_t:
             bottom_temp:
             bottom_salt:
             bottom_age_global:
-            potrho_mix_base:
-            potrho_mix_depth:
-            temp_sigma:
-            eddy_depth:
-            agm_grid_scaling:
-            rossby:
-            rossby_radius:
-            buoy_freq_ave_submeso:
-            hblt_submeso:
-            bvfreq_bottom:
-            power_waves:
-            energy_flux:
-            langmuirfactor:
             psiu:
-            temp_sigma_diff_xflux_int_z:
-            temp_sigma_diff_yflux_int_z:
-            temp_xflux_submeso_int_z:
-            temp_yflux_submeso_int_z:
-            salt_xflux_ndiffuse_int_z:
-            salt_yflux_ndiffuse_int_z:
-            temp_xflux_ndiffuse_int_z:
-            temp_yflux_ndiffuse_int_z:
             ekman_we:
             psiv:
             tau_curl:
-            tau_x:
-            tau_y:
             eta_u:
             urhod:
             vrhod:
-            usurf:
-            vsurf:
             ubott:
             vbott:
-            viscosity_scaling:
-            bmf_u:
-            bmf_v:
-            bottom_power_u:
-            bottom_power_v:
-            wind_power_u:
-            wind_power_v:
-            hblt: {reduction_method: 'max'}
-            licefw:
-            liceht:
+            temp_yflux_adv_int_z:
+            temp_xflux_adv_int_z:
+            salt_yflux_adv_int_z:
+            salt_xflux_adv_int_z:
 
-    'monthly 2d BGC fields':
+    'yearly 2d BGC fields':
         defaults:  # these can be overridden for individual fields below
             module_name: generic_wombatlite
             file_name_prefix: oceanbgc
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
-            o2_stf:
-            dic_stf:
-            adic_stf:
-            fe_stf:
+            stf03:
+            stf07:
+            stf09:
+            stf10:
             pco2:
             paco2:
             pprod_gross_2d:
-            export_prod:
-            export_inorg:
+            atm_co2:
+            wnd:
             det_sediment:
             caco3_sediment:
- 
-    'monthly 2d BGC surface fields':
+
+    'yearly 2d BGC surface fields':
         defaults:  # these can be overridden for individual fields below
             file_name_prefix: oceanbgc
             file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
             output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+            output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
         fields:
             surface_no3:
             surface_phy:
@@ -362,6 +268,30 @@ diag_table:
             surface_dic:
             surface_adic:
             surface_o2:
+
+    'monthly 3d ocean fields':
+        defaults:  # these can be overridden for individual fields below
+            file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
+            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
+            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+        fields:
+            temp:
+            pot_temp:
+            salt:
+
+    'monthly 2d ocean fields':
+        defaults:  # these can be overridden for individual fields below
+            file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
+            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
+            output_freq_units: months  # time units for output: years, months, days, hours, minutes, or seconds
+        fields:
+            surface_temp:
+            surface_salt:
+            mld:
+            tau_x:
+            tau_y:
+            usurf:
+            vsurf:
             
     'monthly scalar ocean fields':
         defaults:  # these can be overridden for individual fields below
@@ -384,6 +314,17 @@ diag_table:
             pbot_adjust:
             temp_global_ave:
             salt_global_ave:
+            no3_global_ave:
+            fe_global_ave:
+            o2_global_ave:
+            dic_global_ave:
+            alk_global_ave:
+            dicr_global_ave:
+            caco3_global_ave:
+            det_global_ave:
+            phy_global_ave:
+            pchl_global_ave:
+            zoo_global_ave:
             total_ocean_pme_river:
             total_ocean_river:
             total_ocean_evap:
@@ -405,4 +346,16 @@ diag_table:
             pe_tot:
             temp_surface_ave:
             salt_surface_ave:
-
+            no3_surface_ave:
+            fe_surface_ave:
+            o2_surface_ave:
+            dic_surface_ave:
+            alk_surface_ave:
+            dicr_surface_ave:
+            caco3_surface_ave:
+            det_surface_ave:
+            phy_surface_ave:
+            pchl_surface_ave:
+            zoo_surface_ave:
+            total_co2_flux:
+            total_aco2_flux:
