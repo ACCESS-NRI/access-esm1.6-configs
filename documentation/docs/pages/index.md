@@ -33,36 +33,31 @@ Scenario names exactly match [CMIP7 experiment names](https://airtable.com/embed
 
 #### Supported configurations
 
-All available configurations are browsable under [the list of release branches](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=release-). There are currently no released configurations.
+All supported configurations are browsable under [the list of release branches](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=release-).
+These current releases are for the CMIP7 piControl and historical configurations. Releases for _amip_ and future scenarios are planned. 
 
-These configurations are under active development:
+- [release-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-historical)
+- [release-esm-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-esm-historical)
+- [release-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-piControl)
+- [release-esm-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-esm-piControl)
 
-- [dev-abrupt-0p5xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-0p5xCO2)
-- [dev-abrupt-2xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-2xCO2)
-- [dev-abrupt-4xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-abrupt-4xCO2)
-- [dev-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2)
-- [dev-1pctCO2-bgc](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2-bgc)
-- [dev-1pctCO2-rad](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-1pctCO2-rad)
-- [dev-amip](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-amip)
-- [dev-esm-flat10](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-flat10)
-- [dev-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-piControl)
-- [dev-esm-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-piControl)
-- [dev-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-historical)
-- [dev-esm-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/dev-esm-historical)
+The configurations under active development, have `dev-` branches - findable through [search](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=dev-)
+It is recommended to use `release-` branches for experiments.
 
-Where changes are made, they should be applied to all these branches (where relevant) by pull requests. These comparisons can assist with understanding differences between configurations:
+Where changes are made, they should be applied to all `dev-` branches they are relevant to by pull requests. 
+These comparisons can assist with understanding differences between configurations and provide examples for comparing other configurations:
 
 - [dev-piControl↔️dev-esm-piControl
 ](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-piControl..dev-esm-piControl)
 
-- [dev-piControl↔️dev-abrupt-4xCO2
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-piControl..dev-abrupt-4xCO2)
+- [dev-esm-piControl↔️dev-esm-historical
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-esm-piControl..dev-esm-historical)
 
-- [dev-piControl↔️dev-1pctCO2
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-piControl..dev-1pctCO2)
+- [release-esm-piControl↔️dev-esm-piControl
+](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/release-esm-piControl..dev-esm-piControl)
 
-There were some configurations previously under development that have now been archived. 
-These were `+CN` only, i.e. including the carbon and nitrogen cycles but excluding the phosphorus cycle in the land and are available for reference:
+There were some configurations previously under development that have now been archived and are available for reference. 
+These were `+CN` only, i.e. including the carbon and nitrogen cycles but excluding the phosphorus cycle in the land :
 
 - [archive-amip+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-amip%2BCN)
 - [archive-1pctCO2-bgc+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2-bgc%2BCN)
@@ -73,6 +68,15 @@ These were `+CN` only, i.e. including the carbon and nitrogen cycles but excludi
 - [archive-historical+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-historical%2Bconcentrations%2BCN)
 - [archive-preindustrial+concentrations+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bconcentrations%2BCN)
 - [archive-preindustrial+emissions+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-preindustrial%2Bemissions%2BCN)
+
+These configurations were used for CMIP7 experiments:
+- [archive-1pctCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2)
+- [archive-1pctCO2-bgc](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2-bgc)
+- [archive-1pctCO2-rad](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-1pctCO2-rad)
+- [archive-abrupt-4xCO2](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-abrupt-4xCO2)
+- [archive-esm-flat10](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-esm-flat10)
+- [archive-esm-flat10-cdr](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-esm-flat10-cdr)
+- [archive-esm-flat10-zec](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-esm-flat10-zec)
 
 If you need assistance to use git to update these configurations, please ask on the 
 [ACCESS-Hive forum](https://forum.access-hive.org.au/new-topic?category=esm&tags=access-nri-help).
