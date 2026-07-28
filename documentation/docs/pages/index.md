@@ -41,7 +41,7 @@ These current releases are for the CMIP7 piControl and historical configurations
 - [release-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-piControl)
 - [release-esm-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-esm-piControl)
 
-The configurations under active development, have `dev-` branches - findable through 
+The configurations under active development, have `dev-` branches - findable through this
 [search](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=dev-)
 It is recommended to use `release-` branches for experiments.
 
