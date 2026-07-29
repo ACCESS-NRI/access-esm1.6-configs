@@ -28,62 +28,61 @@ platform:
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+  - /g/data/vk83/modules
+  - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/2026.02.001
-
-# Model configuration
+  - access-esm1p6/pr213-5
 model: access-esm1.6
 
 submodels:
-    - name: atmosphere
-      model: um
-      ncpus: 208
-      exe: um_hg3.exe
-      input:
+- name: atmosphere
+  model: um
+  ncpus: 208
+  exe: um_hg3.exe
+  input:
         # Aerosols
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/BC_1849_2023_cmip7.anc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/Bio_1849_2023_cmip7.anc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/OCFF_1849_2023_cmip7.anc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/scycl_1849_2023_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/Bio_1849_2015_ESM1.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
-        - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/BC_1849_2023_cmip7.anc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/Bio_1849_2023_cmip7.anc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/OCFF_1849_2023_cmip7.anc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/aerosol/global.N96/2026.01.06/scycl_1849_2023_cmip7.anc
+  - /g/data/vk83/configurations/inputs/access-esm1p5/modern/historical/atmosphere/aerosol/global.N96/2021.06.22/Bio_1849_2015_ESM1.anc
+  - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
+  - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
+  - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
         # Forcing
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/global.N96/2026.03.03/ozone_1849_2023_cmip7.anc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.12.01/volcts_cmip7.dat
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/global.N96/2026.03.03/ozone_1849_2023_cmip7.anc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.12.01/volcts_cmip7.dat
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/forcing/resolution_independent/2025.11.25/TSI_CMIP7_ESM
         # Land
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1849_2023_cmip7_v2_0.anc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2026.05.08/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1849_2023_cmip7_v2_0.anc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/amip/atmosphere/land/vegetation/global.N96/2025.11.25/ACCESS_vegfrac_LUH3_states_withAusPFTs_1850-2023_v7-transposed.nc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2026.05.08/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
         # COE amip configuration omitted this – is it unused?
         #  - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/land/soiltype/global.N96/2020.05.19/qrparm.soil_igbp_vg
         # Spectral
-        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on
-        - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
+  - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_sw_hadgem1_6on
+  - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/spectral/resolution_independent/2020.05.19/spec3a_lw_hadgem1_6on
         # COE amip configuration omitted these – are they unused?
           # - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/grids/global.N96/2020.05.19/qrparm.mask
           # - /g/data/vk83/configurations/inputs/access-esm1p5/share/atmosphere/grids/resolution_independent/2020.05.19/vertlevs_G3
         # STASH
-        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/
+  - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/
         # Boundary conditions
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/seaice_amip_n96_gregorian.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/sst_amip_n96_gregorian.anc
+  - /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/seaice_amip_n96_gregorian.anc
+  - /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/sst_amip_n96_gregorian.anc
 
 
 restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/restart/2026.07.21
 
 # Timing controls
 calendar:
-    runtime:
-        years: 1 # NOTE: Must be 1 year for land use changes
-        months: 0
-        days: 0
+  runtime:
+    years: 1     # NOTE: Must be 1 year for land use changes
+    months: 0
+    days: 0
 
 runspersub: 1
 
@@ -93,7 +92,7 @@ restart_freq: 10YS
 runlog: true
 manifest:
   reproduce:
-    exe: true
+    exe: false
     input: true
 
 stacksize: unlimited
@@ -103,9 +102,9 @@ payu_minimum_version: 1.3.0
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
 sync:
-    enable: False # set path below and change to true
-    restarts: True
-    base_path: null # Set to location on /g/data (e.g., /g/data/$PROJECT/$USER/)
+  enable: false   # set path below and change to true
+  restarts: true
+  base_path: null   # Set to location on /g/data (e.g., /g/data/$PROJECT/$USER/)
 
 # If a postscript included (such as the automated netcdf conversion), the latest output and restart files will not
 # be automatically synced at the end of a run. To sync the latest output after a postscript has completed,
@@ -113,8 +112,8 @@ sync:
 
 userscripts:
     # Apply thinning before each run
-    setup: ./scripts/update_thinning_driver.sh
+  setup: ./scripts/update_thinning_driver.sh
     # Apply land use changes after each run
-    run: ./scripts/update_landuse_driver.sh
+  run: ./scripts/update_landuse_driver.sh
 
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
