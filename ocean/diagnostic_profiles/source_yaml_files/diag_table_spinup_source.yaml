@@ -278,21 +278,6 @@ diag_table:
             caco3_sed_bury:
             zeuphot:
 
-    'yearly 2d BGC surface fields':
-        defaults:  # these can be overridden for individual fields below
-            file_name_prefix: oceanbgc
-            file_name_dimension: 2d  # descriptor for filename, e.g. 3d, 2d, scalar
-            output_freq: 1  # integer: output sampling frequency in output_freq_units (0: every timestep; -1: only at end of run)
-            output_freq_units: years  # time units for output: years, months, days, hours, minutes, or seconds
-        fields:
-            surface_no3:
-            surface_phy:
-            surface_alk:
-            surface_dic:
-            surface_pchl:
-            surface_dicr:
-            surface_o2:
-
     'monthly 3d ocean fields':
         defaults:  # these can be overridden for individual fields below
             file_name_dimension: 3d  # descriptor for filename, e.g. 3d, 2d, scalar
