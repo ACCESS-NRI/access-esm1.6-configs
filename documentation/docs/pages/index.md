@@ -22,42 +22,40 @@ All the configurations use the [Payu](https://payu.readthedocs.io/en/latest/) wo
 
 The [`main`](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/main) branch does not store any model configurations, only documentation.
 
-Each configuration in [github.com/ACCESS-NRI/access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository is stored as a git branch. Most of the branches are named according to the following naming scheme:
+Each configuration in [github.com/ACCESS-NRI/access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository is stored as a git branch. 
+
+*Supported* configurations are named according to the following naming scheme:
 
 `release-{scenario}`
 
-where release signifies this is the release branch that is tested, versioned and ready for use, scenario is the CMIP7 experiment. All configurations are global with nominal 1 degree resolution.
-
+where release signifies this is the release branch that is tested, versioned and ready for use. `{scenario}` is the CMIP7 experiment. 
 Scenario names exactly match [CMIP7 experiment names](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7).
+All configurations are global with nominal 1 degree resolution. 
 
+*Development* branches (`dev-{scenario}`) contain changes for future releases, and when merged into release branches create a release.
+
+*Feature* branches contains tests, demonstrations and new features, and should be named using an issue number, scenario and other 
+descriptors to disambiguate them.
 
 #### Supported configurations
 
 All supported configurations are browsable under [the list of release branches](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=release-).
-These current releases are for the CMIP7 piControl and historical configurations. Releases for _amip_ and future scenarios are planned. 
+The current releases are for the CMIP7 *piControl* and *historical* configurations with concentrations and emissions driven CO₂ forcings. 
+Releases for _amip_ and some CMIP7 future scenarios are planned. 
 
-- [release-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-historical)
-- [release-esm-historical](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-esm-historical)
-- [release-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-piControl)
-- [release-esm-piControl](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/release-esm-piControl)
+#### Development configurations
 
 The configurations under active development, have `dev-` branches - findable through this
-[search](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=dev-)
+[list](https://github.com/ACCESS-NRI/access-esm1.6-configs/branches/all?query=dev-).
 It is recommended to use `release-` branches for experiments.
 
-Where changes are made, they should be applied to all `dev-` branches they are relevant to by pull requests. 
-These comparisons can assist with understanding differences between configurations and provide examples for comparing other configurations:
+When changes are made, they should be applied to all `dev-` branches they are relevant to by pull requests. 
 
-- [dev-piControl↔️dev-esm-piControl
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-piControl..dev-esm-piControl)
+#### Archived configurations
 
-- [dev-esm-piControl↔️dev-esm-historical
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/dev-esm-piControl..dev-esm-historical)
+There were some configurations previously under development that have now been archived.
+These are available for reference as git [tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
 
-- [release-esm-piControl↔️dev-esm-piControl
-](https://github.com/ACCESS-NRI/access-esm1.6-configs/compare/release-esm-piControl..dev-esm-piControl)
-
-There were some configurations previously under development that have now been archived and are available for reference. 
 These were `+CN` only, i.e. including the carbon and nitrogen cycles but excluding the phosphorus cycle in the land :
 
 - [archive-amip+CN](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-amip%2BCN)
@@ -83,7 +81,37 @@ These configurations were used for CMIP7 experiments:
 If you need assistance to use git to update these configurations, please ask on the 
 [ACCESS-Hive forum](https://forum.access-hive.org.au/new-topic?category=esm&tags=access-nri-help).
 
-#### How to use this repository to run a model
+### Comparing configuration branches
+
+GitHub's branch comparison view can be used to see exactly what differs between any two configurations.
+This is useful, for example, to see how a `dev-*` configuration differs from the latest `release-*`
+configuration it's based on, or how two configurations at different resolutions differ.
+
+To compare any two branches, visit a URL of the form:
+
+```
+https://github.com/ACCESS-NRI/access-om3-configs/compare/{base-branch}..{compare-branch}
+```
+
+replacing `{base-branch}` and `{compare-branch}` with the names of the branches you want to compare.
+This shows the `diff` between the `{base-branch}` and `{compare-branch}`. Lines shown in red are
+only present in `{base-branch}` (i.e. absent from `{compare-branch}`) and lines shown in green are only
+present in `{compare-branch}` (i.e. added relative to `{base-branch}`).
+
+Note that the `..` produces a ["two-dot" diff](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-comparing-branches-in-pull-requests#three-dot-and-two-dot-git-diff-comparisons)
+directly between the two refs, rather than the "three-dot" diff (against their merge base) that GitHub
+uses for pull requests.
+
+Tags or commit hashes can be used in place of branch names, which is useful for comparing
+against a specific released version or commit, rather than the (potentially newer) tip
+of a branch.
+
+For example, to compare the `release-MC_25km_jra_iaf-1.0-beta` release tag with the `dev-MC_25km_jra_iaf`
+branch, visit:
+
+[`https://github.com/ACCESS-NRI/access-om3-configs/compare/release-MC_25km_jra_iaf-1.0-beta..dev-MC_25km_jra_iaf`](https://github.com/ACCESS-NRI/access-om3-configs/compare/release-MC_25km_jra_iaf-1.0-beta..dev-MC_25km_jra_iaf)
+
+### How to use this repository to run a model
 
 All configurations use [payu](https://github.com/payu-org/payu) to run the model.
 
@@ -100,9 +128,3 @@ git clone -b <experiment> https://github.com/ACCESS-NRI/access-esm1.6-configs <e
 and replace `<experiment>` with the branch name or tag of the experiment you wish to run.
 
 [ACCESS-Hive](https://access-hive.org.au/) contains [detailed instructions for how to configure and run ACCESS models with `payu`](https://access-hive.org.au/models/run_a_model).
-
-#### CI and Reproducibility Checks
-
-This repository makes use of GitHub Actions to perform reproducibility checks on model config branches.
-
-
