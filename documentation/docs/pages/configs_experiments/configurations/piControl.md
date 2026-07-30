@@ -19,7 +19,7 @@ The following input files provide external forcings for 1850 to the atmosphere m
 * Bio_1850_cmip7.anc: Fire emissions of OC and BC in kg(C) m-2 s-1. Split into emissions for low and high model levels.
 * biogenic_351sm.N96L38: Climatological mass mixing ratios of biogenic aerosols.
 * sulpc_oxidants_N96_L38:  Climatological OH, HO2, H2O2, and Ozone MMRs, used in sulphur cycle chemistry calculations.
-* DMS_conc.N96: Dimethyl sulphide concentration in seawater given in nmol l-1.
+* DMS_conc.N96: Dimethyl sulphide concentration in seawater given in nmol L-1.
 * ozone_1850_cmip7.anc: Zonal mean ozone mass mixing ratio used in atmosphere radiation calculations.
 
 ### Land

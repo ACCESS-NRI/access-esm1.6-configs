@@ -25,7 +25,7 @@ are repeated in the model:
 
 * biogenic_351sm.N96L38: Climatological mass mixing ratios of biogenic aerosols.
 * sulpc_oxidants_N96_L38: Climatological OH, HO2, H2O2, and Ozone MMRs, used in sulphur cycle chemistry calculations.
-* DMS_conc.N96: Dimethyl sulphide concentration in seawater given in nmol l-1.
+* DMS_conc.N96: Dimethyl sulphide concentration in seawater given in nmol L-1.
 
 ### Land
 The following input files provide time varying conditions to the land model for years 1850-2022:
