@@ -2,7 +2,9 @@ The esm-historical configuration simulates the climate from 1850-2022 using a fu
 
 This configuration is used for the [CMIP7 esm-historical experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recIoJ9zT1p7yrD6w).
 
-Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
+!!! info
+
+    Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 ## Inputs
 The same input files as the [historical](/configs_experiments/configurations/historical) configuration are used to provide the model with time varying aerosol, ozone, nitrogen deposition, volcanic forcing, solar irradiance and land use change data.

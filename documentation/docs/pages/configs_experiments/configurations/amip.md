@@ -4,7 +4,9 @@ The amip configuration is set up from the [historical](/configs_experiments/conf
 
 This configuration is used for the [CMIP7 amip experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recPovziGiiALZQUj).
 
-Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
+!!! info
+
+    Please note that the settings described below are implemented in the configuration and no further changes are required to run it. The descriptions below are included to aid in understanding of the configuration and to assist with making modifications.
 
 
 ## Inputs
