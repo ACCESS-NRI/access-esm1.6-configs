@@ -17,7 +17,7 @@ ACCESS-ESM1.6 configurations are provided via branches in the [access-esm1.6-con
 - [MOM5](https://github.com/ACCESS-NRI/mom5) ocean model
 - [CICE5](https://github.com/accESS-NRI/cice5) sea ice model
 - [UM7](https://github.com/accESS-NRI/um7) atmosphere model
-- [CABLE](https://github.com/CABLE-LSM/CABLE) and Casa land surface models
+- [CABLE](https://github.com/CABLE-LSM/CABLE) land surface model including CASA-CNP for the land biogeochemistry
 - [WOMBATLite](https://github.com/ACCESS-NRI/GFDL-generic-tracers) ocean biogeochemisty
 
 All the configurations use the [Payu](https://payu.readthedocs.io/en/latest/) workflow management tool, and pre-built executables available on [NCI](https://nci.org.au/).
