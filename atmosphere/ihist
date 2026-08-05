@@ -1,44 +1,10 @@
  &NLIHISTO
- MODEL_DATA_TIME = 6*-32768,
- RUN_MEANCTL_RESTART     =                     0,
- RUN_INDIC_OP    =                     0,
- RUN_RESUBMIT_TARGET     = 6*-32768,
- FT_LASTFIELD    = 142*-32768
  /
  &NLCHISTO
- RUN_HIST_TYPE   = 'Interim   ',
- RUN_TYPE        = 'Reconfig',
- RUN_COMPCODE    = '              ',
- RUN_LAST_MEAN   = '              ',
- RUN_MEANS_TO_DO = ' ',
- RUN_OCEAN_FIRST = ' ',
- RUN_JOB_NAME    = 'aiihc000',
- RUN_ID  = '     ',
- RUN_RESUBMIT    = 'Y',
- RUN_RESUBMIT_Q  = 'other       ',
- RUN_RESUBMIT_TIME       = '                    ',
- RUN_RESUBMIT_CPU        = '400000',
- RUN_RESUBMIT_MEMORY     = '      ',
- RUN_RESUBMIT_PRTY       = '  ',
- RUN_RESUBMIT_JOBNAME    = '        ',
- FT_ACTIVE       = 142*' '
  /
  &NLIHISTG
- H_STEPIM        = 4*0,
- H_GROUPIM       = 4*0,
- MEAN_OFFSETIM   = 4*-32768,
- OFFSET_DUMPSIM  = 4*-32768,
- MEAN_NUMBERIM   = 4*0,
- RUN_MEANCTL_INDICIM     = 16*1
  /
  &NLCHISTG
- END_DUMPIM      = 4*'              ',
- RESTARTIM       = 4*'                                                                                ',
- SAFEDMPIM       = 4*'              ',
- NEWSAFEIM       = 4*'              ',
- LASTATMIM       = 4*'              ',
- CURRATMIM       = 4*'              ',
- LASTDMPIM       = 4*'              '
  /
  &NLCFILES
  /
