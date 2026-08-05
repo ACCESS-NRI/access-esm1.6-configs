@@ -1,4 +1,4 @@
-#!/g/data/vk83/apps/payu/1.1.5/bin/python
+#!/usr/bin/env python3
 
 import um_replace_field
 import xarray
