@@ -96,10 +96,6 @@
     f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_aice      = 'm', ! we need this to calculate time-weighted averages
     f_rain_ai   = 'm',
-    f_flat_ai   = 'm',
-    f_fsurf_ai  = 'm',
-    f_fmeltt_ai = 'm',
-
 
     !-----------------------------------
     ! These fields are on by default but let's turn them off
@@ -122,7 +118,7 @@
     f_alvdf_ai  = 'x', f_alidf_ai   = 'x',
     f_albice    = 'x', f_albsno     = 'x',
     f_albpnd    = 'x', f_coszen     = 'x',
-    f_flat      = 'x',
+    f_flat      = 'x', f_flat_ai    = 'x',
     f_fsens     = 'x', f_fsens_ai   = 'x',
     f_flwup     = 'x', f_flwup_ai   = 'x',
     f_evap      = 'x', f_evap_ai    = 'x',
@@ -153,7 +149,8 @@
     f_iage      = 'x', f_FY         = 'x',
     f_hisnap    = 'x', f_aisnap     = 'x',
     f_trsig     = 'x', 
-    f_fcondtop_ai= 'x',
+    f_fsurf_ai  = 'x', f_fcondtop_ai= 'x',
+    f_fmeltt_ai = 'x',
     f_Tn_top    = 'x', f_keffn_top  = 'x',
     f_icepresent   = 'x',
     f_fsurfn_ai    = 'x', f_fcondtopn_ai = 'x',
