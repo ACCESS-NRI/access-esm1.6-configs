@@ -1,20 +1,24 @@
 
 # Home
 
-Welcome to the documentation for the [ACCESS-ESM1.6 model configurations](https://github.com/ACCESS-NRI/access-ESM1.6-configs)! 
-
+Welcome to the documentation for the [ACCESS-ESM1.6 model configurations](https://github.com/ACCESS-NRI/access-ESM1.6-configs). This website contains information for running, modifying and understanding the ACCESS-ESM1.6 Earth System Model.
 
 ## ACCESS-ESM1.6 Documentation Overview
 
-See the navigation links on the left. Some reading tips, see:
+Key sections to look for are:
 
- - [Contributing](/contributing) 
- - [Infrastructure](/infrastructure/building/) 
+- Configurations: supported and updated collections of run-time configuration files to run the model
+- Experiments: results of using a single configurations to simulate climate
+- Infrastructure: details on modifying compiled model executables, and contributing changes to support configurations
 
 ## access-esm1.6-configs Overview
-ACCESS-ESM1.6 configurations are provided via branches in the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository. The [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository contains several configurations using the following components:
+ACCESS-ESM1.6 configurations are provided via branches in the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository. The [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) repository contains configurations using the following components:
 
 - [MOM5](https://github.com/ACCESS-NRI/mom5) ocean model
+- [CICE5](https://github.com/accESS-NRI/cice5) sea ice model
+- [UM7](https://github.com/accESS-NRI/um7) atmosphere model
+- [CABLE](https://github.com/CABLE-LSM/CABLE) land surface model including CASA-CNP for the land biogeochemistry
+- [WOMBATLite](https://github.com/ACCESS-NRI/GFDL-generic-tracers) ocean biogeochemisty
 
 All the configurations use the [Payu](https://payu.readthedocs.io/en/latest/) workflow management tool, and pre-built executables available on [NCI](https://nci.org.au/).
 
