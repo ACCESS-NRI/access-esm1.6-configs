@@ -88,6 +88,7 @@
                                 ! averaged only when sea ice is present
     f_sisaltmass       = 'md',  ! Mass of salt in sea ice
     f_siitdconc        = 'md',  ! Sea ice area fraction in thickness categories
+    f_siitdthick       = 'md',   ! Sea ice thickness in ice thickness categories
 
     !-----------------------------------
     ! Other CICE variables
@@ -98,8 +99,6 @@
     f_flat_ai   = 'm',
     f_fsurf_ai  = 'm',
     f_fmeltt_ai = 'm',
-    f_aicen     = 'm',
-    f_vicen     = 'm',
 
 
     !-----------------------------------
