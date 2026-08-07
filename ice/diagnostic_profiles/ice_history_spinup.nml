@@ -97,9 +97,8 @@
 
 
     !-----------------------------------
-    ! These fields are on by default (in ice_history_mechred.F90) but let's turn them off
+    ! These fields are on by default but let's turn them off
     !-----------------------------------
-    f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_hi        = 'x', f_hs         = 'x',
     f_Tsfc      = 'x',
     f_uvel      = 'x', f_vvel       = 'x',
@@ -142,7 +141,7 @@
     f_divu      = 'x', f_shear      = 'x',
     f_sig1      = 'x', f_sig2       = 'x',
     f_dvidtt    = 'x', f_dvidtd     = 'x',
-    !f_dvsdtt    = 'x', f_dvsdtd     = 'x',
+    f_dvsdtt    = 'x', f_dvsdtd     = 'x',
     f_daidtt    = 'x', f_daidtd     = 'x',
     f_dagedtt   = 'x', f_dagedtd    = 'x',
     f_mlt_onset = 'x', f_frz_onset  = 'x',
@@ -153,7 +152,6 @@
     f_fmeltt_ai = 'x',
     f_Tn_top    = 'x', f_keffn_top  = 'x',
     f_icepresent   = 'x',
-    f_aicen        = 'x', f_vicen        = 'x',
     f_fsurfn_ai    = 'x', f_fcondtopn_ai = 'x',
     f_fmelttn_ai   = 'x', f_flatn_ai     = 'x'
 /
