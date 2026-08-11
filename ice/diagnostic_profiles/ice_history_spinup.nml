@@ -64,7 +64,7 @@
     f_sistrxubot       = 'x',  f_sistryubot       = 'x',
                                 ! Ocean surface stress on sea ice
                                 ! averaged only when sea ice is present
-    f_sithick          = 'm',  ! Sea ice thickness
+    f_sithick          = 'x',  ! Sea ice thickness
                                 ! averaged only when sea ice is present
     f_sitimefrac       = 'x',  ! Fraction of averaging interval when there is sea ice
     f_siu              = 'm', f_siv              = 'm',
