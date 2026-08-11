@@ -1,0 +1,60 @@
+!!! warning
+
+    The ACCESS-ESM1.6 1pctCO2 experiment does not have a released and maintained configuration. These notes describe how the CMIP7 experiment was set up and are for reference only. If you would like to run a 1pctCO2 experiment with the latest configuration updates, please create a *help request* on the [ACCESS Hive Forum](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021).
+
+
+The 1pctCO2 experiment simulates the climate under a yearly 1% increase in CO2 concentrations, starting from preindustrial conditions.
+
+The experimental setup matches commit [37d5312](https://github.com/ACCESS-NRI/access-esm1.6-configs/tree/37d5312847642f1ea574306d200449aa8b44fd39) from the [piControl](/configs_experiments/configurations/piControl) configuration with changes for prescribing the yearly CO2 increase and changes to the initial conditions.
+
+This experiment has been run for the [CMIP7 1pctCO2 experiment](https://airtable.com/embed/apphXCUgASIeT6jCz/shrCs1cSWzQRV0v4i/tblbT6XAdQYOCMXu7/viwUXPlXGkKPiFTgB/recdrTGc9OOrRF1rU).
+
+
+## Inputs
+The 1pctCO2 experiment uses the same input files as the [piControl](/configs_experiments/configurations/piControl) configuration except for the initial conditions.
+
+### Restart
+The 1pctCO2 experiment uses the restart from the piControl experiment with calendar year 201.
+
+## Key settings
+The yearly 1% increase in atmospheric CO2 concentrations is configured in the `atmosphere/namelists` file. Under the `&CLIMCHFG` section, an initial concentration and year are specified along with a rate of increase to apply for the following years.
+
+The following differences are shown with respect to the [piControl](/configs_experiments/configurations/piControl) configuration:
+
+#### atmosphere/namelists
+```diff
+ &CLMCHFCG
+- L_CLMCHFCG=.FALSE.,
++ L_CLMCHFCG=.TRUE.,
++ CLIM_FCG_NYEARS(1)= 1,
++ CLIM_FCG_YEARS(1,1)=200,
++ CLIM_FCG_LEVLS(1,1)=4.3189e-04,
++ CLIM_FCG_RATES(1,1)= 1.00000,
++ CLIM_FCG_NYEARS(2:11)=10*0,
+ /
+```
+In the above:
+
+* `L_CLMCHFCG=.TRUE.` enables time varying prescribed greenhouse gas concentrations.
+* `CLIM_FCG_NYEARS(1)= 1` indicates that one year of prescribed CO2 concentrations will be provided.
+* `CLIM_FCG_YEARS(1,1)=200` indicates CO2 mass mixing ratios in the `CLIM_FCG_LEVLS(1,1)` setting are provided for calendar year 200. This has been set to be one less than 201, the calendar year in the initial restart file. It's important for this setting to be exactly one year less than the year in the initial restart file, otherwise incorrect increases in CO2 concentrations will be applied.
+* `CLIM_FCG_LEVLS(1,1)=4.3189e-04` sets the CO2 mass mixing ratio for calendar year specified in `CLIM_FCG_YEARS(1,1)` to equal the value used in the [piControl](/configs_experiments/configurations/piControl) configuration.
+* `CLIM_FCG_RATES(1,1)= 1.00000` tells the model to apply a 1% increase to the CO2 concentration for each year after the last provided prescribed value.
+* `CLIM_FCG_NYEARS(2:11)=10*0` tells the model that time varying values are not being provided for the other greenhouse gasses. Their values are instead taken from the `&RUN_Radiation` section.
+
+With these settings, the model applies a 1% increase in CO2 concentrations for each year following the calendar year set in `CLIM_FCG_YEARS(1,1)=200`, so that calendar year 201 uses a concentration of `4.3189e-04*1.01=4.362089e-04`, calendar year 202 uses `4.3189e-04*1.01^2=4.4057098e-04` and so on.
+
+The values for other greenhouse gas concentrations, volcanic forcings, and the solar constant are indentical to the [piControl](/configs_experiments/configurations/piControl) configuration.
+
+## Configuration scripts
+The 1pctCO2 experiment uses a `check_co2_year.py` userscript which is run during the payu setup stage. This checks during the first run that the restart year is one year greater than the value set for `CLIM_FCG_YEARS(1,1)`, and produces an error otherwise. 
+
+#### config.yaml
+```yaml
+userscripts:
+    setup: scripts/check_co2_year.py
+```
+
+!!! warning
+
+    This check will not work properly if the payu run index is customised with the `payu run -i` option.
