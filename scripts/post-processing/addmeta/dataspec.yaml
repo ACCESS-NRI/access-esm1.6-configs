@@ -21,12 +21,9 @@ global:
     license: "{{ metadata.license }}"
     model: "{{ metadata.model }}"
     model_version: "{{ metadata.version }}"
-    # FIXME: we may need a semi-manual mapping for branch time one
     parent_experiment_branch_time: "{{ metadata.parent_experiment_branch_time }}"
-    # FIXME: parent_experiment is missing in the test dataset
-    parent_experiment_uuid: "45fa297e-165c-4944-98a6-dbb653be30fc" #"{{ metadata.parent_experiment }}"
-    # FIXME: PAYU_RUN_ID is missing from my test env.yaml file
-    run_id: "{{ env.RUNID }}"
+    parent_experiment_uuid: "{{ metadata.parent_experiment }}"
+    run_id: "{{ env.PAYU_RUN_ID }}"
     title: "{{ metadata.name }}"
     variable_id: "{{ __file__.var }}"
 

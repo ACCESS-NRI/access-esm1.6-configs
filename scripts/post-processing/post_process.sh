@@ -21,8 +21,11 @@ um2nc driver esm1p6 $PAYU_CURRENT_OUTPUT_DIR --delete-ff  --one-nc-per-stash-var
 
 # Split sea ice output into single variable files using the splitnc command. The splitnc command calls https://github.com/ACCESS-NRI/splitnc/blob/main/src/splitnc/splitnc.py
 icefiles=($PAYU_CURRENT_OUTPUT_DIR/ice/iceh-*)
+
+# Only run splitnc if unprocessed ice files exist to avoid errors on reruns
 if [ "${#icefiles[@]}" -gt 0 ]
 then
+    splitnc --shared-vars uarea,tmask,tarea --excluded-vars VGRD.  --use-esm1p6-filenames --fix-cell-methods --skip-existing "${icefiles[@]}"
     if [ $? -eq 0 ]; then
       rm "${icefiles[@]}"
     fi
@@ -74,6 +77,5 @@ addmeta \
     -d metadata.yaml \
     -d $PAYU_CURRENT_OUTPUT_DIR/env.yaml \
     -m scripts/post-processing/addmeta/dataspec.yaml \
-    -m scripts/post-processing/addmeta/ocean.yaml \
     --fnregex='access-esm1p6\.\w+(?:\.\dd)?\.(?P<var>\w+)\.(?P<freq>\w{2,4})(?:\.\w+)?(?:\.\d{4})?\.nc' \
     $PAYU_CURRENT_OUTPUT_DIR/ocean/*.nc
