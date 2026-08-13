@@ -23,10 +23,9 @@ um2nc driver esm1p6 $PAYU_CURRENT_OUTPUT_DIR --delete-ff  --one-nc-per-stash-var
 icefiles=($PAYU_CURRENT_OUTPUT_DIR/ice/iceh-*)
 if [ "${#icefiles[@]}" -gt 0 ]
 then
-    splitnc --shared-vars uarea,tmask,tarea --excluded-vars VGRD.  --use-esm1p6-filenames --fix-cell-methods --overwrite "${icefiles[@]}"
-
-    # Remove the original sea ice model output:
-    rm "${icefiles[@]}"
+    if [ $? -eq 0 ]; then
+      rm "${icefiles[@]}"
+    fi
 fi
 
 
