@@ -339,124 +339,146 @@
 
  
 
+! Time profile number 1
  &TIME NAME="TDAYMN", ITYP=3
  INTV=1,UNT1="DA",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DA",
  /
 
+! Time profile number 2
  &TIME NAME="TDAILY", ITYP=1
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DA",
  /
 
+! Time profile number 3
  &TIME NAME="TDMPMN", ITYP=3
  INTV=1,UNT1="DU",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DU",
  /
 
+! Time profile number 4
  &TIME NAME="T6H", ITYP=1
  IOPT=1,
  ISTR=6,IEND=-1,IFRE=6,UNT3="H ",
  /
 
+! Time profile number 5
  &TIME NAME="T6HDM", ITYP=3
  INTV=1,UNT1="DU",IOFF=0,ISAM=6,UNT2="H ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DU",
  /
 
+! Time profile number 6
  &TIME NAME="TALLTS", ITYP=1
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="T ",
  /
 
+! Time profile number 7
  &TIME NAME="T3H", ITYP=1
  IOPT=1,
  ISTR=3,IEND=-1,IFRE=3,UNT3="H ",
  /
 
+! Time profile number 8
  &TIME NAME="T3HMN", ITYP=3
  INTV=3,UNT1="H ",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=3,IEND=-1,IFRE=3,UNT3="H ",
  /
 
+! Time profile number 9
  &TIME NAME="TCOUPMN", ITYP=3
  INTV=1,UNT1="DA",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DA",
  /
 
+! Time profile number 10
  &TIME NAME="TSW", ITYP=1
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=6,UNT3="T ",
  /
 
+! Time profile number 11
  &TIME NAME="TTRIFdyn", ITYP=1
  IOPT=1,
  ISTR=480,IEND=-1,IFRE=480,UNT3="T ",
  /
 
+! Time profile number 12
  &TIME NAME="TDALYMIN", ITYP=6
  INTV=1,UNT1="DA",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DA",
  /
 
+! Time profile number 13
  &TIME NAME="TDALYMAX", ITYP=5
  INTV=1,UNT1="DA",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DA",
  /
 
+! Time profile number 14
  &TIME NAME="TTRIFphn", ITYP=3
  INTV=1,UNT1="DU",IOFF=48,ISAM=48,UNT2="T ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DU",
  /
 
+! Time profile number 15
  &TIME NAME="T24H0Z", ITYP=1
  IOPT=1,
  ISTR=24,IEND=-1,IFRE=24,UNT3="H ",
  /
 
+! Time profile number 16
  &TIME NAME="T24HRMRV", ITYP=3
  INTV=1,UNT1="DU",IOFF=24,ISAM=24,UNT2="H ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DU",
  /
 
+! Time profile number 17
  &TIME NAME="T6HDMmon", ITYP=3
  INTV=1,UNT1="DU",IOFF=0,ISAM=6,UNT2="H ",
  IOPT=1,
  ISTR=30,IEND=-1,IFRE=30,UNT3="DA",
  /
 
+! Time profile number 18
  &TIME NAME="TMONMN", ITYP=3
  INTV=30,UNT1="DA",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=30,IEND=-1,IFRE=30,UNT3="DA",
  /
 
+! Time profile number 19
  &TIME NAME="TSERIES", ITYP=4
  INTV=1,UNT1="DA",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DA",
  /
 
+! Time profile number 20
  &TIME NAME="TMON", ITYP=1
  IOPT=1,
  ISTR=1,IEND=-1,IFRE=1,UNT3="DU",
  /
 
+! Time profile number 21
  &TIME NAME="T6HMN", ITYP=3
  INTV=6,UNT1="H ",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=6,IEND=-1,IFRE=6,UNT3="H ",
  /
 
+! Time profile number 22
  &TIME NAME="T1HMN", ITYP=3
  INTV=1,UNT1="H ",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
@@ -464,6 +486,7 @@
  /
  
 
+! Domain profile number 1
  &DOMAIN NAME="DIAG", IOPL=5
  PLT=0,
  IOPA=1,
@@ -471,6 +494,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 2
  &DOMAIN NAME="DALLTH", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -481,6 +505,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 3
  &DOMAIN NAME="DPBLTH", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -491,6 +516,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 4
  &DOMAIN NAME="DP17", IOPL=3
  RLEVLST=1000.000,925.000,850.000,700.000,600.000,500.000,
  400.000,300.000,250.000,200.000,150.000,100.000,70.000,50.000,30.000,20.000,
@@ -501,6 +527,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 5
  &DOMAIN NAME="DSOIL", IOPL=6
  ILEVS=1,
  LEVB=1,
@@ -511,6 +538,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 6
  &DOMAIN NAME="DBOTTH", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -521,6 +549,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 7
  &DOMAIN NAME="D500", IOPL=3
  RLEVLST=500.000,
  PLT=0,
@@ -529,6 +558,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 8
  &DOMAIN NAME="DALLRH", IOPL=1
  ILEVS=1,
  LEVB=1,
@@ -539,6 +569,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 9
  &DOMAIN NAME="DALLCL", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -549,6 +580,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 10
  &DOMAIN NAME="DTILE", IOPL=5
  PLT=9,
  PSLIST=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,
@@ -557,6 +589,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 11
  &DOMAIN NAME="DPBLTH0", IOPL=2
  ILEVS=1,
  LEVB=0,
@@ -567,6 +600,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 12
  &DOMAIN NAME="DA7ISCCP", IOPL=3
  RLEVLST=900.000, 740.000, 620.000, 500.000, 375.000, 245.000, 115.000,
  PLT=0,
@@ -575,6 +609,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 13
  &DOMAIN NAME="DPSEUD", IOPL=5
  PLT=10,
  PSLIST=1,
@@ -583,6 +618,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 14
  &DOMAIN NAME="DPFT", IOPL=5
  PLT=9,
  PSLIST=1,2,3,4,5,6,7,8,9,10,11,12,13,
@@ -591,6 +627,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 15
  &DOMAIN NAME="DTILEURB", IOPL=5
  PLT=9,
  PSLIST=3,6,
@@ -599,6 +636,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 16
  &DOMAIN NAME="DIAG_AOT", IOPL=5
  PLT=1,
  PSLIST=1,2,3,4,5,6,
@@ -607,6 +645,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 17
  &DOMAIN NAME="Dtype", IOPL=5
  PLT=9,
  PSLIST=1,2,3,4,5,6,7,8,9,
@@ -615,6 +654,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 18
  &DOMAIN NAME="DP6", IOPL=3
  RLEVLST=1000.000,850.000,700.000,500.000,250.000,100.000,
  PLT=0,
@@ -623,6 +663,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 19
  &DOMAIN NAME="D8550252", IOPL=3
  RLEVLST=850.000,500.000,250.000,
  PLT=0,
@@ -631,6 +672,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 20
  &DOMAIN NAME="DBOTRHO", IOPL=1
  ILEVS=1,
  LEVB=1,
@@ -641,6 +683,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 21
  &DOMAIN NAME="D200", IOPL=3
  RLEVLST=200.000,
  PLT=0,
@@ -649,6 +692,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 22
  &DOMAIN NAME="DP31zm", IOPL=3
  RLEVLST=1000.000,850.000,700.000,500.000,400.000,300.000,
  250.000,200.000,170.000,150.000,130.000,115.000,100.000,90.000,80.000,70.000,
@@ -660,6 +704,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 23
  &DOMAIN NAME="DP3", IOPL=3
  RLEVLST=1000.000,100.000,10.000,
  PLT=0,
@@ -668,6 +713,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 24
  &DOMAIN NAME="DTHETA7", IOPL=7
  RLEVLST=315.000,330.000,350.000,380.000,405.000,460.000,
  840.000,
@@ -677,6 +723,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 25
  &DOMAIN NAME="DP10hPa", IOPL=3
  RLEVLST=10.000,
  PLT=0,
@@ -685,6 +732,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 26
  &DOMAIN NAME="DP7", IOPL=3
  RLEVLST=1000.000,850.000,700.000,500.000,250.000,100.000,
  10.000,
@@ -694,6 +742,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 27
  &DOMAIN NAME="DALLTHzm", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -704,6 +753,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 28
  &DOMAIN NAME="DALLRHzm", IOPL=1
  ILEVS=1,
  LEVB=1,
@@ -714,6 +764,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 29
  &DOMAIN NAME="DTOPSOIL", IOPL=6
  ILEVS=1,
  LEVB=1,
@@ -724,6 +775,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 30
  &DOMAIN NAME="DP17zm", IOPL=3
  RLEVLST=1000.000,925.000,850.000,700.000,600.000,500.000,
  400.000,300.000,250.000,200.000,150.000,100.000,70.000,50.000,30.000,20.000,
@@ -734,6 +786,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 31
  &DOMAIN NAME="DP8", IOPL=3
  RLEVLST=1000.000,850.000,700.000,500.000,250.000,100.000,
  50.000,10.000,
@@ -743,6 +796,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 32
  &DOMAIN NAME="DP17th", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -753,6 +807,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 33
  &DOMAIN NAME="DGTS_PT", IOPL=5
  PLT=0,
  IOPA=1,
@@ -768,6 +823,7 @@
  TS="Y", TSNUM=21,
  /
 
+! Domain profile number 34
  &DOMAIN NAME="DCO2TS", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -796,6 +852,7 @@
  4,4,4,49,69,5,74,8,77,77,80,70,72,78,164,164,164,140,
  /
 
+! Domain profile number 35
  &DOMAIN NAME="DCO2TSL", IOPL=5
  PLT=0,
  IOPA=1,
@@ -815,6 +872,7 @@
  TS="Y", TSNUM=43,
  /
 
+! Domain profile number 36
  &DOMAIN NAME="PLEV19", IOPL=3
  RLEVLST=1000.000,925.000,850.000,700.000,600.000,500.000,
  400.000,300.000,250.000,200.000,150.000,100.000,70.000,50.000,30.000,20.000,
@@ -825,6 +883,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 37
  &DOMAIN NAME="PLEV3", IOPL=3
  RLEVLST=850.000,500.000,250.000,
  PLT=0,
@@ -833,6 +892,7 @@
  TS="N",TSNUM=0,
  /
 
+! Domain profile number 38
  &DOMAIN NAME="CMIP7PLEV7", IOPL=3
  RLEVLST=925.000,850.000,700.000,600.000,500.000,250.000,50.000,
  PLT=0,
@@ -841,50 +901,62 @@
  TS="N",TSNUM=0,
  /
 
+! Usage profile number 1
  &USE NAME="Upedaily", LOCN=3
  IUNT=64,
  /
 
+! Usage profile number 2
  &USE NAME="Upamonth", LOCN=3
  IUNT=60,
  /
 
+! Usage profile number 3
  &USE NAME="UPUKCA", LOCN=1
  IUNT=98,
  /
 
+! Usage profile number 4
  &USE NAME="UPI3hrly", LOCN=3
  IUNT=68,
  /
 
+! Usage profile number 5
  &USE NAME="UPJuser", LOCN=3
  IUNT=69,
  /
 
+! Usage profile number 6
  &USE NAME="UPA2O", LOCN=1
  IUNT=10,
  /
 
+! Usage profile number 7
  &USE NAME="UPC1hr", LOCN=3
  IUNT=62,
  /
 
+! Usage profile number 8
  &USE NAME="UPEuser", LOCN=3
  IUNT=64,
  /
 
+! Usage profile number 9
  &USE NAME="UPFuser", LOCN=3
  IUNT=65,
  /
 
+! Usage profile number 10
  &USE NAME="Upi3hr", LOCN=3
  IUNT=68,
  /
 
+! Usage profile number 11
  &USE NAME="Upi6hrly", LOCN=3
  IUNT=69,
  /
 
+! Usage profile number 12
  &USE NAME="UPGuser", LOCN=3
  IUNT=66,
  /
@@ -917,17 +989,20 @@
  &STREQ IMOD= 1, ISEC=5, ITEM=206, ITIM=1, IDOM=1, IUSE=1 /	! CONVECTIVE SNOWFALL RATE     KG/M2/S
  &STREQ IMOD= 1, ISEC=26, ITEM=4, ITIM=2, IDOM=1, IUSE=1 /	! RIVER OUTFLOW       KG/M2/S
 
+! Time profile number 1
  &TIME NAME="T3HRMN", ITYP=3
  INTV=6,UNT1="T ",IOFF=0,ISAM=1,UNT2="T ",
  IOPT=1,
  ISTR=6,IEND=-1,IFRE=6,UNT3="T "
  /
 
+! Time profile number 2
  &TIME NAME="T3HR", ITYP=1
  IOPT=1,
  ISTR=6,IEND=-1,IFRE=6,UNT3="T "
  /
 
+! Domain profile number 1
  &DOMAIN NAME="DIAG", IOPL=5
  PLT=0,
  IOPA=1,
@@ -935,6 +1010,7 @@
  TS="N",TSNUM=0
  /
  
+! Domain profile number 2
  &DOMAIN NAME="DPSEUD", IOPL=5,
  PLT=10,
  PSLIST=1,2,3,4,5,
@@ -943,6 +1019,7 @@
  TS="N",TSNUM=0
  /
  
+! Domain profile number 3
  &DOMAIN NAME="mthl", IOPL=2,
  ILEVS=1,
  LEVB=1,
@@ -953,6 +1030,7 @@
  TS="N",TSNUM=0,
  /
  
+! Domain profile number 4
  &DOMAIN NAME="DALLTH", IOPL=2
  ILEVS=1,
  LEVB=1,
@@ -963,6 +1041,7 @@
  TS="N",TSNUM=0,
  /
 
+! Usage profile number 1
  &USE NAME="UPCOUP", LOCN=1,
  IUNT=10
  /
