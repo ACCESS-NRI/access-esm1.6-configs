@@ -28,9 +28,9 @@ platform:
 # Modules for loading model executables
 modules:
   use:
-      - /g/data/vk83/modules
+      - /g/data/vk83/prerelease/modules
   load:
-      - access-esm1p6/2026.04.001
+      - access-esm1p6/pr221-1
 
 # Model configuration
 model: access-esm1.6
@@ -85,7 +85,7 @@ submodels:
     - name: ice
       model: cice5
       ncpus: 12
-      exe: cice_access_360x300_30x300.exe
+      exe: cice_access.exe
       input:
         # Grids
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/share/ice/grids/global.1deg/2025.07.29/kmt.nc
