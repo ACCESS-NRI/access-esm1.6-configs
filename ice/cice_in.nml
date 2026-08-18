@@ -7,7 +7,7 @@
     use_restart_time = .true.
     pointer_file   = './RESTART/ice.restart_file'
     dumpfreq       = 'x' !only for extra restarts, payu sets `dump_last=.true.`
-    diagfreq       = 1e6
+    diagfreq       = 1000000
     print_global   = .false.
     diag_type      = 'file'
     history_dir    = './'
@@ -39,7 +39,7 @@
     tr_iage      = .true. ! ice age
     restart_age  = .true. ! ice age restart
     tr_FY        = .true. ! first year ice
-    restart_FY   = .true. 
+    restart_FY   = .true.
 /
 
 &thermo_nml
