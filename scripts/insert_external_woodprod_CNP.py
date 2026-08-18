@@ -41,14 +41,9 @@ def parse_args():
     )
 
     parser.add_argument(
-        "--stash-base",
+        "--stash",
         required=True,
-        help="Path to base STASHMaster_A file"
-    )
-    parser.add_argument(
-        "--stash-prefix",
-        required=True,
-        help="Path to prefix.PRESM_A stash file"
+        help="Path to STASHMaster_A file"
     )
 
     return parser.parse_args()
@@ -63,7 +58,7 @@ def to_file(self, output_file_or_path):
         self._write_to_file(output_file_or_path)
 
 
-def insert_woodprod(restart_path, external_nc_path, stashmaster_base_path, stashmaster_ext_path, output_path):
+def insert_woodprod(restart_path, external_nc_path, stashmaster_path, output_path):
 
     print("Starting UM restart file modification...")
     # Load UM restart file
@@ -71,11 +66,7 @@ def insert_woodprod(restart_path, external_nc_path, stashmaster_base_path, stash
 
     print("Loading STASHmaster base file")
     # Load and attach STASHmaster files
-    stash_base = mule.STASHmaster.from_file(stashmaster_base_path)
-    print("Loading STASHmaster ext file")
-    stash_ext = mule.STASHmaster.from_file(stashmaster_ext_path)
-    print("Updating stash_base with stash_ext")
-    stash_base.update(stash_ext)
+    stash_base = mule.STASHmaster.from_file(stashmaster_path)
     print("Attaching STASHmaster info")
     ff.attach_stashmaster_info(stash_base.by_section(0))  # Section 0 = prognostic
 
@@ -139,4 +130,4 @@ if __name__ == "__main__":
         output_path = args.output
     else:
         output_path = args.restart
-    insert_woodprod(args.restart, args.woodfile, args.stash_base, args.stash_prefix, args.output)
+    insert_woodprod(args.restart, args.woodfile, args.stash, args.output)
