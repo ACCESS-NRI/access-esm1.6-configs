@@ -379,24 +379,24 @@ def remap_vegetation(
 
     return OutDataset
 
-if __name__ == '__main__':
-
-    # Process command line args
-    args = _parse_args()
-    OrigDataset = xarray.open_dataset(args.input)
+def run_vegetation_remapping(input, output, vegetation_map, time_index, fill_all, config, use_previous_fractions_from_restart):
+    """
+    Wrapper function to load the files, run the remapping, and save the output file
+    """
+    OrigDataset = xarray.open_dataset(input)
     OrigVegetation = OrigDataset['FRACTIONS OF SURFACE TYPES'].to_numpy()
 
-    Vegetation = xarray.open_dataset(args.vegetation_map)
+    Vegetation = xarray.open_dataset(vegetation_map)
     # Allow the file to contain a time series (as might be prepared for a LUC
     # dataset) or a snapshot.
-    NewVegetation = Vegetation['fraction'][args.time_index, :, :, :].to_numpy()
+    NewVegetation = Vegetation['fraction'][time_index, :, :, :].to_numpy()
 
     OutDataset = remap_vegetation(
             OrigDataset,
             OrigVegetation,
             NewVegetation,
-            args.fill_all,
-            args.config
+            fill_all,
+            config
             )
 
     # Decide what to do about the previous year's fractions in the restart. It
@@ -405,8 +405,8 @@ if __name__ == '__main__':
     # fractions, if the first index is requested).
     # If the user wants to take previous fractions from the restart, don't need
     # to do anything.
-    if not args.use_previous_fractions_from_restart:
-        if ars.time_index == 0:
+    if not use_previous_fractions_from_restart:
+        if time_index == 0:
             prev_index = 0
         else:
             prev_index = args.time_index - 1
@@ -415,4 +415,19 @@ if __name__ == '__main__':
         OutDataset["PREVIOUS YEAR SURF FRACTIONS (TILES)"] = \
                 (('veg', 'lat', 'lon'), PrevVegetation)
         
-    OutDataset.to_netcdf(args.output)
+    OutDataset.to_netcdf(output)
+
+
+if __name__ == '__main__':
+
+    # Process command line args
+    args = _parse_args()
+
+    # Run the remapping
+    run_vegetation_remapping(args.input,
+                             args.output, 
+                             args.vegetetation_map,
+                             args.time_index,
+                             args.fill_all,
+                             args.use_previous_fractions_from_restart
+                             )

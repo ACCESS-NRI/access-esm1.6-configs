@@ -29,11 +29,30 @@ def _parse_args():
             )
 
     return parser.parse_args()
+
+
+def open_restart(RestartPath, StashFiles):
+    """
+    Open a UM restart file with mule and attach specified STASHmaster files
+    """
+        
+    # Process the command line args
+    FF = mule.FieldsFile.from_file(RestartPath)
+    SMBase = mule.STASHmaster()
+    for SM in StashFiles.split(","):
+        SM = mule.STASHmaster.from_file(SM)
+        SMBase.update(SM)
+
+    FF.attach_stashmaster_info(SMBase.by_section(0))
+
+    return FF
     
-def convert_restart(RestartFile, OutputFile):
+def convert_restart(RestartPath, OutputFile, StashFiles):
     """
     Convert the UM restart to NetCDF
     """
+
+    RestartFile = open_restart(RestartPath, StashFiles)
 
     # We know the latitude and longitude
     Longitudes = numpy.linspace(0.0, 360.0, 192)
@@ -115,14 +134,5 @@ def convert_restart(RestartFile, OutputFile):
 if __name__ == '__main__':
 
     args = _parse_args()
-    
-    # Process the command line args
-    FF = mule.FieldsFile.from_file(args.input)
-    SMBase = mule.STASHmaster()
-    for SM in args.stash.split(","):
-        SM = mule.STASHmaster.from_file(SM)
-        SMBase.update(SM)
 
-    FF.attach_stashmaster_info(SMBase.by_section(0))
-
-    convert_restart(FF, args.output)
+    convert_restart(args.input, args.output, args.stash)

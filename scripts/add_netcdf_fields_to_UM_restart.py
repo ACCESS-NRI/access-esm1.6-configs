@@ -103,20 +103,21 @@ def to_file(self, output_file_or_path):
         else:
             self._write_to_file(output_file_or_path)
 
-if __name__ == '__main__':
 
-    args = _parse_args()
-
+def insert_fields_to_restart(processed_restart, output, base_restart, stash_list):
+    """
+    Top level function to load the files and run the restart modification commands
+    """
     # Process command line args
-    ProcessedRestart = xarray.open_dataset(args.input)
+    ProcessedRestart = xarray.open_dataset(processed_restart)
 
     # Build the STASHmaster and attach it to the UM restart
     SMBase = mule.STASHmaster()
-    for SM in args.stash.split(','):
+    for SM in stash_list.split(','):
         SM = mule.STASHmaster.from_file(SM)
         SMBase.update(SM)
 
-    BaseRestart = mule.FieldsFile.from_file(args.restart)
+    BaseRestart = mule.FieldsFile.from_file(base_restart)
     BaseRestart.attach_stashmaster_info(SMBase.by_section(0))
 
     # Drop in the variables to modify
@@ -126,4 +127,17 @@ if __name__ == '__main__':
     # Write to file- since the UM7 restart doesn't match their expected format
     # for some reason, we need to override the existing to_file
     BaseRestart.to_file = to_file
-    BaseRestart.to_file(BaseRestart, args.output)
+    BaseRestart.to_file(BaseRestart, output)
+    
+
+
+if __name__ == '__main__':
+
+    args = _parse_args()
+
+    insert_fields_to_restart(
+        processed_restart=args.input,
+        output=args.output,
+        base_restart=args.restart,
+        stash_list=args.stash
+    )
