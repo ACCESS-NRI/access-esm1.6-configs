@@ -429,5 +429,6 @@ if __name__ == '__main__':
                              args.vegetetation_map,
                              args.time_index,
                              args.fill_all,
+                             args.config,
                              args.use_previous_fractions_from_restart
                              )
