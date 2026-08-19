@@ -7,11 +7,12 @@ import shlex
 import subprocess
 import re
 import tempfile
+import xarray
 
-from update_thinning_scenario import insert_thinning
+from update_thinning import insert_thinning
 from convert_UM_restart_to_netcdf import convert_restart
 from adjust_restart_for_new_land_cover import run_vegetation_remapping
-from add_netcdf_fields_to_UM_restart import insert_fields_to_restart
+from um_replace_field import open_fields_file, replace_fields
 
 STASHMASTER_PATH = "/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A"
 
@@ -32,10 +33,10 @@ REMAP_CONFIG="/g/data/p66/ajn563/ACCESS-ESM/ESM1.6/configs/restarts/scenarios/se
 def parse_args():
     parser = argparse.ArgumentParser(
         description=(
-            "Copy and modify a ESM1.6 historical restart directory for use as the"
-            "initial condition in a ScenarioMip simulation. This includes:\n"
-            " - Adjusting the land fields for compatibility with the scenario land cover\n"
-            " - Inserting scenarion wood thinning data into the restart\n"
+            "Copy and modify an ESM1.6 restart from a historical experiment for use as the"
+            "initial condition in a ScenarioMip simulation. Apply the following modifications:\n"
+            " - Adjust the land fields for compatibility with the scenario land cover\n"
+            " - Insert initial scenario wood thinning data into the restart\n"
             "The initial restart path is taken from the config.yaml, and the output restart path can be specified as an argument."
             "This script should be run from the payu control directory"
         ),
@@ -50,6 +51,66 @@ def parse_args():
 
     return parser.parse_args()
 
+
+def adjust_restart_for_landcover(input_restart,
+                                 output_restart,
+                                 stashmaster_file,
+                                 vegetation_map,
+                                 config):
+    """
+    Driver function for adjusting UM restart land fields for compatibility
+    with a new vegetation map.
+
+    Parameters
+    ----------
+    input_restart: initial restart to perform the adjustments on
+    output_restart: path to write modified restart to
+    stashmaster_file: path to STASHmaster file for matching variable names and codes
+    config: path to configuration file for the remapping function
+    """
+
+    # Convert UM restart to netCDF
+    restart_as_nc = tempfile.NamedTemporaryFile().name
+    convert_restart(input_restart, restart_as_nc, stashmaster_file)
+
+    # remapped_restart_nc = tempfile.NamedTemporaryFile().name
+    remapped_restart_nc = Path("/g/data/tm70/sw6175/development/esm1p6/access-esm1.6-configs/scripts/remapped_res.nc")
+    # Step 2: Update land data based on new vegetation map
+    run_vegetation_remapping(
+        input=str(restart_as_nc),
+        output=str(remapped_restart_nc),
+        vegetation_map=vegetation_map,
+        # Use time index 0 from the vegetation mapping file
+        time_index=0,
+        config=config,
+        # Only add data for newly active tiles
+        fill_all=False,
+        # Keep the previous years land fractions already in the restart
+        use_previous_fractions_from_restart=True
+    )
+
+    # Step 3: Add remapped data in the netCDF back into the original restart
+    um_file = open_fields_file(
+        str(input_restart),
+        stashmaster_file,
+        # Modifications will be applied to section 0
+        section=0
+    )
+
+    nc_data = xarray.open_dataset(remapped_restart_nc, decode_times=False)
+
+    # The netCDF and original restart use the same variable names
+    variable_map = {var: var for var in nc_data.data_vars}
+
+    print(f"variable_map: {variable_map}")
+    replace_fields(
+        um_file=um_file,
+        variable_map=variable_map,
+        nc_file=nc_data,
+        outfile=output_restart,
+        # Use time index 0 from nc_file
+        time_index=0,
+    )
 
 
 
@@ -116,33 +177,19 @@ if __name__ == "__main__":
     
     atm_restart = output_restart/"atmosphere"/"restart_dump.astart"
 
-    # Convert UM restart to netCDF
-    restart_as_nc = tempfile.NamedTemporaryFile().name
-    convert_restart(atm_restart, restart_as_nc, STASHMASTER_PATH)
-
-    remapped_restart_nc = tempfile.NamedTemporaryFile().name
-    # Step 2: Adjust restart for new land cover
-    run_vegetation_remapping(
-        input=restart_as_nc,
-        output=remapped_restart_nc,
-        vegetation_map=LAND_COVER_FILE,
-        time_index=0,
-        fill_all=False,
-        use_previous_fractions_from_restart=True
-    )
-
-    # Step 3: Add remapped data from netCDF bank into the original restart
     remapped_restart_um = tempfile.NamedTemporaryFile().name
-    insert_fields_to_restart(
-        processed_restart=remapped_restart_nc,
-        output=remapped_restart_um,
-        base_restart=atm_restart,
-        stash_list=STASHMASTER_PATH       
+    # Step 2: Adjust restart for new land cover
+    adjust_restart_for_landcover(
+        input_restart=str(atm_restart),
+        output_restart=str(remapped_restart_um),
+        stashmaster_file=STASHMASTER_PATH,
+        vegetation_map=LAND_COVER_FILE,
+        config=REMAP_CONFIG
     )
 
     # Step 4: Add initial scenario wood thinning data to the restart
     insert_thinning(
-        restart_file=remapped_restart_um,
+        restart_file=str(remapped_restart_um),
         thinning_file=THINNING_FILE,
         stashmaster_file=STASHMASTER_PATH
     )
