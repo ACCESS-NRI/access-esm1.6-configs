@@ -35,47 +35,14 @@ fi
 # Clean up global metatdata to meet ACCESS-NRI dataspec standards
 # https://access-output-data-specifications--2.org.readthedocs.build/en/2/
 
-# Atmosphere
-addmeta \
-    -v -s \
-    -d metadata.yaml \
-    -d $PAYU_CURRENT_OUTPUT_DIR/env.yaml \
-    -m scripts/post-processing/addmeta/dataspec.yaml \
-    -m scripts/post-processing/addmeta/atmosphere.yaml \
-    --fnregex='access-esm1p6\.\w+(?:\.\dd)?\.(?P<var>\w+)\.(?P<freq>\w{2,4})(?:\.\w+)?(?:\.\d{4})?\.nc' \
-    $PAYU_CURRENT_OUTPUT_DIR/atmosphere/*.nc
-
-# Sea ice
-addmeta \
-    -v -s \
-    -d metadata.yaml \
-    -d $PAYU_CURRENT_OUTPUT_DIR/env.yaml \
-    -m scripts/post-processing/addmeta/dataspec.yaml \
-    -m scripts/post-processing/addmeta/ice.yaml \
-    --fnregex='access-esm1p6\.\w+(?:\.\dd)?\.(?P<var>\w+)\.(?P<freq>\w{2,4})(?:\.\w+)?(?:\.\d{4})?\.nc' \
-    $PAYU_CURRENT_OUTPUT_DIR/ice/*.nc
-
-# Ocean
-addmeta \
-    -v -s \
-    -m scripts/post-processing/addmeta/realm_only.yaml \
-    --datavar realm='ocean' \
-    $PAYU_CURRENT_OUTPUT_DIR/ocean/ocean.*.nc
-
-addmeta \
-    -v -s \
-    -m scripts/post-processing/addmeta/realm_only.yaml \
-    --datavar freq='ocnBgchem' \
-    $PAYU_CURRENT_OUTPUT_DIR/ocean/ocnBgchem.*.nc
-
-# Rename ocean files to remove the realm and "_" in the date
-python3 scripts/post-processing/rename_ocean.py $PAYU_CURRENT_OUTPUT_DIR/ocean/{ocean,ocnBgchem}.*.nc
-
-
-addmeta \
-    -v -s \
-    -d metadata.yaml \
-    -d $PAYU_CURRENT_OUTPUT_DIR/env.yaml \
-    -m scripts/post-processing/addmeta/dataspec.yaml \
-    --fnregex='access-esm1p6\.\w+(?:\.\dd)?\.(?P<var>\w+)\.(?P<freq>\w{2,4})(?:\.\w+)?(?:\.\d{4})?\.nc' \
-    $PAYU_CURRENT_OUTPUT_DIR/ocean/*.nc
+for submodel in {atmosphere,ocean,ice};
+do
+    addmeta \
+        -v -s \
+        -d metadata.yaml \
+        -d $PAYU_CURRENT_OUTPUT_DIR/env.yaml \
+        -m scripts/post-processing/addmeta/dataspec.yaml \
+        -m scripts/post-processing/addmeta/${submodel}.yaml \
+        --fnregex='access-esm1p6\.\w+(?:\.\dd)?\.(?P<var>\w+)\.(?P<freq>\w{2,4})(?:\.\w+)?(?:\.\d{4})?\.nc' \
+        $PAYU_CURRENT_OUTPUT_DIR/${submodel}/*.nc
+done
