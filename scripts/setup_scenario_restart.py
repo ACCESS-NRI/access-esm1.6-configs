@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import git
 from ruamel.yaml import YAML
@@ -14,20 +15,9 @@ from convert_UM_restart_to_netcdf import convert_restart
 from adjust_restart_for_new_land_cover import run_vegetation_remapping
 from um_replace_field import open_fields_file, replace_fields
 
-STASHMASTER_PATH = "/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A"
-
 
 # Filepaths required for updating a historical restart for a scenario run
-THINNING_FILE="/g/data/p66/ajn563/ACCESS-ESM/ESM1.6/luh3-1-1/scenarios/VL-Scenario/LUH3_cable_thinning_frac_from_bioh_rampnewtiles_scen_vl_2022-2101.nc"
-LAND_COVER_FILE="/g/data/p66/ajn563/ACCESS-ESM/ESM1.6/luh3-1-1/scenarios/VL-Scenario/ACCESS_vegfrac_scen_vl_rampnewtiles_dims.nc"   # New vegetation distribution to substitute in
-REMAP_CONFIG="/g/data/p66/ajn563/ACCESS-ESM/ESM1.6/configs/restarts/scenarios/setup_scen_restart/remap_config_hist_to_scen_asluc.yaml"         # Config file to configure the remapping
-
-# Filepaths for outputs
-# RESTART_AS_NETCDF="/g/data/p66/ajn563/ACCESS-ESM/ESM1.6/configs/restarts/scenarios/setup_scen_restart/restart_original.nc"    # Intermediate NetCDF file to hold the CABLE relevant fields
-# REMAPPED_RESTART_AS_NETCDF="/g/data/p66/ajn563/ACCESS-ESM/ESM1.6/configs/restarts/scenarios/setup_scen_restart/restart_updated.nc"  # Remapped CABLE fields
-# OUTPUT_RESTART="/g/data/p66/ajn563/ACCESS-ESM/ESM1.6/configs/restarts/scenarios/setup_scen_restart/restart_dump.astart.update"       # Name to write the new restart to
-
-# Filepaths required for wood thinning
+REMAP_CONFIG="./scripts/remap_config_hist_to_scen_asluc.yaml"         # Config file to configure the remapping
 
 
 def parse_args():
@@ -52,6 +42,60 @@ def parse_args():
     return parser.parse_args()
 
 
+def input_path_from_config(config, submodel, re_pattern):
+    """
+    Search a submodel configuration for a filepath which contains a given pattern.
+    Parameters
+    ---------
+    config: dict containing the config.yaml contents
+    submodel: string specifying submodel configuration to search
+    re_pattern: regex pattern to search for in the input file paths
+    """
+
+    submodel_config = None
+    for model_config in config["submodels"]:
+        if model_config["name"] == submodel:
+            submodel_config = model_config
+
+    if submodel_config is None:
+        raise RuntimeError(f"Configuration for submodel {submodel} not found in config.yaml")
+
+    submodel_inputs = submodel_config["input"]
+
+    matches = [path for path in submodel_inputs if re.search(re_pattern, path)]
+
+    if len(matches) == 0:
+        raise RuntimeError(
+            f"No input files matching {re_pattern} found for submodel {submodel} in config.yaml"
+            )
+    elif len(matches) > 1:
+        raise RuntimeError(
+            f"Multiple input files matching {re_pattern} found for submodel {submodel} in config.yaml"
+            )
+
+    return Path(matches[0])
+
+
+def stashmaster_from_config(config):
+    """
+    Find the path to the STASHmaster_A file using the input paths in the config.yaml
+    """
+    # The config.yaml specifies a higher level "stash" directory. Search it for STASHmaster_A
+    stash_dir = input_path_from_config(config, "atmosphere", "stash")
+    stashmasters_found = list(stash_dir.rglob("STASHmaster_A"))
+
+    if len(stashmasters_found) == 0:
+        raise RuntimeError(
+            f"No STASHmaster_A file found in stash directory {stash_dir}."
+        )
+    elif len(stashmasters_found) > 1:
+        raise RuntimeError(
+            f"Multiple STASHmaster_A files found in stash directory {stash_dir}."
+        )
+
+    return stashmasters_found[0]
+
+
 def adjust_restart_for_landcover(input_restart,
                                  output_restart,
                                  stashmaster_file,
@@ -73,9 +117,8 @@ def adjust_restart_for_landcover(input_restart,
     restart_as_nc = tempfile.NamedTemporaryFile().name
     convert_restart(input_restart, restart_as_nc, stashmaster_file)
 
-    # remapped_restart_nc = tempfile.NamedTemporaryFile().name
-    remapped_restart_nc = Path("/g/data/tm70/sw6175/development/esm1p6/access-esm1.6-configs/scripts/remapped_res.nc")
-    # Step 2: Update land data based on new vegetation map
+    # Adjust land fields in netCDF based on new vegetation map
+    remapped_restart_nc = tempfile.NamedTemporaryFile().name
     run_vegetation_remapping(
         input=str(restart_as_nc),
         output=str(remapped_restart_nc),
@@ -89,7 +132,7 @@ def adjust_restart_for_landcover(input_restart,
         use_previous_fractions_from_restart=True
     )
 
-    # Step 3: Add remapped data in the netCDF back into the original restart
+    # Write the updated land data into a UM restart file
     um_file = open_fields_file(
         str(input_restart),
         stashmaster_file,
@@ -174,25 +217,32 @@ if __name__ == "__main__":
     input_restart = config["restart"]
     copy_restart(input_restart, output_restart)
 
-    
     atm_restart = output_restart/"atmosphere"/"restart_dump.astart"
 
-    remapped_restart_um = tempfile.NamedTemporaryFile().name
+
     # Step 2: Adjust restart for new land cover
+    remapped_restart_um = tempfile.NamedTemporaryFile().name
+    stashmaster_path = stashmaster_from_config(config)
+    land_cover_file = input_path_from_config(config, "atmosphere", r"ACCESS_vegfrac_scen_(?P<scenario>\w{1,2})_rampnewtiles_dims.nc")
+
     adjust_restart_for_landcover(
         input_restart=str(atm_restart),
         output_restart=str(remapped_restart_um),
-        stashmaster_file=STASHMASTER_PATH,
-        vegetation_map=LAND_COVER_FILE,
+        stashmaster_file=stashmaster_path,
+        vegetation_map=land_cover_file,
         config=REMAP_CONFIG
     )
 
-    # Step 4: Add initial scenario wood thinning data to the restart
+
+    # Step 3: Add initial scenario wood thinning data to the restart
+    thinning_file = input_path_from_config(config, "atmosphere", r"LUH3_cable_thinning_frac_from_bioh_rampnewtiles_scen_(?P<scenario>\w{1,2})_2022-2101.nc")
+
     insert_thinning(
         restart_file=str(remapped_restart_um),
-        thinning_file=THINNING_FILE,
-        stashmaster_file=STASHMASTER_PATH
+        thinning_file=thinning_file,
+        stashmaster_file=stashmaster_path
     )
+
 
     # Move the modified restart to the final location
     shutil.move(remapped_restart_um, atm_restart)
