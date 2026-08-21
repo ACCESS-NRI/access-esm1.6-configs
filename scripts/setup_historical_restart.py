@@ -11,8 +11,8 @@ import insert_external_woodprod_CNP
 import update_thinning
 
 # Filepaths required for the initial wood product script
-EXTERNAL_NC_PATH = "/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.05.08/access-esm16_wood_prod_initial_1850_20PgC.nc"
-STASHMASTER_PATH = "/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A"
+EXTERNAL_NC_PATH = "/g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.05.08/access-esm16_wood_prod_initial_1850_20PgC.nc"
+STASHMASTER_PATH = "/g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A"
 
 
 # Filepaths required for wood thinning
