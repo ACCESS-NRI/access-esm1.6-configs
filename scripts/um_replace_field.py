@@ -122,7 +122,6 @@ def to_file(um_file, output_name):
 
 def swap_field(um_file, field, nc_var):
     """Replace the specified field in the u]m_file with the NetCDF variable."""
-    print("SPENCER: call from swap_field")
     stash_code = get_code(um_file, field)
 
     for field in um_file.fields:
@@ -180,7 +179,6 @@ def get_code(um_file, field):
 
 def determine_shape(um_file, field):
     """Try to determine the size of a UM field."""
-    print("SPENCER call from determine shape")
 
     stash_code = get_code(um_file, field)
 
