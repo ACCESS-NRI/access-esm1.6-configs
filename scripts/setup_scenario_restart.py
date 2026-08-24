@@ -145,7 +145,6 @@ def adjust_restart_for_landcover(input_restart,
     # The netCDF and original restart use the same variable names
     variable_map = {var: var for var in nc_data.data_vars}
 
-    print(f"variable_map: {variable_map}")
     replace_fields(
         um_file=um_file,
         variable_map=variable_map,
@@ -228,7 +227,7 @@ if __name__ == "__main__":
     adjust_restart_for_landcover(
         input_restart=str(atm_restart),
         output_restart=str(remapped_restart_um),
-        stashmaster_file=stashmaster_path,
+        stashmaster_file=str(stashmaster_path),
         vegetation_map=land_cover_file,
         config=REMAP_CONFIG
     )
@@ -240,7 +239,7 @@ if __name__ == "__main__":
     insert_thinning(
         restart_file=str(remapped_restart_um),
         thinning_file=thinning_file,
-        stashmaster_file=stashmaster_path
+        stashmaster_file=str(stashmaster_path)
     )
 
 
