@@ -33,7 +33,7 @@ fi
 
 
 # Clean up global metatdata to meet ACCESS-NRI dataspec standards
-# https://access-output-data-specifications--2.org.readthedocs.build/en/2/
+# https://access-output-data-specifications.readthedocs.io/en/latest/specification/
 
 for submodel in {atmosphere,ocean,ice};
 do
