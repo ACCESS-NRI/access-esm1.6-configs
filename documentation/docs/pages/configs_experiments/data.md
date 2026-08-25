@@ -39,7 +39,9 @@ use an ESGF node.
 
 Experiments can be found in the access-nri-intake catalog by their experiment name. ## IS THIS TRUE ?
 
-| Experiment | Release Configuration[^1] | Description | Length (years) | Output Path |
+## Experiments for Supported Configurations
+
+| Experiment | Configuration[^1] | Description | Length (years) | Output Path |
 | ---- | ---- | ---- | ---- | ---- | 
 | [piControl-2026.04.07](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/piControl-2026.04.07) | [archive-piControl-2026.04.07](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-piControl-2026.04.07)[^2] | [Pre-industrial control experiment](/configs_experiments/configurations/piControl/) forced by CO2 concentrations | 173 years             | `/g/data/jq44/access-nri/access-esm1p6/global/piControl/2026.04.07/` |
 | [piControl-2026.04.22](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/piControl-2026.04.22) | [release-piControl-1.1](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/release-piControl-1.1) | [Pre-industrial control experiment](/configs_experiments/configurations/piControl/) forced by CO2 concentrations (extends *piControl-2026.04.07* ) | 855 years             | `/g/data/jq44/access-nri/access-esm1p6/global/piControl/2026.04.22/` |
@@ -51,10 +53,16 @@ Experiments can be found in the access-nri-intake catalog by their experiment na
 [^2]: This configuration is bitwise identical to release-piControl-1.1 (and subsequent minor versions).
 However the ocean age diagnostic tracer is incorrect in this dataset, and calculated differently in `release` configurations.
 
+## Single Experiments
+
+| Experiment | Configuration | Description | Length (years) | Output Path |
+| ---- | ---- | ---- | ---- | ---- |
+| [1pctCO2-2026.04.15](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/1pctCO2-2026.04.15) | [release-1pctCO2-1.0](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/release-1pctCO2-1.0) | [1pctCO2 experiment](/configs_experiments/experiments/1pctCO2/) forced by a yearly 1% increase in CO2 concentrations from preindustrial conditions, branched from piControl at year 201 | 169 years | `/g/data/jq44/access-nri/access-esm1p6/global/1pctCO2/r1i1p1f1/2026.04.15/` |
+
 <!--
 ??? note "historical ensemble — remaining members (r2i1p1f1 – r10i1p1f1)"
 
-    | Experiment | Release Configuration | Description | Length (years) | Output Path |
+    | Experiment | Configuration | Description | Length (years) | Output Path |
     | ---- | ---- | ---- | ---- | ---- |
     | [historical-r2i1p1f1-2026.06.12](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/historical-r2i1p1f1-2026.06.12) | [release-historical-1.2](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/release-historical-1.2) | [Historical experiment](/configs_experiments/configurations/historical/) member r2i1p1f1, forced by CO2 concentrations, branched from piControl at year 221 | 172 years | `/g/data/jq44/access-nri/access-esm1p6/global/historical-r2i1p1f1/2026.06.12/` |
     | [historical-r3i1p1f1-2026.06.12](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/historical-r3i1p1f1-2026.06.12) | [release-historical-1.2](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/release-historical-1.2) | [Historical experiment](/configs_experiments/configurations/historical/) member r3i1p1f1, forced by CO2 concentrations, branched from piControl at year 241 | 172 years | `/g/data/jq44/access-nri/access-esm1p6/global/historical-r3i1p1f1/2026.06.12/` |
@@ -71,7 +79,7 @@ However the ocean age diagnostic tracer is incorrect in this dataset, and calcul
 <!--
 ??? note "esm-historical ensemble — remaining members (r2i1p1f1 – r30i1p1f1)"
 
-    | Experiment | Release Configuration | Description | Length (years) | Output Path |
+    | Experiment | Configuration | Description | Length (years) | Output Path |
     | ---- | ---- | ---- | ---- | ---- |
     | [esm-historical-r2i1p1f1-2026.06.12](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/esm-historical-r2i1p1f1-2026.06.12) | [release-esm-historical-1.2](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/release-esm-historical-1.2) | [Historical experiment](/configs_experiments/configurations/esm-historical/) member r2i1p1f1, forced by CO2 emissions, branched from esm-piControl at year 221 | 172 years | `/g/data/jq44/access-nri/access-esm1p6/global/esm-historical-r2i1p1f1/2026.06.12/` |
     | [esm-historical-r3i1p1f1-2026.06.12](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/esm-historical-r3i1p1f1-2026.06.12) | [release-esm-historical-1.2](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/release-esm-historical-1.2) | [Historical experiment](/configs_experiments/configurations/esm-historical/) member r3i1p1f1, forced by CO2 emissions, branched from esm-piControl at year 241 | 172 years | `/g/data/jq44/access-nri/access-esm1p6/global/esm-historical-r3i1p1f1/2026.06.12/` |
