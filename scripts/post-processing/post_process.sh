@@ -10,7 +10,7 @@
 set -e
 
 module use /g/data/vk83/modules
-module load model-processing
+module load model-processing/1.0.0_0
 
 # Convert UM atmosphere fields files to netCDF.
 # By default UM atmosphere fields files are deleted after conversion to save space. 
