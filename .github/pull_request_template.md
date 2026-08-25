@@ -82,3 +82,10 @@ If not squash, link to the related issue in the commit descriptions -->
 - [ ] Merge commit
 - [ ] Rebase and merge
 - [ ] Squash
+
+**11. Miscellaneous**
+
+If modifying the atmosphere STASHC files, have you run the [add_stashc_comments.py](https://github.com/ACCESS-NRI/esm1.6-scripts/blob/main/add_stashc_comments/add_stashc_comments.py) script?
+
+- [ ] Yes
+- [ ] No
