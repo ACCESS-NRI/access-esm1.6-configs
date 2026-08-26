@@ -37,7 +37,7 @@ distributed and modified. Guidelines for acknoledgement are in [Conditions of Us
 Data in these experiments is in the models native format and meets the [ACCESS Data Output Specification](https://access-output-data-specifications.readthedocs.io). For data meeting the CMIP7 specification, please 
 use an ESGF node.
 
-Experiments can be found in the access-nri-intake catalog by their experiment name. ## IS THIS TRUE ?
+Experiments can be found in the [access-nri-intake catalog](https://access-nri.github.io/interactive-data-catalogue/#/?model_filter=ACCESS-ESM1-6) by their experiment name.
 
 ## Experiments for Supported Configurations
 
