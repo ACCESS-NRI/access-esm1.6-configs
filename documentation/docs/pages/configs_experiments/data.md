@@ -51,7 +51,7 @@ Experiments can be found in the access-nri-intake catalog by their experiment na
 
 [^1]: Increments to minor versions of configurations produce prognostically bitwise identical output. e.g. Versions 1.1 and 1.2 of a configuration create the same model state, but version 2 would be different. There may be diagnostic differences between minor versions.
 [^2]: This configuration is bitwise identical to release-piControl-1.1 (and subsequent minor versions).
-However the ocean age diagnostic tracer is incorrect in this dataset, and calculated differently in `release` configurations.
+However the ocean age diagnostic tracer is incorrect in this dataset, and calculated differently in `release` configurations. There is also a difference in diagnostic CO2 flux and CO2 atmospheric tracer variables (`fld_s03i101` and `fld_s33i002`) due to a bug fix in the CO2 fluxes that was added in release-piControl-1.1. This does not impact any of the other output variables.
 
 ## Single Experiments
 
