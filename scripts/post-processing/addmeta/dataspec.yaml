@@ -2,7 +2,7 @@ global:
     base_configuration: "release-piControl"
     contact: "{{ metadata.contact }} ({{ metadata.email}})"
     Conventions: "CF-1.11,ACDD-1.3"
-    data_specification: "ACCESS-Output Data Specification v0.3.0"
+    data_specification: "ACCESS-Output Data Specification v0.4.0"
     date_created: "{{ __file__.mtime }}"
     date_metadata_modified: "{{ __datetime__.now }}"
     date_modified: "{{ __datetime__.now }}"
