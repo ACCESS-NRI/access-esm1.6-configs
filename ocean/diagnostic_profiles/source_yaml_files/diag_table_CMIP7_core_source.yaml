@@ -276,9 +276,6 @@ diag_table:
             caco3_vmove:
             alk_correct:
             dic_correct:
-            det_sediment:
-            detfe_sediment:
-            caco3_sediment:
 
     'monthly 2d ocean fields':
         defaults:  # these can be overridden for individual fields below
@@ -387,6 +384,9 @@ diag_table:
             pprod_gross_2d:
             export_prod:
             export_inorg:
+            det_sediment:
+            detfe_sediment:
+            caco3_sediment:
             det_sed_depst:
             detfe_sed_depst:
             caco3_sed_depst:
