@@ -19,23 +19,10 @@ module load model-processing/1.0.0_0
 um2nc driver esm1p6 $PAYU_CURRENT_OUTPUT_DIR --delete-ff  --one-nc-per-stash-variable
 
 
-# Split sea ice output into single variable files using the splitnc command. The splitnc command calls https://github.com/ACCESS-NRI/splitnc/blob/main/src/splitnc/splitnc.py
-icefiles=($PAYU_CURRENT_OUTPUT_DIR/ice/iceh-*)
-
-# Only run splitnc if unprocessed ice files exist to avoid errors on reruns
-if [ "${#icefiles[@]}" -gt 0 ]
-then
-    splitnc --shared-vars uarea,tmask,tarea --excluded-vars VGRD.  --use-esm1p6-filenames --fix-cell-methods --skip-existing "${icefiles[@]}"
-    if [ $? -eq 0 ]; then
-      rm "${icefiles[@]}"
-    fi
-fi
-
-
 # Clean up global metatdata to meet ACCESS-NRI dataspec standards
 # https://access-output-data-specifications.readthedocs.io/en/latest/specification/
 
-for submodel in {atmosphere,ocean,ice};
+for submodel in {atmosphere};
 do
     addmeta \
         -v -s \
