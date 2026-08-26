@@ -8,7 +8,6 @@ global:
     date_modified: "{{ __datetime__.now }}"
     experiment_repo: "{{ metadata.url }}"
     experiment_uuid: "{{ metadata.experiment_uuid }}"
-    filename: "{{ __file__.name }}"
     frequency: "{{ __file__.freq }}"
     geospatial_lat_max: 90
     geospatial_lat_min: -90
