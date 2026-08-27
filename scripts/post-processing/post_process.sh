@@ -22,7 +22,7 @@ um2nc driver esm1p6 $PAYU_CURRENT_OUTPUT_DIR --delete-ff  --one-nc-per-stash-var
 # Clean up global metatdata to meet ACCESS-NRI dataspec standards
 # https://access-output-data-specifications.readthedocs.io/en/latest/specification/
 
-for submodel in {atmosphere};
+for submodel in atmosphere;
 do
     addmeta \
         -v -s \
