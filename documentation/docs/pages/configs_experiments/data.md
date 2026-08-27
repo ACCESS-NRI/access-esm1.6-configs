@@ -48,6 +48,10 @@ Experiments can be found in the [access-nri-intake catalog](https://access-nri.g
     For ease of use, we have released the configurations `release-piControl-2.0` and `release-esm-piControl-2.0`, which start from 
     calendar year 101. These configurations will reproduce the datasets provided which also start from year 101, with the exception of some diagnostic differences[^2][^3].
 
+The datasets below use the "core" and "high" diagnostic profiles to meet the requirements for CMIP7 data output. This produces more 
+data than the default diagnostic profiles. See https://docs.access-hive.org.au/models/run_a_model/run_access-esm1p6/#edit-the-model-components-configuration for
+details on changing the profiles.
+
 | Experiment | Description | Length (years) | Output Path | Configuration[^1] |
 | ---- | ---- | ---- | ---- | ---- | 
 | [piControl-2026.04.07](https://github.com/ACCESS-NRI/access-esm1.6-experiments/tree/piControl-2026.04.07) | [Pre-industrial control experiment](/configs_experiments/configurations/piControl/) forced by CO2 concentrations | 173 years | `/g/data/jq44/access-nri/access-esm1p6/global/piControl/r1i1p1f1/2026.04.07/` | [archive-piControl-2026.04.07](https://github.com/ACCESS-NRI/access-esm1.6-configs/releases/tag/archive-piControl-2026.04.07) |
