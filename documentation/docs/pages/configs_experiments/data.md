@@ -43,7 +43,7 @@ Experiments can be found in the [access-nri-intake catalog](https://access-nri.g
 
 !!! note
 
-    The piControl and esm-piControl experiments below were produced using slightly earlier configurations that the first announced release, 
+    The piControl and esm-piControl experiments below were produced using slightly earlier configurations than the first announced release, 
     due to ongoing testing and developments.
     For ease of use, we have released the configurations `release-piControl-2.0` and `release-esm-piControl-2.0`, which start from 
     calendar year 101. These configurations will reproduce the datasets provided which also start from year 101, with the exception of some diagnostic differences[^2][^3].
