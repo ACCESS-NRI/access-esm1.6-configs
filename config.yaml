@@ -117,4 +117,4 @@ userscripts:
     # Apply land use changes after each run
     run: ./scripts/update_landuse_driver.sh
 
-postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/NetCDF-conversion/UM_conversion_job.sh
+postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/post-processing/post_process.sh
