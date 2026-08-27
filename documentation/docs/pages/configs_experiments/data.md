@@ -32,7 +32,7 @@ The table below lists published experiments, on Gadi, available for analysis and
 
 This data, and the configurations they are based on, are licensed by 
 [CC-by-4.0](https://creativecommons.org/licenses/by/4.0/) and therefore can be freely shared, 
-distributed and modified. Guidelines for acknoledgement are in [Conditions of Use](https://github.com/accESS-NRI/access-esm1.6-configs/#conditions-of-use).
+distributed and modified. Guidelines for acknowledgement are in [Conditions of Use](https://github.com/accESS-NRI/access-esm1.6-configs/#conditions-of-use).
 
 Data in these experiments is in the model's native format and meets the [ACCESS Data Output Specification](https://access-output-data-specifications.readthedocs.io). For data meeting the CMIP7 specification, please 
 use an ESGF node.
