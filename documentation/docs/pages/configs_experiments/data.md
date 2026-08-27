@@ -49,7 +49,7 @@ Experiments can be found in the [access-nri-intake catalog](https://access-nri.g
     calendar year 101. These configurations will reproduce the datasets provided which also start from year 101, with the exception of some diagnostic differences[^2][^3].
 
 The datasets below use the "core" and "high" diagnostic profiles to meet the requirements for CMIP7 data output. This produces more 
-data than the default diagnostic profiles. See https://docs.access-hive.org.au/models/run_a_model/run_access-esm1p6/#edit-the-model-components-configuration for
+data than the default diagnostic profiles. See [edit the models configurations](https://docs.access-hive.org.au/models/run_a_model/run_access-esm1p6/#edit-the-model-components-configuration) for
 details on changing the profiles.
 
 | Experiment | Description | Length (years) | Output Path | Configuration[^1] |
