@@ -1,1 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="190.603" timestamp="2026-05-21T09:32:19.611056+10:00" hostname="gadi-login-07.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_historical" time="189.259" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="355.176" timestamp="2026-08-28T10:33:58.334287+10:00" hostname="gadi-login-07.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_historical" time="344.095"><failure message="AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1012/dev-esm-piControl/4c6bef3a0c27ffbee1eb6b0d7dee5217cd420d69/checksum/historical-24hr-checksum.json.&#10;assert {'schema_vers...37321'], ...}} == {'schema_vers...37321'], ...}}&#10;  &#10;  Omitting 1 identical items, use -vv to show&#10;  Differing items:&#10;  {'output': {'xt': ['-3425757943572301981'], 'xu': ['-3428710751629949619'], 'yt': ['3983075590363002848'], 'yu': ['3993847596950837321'], ...}} != {'output': {'xt': ['-3425757943572301981'], 'xu': ['-3428710751629949619'], 'yt': ['3983075590363002848'], 'yu': ['3993847596950837321'], ...}}&#10;  Use -v to get more diff">self = &lt;test_bit_reproducibility.TestBitReproducibility object at 0x7f48f9ae2c80&gt;
+output_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1012/dev-esm-piControl/4c6bef3a0c27ffbee1eb6b0d7dee5217cd420d69')
+control_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1012/dev-esm-piControl/4c6bef3a0c27ffbee1eb6b0d7dee5217cd420d69/base-experiment')
+requested_experiments = {'exp_default_runtime': &lt;model_config_tests.exp_test_helper.ExpTestHelper object at 0x7f48f9ae2830&gt;}
+checksum_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1012/dev-esm-piControl/4c6bef3a0c27ffbee1eb6b0d7dee5217cd420d69/compared/testing/checksum/historical-24hr-checksum.json')
+
+    @pytest.mark.repro
+    @pytest.mark.repro_historical
+    @pytest.mark.experiments(
+        {
+            EXP_DEFAULT_RUNTIME: {"n_runs": 1},
+        }
+    )
+    def test_repro_historical(
+        self,
+        output_path: Path,
+        control_path: Path,
+        requested_experiments: dict[str, ExpTestHelper],
+        checksum_path: Optional[Path],
+    ):
+        """
+        Historical reproducibility test that confirms results from a model
+        run match a stored previous result. Any generated results are
+        added to a "checksum" subdirectory in the output directory.
+    
+        Parameters
+        ----------
+        output_path: Path
+            Output directory for test output and where the control and
+            lab directories are stored for the payu experiments. Default is
+            set in conftest.py.
+        control_path: Path
+            Path to the model configuration to test. This is copied for
+            for control directories in experiments. Default is set in
+            conftests.py.
+        requested_experiments: dict[str, ExpTestHelper]
+            A dictionary of requested experiments, where the key is the
+            experiment name and the value is an instance of ExpTestHelper.
+        checksum_path: Optional[Path]
+            Path to checksums to compare model output against. Default is
+            set to checksums saved on model configuration. This is a
+            fixture defined in conftests.py
+        """
+        # Get output directory for the checksums
+        checksum_output_dir = set_checksum_output_dir(output_path=output_path)
+    
+        # Use default runtime experiment to get the historical checksums
+        exp = requested_experiments.get(EXP_DEFAULT_RUNTIME)
+    
+        # Set the checksum output filename using the model default runtime
+        runtime_hours = exp.model.default_runtime_seconds // HOUR_IN_SECONDS
+        checksum_filename = f"historical-{runtime_hours}hr-checksum.json"
+    
+        # Read the historical checksum file
+        hist_checksums = read_historical_checksums(
+            control_path, checksum_filename, checksum_path
+        )
+    
+        # Use historical file checksums schema version for parsing checksum,
+        # otherwise use the model default, if file does not exist
+        schema_version = (
+            hist_checksums["schema_version"]
+            if hist_checksums
+            else exp.model.default_schema_version
+        )
+    
+        # Extract checksums
+        checksums = exp.extract_checksums(schema_version=schema_version)
+    
+        # Write out checksums to output file
+        checksum_output_file = checksum_output_dir / checksum_filename
+        with open(checksum_output_file, "w") as file:
+            json.dump(checksums, file, indent=2)
+    
+&gt;       assert (
+            hist_checksums == checksums
+        ), f"Checksums were not equal. The new checksums have been written to {checksum_output_file}."
+E       AssertionError: Checksums were not equal. The new checksums have been written to /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1012/dev-esm-piControl/4c6bef3a0c27ffbee1eb6b0d7dee5217cd420d69/checksum/historical-24hr-checksum.json.
+E       assert {'schema_vers...37321'], ...}} == {'schema_vers...37321'], ...}}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'output': {'xt': ['-3425757943572301981'], 'xu': ['-3428710751629949619'], 'yt': ['3983075590363002848'], 'yu': ['3993847596950837321'], ...}} != {'output': {'xt': ['-3425757943572301981'], 'xu': ['-3428710751629949619'], 'yt': ['3983075590363002848'], 'yu': ['3993847596950837321'], ...}}
+E         Use -v to get more diff
+
+../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:234: AssertionError</failure></testcase><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_determinism" time="0.018" /><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility" name="test_repro_payu_setup" time="9.390" /></testsuite></testsuites>
