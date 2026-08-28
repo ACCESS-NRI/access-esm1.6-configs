@@ -31,6 +31,8 @@
       max_num_axis_sets = 400 
       max_axes = 700 
       max_files = 400 
+      wildcard_filename_prefix=''
+      wildcard_filename_separator='-'
 /
 
  &ocean_barotropic_nml
@@ -210,6 +212,7 @@
       surface_height_split = 1
       barotropic_split = 80
       cmip_units=.true.
+      cmip_version=7
       debug=.false.
       do_wave=.true.
       impose_init_from_restart=.true.
@@ -524,6 +527,8 @@
     do_caco3_dynamics=.true.
     do_burial=.false.
     do_conserve_tracers=.false.
+    do_check_n_conserve=.false.
+    do_check_c_conserve=.false.
 /
 
  &ocean_velocity_advect_nml
