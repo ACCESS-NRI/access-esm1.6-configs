@@ -11,9 +11,9 @@ import insert_external_woodprod_CNP
 import update_thinning
 
 # Filepaths required for the initial wood product script
-EXTERNAL_NC_PATH = "/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.05.08/access-esm16_wood_prod_initial_1850_20PgC.nc"
-STASHMASTER_BASE_PATH = "/g/data/vk83/prerelease/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A"
-STASHMASTER_EXT_PATH = "./atmosphere/prefix.PRESM_A"
+EXTERNAL_NC_PATH = "/g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/biogeochemistry/global.N96/2026.05.08/access-esm16_wood_prod_initial_1850_20PgC.nc"
+STASHMASTER_PATH = "/g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/STASHmaster_A"
+
 
 # Filepaths required for wood thinning
 THINNING_FILE = "/g/data/vk83/configurations/inputs/access-esm1p6/modern/historical/atmosphere/land/vegetation/global.N96/2026.05.08/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc"
@@ -116,8 +116,7 @@ if __name__ == "__main__":
     insert_external_woodprod_CNP.insert_woodprod(
         restart_path=str(atm_restart),
         external_nc_path=EXTERNAL_NC_PATH,
-        stashmaster_base_path=STASHMASTER_BASE_PATH,
-        stashmaster_ext_path=STASHMASTER_EXT_PATH,
+        stashmaster_path=STASHMASTER_PATH,
         output_path=str(atm_restart)
     )
 
@@ -125,7 +124,7 @@ if __name__ == "__main__":
     update_thinning.insert_thinning(
         restart_file=str(atm_restart),
         thinning_file=THINNING_FILE,
-        stashmaster_file=STASHMASTER_BASE_PATH
+        stashmaster_file=STASHMASTER_PATH
     )
     update_config(output_restart, config)
     commit_config(input_restart, output_restart)

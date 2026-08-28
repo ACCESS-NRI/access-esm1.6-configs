@@ -1,4 +1,4 @@
-#!/g/data/vk83/apps/payu/1.1.5/bin/python
+#!/usr/bin/env python3
 # Copyright 2020 Scott Wales
 # author: Scott Wales <scott.wales@unimelb.edu.au>
 #
@@ -20,6 +20,7 @@ import mule
 import xarray
 import os
 import shutil
+import stat
 import sys
 import tempfile
 
@@ -70,3 +71,7 @@ temp = tempfile.NamedTemporaryFile()
 out.to_file(temp.name)
 
 shutil.copy(temp.name, restart)
+
+# tempfiles only have user read+write permissions.
+# Set user read+write and group read permission
+os.chmod(restart, stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP)
