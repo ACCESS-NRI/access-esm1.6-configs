@@ -14,12 +14,20 @@ edit_uri: blob/main/documentation/docs/ #hopefully will fix the edit button from
 # Navigation
 nav:
   - Home:                            pages/index.md
-  - Contributing:
-        - Contributing overview:     pages/contributing/index.md
+  - Contributing:          
+        - Contributing overview:     pages/contributing/index.md   
+  - Model Components:
+        - MOM - Ocean:      pages/model_components/mom.md
+        - WOMBAT - Ocean Biogeochem.:   pages/model_components/wombat.md
+        - CICE - Sea Ice:     pages/model_components/cice.md
+        - UM - Atmosphere:       pages/model_components/um.md
+        - CABLE - Land:    pages/model_components/cable.md
+        - CASA - Land Biogeochem.:     pages/model_components/casa.md
   - Inputs:
-        - Restarts: pages/inputs/restarts.md
+          - Restarts: pages/inputs/restarts.md
   - Configurations and Experiments:
         - pages/configs_experiments/index.md
+        - Published Data: pages/configs_experiments/data.md
         - Configurations:
             - piControl:   pages/configs_experiments/configurations/piControl.md
             - esm-piControl:   pages/configs_experiments/configurations/esm-piControl.md
