@@ -78,7 +78,7 @@
  AOBINC= 0 ,
  AOBGRP= 0 ,
  /
- 
+
  &NLSTCALL
  EXPT_ID='aiih',
  JOB_ID='c',
@@ -89,7 +89,7 @@
  MODEL_STATUS='NonOperational',
  MODEL_BASIS_TIME=  0101 , 01 , 01 , 0 , 0 , 0 ,
  ANCIL_REFTIME=  0101 , 01 , 01 , 0 , 0 , 0 ,
- RUN_TARGET_END=  0 , 0 , 1 , 0 , 0 , 0 , 
+ RUN_TARGET_END=  0 , 0 , 1 , 0 , 0 , 0 ,
  LCLIMREALYR=.FALSE.,
  LCAL360=.FALSE., 
  LTIMER=.TRUE., 
@@ -146,8 +146,8 @@
  'N','N','N','N','N','N' , 
  FT_STEPS= 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,
   0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,
-  0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,  -1 , 0 , -1 , 0 , -1, 1440 ,
-  -1 , 0 , -1 , -1 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,
+  0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,  -12 , 0 , -12 , 0 , -12, 1440 ,
+  -12 , 0 , -12 , -12 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,
   0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,
   0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,
   0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,
@@ -247,7 +247,7 @@
  L_SNOW_ALBEDO=.FALSE.,
  L_SSICE_ALBEDO=.TRUE.,
  L_SICE_MELTPONDS=.TRUE.,
- L_SICE_SCATTERING=.TRUE., 
+ L_SICE_SCATTERING=.TRUE.,
  L_SICE_HADGEM1A=.TRUE.,
  A_SW_RADSTEP=6,
  A_LW_RADSTEP=6,
