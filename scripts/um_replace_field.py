@@ -59,12 +59,11 @@ def _parse_args():
 
     return parser.parse_args()
 
-def replace_field(
+def _replace_field(
         um_file,
         um_field,
         nc_file,
         nc_var,
-        outfile,
         time_index
         ):
     """Replace the field with name "um_field" in the UM file with the specified
@@ -89,7 +88,31 @@ def replace_field(
     # Now we can replace the field
     swap_field(um_file, um_field, nc_var)
 
+    return um_file
+
+
+def replace_fields(um_file, variable_map, nc_file,  outfile, time_index):
+    """
+    Replace variables in a UM fields file with data from netCDF
+    
+    Parameters
+    ----------
+    um_file: mule FieldsFile
+    variable_map: dict of {nc_name: um_name} mappings between variables
+    nc_file: xarray DataSet
+    time_index: int specifying time index of data in nc_file to use
+    outfile: path to write output file to
+    """
+
+    # Insert fields into the mule UMFile
+    for nc_var, um_field in variable_map.items():
+        um_file = _replace_field(
+            um_file, um_field, nc_file, nc_var, time_index
+        )
+
+    # Write the updated UMfile to the output
     to_file(um_file, outfile)
+
 
 def to_file(um_file, output_name):
     um_file.validate(filename=output_name, warn=True)
@@ -99,7 +122,6 @@ def to_file(um_file, output_name):
 
 def swap_field(um_file, field, nc_var):
     """Replace the specified field in the u]m_file with the NetCDF variable."""
-
     stash_code = get_code(um_file, field)
 
     for field in um_file.fields:
@@ -137,9 +159,19 @@ def make_consistent(nc_var, field_shape):
 
 def get_code(um_file, field):
     """Get the stash code associated with a given field."""
-    stash_item = um_file.stashmaster.by_regex(field)
 
-    assert len(stash_item) == 1, "Field name is not unique in the section."
+    # escape any brackets in field name so they are correctly used in the regex search
+    field_regex = field.replace('(', '\(').replace(')', '\)')
+    stash_item = um_file.stashmaster.by_regex(field_regex)
+
+    if len(stash_item) == 0:
+        # "/" may have been replaced by " PER " in the netCDF file
+        print(f"Finding {field} failed; try again replacing PER")
+        field_regex = field_regex.replace(' PER ', '/')
+        stash_item = um_file.stashmaster.by_regex(field_regex)
+
+
+    assert len(stash_item) == 1, f"Field name is not unique in the section. {field}"
 
     stash_code = list(stash_item.values())[0].item
 
@@ -187,6 +219,7 @@ def open_fields_file(um_file, stash, section):
 
     return um_file
 
+
 if __name__ == "__main__":
     parser = _parse_args()
 
@@ -198,11 +231,11 @@ if __name__ == "__main__":
 
     nc_file = xarray.open_dataset(parser.nc_file, decode_times=False)
 
-    replace_field(
+    variable_map = {parser.nc_var: parser.field}
+    replace_fields(
             um_file,
-            parser.field,
+            variable_map,
             nc_file,
-            parser.nc_var,
             parser.output,
             parser.time_index
             )
