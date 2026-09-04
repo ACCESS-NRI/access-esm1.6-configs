@@ -8,7 +8,7 @@ year_end_restart=work/atmosphere/aiihca.da??110
 
 if [ -f $year_end_restart ]; then
    ./scripts/update_thinning.py --restart-file $year_end_restart \
-  --thinning-file "./work/atmosphere/INPUT/LUH3_cable_thinning_frac_from_bioh_1850-2023_v2.nc" \
+  --thinning-file "./work/atmosphere/INPUT/ACCESS_forest_thinning_frac_scen_vl.nc" \
   --stashmaster-file "./work/atmosphere/INPUT/STASHmaster/STASHmaster_A"
 else
     echo "Warning: No atmosphere end of year restart file found. update_thinning.py will not be run." >&2
