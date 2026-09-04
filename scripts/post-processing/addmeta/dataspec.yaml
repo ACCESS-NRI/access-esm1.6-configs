@@ -11,8 +11,7 @@ global:
     frequency: "{{ __file__.freq }}"
     geospatial_lat_max: 90
     geospatial_lat_min: -90
-    geospatial_lon_max: -180
-    geospatial_lon_min: 180
+    # longitude bounds differ per component
     grid: "access-1deg-global"
     id: "{{ metadata.experiment_uuid }}"
     license: "{{ metadata.license }}"
