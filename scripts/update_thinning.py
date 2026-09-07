@@ -42,19 +42,32 @@ def insert_thinning(restart_file, thinning_file, stashmaster_file):
         0
         )
 
-    ref_year = 1850
-    model_year = um_file.fixed_length_header.t2_year
-    t_index = model_year - ref_year
+    time_coder = xarray.coders.CFDatetimeCoder(use_cftime=True)
 
-    thinning_file = xarray.open_dataset(thinning_file, decode_times=False)
+    thinning_file = xarray.open_dataset(thinning_file, decode_times=time_coder)
+
+    target_year = um_file.fixed_length_header.t2_year
+    time_values = thinning_file.time.dt.year.values
+    matches = (time_values == target_year).nonzero()[0]
+
+    if len(matches) == 0:
+        raise ValueError(
+            f"Year {target_year} not found in thinning file. "
+            f"Available years: {time_values.min()} "
+            f"to {time_values.max()}"
+        )
+
+    t_index = int(matches[0])
+    print(f"target_year: {target_year}")
+    print(f"Available years in thinning file: {time_values.min()} to {time_values.max()}")
+    print(f"t_index: {t_index}")
 
     # Create a temporary file to write to
     tmp = tempfile.NamedTemporaryFile()
-    um_replace_field.replace_field(
+    um_replace_field.replace_fields(
         um_file,
-        "WOOD THINNING",
+        {"fraction": "WOOD THINNING"},
         thinning_file,
-        "fraction",
         tmp.name,
         t_index
         )
