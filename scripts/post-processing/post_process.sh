@@ -45,4 +45,14 @@ do
         -m scripts/post-processing/addmeta/${submodel}.yaml \
         --fnregex='access-esm1p6\.\w+(?:\.\dd)?\.(?P<var>\w+)\.(?P<freq>\w{2,4})(?:\.\w+)?(?:\.\d{4})?\.nc' \
         $PAYU_CURRENT_OUTPUT_DIR/${submodel}/*.nc
+
+
+    # Remove time:bound = time_bnds from instantaneous files
+    # First check if there are any *snap* files
+    if compgen -G "$PAYU_CURRENT_OUTPUT_DIR/${submodel}/*snap*.nc" > /dev/null; then
+        addmeta \
+            -v \
+            -m scripts/post-processing/addmeta/remove_time_bounds.yaml \
+            $PAYU_CURRENT_OUTPUT_DIR/$submodel/*snap*.nc
+    fi
 done
