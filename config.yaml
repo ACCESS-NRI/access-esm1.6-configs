@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: scen7-h
+jobname: esm-scen7-h
 queue: normalsr
 walltime: 2:30:00
 jobfs: 15GB
@@ -53,6 +53,7 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/forcing/global.N96/2026.07.14/ozone_h_2022_2100_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.08.26/volcts_cmip7.dat
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.08.26/TSI_CMIP7_ESM
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/esm-scen7-h/atmosphere/forcing/global.N96/2026.08.14/CO2_fluxes_h_2022_2100_cmip7.anc
         # Land
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/biogeochemistry/global.N96/2026.07.14/Ndep_h_2022_2100_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.08.28/ACCESS_vegfrac_scen_h.nc
@@ -118,7 +119,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/restart/2026.08.04
+restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/esm-scen7-h/restart/2026.08.04
 
 # Timing controls
 calendar:
