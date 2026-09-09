@@ -54,7 +54,7 @@ do
             addmeta \
                 -v \
                 -m scripts/post-processing/addmeta/remove_time_bounds.yaml \
-                $PAYU_CURRENT_OUTPUT_DIR/$submodel/*${pattern}*.nc
+                $PAYU_CURRENT_OUTPUT_DIR/$submodel/*${pattern}*nc
         fi
     done
 
