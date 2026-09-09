@@ -1,1 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="2" time="6316.380" timestamp="2026-06-11T16:54:31.248696+10:00" hostname="gadi-login-09.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_historical" time="6313.126" /><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_determinism" time="0.019" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="3" time="29.189" timestamp="2026-09-09T11:40:49.056736+10:00" hostname="gadi-login-02.gadi.nci.org.au"><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_historical" time="19.083"><error message="failed on setup with &quot;RuntimeError: Expected 1 job ID in payu run submission, but found 0. IDs: []&quot;">request = &lt;SubRequest 'experiments' for &lt;Function test_repro_historical&gt;&gt;
+output_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1053/dev-scen7-vl/f7e136e57d16821fe513c73a10935a0d9a82ffc5')
+control_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1053/dev-scen7-vl/f7e136e57d16821fe513c73a10935a0d9a82ffc5/base-experiment')
+keep_archive = False
+
+    @pytest.fixture(scope="class")
+    def experiments(
+        request, output_path: Path, control_path: Path, keep_archive: Optional[bool]
+    ):
+        """
+        Parse the experiments markers from the requested tests and
+        submit all necessary experiments at the same time.
+    
+        The scope is class so the experiments are only run once before all repro
+        tests.
+        """
+    
+        # Parse the experiments markers from the requested tests
+        experiments_markers = []
+        for item in request.session.items:
+            if item.parent == request.node:
+                marker = item.get_closest_marker("experiments")
+                if marker:
+                    experiments_markers.append(marker.args[0])
+    
+&gt;       return _experiments(experiments_markers, output_path, control_path, keep_archive)
+
+../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:113: in _experiments
+    experiments.setup_and_submit(
+../test-venv/lib/python3.10/site-packages/model_config_tests/exp_test_helper.py:366: in setup_and_submit
+    exp.submit_payu_run(n_runs=n_runs)
+../test-venv/lib/python3.10/site-packages/model_config_tests/exp_test_helper.py:256: in submit_payu_run
+    self.run_id = parse_run_id(result.stdout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+stdout = 'laboratory path:  /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1053/dev-scen7-vl/f7e136e57d16821fe513c7...ainerised_envs/payu/1.3.5_0/bin/python3.10 /containerised_envs/payu/1.3.5_0/bin/payu-run\nJob ID: 178498184.gadi-pbs\n'
+
+    def parse_run_id(stdout: str) -&gt; str:
+        """Parses the Gadi PBS run ID from the subprocess stdout that submits payu
+        run"""
+        ids = parse_gadi_pbs_ids(stdout)
+        if len(ids) != 1:
+&gt;           raise RuntimeError(
+                "Expected 1 job ID in payu run submission, "
+                f"but found {len(ids)}. IDs: {ids}"
+            )
+E           RuntimeError: Expected 1 job ID in payu run submission, but found 0. IDs: []
+
+../test-venv/lib/python3.10/site-packages/model_config_tests/exp_test_helper.py:465: RuntimeError</error></testcase><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility.TestBitReproducibility" name="test_repro_determinism" time="0.001"><error message="failed on setup with &quot;RuntimeError: Expected 1 job ID in payu run submission, but found 0. IDs: []&quot;">request = &lt;SubRequest 'experiments' for &lt;Function test_repro_historical&gt;&gt;
+output_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1053/dev-scen7-vl/f7e136e57d16821fe513c73a10935a0d9a82ffc5')
+control_path = PosixPath('/scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1053/dev-scen7-vl/f7e136e57d16821fe513c73a10935a0d9a82ffc5/base-experiment')
+keep_archive = False
+
+    @pytest.fixture(scope="class")
+    def experiments(
+        request, output_path: Path, control_path: Path, keep_archive: Optional[bool]
+    ):
+        """
+        Parse the experiments markers from the requested tests and
+        submit all necessary experiments at the same time.
+    
+        The scope is class so the experiments are only run once before all repro
+        tests.
+        """
+    
+        # Parse the experiments markers from the requested tests
+        experiments_markers = []
+        for item in request.session.items:
+            if item.parent == request.node:
+                marker = item.get_closest_marker("experiments")
+                if marker:
+                    experiments_markers.append(marker.args[0])
+    
+&gt;       return _experiments(experiments_markers, output_path, control_path, keep_archive)
+
+../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../test-venv/lib/python3.10/site-packages/model_config_tests/config_tests/test_bit_reproducibility.py:113: in _experiments
+    experiments.setup_and_submit(
+../test-venv/lib/python3.10/site-packages/model_config_tests/exp_test_helper.py:366: in setup_and_submit
+    exp.submit_payu_run(n_runs=n_runs)
+../test-venv/lib/python3.10/site-packages/model_config_tests/exp_test_helper.py:256: in submit_payu_run
+    self.run_id = parse_run_id(result.stdout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+stdout = 'laboratory path:  /scratch/tm70/repro-ci/experiments/access-esm1.6-configs/pr1053/dev-scen7-vl/f7e136e57d16821fe513c7...ainerised_envs/payu/1.3.5_0/bin/python3.10 /containerised_envs/payu/1.3.5_0/bin/payu-run\nJob ID: 178498184.gadi-pbs\n'
+
+    def parse_run_id(stdout: str) -&gt; str:
+        """Parses the Gadi PBS run ID from the subprocess stdout that submits payu
+        run"""
+        ids = parse_gadi_pbs_ids(stdout)
+        if len(ids) != 1:
+&gt;           raise RuntimeError(
+                "Expected 1 job ID in payu run submission, "
+                f"but found {len(ids)}. IDs: {ids}"
+            )
+E           RuntimeError: Expected 1 job ID in payu run submission, but found 0. IDs: []
+
+../test-venv/lib/python3.10/site-packages/model_config_tests/exp_test_helper.py:465: RuntimeError</error></testcase><testcase classname="test-venv.lib.python3.10.site-packages.model_config_tests.config_tests.test_bit_reproducibility" name="test_repro_payu_setup" time="7.870" /></testsuite></testsuites>
