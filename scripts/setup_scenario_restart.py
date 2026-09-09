@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Author: Spencer Wong (ACCESS-NRI)
 import argparse
 import git
 from ruamel.yaml import YAML

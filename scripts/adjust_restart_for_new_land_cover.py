@@ -1,3 +1,4 @@
+# Author: Lachlan Whyborn (ACCESS-NRI)
 import argparse
 import yaml
 import numpy
