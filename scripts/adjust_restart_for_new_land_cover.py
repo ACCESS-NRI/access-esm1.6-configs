@@ -426,7 +426,7 @@ if __name__ == '__main__':
     # Run the remapping
     run_vegetation_remapping(args.input,
                              args.output, 
-                             args.vegetetation_map,
+                             args.vegetation_map,
                              args.time_index,
                              args.fill_all,
                              args.config,
