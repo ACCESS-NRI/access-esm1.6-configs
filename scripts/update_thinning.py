@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+# Author: Alex Norton (CSIRO)
 import um_replace_field
 import xarray
 import argparse
