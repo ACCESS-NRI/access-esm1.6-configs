@@ -1,0 +1,59 @@
+# matching variables to be filled with the list that redistr_luc code is applied to in model
+# tsoil_tile ! ssnow%tgg
+# smcl_tile ! ssnow%wb
+# sthf_tile ! ssnow%wbice
+# snow_depth3l ! ssnow%sdepth
+# snow_mass3l  ! ssnow%smass
+# snow_tmp3l   ! ssnow%tggsn
+# snow_rho3l   ! ssnow%ssdn
+# snow_rho1l   ! ssnow%ssdnn
+# snage_tile   ! ssnow%snage
+# snow_tile    ! ssnow%snowd
+# snow_cond    ! ssnow%sconds - note that removed in AM3 and doesn't appear to be carried in restart
+# canopy_tile  ! canopy%oldcansto
+# npp_ft_acc   ! frs
+# resp_w_ft_acc! frp
+# resp_s_acc ! npp
+per_cell:
+  - "CABLE SOIL TEMPERATURE LAYER 1 (K)"
+  - "CABLE SOIL TEMPERATURE LAYER 2 (K)"
+  - "CABLE SOIL TEMPERATURE LAYER 3 (K)"
+  - "CABLE SOIL TEMPERATURE LAYER 4 (K)"
+  - "CABLE SOIL TEMPERATURE LAYER 5 (K)"
+  - "CABLE SOIL TEMPERATURE LAYER 6 (K)"
+  - "CABLE SOIL MOISTURE LAYER    1"
+  - "CABLE SOIL MOISTURE LAYER    2"
+  - "CABLE SOIL MOISTURE LAYER    3"
+  - "CABLE SOIL MOISTURE LAYER    4"
+  - "CABLE SOIL MOISTURE LAYER    5"
+  - "CABLE SOIL MOISTURE LAYER    6"
+  - "CABLE SOIL FROZEN FRAC LAYER 1"
+  - "CABLE SOIL FROZEN FRAC LAYER 2"
+  - "CABLE SOIL FROZEN FRAC LAYER 3"
+  - "CABLE SOIL FROZEN FRAC LAYER 4"
+  - "CABLE SOIL FROZEN FRAC LAYER 5"
+  - "CABLE SOIL FROZEN FRAC LAYER 6"
+  - "SNOW DEPTH LAYER 1 (ON TILES)"
+  - "SNOW DEPTH LAYER 2 (ON TILES)"
+  - "SNOW DEPTH LAYER 3 (ON TILES)"
+  - "SNOW MASS LAYER 1 (ON TILES)"
+  - "SNOW MASS LAYER 2 (ON TILES)"
+  - "SNOW MASS LAYER 3 (ON TILES)"
+  - "SNOW TEMPERATURE LAYER 1 (ON TILES)"
+  - "SNOW TEMPERATURE LAYER 2 (ON TILES)"
+  - "SNOW TEMPERATURE LAYER 3 (ON TILES)"
+  - "SNOW DENSITY LAYER 1 (ON TILES)"
+  - "SNOW DENSITY LAYER 2 (ON TILES)"
+  - "SNOW DENSITY LAYER 3 (ON TILES)"
+  - "SNOW MEAN DENSITY (ON TILES)"
+  - "SNOW AGE (ON TILES)"
+  - "CANOPY WATER ON TILES  KG PER M2"
+  - "SOIL RESPIRATION ON TILES (CASA-CNP)"
+  - "PLANT RESPIRATION ON TILES (CASA)"
+  - "NET PRIMARY PRODUCTIVITY (NPP)"
+
+per_tile:
+
+search_radius: 2
+latitude_band: 8
+minimum_points: 1
