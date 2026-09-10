@@ -69,6 +69,9 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/seaice_amip_n96_gregorian.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/atmosphere/boundary_conditions/global.N96/2026.07.08/sst_amip_n96_gregorian.anc
 
+# Collation
+collate:
+    enable: false
 
 restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/amip/restart/2026.07.21
 
