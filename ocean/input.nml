@@ -31,6 +31,8 @@
       max_num_axis_sets = 400 
       max_axes = 700 
       max_files = 400 
+      wildcard_filename_prefix=''
+      wildcard_filename_separator='-'
 /
 
  &ocean_barotropic_nml
