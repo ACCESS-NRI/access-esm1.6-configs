@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: esm-scen7-h
+jobname: esm-scen7-m
 queue: normalsr
 walltime: 2:30:00
 jobfs: 15GB
@@ -42,20 +42,20 @@ submodels:
       exe: um_hg3.exe
       input:
         # Aerosols
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/BC_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/Bio_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/OCFF_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/scycl_h_2022_2100_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-m/atmosphere/aerosol/global.N96/2026.08.02/BC_m_2022_2100_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-m/atmosphere/aerosol/global.N96/2026.08.02/Bio_m_2022_2100_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-m/atmosphere/aerosol/global.N96/2026.08.02/OCFF_m_2022_2100_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-m/atmosphere/aerosol/global.N96/2026.08.02/scycl_m_2022_2100_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
         # Forcing
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/forcing/global.N96/2026.07.14/ozone_h_2022_2100_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-m/atmosphere/forcing/global.N96/2026.08.02/ozone_m_2022_2100_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.08.26/volcts_cmip7.dat
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.08.26/TSI_CMIP7_ESM
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/esm-scen7-h/atmosphere/forcing/global.N96/2026.08.14/CO2_fluxes_h_2022_2100_cmip7.anc
         # Land
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/biogeochemistry/global.N96/2026.07.14/Ndep_h_2022_2100_cmip7.anc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-m/atmosphere/land/biogeochemistry/global.N96/2026.08.02/Ndep_m_2022_2100_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.08.28/ACCESS_vegfrac_scen_h.nc
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.08.28/ACCESS_forest_thinning_frac_scen_h.nc
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
