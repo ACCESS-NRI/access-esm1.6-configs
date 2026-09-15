@@ -12,7 +12,6 @@ If you haven't volunteered and would be interested in running Assessment Fast Tr
 1. You will need an [NCI account](https://access-hive.org.au/getting_started/set_up_nci_account) and to [join project vk83](https://my.nci.org.au/mancini/project/vk83/join).
 2. You will need to have completed the [UKMO licensing process](https://forum.access-hive.org.au/t/accessing-ukmo-licensed-models/6168).
 3. You need to have a [GitHub account](https://github.com/) and authenticate it with [GitHub on gadi](https://forum.access-hive.org.au/t/setting-up-gh/4294)
-4. You will need write permissions on the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository. To request access, create a [new issue](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments/issues) using the *Repository access request* template.
 
 ---
 
@@ -39,15 +38,12 @@ Payu *configurations* and *experiments* both contain all the information require
 
 # Instructions and guidelines
 ## Cloning and running an experiment
-In most cases, ACCESS-NRI and CSIRO will provide you with a branch on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository which you can clone, run, and push the runlogs back to. 
+In most cases, ACCESS-NRI and CSIRO will provide you with a branch on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository which you can clone and run.
 
 For example, to clone the *example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments/tree/example-experiment), you would first load the payu module, and use:
 ```
 payu clone https://github.com/ACCESS-NRI/access-esm1.6-experiments -B example-experiment <control directory name>
 ```
-
-!!! warning
-    If you are cloning an experiment which has been set up for you on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository, it's important that you don't change the local branch name using the `-b <local-branch-name>` option from the `payu clone` command.*
 
 Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <n runs>` command.
 
@@ -79,15 +75,7 @@ Output and restart files for ESM1.6 fast track experiments are being archived to
 
 
 ## Pushing completed experiments back to the repository
-Once your simulations are complete, you'll need to push the runlogs back up to the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository using the following step:
-
-1. Push the runlogs up to the repository:
-   ```
-   $ git push origin HEAD
-   ```
-
-!!! warning
-    If your experiment was originally cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-NRI/access-esm1.6-experiments), the above instructions won't apply. ACCESS-NRI staff will provide you with specific instructions in this case.
+Once your simulations are complete, please get in contact with ACCESS-NRI staff who will then push the experiment's runlogs up to the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository. This may require you to make a copy of the payu control directory in an accessible location such as `/scratch/public/`.
 
 
 ## Crashes, perturbing atmospheric restarts, and reproducibiliy
