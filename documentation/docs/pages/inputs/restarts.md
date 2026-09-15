@@ -65,24 +65,47 @@ We recommend using the following steps to apply and record a perturbation:
     Before applying a perturbation, we recommend first inspecting the error logs and trying to sweep and rerun to rule out other problems such as transient errors on Gadi.
 
 
-1. In the experiment's archive directory, first make a backup of the latest restart directory (e.g. `restartXYZ`). 
+1. In the experiment's archive directory, navigate to the latest `restartXYZ` restart directory and make a backup of the atmospheric restart file `atmosphere/restart_dump.astart`:
    ```bash
-   $ cp -r restartXYZ backup_restartXYZ
+   cd restartXYZ/atmosphere
+   mv restart_dump.astart restart_dump.astart_orig
    ```
-2. With the payu module loaded, apply a perturbation to the latest atmosphere restart:
+   Make sure to keep this file as a backup.
+
+2. Load the `model-processing` environment. This may clash with the `payu` environment, and so it is best to unload the `payu` module or perform this step in a new Gadi session.
+
    ```bash
-   $ python ~access/apps/pythonlib/umfile_utils/access_cm2/perturbIC.py -s <SEED> <path to restartXYZ>/atmosphere/restart_dump.astart
+   module use /g/data/vk83/modules
+   module load model-processing
+   ```
+3. Apply a perturbation to the atmospheric restart file:
+   ```
+   perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart
    ```
    here `<SEED>` can be any integer, and it's used to set the [random seed](https://en.wikipedia.org/wiki/Random_seed) for the perturbation. Specifying a random seed is important, as it allows for the exact same perturbation to be reapplied in the future. Make sure to keep track of whichever value you use.
-3. Make a record of the perturbation in the experiment runlogs. First `cd` into the Payu control directory for the experiment and run
+
+    The resulting perturbed restart will be written to restart_dump.astart. This file name is required for the model to be able to find the restart.
+
+
+4. Unload the model-processing environment and load the payu environment:
+    ```bash
+    module unload model-processing
+    module load payu
+    ```
+
+
+3. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment and run
    ```
    payu setup
    ```
-   This will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
+   !!! tip
+      If the work directory still exists, you will first need to run `payu sweep`
+
+   `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
    ```bash
-   $ git commit -a -m "restartXYZ perturbed using command:  python ~access/apps/pythonlib/umfile_utils/access_cm2/perturbIC.py -s <SEED> <path to restartXYZ>/atmosphere/restart_dump.astart"
+   $ git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
    ```
-   filling in the correct information for `<SEED>` and `<path to restartXYZ>`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
+   filling in the correct information for `<SEED>` and `restartXYZ`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
 
    If you run the `git log` command, it should now include the above record.
 
