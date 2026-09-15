@@ -20,18 +20,18 @@ If you haven't volunteered and would be interested in running Assessment Fast Tr
 This section introduces some background concepts which will be helpful to understand for the instructions and guidelines further below. 
 
 ### Payu and running experiments
-ACCESS-ESM1.6 is run using the program [Payu](https://payu.readthedocs.io/en/stable/) via the same commands used for ACCESS-ESM1.5. If you are unfamiliar with running models with Payu or need a refresher, please see [this guide on running ACCESS-ESM1.5](https://docs.access-hive.org.au/models/run_a_model/run_access-esm/) for an introduction (new instructions for ESM1.6 are currently in preparation).
+ACCESS-ESM1.6 is run using the program [Payu](https://payu.readthedocs.io/en/stable/). If you are unfamiliar with running models with Payu or need a refresher, please see [this guide on running ACCESS-ESM1.6](https://docs.access-hive.org.au/models/run_a_model/run_access-esm1p6/).
 
-ACCESS-NRI staff will be available, via the ACCESS-Hive Forum, if you have any questions about running the model.
+If you have any questions about running the model, ACCESS-NRI staff will be available to help via the ACCESS-Hive Forum.
 
 ### Configurations and experiments
 #### Configurations
 A Payu *model configuration* contains the complete collection of model settings, configuration files, and paths to input and restart files required to run a model. Payu configurations for ACCESS-ESM1.6 are kept using branches the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository, with `dev-` branches representing development versions of configurations and `release-` branches representing released configurations.
 
 #### Experiments
-When Payu runs a simulation, it keeps track of the configuration settings, input files, model executables, and restart files used for each run segment and records this information into a git commit in the Payu control directory. This information can be accessed later. For example, the configuration settings used for each segment of the ESM1.6 CMIP7 esm-piControl simulation are available to view [here](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments/commits/dev-preindustrial%2Bemissions-14-04-26/). This sequence of commits are referred to as the Payu *runlogs*, and as a whole they form a Payu *experiment*.
+When Payu runs a simulation, it keeps track of the configuration settings, input files, model executables, and restart files used for each run segment and records this information into a git commit in the Payu control directory. This information can be accessed later. For example, the configuration settings used for each segment of the ESM1.6 CMIP7 esm-piControl simulation are available to view [here](https://github.com/ACCESS-NRI/access-esm1.6-experiments/commits/esm-piControl-2026.04.14/). This sequence of commits are referred to as the Payu *runlogs*, and as a whole they form a Payu *experiment*.
 
-On completion, ESM1.6 Payu experiments for the CMIP7 Assessment Fast Track will need to be uploaded to the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository.
+On completion, ESM1.6 Payu experiments for the CMIP7 Assessment Fast Track will need to be uploaded to the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository.
 
 Payu *configurations* and *experiments* both contain all the information required to run a model, and either can be used to start a simulation.
 
@@ -39,20 +39,20 @@ Payu *configurations* and *experiments* both contain all the information require
 
 # Instructions and guidelines
 ## Cloning and running an experiment
-In most cases, ACCESS-NRI and CSIRO will provide you with a branch on the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository which you can clone, run, and push the runlogs back to. 
+In most cases, ACCESS-NRI and CSIRO will provide you with a branch on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository which you can clone, run, and push the runlogs back to. 
 
 For example, to clone the *example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments/tree/example-experiment), you would first load the payu module, and use:
 ```
-payu clone git@github.com:ACCESS-Community-Hub/access-esm1.6-dev-experiments.git -B example-experiment <control directory name>
+payu clone https://github.com/ACCESS-NRI/access-esm1.6-experiments -B example-experiment <control directory name>
 ```
 
 !!! warning
-    If you are cloning an experiment which has been set up for you on the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository, it's important that you don't change the local branch name using the `-b <local-branch-name>` option from the `payu clone` command.*
+    If you are cloning an experiment which has been set up for you on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository, it's important that you don't change the local branch name using the `-b <local-branch-name>` option from the `payu clone` command.*
 
 Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <n runs>` command.
 
 !!! tip
-    Some experiments will require a more complicated setup, such as scripts that need to be run before the initial simulation. Other experiments may need to be cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments). In these cases, ACCESS-NRI staff will provide you with specific instructions.
+    Some experiments will require a more complicated setup, such as scripts that need to be run before the initial simulation. Other experiments may need to be cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-NRI/access-esm1.6-experiments). In these cases, ACCESS-NRI staff will provide you with specific instructions.
 
 
 
@@ -71,7 +71,7 @@ sync:
 
 With the above changes, Payu will create a new directory matching your experiment's name under the location specified by `base_path`. Outputs and restarts will then be copied to this location at the end of each run segment. For more information on automatic syncing, please see the [Payu documentation](https://payu.readthedocs.io/en/stable/config.html#:~:text=the%20PBS%20script.-,sync,-Sync%20archive%20to).
 
-ACCESS-NRI and CSIRO staff will work with you to determine the best location for syncing your data.
+ACCESS-NRI and CSIRO staff can help determine the best location for syncing your data.
 
 
 ## Output archiving
@@ -79,7 +79,7 @@ Output and restart files for ESM1.6 fast track experiments are being archived to
 
 
 ## Pushing completed experiments back to the repository
-Once your simulations are complete, you'll need to push the runlogs back up to the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments) GitHub repository using the following step:
+Once your simulations are complete, you'll need to push the runlogs back up to the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository using the following step:
 
 1. Push the runlogs up to the repository:
    ```
@@ -87,7 +87,7 @@ Once your simulations are complete, you'll need to push the runlogs back up to t
    ```
 
 !!! warning
-    If your experiment was originally cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments), the above instructions won't apply. ACCESS-NRI staff will provide you with specific instructions in this case.
+    If your experiment was originally cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-NRI/access-esm1.6-experiments), the above instructions won't apply. ACCESS-NRI staff will provide you with specific instructions in this case.
 
 
 ## Crashes, perturbing atmospheric restarts, and reproducibiliy
@@ -102,4 +102,4 @@ $ payu sweep
 $ payu run
 ```
 
-If the same error occurs on the rerun, it may be due to a numerical instability and you can try perturbing the atmosphere restart file as a workaround. It's crucial to do this in a reproducible way and to keep a record of any perturbations applied. We recommend following the steps [outlined here](/inputs/restarts/#perturbing-an-atmospheric-restart-file), which will apply a reproducible perturbation and record it in the experiment runlogs.
+If the same error occurs on the rerun, it may be due to a numerical instability and you can try perturbing the atmosphere restart file as a workaround. It's important to do this in a reproducible way and to keep a record of any perturbations applied. We recommend following the steps [outlined here](/inputs/restarts/#perturbing-an-atmospheric-restart-file), which will apply a reproducible perturbation and record it in the experiment runlogs.
