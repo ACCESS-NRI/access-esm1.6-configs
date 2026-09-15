@@ -40,10 +40,16 @@ Payu *configurations* and *experiments* both contain all the information require
 ## Cloning and running an experiment
 In most cases, ACCESS-NRI and CSIRO will provide you with a branch on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository which you can clone and run.
 
-For example, to clone the *example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments/tree/example-experiment), you would first load the payu module, and use:
+For example, to clone the (fictional) g*example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments/tree/example-experiment), you would first load the payu module, and use:
 ```
 payu clone https://github.com/ACCESS-NRI/access-esm1.6-experiments -B example-experiment <control directory name>
 ```
+
+!!! Warning
+    CMIP7 requests a larger number of output variables than what's saved in the released configurations. Before running your experiment, please make sure that the settings have been adjusted to request the full set of CMIP7 outputs. To do this, navigate to the payu control directory and double check that:
+        * The `atmosphere/STASHC` symlink points to `diagnostic_profiles/STASHC_CMIP7_core_<concentrations/emissions>`
+        * The `ice_history.nml` symlink points to `diagnostic_profiles/ice_history_CMIP7_high.nml`
+        * The `diag_table` symlink points to -> `diagnostic_profiles/diag_table_CMIP7_core`
 
 Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <n runs>` command.
 
