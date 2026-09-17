@@ -81,7 +81,20 @@ Output and restart files for ESM1.6 fast track experiments are being archived to
 
 
 ## Pushing completed experiments back to the repository
-Once your simulations are complete, please get in contact with ACCESS-NRI staff who will then push the experiment's runlogs up to the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository. This may require you to make a copy of the payu control directory in an accessible location such as `/scratch/public/`.
+Once your simulations are complete, the git runlogs will need to be pushed to the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository.
+
+If you are less familiar with Git and Github, ACCESS-NRI staff can complete this step. Let them know when your experiments are complete and they will instruct you on making the control directory and runlogs accessible to them.
+
+If you are comfortable using git and GitHub, you are welcome to push the runlogs to the repository as follows:
+1. First request write permissions on the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments), by creating a [new-issue](https://github.com/ACCESS-NRI/access-esm1.6-experiments/issues) which outlines the experiments you will be pushing to the repository.
+2. Make sure to [authenticate your GitHub account on Gadi](https://forum.access-hive.org.au/t/setting-up-gh/4294)
+3. Navigate to the payu control directory for the completed experiment, and run:
+   ```
+   $ git push origin HEAD
+   ```
+
+!!! warning
+    If your experiment was originally cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-NRI/access-esm1.6-experiments), the above instructions won't apply. ACCESS-NRI staff can provide you with specific instructions in this case.
 
 
 ## Crashes, perturbing atmospheric restarts, and reproducibiliy
