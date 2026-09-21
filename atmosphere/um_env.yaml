@@ -1,5 +1,5 @@
 AINITIAL: ''
-ASTART: INPUT/AM-09-t1.astart-19780101
+ASTART: '' # set to restart_dump.astart by payu
 AUSCOM_CPL: 'false'
 DATAW: '{work_path}'
 FASTRUN: 'true'
@@ -7,7 +7,7 @@ IDEALISE: ''
 PAREXE: ''
 PRINT_STATUS: PrStatus_Normal
 RPSEED: ''
-RUNID: AMIP
+RUNID: nouse
 TYPE: NRUN
 UM_ATM_NPROCX: '16'
 UM_ATM_NPROCY: '13'
