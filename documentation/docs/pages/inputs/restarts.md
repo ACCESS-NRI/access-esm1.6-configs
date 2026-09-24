@@ -66,23 +66,23 @@ We recommend using the following steps to apply and record a perturbation:
 
 
 1. In the experiment's archive directory, navigate to the latest `restartXYZ` restart directory and make a backup of the atmospheric restart file `atmosphere/restart_dump.astart`:
-   ```bash
-   cd restartXYZ/atmosphere
-   mv restart_dump.astart restart_dump.astart_orig
-   ```
-   Make sure to keep this file as a backup.
+    ```bash
+    cd restartXYZ/atmosphere
+    mv restart_dump.astart restart_dump.astart_orig
+    ```
+    Make sure to keep this file as a backup.
 
 2. Load the `model-processing` environment. This may clash with the `payu` environment, and so it is best to unload the `payu` module or perform this step in a new Gadi session.
-   ```bash
-   module use /g/data/vk83/modules
-   module load model-processing
-   ```
+    ```bash
+    module use /g/data/vk83/modules
+    module load model-processing
+    ```
 
 3. Apply a perturbation to the atmospheric restart file:
-   ```
-   perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart
-   ```
-   here `<SEED>` can be any integer, and it's used to set the [random seed](https://en.wikipedia.org/wiki/Random_seed) for the perturbation. Specifying a random seed is important, as it allows for the exact same perturbation to be reapplied in the future. Make sure to keep track of whichever value you use.
+    ```
+    perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart
+    ```
+    here `<SEED>` can be any integer, and it's used to set the [random seed](https://en.wikipedia.org/wiki/Random_seed) for the perturbation. Specifying a random seed is important, as it allows for the exact same perturbation to be reapplied in the future. Make sure to keep track of whichever value you use.
 
     The resulting perturbed restart will be written to restart_dump.astart. This file name is required for the model to be able to find the restart.
 
@@ -94,7 +94,9 @@ We recommend using the following steps to apply and record a perturbation:
     ```
 
 
-5. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment. If the work directory still exists, first run `payu sweep`. Next run
+5. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment. If the work directory still exists, first run `payu sweep`.
+
+    Next run
     ```
     payu setup
     ```
