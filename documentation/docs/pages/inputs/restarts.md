@@ -73,11 +73,11 @@ We recommend using the following steps to apply and record a perturbation:
    Make sure to keep this file as a backup.
 
 2. Load the `model-processing` environment. This may clash with the `payu` environment, and so it is best to unload the `payu` module or perform this step in a new Gadi session.
-
    ```bash
    module use /g/data/vk83/modules
    module load model-processing
    ```
+
 3. Apply a perturbation to the atmospheric restart file:
    ```
    perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart
@@ -94,7 +94,7 @@ We recommend using the following steps to apply and record a perturbation:
     ```
 
 
-3. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment. If the work directory still exists, first run `payu sweep`. Next run
+5. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment. If the work directory still exists, first run `payu sweep`. Next run
    ```
    payu setup
    ```
