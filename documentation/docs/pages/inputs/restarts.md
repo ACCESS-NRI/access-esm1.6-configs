@@ -103,6 +103,7 @@ We recommend using the following steps to apply and record a perturbation:
    $ git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
    ```
    filling in the correct information for `<SEED>` and `restartXYZ`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
+   
    If you run the `git log` command, it should now include the above record.
    
 
