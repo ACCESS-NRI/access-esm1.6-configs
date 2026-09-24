@@ -98,7 +98,6 @@ We recommend using the following steps to apply and record a perturbation:
    ```
    payu setup
    ```
-
    `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
    ```bash
    $ git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
