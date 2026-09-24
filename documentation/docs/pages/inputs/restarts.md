@@ -95,16 +95,16 @@ We recommend using the following steps to apply and record a perturbation:
 
 
 5. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment. If the work directory still exists, first run `payu sweep`. Next run
-   ```
-   payu setup
-   ```
-   `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
-   ```bash
-   $ git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
-   ```
-   filling in the correct information for `<SEED>` and `restartXYZ`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
-   
-   If you run the `git log` command, it should now include the above record.
+    ```
+    payu setup
+    ```
+    `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
+    ```bash
+    $ git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
+    ```
+    filling in the correct information for `<SEED>` and `restartXYZ`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
+
+    If you run the `git log` command, it should now include the above record.
    
 
 You will finally need to run `payu sweep` to clear the work directory before setting off the next run.
