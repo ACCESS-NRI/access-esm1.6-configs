@@ -98,8 +98,9 @@ We recommend using the following steps to apply and record a perturbation:
    ```
    payu setup
    ```
-   !!! tip
-      If the work directory still exists, you will first need to run `payu sweep`
+
+!!! tip
+    If the work directory still exists, you will first need to run `payu sweep`
 
    `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
    ```bash
