@@ -94,13 +94,10 @@ We recommend using the following steps to apply and record a perturbation:
     ```
 
 
-3. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment and run
+3. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment. If the work directory still exists, first run `payu sweep`. Next run
    ```
    payu setup
    ```
-
-!!! tip
-    If the work directory still exists, you will first need to run `payu sweep`
 
    `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
    ```bash
