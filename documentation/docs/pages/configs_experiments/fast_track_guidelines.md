@@ -1,6 +1,6 @@
 # Guidelines for running CMIP7 Assessment Fast Track simulations
 
-This page provides guidelines for community members who will be running ACCESS-ESM1.6 experiments for the [CMIP7 Assessment Fast Track](https://wcrp-cmip.org/cmip-phases/cmip7/fast-track/). As part of the CMIP7 submission, there are requirements around provenance, documentation, and reproducibility, which will impact how your experiments should be run and shared.
+This page provides guidelines for community members who will be running ACCESS-ESM1.6 experiments for the [CMIP7 Assessment Fast Track](https://wcrp-cmip.org/cmip-phases/cmip7/fast-track/). As part of the CMIP7 submission, there are requirements around provenance, documentation, and reproducibility, which will impact how the experiments will be run and shared.
 
 This information on this page is fairly general, and ACCESS-NRI/CSIRO staff may provide you with further instructions specific to the experiment that you are running. 
 
@@ -16,7 +16,7 @@ If you haven't volunteered and would be interested in running Assessment Fast Tr
 ---
 
 # Background information
-This section introduces some background concepts which will be helpful to understand for the instructions and guidelines further below. 
+This section introduces some background concepts which will be helpful for understanding the instructions and guidelines further below. 
 
 ### Payu and running experiments
 ACCESS-ESM1.6 is run using the program [Payu](https://payu.readthedocs.io/en/stable/). If you are unfamiliar with running models with Payu or need a refresher, please see [this guide on running ACCESS-ESM1.6](https://docs.access-hive.org.au/models/run_a_model/run_access-esm1p6/).
@@ -40,7 +40,7 @@ Payu *configurations* and *experiments* both contain all the information require
 ## Cloning and running an experiment
 In most cases, ACCESS-NRI and CSIRO will provide you with a branch on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository which you can clone and run.
 
-For example, to clone the (fictional) g*example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments/tree/example-experiment), you would first load the payu module, and use:
+For example, to clone the (fictional) g*example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-experiments/tree/example-experiment), you would first load the payu module, and use:
 ```
 payu clone https://github.com/ACCESS-NRI/access-esm1.6-experiments -B example-experiment <control directory name>
 ```
@@ -86,7 +86,7 @@ Once your simulations are complete, the git runlogs will need to be pushed to th
 If you are less familiar with Git and Github, ACCESS-NRI staff can complete this step. Let them know when your experiments are complete and they will instruct you on making the control directory and runlogs accessible to them.
 
 If you are comfortable using git and GitHub, you are welcome to push the runlogs to the repository as follows:
-1. First request write permissions on the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments), by creating a [new-issue](https://github.com/ACCESS-NRI/access-esm1.6-experiments/issues) which outlines the experiments you will be pushing to the repository.
+1. First request write permissions on the [access-esm1.6-dev-experiments](https://github.com/ACCESS-Community-Hub/access-esm1.6-dev-experiments), by creating a [new-issue](https://github.com/ACCESS-NRI/access-esm1.6-experiments/issues) which lists the experiments you will be pushing to the repository.
 2. Make sure to [authenticate your GitHub account on Gadi](https://forum.access-hive.org.au/t/setting-up-gh/4294)
 3. Navigate to the payu control directory for the completed experiment, and run:
    ```
@@ -94,12 +94,12 @@ If you are comfortable using git and GitHub, you are welcome to push the runlogs
    ```
 
 !!! warning
-    If your experiment was originally cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-NRI/access-esm1.6-experiments), the above instructions won't apply. ACCESS-NRI staff can provide you with specific instructions in this case.
+    If your experiment was originally cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-NRI/access-esm1.6-experiments), the above instructions won't apply. ACCESS-NRI staff can provide you with specific instructions in this case, or can push the runlogs to the repository on their end.
 
 
 ## Crashes, perturbing atmospheric restarts, and reproducibiliy
 
-During the simulations you may run into model crashes. These can occur due to many different reasons including transient errors on Gadi and numerical instabilities in the model, and you're welcome to get in touch with ACCESS-NRI staff or add a [help request](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021) to the ACCESS-Hive Forum for help with understanding the cause of a creash.
+During the simulations you may run into model crashes. These can occur due to many different reasons including transient errors on Gadi and numerical instabilities in the model. You're welcome to get in touch with ACCESS-NRI staff or add a [help request](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021) to the ACCESS-Hive Forum for help with understanding the cause of a crash.
 
 In general, we recommend the following approach for dealing with crashes:
 
@@ -109,4 +109,4 @@ $ payu sweep
 $ payu run
 ```
 
-If the same error occurs on the rerun, it may be due to a numerical instability and you can try perturbing the atmosphere restart file as a workaround. It's important to do this in a reproducible way and to keep a record of any perturbations applied. We recommend following the steps [outlined here](/inputs/restarts/#perturbing-an-atmospheric-restart-file), which will apply a reproducible perturbation and record it in the experiment runlogs.
+If the same error occurs on the rerun, it may be due to a numerical instability and you can try perturbing the atmosphere restart file as a workaround. It's important to do this in a reproducible way and to keep a record of any perturbations applied. Please follow the steps [outlined here](/inputs/restarts/#perturbing-an-atmospheric-restart-file), which will apply a reproducible perturbation and record it in the experiment runlogs.
