@@ -52,6 +52,66 @@ a2i.nc  i2a.nc  o2i.nc
 
 ## Common restart manipulations
 
+### Perturbing an atmospheric restart file
+
+ESM1.6 simulations occasionally crash due to numerical instabilities in the atmosphere component. A common workaround is to apply a small perturbation to the theta field in the last atmospheric restart file.  
+
+It's best practice to apply the perturbation in a reproducible way, and to record details of any perturbations that are added during your experiment. Doing so will allow you to rerun the same experiment in an identical way in the future, for example to enable additional output variables. 
+
+We recommend using the following steps to apply and record a perturbation:
+
+
+!!! warning
+    Before applying a perturbation, we recommend first inspecting the error logs and trying to sweep and rerun to rule out other problems such as transient errors on Gadi.
+
+
+1. In the experiment's archive directory, navigate to the latest `restartXYZ` restart directory and make a backup of the atmospheric restart file `atmosphere/restart_dump.astart`:
+    ```bash
+    cd restartXYZ/atmosphere
+    mv restart_dump.astart restart_dump.astart_orig
+    ```
+    Make sure to keep this file as a backup.
+
+2. Load the `model-processing` environment. This may clash with the `payu` environment, and so it is best to unload the `payu` module or perform this step in a new Gadi session.
+    ```bash
+    module use /g/data/vk83/modules
+    module load model-processing
+    ```
+
+3. Apply a perturbation to the atmospheric restart file:
+    ```
+    perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart
+    ```
+    here `<SEED>` can be any integer, and it's used to set the [random number generator seed](https://en.wikipedia.org/wiki/Random_seed) for the perturbation. Specifying a seed value is important, as it allows for the exact same perturbation to be reapplied in the future. Make sure to keep track of whichever value you use.
+
+    The resulting perturbed restart will be written to `restart_dump.astart`. This file name is required for the model to be able to find the restart.
+
+
+4. Unload the model-processing environment and load the payu environment:
+    ```bash
+    module unload model-processing
+    module load payu
+    ```
+
+
+5. Make a record of the perturbation in the experiment runlogs. First `cd` into the payu control directory for the experiment. If the work directory still exists, first run `payu sweep`.
+
+    Next run
+    ```
+    payu setup
+    ```
+    `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
+    ```bash
+    git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
+    ```
+    filling in the correct information for `<SEED>` and `restartXYZ`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
+
+    If you run the `git log` command, it should now include the above record.
+   
+
+You will finally need to run `payu sweep` to clear the work directory before setting off the next run.
+
+
 ### Changing the date of restart files
 
 It's commonly required to change the date for a restart file. For example when setting up a historical experiment, a restart might be taken from a pre-industrial simulation and the date changed to 1850. Another example is when combining ocean and atmosphere restarts from two different experiments into a single restart, where it is necessary to make sure the dates for the different components match.
