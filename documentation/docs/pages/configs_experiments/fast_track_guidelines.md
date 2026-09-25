@@ -25,10 +25,10 @@ If you have any questions about running the model, ACCESS-NRI staff will be avai
 
 ### Configurations and experiments
 #### Configurations
-A Payu *model configuration* contains the complete collection of model settings, configuration files, and paths to input and restart files required to run a model. Payu configurations for ACCESS-ESM1.6 are kept using branches the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository, with `dev-` branches representing development versions of configurations and `release-` branches representing released configurations.
+A Payu *model configuration* contains the complete collection of model settings, configuration files, and paths to input and restart files required to run a model. Payu configurations for ACCESS-ESM1.6 are kept as branches in the [access-esm1.6-configs](https://github.com/ACCESS-NRI/access-esm1.6-configs) GitHub repository, with `dev-` branches representing development versions of configurations and `release-` branches representing released configurations.
 
 #### Experiments
-When Payu runs a simulation, it keeps track of the configuration settings, input files, model executables, and restart files used for each run segment and records this information into a git commit in the Payu control directory. This information can be accessed later. For example, the configuration settings used for each segment of the ESM1.6 CMIP7 esm-piControl simulation are available to view [here](https://github.com/ACCESS-NRI/access-esm1.6-experiments/commits/esm-piControl-2026.04.14/). This sequence of commits are referred to as the Payu *runlogs*, and as a whole they form a Payu *experiment*.
+Running a simulation involves cloning a configuration into a directory, called the control directory. When Payu runs a simulation, it keeps track of the configuration settings, input files, model executables, and restart files used for each run segment and records this information in a git commit in the Payu control directory. This information can be accessed later. For example, the configuration settings used for each segment of the ESM1.6 CMIP7 esm-piControl simulation are available to view [here](https://github.com/ACCESS-NRI/access-esm1.6-experiments/commits/esm-piControl-2026.04.14/). This sequence of commits are referred to as the Payu *runlogs*, and as a whole they form a Payu *experiment*.
 
 On completion, ESM1.6 Payu experiments for the CMIP7 Assessment Fast Track will need to be uploaded to the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository.
 
@@ -40,18 +40,18 @@ Payu *configurations* and *experiments* both contain all the information require
 ## Cloning and running an experiment
 In most cases, ACCESS-NRI and CSIRO will provide you with a branch on the [access-esm1.6-experiments](https://github.com/ACCESS-NRI/access-esm1.6-experiments) GitHub repository which you can clone and run.
 
-For example, to clone the (fictional) g*example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-experiments/tree/example-experiment), you would first load the payu module, and use:
+For example, to clone the (fictional) *example-experiment* [branch](https://github.com/ACCESS-Community-Hub/access-esm1.6-experiments/tree/example-experiment), you would first load the payu module, and use:
 ```
 payu clone https://github.com/ACCESS-NRI/access-esm1.6-experiments -B example-experiment <control directory name>
 ```
 
 !!! Warning
-    CMIP7 requests a larger number of output variables than what's saved in the released configurations. Before running your experiment, please make sure that the settings have been adjusted to request the full set of CMIP7 outputs. To do this, navigate to the payu control directory and double check that:
+    CMIP7 requests a larger number of output variables than the default released configurations. Before running your experiment, please make sure that the settings have been adjusted to request the full set of CMIP7 outputs. To do this, navigate to the payu control directory and double check that:
         * The `atmosphere/STASHC` symlink points to `diagnostic_profiles/STASHC_CMIP7_core_<concentrations/emissions>`
-        * The `ice_history.nml` symlink points to `diagnostic_profiles/ice_history_CMIP7_high.nml`
-        * The `diag_table` symlink points to -> `diagnostic_profiles/diag_table_CMIP7_core`
+        * The `ice/ice_history.nml` symlink points to `diagnostic_profiles/ice_history_CMIP7_high.nml`
+        * The `ocean/diag_table` symlink points to `diagnostic_profiles/diag_table_CMIP7_core`
 
-Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <n runs>` command.
+Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <nruns>` command.
 
 !!! tip
     Some experiments will require a more complicated setup, such as scripts that need to be run before the initial simulation. Other experiments may need to be cloned from the [configuration repository](https://github.com/ACCESS-NRI/access-esm1.6-configs) rather than the [experiments repository](https://github.com/ACCESS-NRI/access-esm1.6-experiments). In these cases, ACCESS-NRI staff will provide you with specific instructions.
@@ -71,7 +71,7 @@ sync:
     base_path: <Location on /g/data>
 ```
 
-With the above changes, Payu will create a new directory matching your experiment's name under the location specified by `base_path`. Outputs and restarts will then be copied to this location at the end of each run segment. For more information on automatic syncing, please see the [Payu documentation](https://payu.readthedocs.io/en/stable/config.html#:~:text=the%20PBS%20script.-,sync,-Sync%20archive%20to).
+With the above changes, at the end of each run segment payu will automatically copy outputs and restarts to a directory matching your experiment's name under the location specified by `base_path`. For more information on automatic syncing, please see the [Payu documentation](https://payu.readthedocs.io/en/stable/config.html#:~:text=the%20PBS%20script.-,sync,-Sync%20archive%20to).
 
 ACCESS-NRI and CSIRO staff can help determine the best location for syncing your data.
 
@@ -99,7 +99,7 @@ If you are comfortable using git and GitHub, you are welcome to push the runlogs
 
 ## Crashes, perturbing atmospheric restarts, and reproducibiliy
 
-During the simulations you may run into model crashes. These can occur due to many different reasons including transient errors on Gadi and numerical instabilities in the model. You're welcome to get in touch with ACCESS-NRI staff or add a [help request](https://forum.access-hive.org.au/t/support-faq-frequently-asked-questions/1021) to the ACCESS-Hive Forum for help with understanding the cause of a crash.
+During the simulations you may run into model crashes. These can occur due to many different reasons including transient errors on Gadi and numerical instabilities in the model. You're welcome to get in touch with ACCESS-NRI staff or add a [help request](https://forum.access-hive.org.au/t/access-help-and-support/908) to the ACCESS-Hive Forum for help with understanding the cause of a crash.
 
 In general, we recommend the following approach for dealing with crashes:
 

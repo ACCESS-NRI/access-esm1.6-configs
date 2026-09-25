@@ -82,9 +82,9 @@ We recommend using the following steps to apply and record a perturbation:
     ```
     perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart
     ```
-    here `<SEED>` can be any integer, and it's used to set the [random seed](https://en.wikipedia.org/wiki/Random_seed) for the perturbation. Specifying a random seed is important, as it allows for the exact same perturbation to be reapplied in the future. Make sure to keep track of whichever value you use.
+    here `<SEED>` can be any integer, and it's used to set the [random number generator seed](https://en.wikipedia.org/wiki/Random_seed) for the perturbation. Specifying a seed value is important, as it allows for the exact same perturbation to be reapplied in the future. Make sure to keep track of whichever value you use.
 
-    The resulting perturbed restart will be written to restart_dump.astart. This file name is required for the model to be able to find the restart.
+    The resulting perturbed restart will be written to `restart_dump.astart`. This file name is required for the model to be able to find the restart.
 
 
 4. Unload the model-processing environment and load the payu environment:
@@ -102,7 +102,7 @@ We recommend using the following steps to apply and record a perturbation:
     ```
     `payu setup` will rewrite the manifest file using the data from the modified restart. To record the pertubation in the experiment history, next run
     ```bash
-    $ git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
+    git commit -a -m "restartXYZ atmospheric restart perturbed using command:  perturbIC -s <SEED> restart_dump.astart_orig -o restart_dump.astart"
     ```
     filling in the correct information for `<SEED>` and `restartXYZ`. When the experiment is uploaded to the experiments repository, it will include this record of the applied perturbation.
 
