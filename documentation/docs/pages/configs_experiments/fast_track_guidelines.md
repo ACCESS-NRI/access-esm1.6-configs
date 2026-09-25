@@ -50,7 +50,7 @@ payu clone https://github.com/ACCESS-NRI/access-esm1.6-experiments -B example-ex
         * The `atmosphere/STASHC` symlink points to `diagnostic_profiles/STASHC_CMIP7_core_<concentrations/emissions>`
         * The `ice/ice_history.nml` symlink points to `diagnostic_profiles/ice_history_CMIP7_high.nml`
         * The `ocean/diag_table` symlink points to `diagnostic_profiles/diag_table_CMIP7_core`
-    See the [documentation section here](https://access-hive-docs--1242.org.readthedocs.build/models/run_a_model/run_access-esm1p6/#controlling-the-diagnostics-output-by-the-model) for instructions on how to swap the diagnostic profiles.
+    See the [documentation section here](https://docs.access-hive.org.au/models/run_a_model/run_access-esm1p6/#controlling-the-diagnostics-output-by-the-model) for instructions on how to swap the diagnostic profiles.
 
 Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <nruns>` command.
 
