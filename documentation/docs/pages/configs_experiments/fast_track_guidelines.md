@@ -50,6 +50,7 @@ payu clone https://github.com/ACCESS-NRI/access-esm1.6-experiments -B example-ex
         * The `atmosphere/STASHC` symlink points to `diagnostic_profiles/STASHC_CMIP7_core_<concentrations/emissions>`
         * The `ice/ice_history.nml` symlink points to `diagnostic_profiles/ice_history_CMIP7_high.nml`
         * The `ocean/diag_table` symlink points to `diagnostic_profiles/diag_table_CMIP7_core`
+    See the [documentation section here](https://access-hive-docs--1242.org.readthedocs.build/models/run_a_model/run_access-esm1p6/#controlling-the-diagnostics-output-by-the-model) for instructions on how to swap the diagnostic profiles.
 
 Once the experiment has been cloned, you can `cd` into the control directory cloned in the command above and run it using the usual `payu run -n <nruns>` command.
 
@@ -61,12 +62,11 @@ Once the experiment has been cloned, you can `cd` into the control directory clo
 ## Output syncing
 Model outputs and restarts should be synced to a location on `/g/data` to prevent loss of data during the automatic cleanup of files on `/scratch`. We recommend configuring Payu to automatically sync the outputs and restarts to a location on `/g/data` by enabling the `sync` option in the `config.yaml`:
 
-```diff
+```yaml
 # Sync options for automatically copying data from ephemeral scratch space to
 # longer term storage
 sync:
--   enable: False # set path below and change to true
-+   enable: True # set path below and change to true
+    enable: True # set path below and change to true
     restarts: True
     base_path: <Location on /g/data>
 ```
@@ -109,4 +109,19 @@ $ payu sweep
 $ payu run
 ```
 
-If the same error occurs on the rerun, it may be due to a numerical instability and you can try perturbing the atmosphere restart file as a workaround. It's important to do this in a reproducible way and to keep a record of any perturbations applied. Please follow the steps [outlined here](/inputs/restarts/#perturbing-an-atmospheric-restart-file), which will apply a reproducible perturbation and record it in the experiment runlogs.
+If the same error occurs on the rerun, it may be due to a numerical instability in the atmosphere. This is typically accompanied by the following message in the `work/atmosphere/atm.fort6.pe0` atmosphere log file
+```
+  ==============================================
+  initial Absolute Norm :    67248670.7694857     
+  GCR(                     2 ) failed to converge in                     50 
+  iterations. 
+  Final Absolute Norm :    1049.99880463915     
+  ==============================================
+```
+and perturbing the last atmosphere restart file may work as a workaround. It's important to do this in a reproducible way and to keep a record of any perturbations applied. Please follow the steps [outlined here](/inputs/restarts/#perturbing-an-atmospheric-restart-file), which will apply a reproducible perturbation and record it in the experiment runlogs.
+
+!!! Tip
+    The above error message indicates a failure in the atmosphere's numerical solver. This can be due to spurious numerical instabilities in the model (in which case perturbations can help), but can also occur due to other causes including problems in the configuration and input files which require more involved investigation.
+
+Other types of crashes may require different workarounds. If you are unsure about what caused a crash or how to resolve it, we encourage you to add [help request](https://forum.access-hive.org.au/t/access-help-and-support/908) on the ACCESS-Hive forum, where ACCESS-NRI staff will be available to provide advice.
+
