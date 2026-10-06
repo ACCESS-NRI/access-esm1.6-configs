@@ -42,22 +42,22 @@ submodels:
       exe: um_hg3.exe
       input:
         # Aerosols
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/BC_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/Bio_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/OCFF_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/aerosol/global.N96/2026.07.14/scycl_h_2022_2100_cmip7.anc
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-h/atmosphere/aerosol/global.N96/2026.09.30/BC_h_2022_2150_cmip7.anc
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-h/atmosphere/aerosol/global.N96/2026.09.30/Bio_h_2022_2150_cmip7.anc
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-h/atmosphere/aerosol/global.N96/2026.09.30/OCFF_h_2022_2150_cmip7.anc
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-h/atmosphere/aerosol/global.N96/2026.09.30/scycl_h_2022_2150_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
         # Forcing
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/forcing/global.N96/2026.07.14/ozone_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.08.26/volcts_cmip7.dat
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.08.26/TSI_CMIP7_ESM
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/esm-scen7-h/atmosphere/forcing/global.N96/2026.08.14/CO2_fluxes_h_2022_2100_cmip7.anc
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-h/atmosphere/forcing/global.N96/2026.09.30/ozone_h_2022_2150_cmip7.anc
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.09.30/volcts_cmip7.dat
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.09.30/TSI_CMIP7_ESM
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/esm-scen7-h/atmosphere/forcing/global.N96/2026.09.30/CO2_fluxes_h_2022_2150_cmip7.anc
         # Land
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/biogeochemistry/global.N96/2026.07.14/Ndep_h_2022_2100_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.08.28/ACCESS_vegfrac_scen_h.nc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.08.28/ACCESS_forest_thinning_frac_scen_h.nc
+        - /g/data/tm70/pcl851/CMIP7/esm1p6_ancil/2026.09.30/modern/scen7-h/atmosphere/land/biogeochemistry/global.N96/2026.09.30/Ndep_h_2022_2150_cmip7.anc
+        - /g/data/p66/ajn563/ACCESS-ESM/ESM1.6/luh3-1-1/scenarios/H-Scenario-ext/ACCESS_vegfrac_scen_h_ext.nc
+        # - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.08.28/ACCESS_forest_thinning_frac_scen_h.nc
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
@@ -159,6 +159,6 @@ sync:
 
 userscripts:
     # Apply land use and thinning changes after each run
-    run: ./scripts/update_landuse_driver.sh && ./scripts/update_thinning_driver.sh
+    run: ./scripts/update_landuse_driver.sh #&& ./scripts/update_thinning_driver.sh
 
 postscript: -v PAYU_CURRENT_OUTPUT_DIR,PROJECT  -lstorage=${PBS_NCI_STORAGE} ./scripts/post-processing/post_process.sh
