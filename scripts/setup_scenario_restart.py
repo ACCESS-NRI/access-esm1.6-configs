@@ -2,6 +2,7 @@
 # Author: Spencer Wong (ACCESS-NRI)
 import argparse
 import git
+import mule
 from ruamel.yaml import YAML
 from pathlib import Path
 import shutil
@@ -34,11 +35,22 @@ def parse_args():
         formatter_class=argparse.RawTextHelpFormatter
     )
     parser.add_argument(
+        '--input-restart',
+        help='Path to initial restart to be modified. Defaults to the restart path in the config.yaml.',
+        type=Path,
+        required=False
+    )
+    parser.add_argument(
         '--output-restart',
         help='Path for saving modified output ESM1.6 restart directory. Defaults to archive/initial_restart.',
         type=Path,
         required=False
         )
+    parser.add_argument(
+        '--no-config-update',
+        help="Don't update the config.yaml with the new restart path.",
+        action='store_true'
+    )
 
     return parser.parse_args()
 
@@ -118,6 +130,30 @@ def adjust_restart_for_landcover(input_restart,
     restart_as_nc = tempfile.NamedTemporaryFile().name
     convert_restart(input_restart, restart_as_nc, stashmaster_file)
 
+    # Get the time index in the vegetation file corresponding to
+    # the restart year
+    time_coder = xarray.coders.CFDatetimeCoder(use_cftime=True)
+    vegetation_nc = xarray.open_dataset(vegetation_map, decode_times=time_coder)
+
+    um_file = mule.FieldsFile.from_file(input_restart)
+    target_year = um_file.fixed_length_header.t2_year
+
+    time_values = vegetation_nc.time.dt.year.values
+    matches = (time_values == target_year).nonzero()[0]
+
+    if len(matches) == 0:
+        raise ValueError(
+            f"Year {target_year} not found in LUC file. "
+            f"Available years: {time_values.min()} "
+            f"to {time_values.max()}"
+        )
+    elif len(matches) > 1:
+        raise ValueError(
+            f"Multiple points matching year {target_year} found in LUC file. "
+        )
+
+    t_index = int(matches[0])
+
     # Adjust land fields in netCDF based on new vegetation map
     remapped_restart_nc = tempfile.NamedTemporaryFile().name
     run_vegetation_remapping(
@@ -125,7 +161,7 @@ def adjust_restart_for_landcover(input_restart,
         output=str(remapped_restart_nc),
         vegetation_map=vegetation_map,
         # Use time index 0 from the vegetation mapping file
-        time_index=0,
+        time_index=t_index,
         config=config,
         # Only add data for newly active tiles
         fill_all=False,
@@ -198,7 +234,7 @@ def commit_config(input_restart, output_restart):
         f"Restarts in {input_restart} copied to {output_restart} and modified\n"
         f"using {Path(__file__).name}\n"
         " * Land fields adjusted for compatibility with scenario vegetation fractions.\n"
-        " * Initial scenario wood thinning data inserted into the restart."
+        " * Scenario wood thinning data inserted into the restart."
     )
     print(f"Commiting changes to config.yaml with message: '{msg}'")
     repo.index.commit(msg)
@@ -214,7 +250,10 @@ if __name__ == "__main__":
     output_restart = output_restart.resolve()
 
     config = YAML().load(Path("config.yaml"))
-    input_restart = config["restart"]
+
+    input_restart = args.input_restart
+    if input_restart is None:
+        input_restart = config["restart"]
     copy_restart(input_restart, output_restart)
 
     atm_restart = output_restart/"atmosphere"/"restart_dump.astart"
@@ -248,7 +287,8 @@ if __name__ == "__main__":
     shutil.move(remapped_restart_um, atm_restart)
 
     # Add the new restart path to the config.yaml
-    update_config(output_restart, config)
+    if not args.no_config_update:
+        update_config(output_restart, config)
 
     # Commit the changes to the runlogs
     commit_config(input_restart, output_restart)
