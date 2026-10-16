@@ -3,6 +3,8 @@ email: Add your email address here
 created: Add the date you started the experiment here (YYYY-MM-DD)
 description: |-
   ACCESS-ESM1.6 global coupled model configuration running in CO2 concentration driven mode under pre-industrial forcings with abruptly doubled atmospheric CO2 concentrations. Pre-industrial forcing data including atmospheric CO2 concentrations are primarily sourced from the input4MIPs CMIP7 datasets. See https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Experiment_set_up_and_Forcings/abrupt-2xco2/ for a description of the experimental protocol.
+long_description: |-
+  ACCESS-ESM1.6 global coupled model configuration running in CO2 concentration driven mode under pre-industrial forcings with abruptly doubled atmospheric CO2 concentrations. Pre-industrial forcing data including atmospheric CO2 concentrations are primarily sourced from the input4MIPs CMIP7 datasets. See https://wcrp-cmip.github.io/cmip7-guidance/docs/CMIP7/Experiment_set_up_and_Forcings/abrupt-2xco2/ for a description of the experimental protocol.
 notes: |-
   The developers of ACCESS-ESM1.6 request that users of these model configurations:
     (1) Have a Met Office Science Repository Service (MOSRS) account as described on ACCESS-Hive Docs (https://docs.access-hive.org.au/models/run_a_model/run_access-esm/#prerequisites).
@@ -18,9 +20,19 @@ realm:
   - ocean
   - ocnBgchem
   - seaIce
+frequency:
+  - fx
+  - 1yr
+  - 1mon
+  - 1day
+  - 6hr
+  - 3hr
+  - 1hr
 nominal_resolution: 100 km
 reference: https://doi.org/10.5281/zenodo.17490072
 license: CC-BY-4.0
 model: ACCESS-ESM1.6
-url: https://github.com/ACCESS-NRI/access-esm1.6-configs.git
+url: https://github.com/ACCESS-NRI/access-esm1.6-experiments
 version: "2.0"
+parent_experiment: e523e199-80f6-4ca6-b84a-e513a16f2029
+parent_experiment_branch_commit: 1d95cb07523a4683511b0ef39e0ae9cf5834fe53
