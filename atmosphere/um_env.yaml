@@ -1,18 +1,18 @@
 AINITIAL: ''
-ASTART: '' # set to restart_dump.astart by payu
-AUSCOM_CPL: 'true'
+ASTART: INPUT/AM-09-t1.astart-19780101
+AUSCOM_CPL: 'false'
 DATAW: '{work_path}'
 FASTRUN: 'true'
 IDEALISE: ''
 PAREXE: ''
 PRINT_STATUS: PrStatus_Normal
 RPSEED: ''
-RUNID: nouse
+RUNID: AMIP
 TYPE: NRUN
 UM_ATM_NPROCX: '16'
-UM_ATM_NPROCY: '16'
+UM_ATM_NPROCY: '13'
 UM_NAM_MAX_SECONDS: '300'
-UM_NPES: '256'
+UM_NPES: '208'
 UM_SECTOR_SIZE: '2048'
 UM_STDOUT_FILE: atm.fort6.pe
 VN: '7.3'
@@ -48,3 +48,5 @@ OZONE: INPUT/ozone_1850_cmip7.anc
 SOOTEMIS: INPUT/BC_1850_cmip7.anc
 SULPEMIS: INPUT/scycl_1850_cmip7.anc
 VEGINIT: INPUT/cable_vegfunc_N96.anc
+SSTIN: INPUT/sst_piclim_n96_gregorian.anc
+SICEIN: INPUT/seaice_piclim_n96_gregorian.anc
