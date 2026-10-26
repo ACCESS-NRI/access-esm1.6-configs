@@ -262,7 +262,7 @@ if __name__ == "__main__":
     # Step 2: Adjust restart for new land cover
     remapped_restart_um = tempfile.NamedTemporaryFile().name
     stashmaster_path = stashmaster_from_config(config)
-    land_cover_file = input_path_from_config(config, "atmosphere", r"ACCESS_vegfrac_scen_(?P<scenario>\w{1,2}).nc")
+    land_cover_file = input_path_from_config(config, "atmosphere", r"ACCESS_vegfrac_scen_(?P<scenario>\w{1,2})_\d{4}-\d{4}.nc")
 
     adjust_restart_for_landcover(
         input_restart=str(atm_restart),
@@ -274,7 +274,7 @@ if __name__ == "__main__":
 
 
     # Step 3: Add initial scenario wood thinning data to the restart
-    thinning_file = input_path_from_config(config, "atmosphere", r"ACCESS_forest_thinning_frac_scen_(?P<scenario>\w{1,2}).nc")
+    thinning_file = input_path_from_config(config, "atmosphere", r"ACCESS_forest_thinning_frac_scen_(?P<scenario>\w{1,2})_\d{4}-\d{4}.nc")
 
     insert_thinning(
         restart_file=str(remapped_restart_um),
