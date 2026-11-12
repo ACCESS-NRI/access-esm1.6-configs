@@ -20,7 +20,7 @@ um2nc driver esm1p6 $PAYU_CURRENT_OUTPUT_DIR --delete-ff  --one-nc-per-stash-var
 
 
 # Split sea ice output into single variable files using the splitnc command. The splitnc command calls https://github.com/ACCESS-NRI/splitnc/blob/main/src/splitnc/splitnc.py
-icefiles=($PAYU_CURRENT_OUTPUT_DIR/ice/iceh-*)
+icefiles=($(shopt -s nullglob; echo $PAYU_CURRENT_OUTPUT_DIR/ice/iceh-*))
 
 # Only run splitnc if unprocessed ice files exist to avoid errors on reruns
 if [ "${#icefiles[@]}" -gt 0 ]
