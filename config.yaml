@@ -55,8 +55,8 @@ submodels:
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-common/atmosphere/forcing/resolution_independent/2026.10.06/volcts_cmip7.dat
         # Land
         - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-m/atmosphere/land/biogeochemistry/global.N96/2026.10.06/Ndep_m_2022_2150_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.10.23/ACCESS_vegfrac_scen_h_2022-2151.nc # TODO
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.10.23/ACCESS_forest_thinning_frac_scen_h_2022-2501.nc # TODO
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.11.15/ACCESS_vegfrac_scen_m_2022-2501.nc
+        - /g/data/vk83/prerelease/configurations/inputs/access-esm1p6/modern/scen7-h/atmosphere/land/vegetation/global.N96/2026.11.15/ACCESS_forest_thinning_frac_scen_m_2022-2501.nc
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
@@ -118,7 +118,7 @@ submodels:
 collate:
     enable: false
 
-restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/scen7-h/restart/2026.08.04 # TODO
+restart: /g/data/p73/archive/CMIP7/ACCESS-ESM1-6/production/ensemble-concentrations-historical/historical-historical-1.1-r1i1p1f1-01409bc3/historical-historical-1.1-r1i1p1f1-01409bc3/restart171
 
 # Timing controls
 calendar:
