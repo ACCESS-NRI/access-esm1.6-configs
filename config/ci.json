@@ -14,8 +14,8 @@
         "dev-esm-historical": { },
         "dev-amip": { },
         "release-.*": {
-            "model-config-tests-version": "0.2.5",
-            "payu-version": "1.3.6"
+            "model-config-tests-version": "0.2.7",
+            "payu-version": "1.4.0"
         }
     },
     "reproducibility": {
@@ -23,8 +23,8 @@
             "markers": "repro and (not repro_restart)"
         },
         "release-.*": {
-            "model-config-tests-version": "0.2.5",
-            "payu-version": "1.3.6"
+            "model-config-tests-version": "0.2.7",
+            "payu-version": "1.4.0"
         }
     },
     "qa": {
@@ -33,8 +33,8 @@
         },
          "release-.*": {
             "markers": "access_esm1p6 or config",
-            "model-config-tests-version": "0.2.5",
-            "payu-version": "1.3.6"
+            "model-config-tests-version": "0.2.7",
+            "payu-version": "1.4.0"
         }
     },
     "default": {
