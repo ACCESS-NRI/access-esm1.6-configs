@@ -37,9 +37,11 @@ jobs:
         # TODO: make this step into a separate job, so that we can handle more than one command per comment
         id: command
         shell: bash
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           set -f
-          command_string=$(echo "${{ github.event.comment.body }}" | grep -m 1 cherry-pick)
+          command_string=$(echo "$COMMENT_BODY" | grep -m 1 cherry-pick)
           echo "command=$command_string" >> $GITHUB_OUTPUT
           command=($command_string)
           command=("${command[@]:1}")
@@ -99,10 +101,11 @@ jobs:
         if: env.ERROR_MSG == ''
         env:
           GH_TOKEN: ${{ github.token }}
+          COMMITS: ${{ steps.command.outputs.commits }}
         run: |
           # Check that the commits to cherry-pick are actually part of this PRs target branch
           target=$(gh api repos/{owner}/{repo}/pulls/${{ github.event.issue.number }} -q .base.ref)
-          for commit in ${{ steps.command.outputs.commits }}; do
+          for commit in $COMMITS; do
             if git merge-base --is-ancestor ${commit} origin/$target; then 
               echo "Commit $commit found in $target branch."
             else
@@ -115,9 +118,11 @@ jobs:
 
       - name: Check Target Branches
         if: env.ERROR_MSG == ''
+        env:
+          BRANCHES: ${{ steps.command.outputs.branches }}
         run: |
           # Check that cherry-pick target branches actually exist
-          for branch in ${{ steps.command.outputs.branches }}; do
+          for branch in $BRANCHES; do
             if [[ -n "$(git ls-remote --heads origin ${branch})" ]]; then
               echo "Found branch $branch in repository."
             else
@@ -130,9 +135,11 @@ jobs:
         
       - name: Check Previous Cherry-picks
         if: env.ERROR_MSG == ''
+        env:
+          BRANCHES: ${{ steps.command.outputs.branches }}
         run: |
           # Check that branches with the cherry-picked commits have not been pushed to the remote yet
-          for branch in ${{ steps.command.outputs.branches }}; do
+          for branch in $BRANCHES; do
             new_branch=cherry_pick_from_pr${{ github.event.issue.number }}_into_$branch
             if [[ -z "$(git ls-remote --heads origin $new_branch)" ]]; then
               echo "No previous attempt to cherry-pick commits from this PR into branch $branch found."
@@ -156,11 +163,13 @@ jobs:
         id: report
         env:
           GH_TOKEN: ${{ github.token }}
+          COMMAND_TEXT: ${{ steps.command.outputs.command }}
+          ERROR_MSG: ${{ env.ERROR_MSG }}
         run: |
-          if [[ -n '${{ env.ERROR_MSG }}' ]]; then
-            body="> ${{ steps.command.outputs.command }}
+          if [[ -n "$ERROR_MSG" ]]; then
+            body="> ${COMMAND_TEXT}
           
-          Automatic cherry-pick failed. ${{ env.ERROR_MSG }}"
+          Automatic cherry-pick failed. ${ERROR_MSG}"
             gh pr comment ${{ github.event.issue.number }} --body "$body"
             echo "status=failure" >> $GITHUB_OUTPUT
           else
