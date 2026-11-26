@@ -1,31 +1,31 @@
 format: yamanifest
 version: 1.0
 ---
-work/atmosphere/INPUT/BC_1850_cmip7.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/BC_1850_cmip7.anc
+work/atmosphere/INPUT/BC_piclim_anthro_2021_cmip7.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/BC_piclim_anthro_2021_cmip7.anc
   hashes:
-    binhash: d018cd0363a3d084a0615624bed3b5a4
-    md5: 72eac6922e418ad1da3756cd118c80b2
-work/atmosphere/INPUT/Bio_1850_cmip7.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/Bio_1850_cmip7.anc
+    binhash: 1a28fed2f56077cfa82cbedac747ec12
+    md5: a3860a02aa65af84c1446f8caec84df0
+work/atmosphere/INPUT/Bio_piclim_anthro_2021_cmip7.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/Bio_piclim_anthro_2021_cmip7.anc
   hashes:
-    binhash: dc27dc9129f85b943384076d590ee353
-    md5: 9c7af32c6d35a0ecbaa99026bd57943f
+    binhash: 4333c28ebf7afc3f84e19c9cc04be7e0
+    md5: ee8a9b98a52da8618250c8de0900c41c
 work/atmosphere/INPUT/DMS_conc.N96:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
   hashes:
     binhash: da1baa25e78ec281c82ea4588e30a340
     md5: 7e8ec8de832c0b9b8c1d9f0eda4d54e5
-work/atmosphere/INPUT/Ndep_1850_cmip7_v2_0.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1850_cmip7_v2_0.anc
+work/atmosphere/INPUT/Ndep_piclim_anthro_2021_cmip7_v2_0.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/land/biogeochemistry/2026.11.25/Ndep_piclim_anthro_2021_cmip7_v2_0.anc
   hashes:
-    binhash: 45eaf5be27698857c2aae59ee8ab12b9
-    md5: e60be5a1c6f12797f0c18c2cf7c42f23
-work/atmosphere/INPUT/OCFF_1850_cmip7.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/OCFF_1850_cmip7.anc
+    binhash: d8a1088ded865f4ff47598455c77b1cf
+    md5: 4b0ba1e01109454b4d0bd586024eb626
+work/atmosphere/INPUT/OCFF_piclim_anthro_2021_cmip7.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/OCFF_piclim_anthro_2021_cmip7.anc
   hashes:
-    binhash: 971798cbec63f8fe4fea5d1f8e7e862c
-    md5: 6bceddebc7b0c2ebeea3be8b4c0f13e8
+    binhash: e5958c27c78b13e10a47921b23d0398a
+    md5: 378eb75ce10ff2be0d14062a4801cc07
 work/atmosphere/INPUT/STASHmaster/README:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/stash/2026.01.21/STASHmaster/README
   hashes:
@@ -71,21 +71,21 @@ work/atmosphere/INPUT/modis_phenology_csiro_13evergreen.txt:
   hashes:
     binhash: 301907643ca1dfecfdcecd5f65dfd5e6
     md5: c8f344d7371949fb6aac7f71e1e003d6
-work/atmosphere/INPUT/ozone_1850_cmip7.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/forcing/global.N96/2025.12.09/ozone_1850_cmip7.anc
+work/atmosphere/INPUT/ozone_piclim_anthro_2021_cmip7.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/forcing/2026.11.25/ozone_piclim_anthro_2021_cmip7.anc
   hashes:
-    binhash: 06aa2cd5c9fbcb8b5f48eb6160a67586
-    md5: 1e32029cfa87e950b9ce6e4dd1211c6e
+    binhash: aa83cb574277eae67fc43f376ce16131
+    md5: 82888abc5d97efc3dd1246db6dd27efd
 work/atmosphere/INPUT/pftlookup_cable3_Pfix.csv:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
   hashes:
     binhash: fe0c4ad208586a2ccf2cb113919a8332
     md5: d9a4d71ee8038029739c23a1b829ab6a
-work/atmosphere/INPUT/scycl_1850_cmip7.anc:
-  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/scycl_1850_cmip7.anc
+work/atmosphere/INPUT/scycl_piclim_anthro_2021_cmip7.anc:
+  fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/scycl_piclim_anthro_2021_cmip7.anc
   hashes:
-    binhash: c194a03b08f28b8ccb3ba3f87bbdd39d
-    md5: 46c41f2683230a383bd7fb1face49203
+    binhash: 41c554beb9ad7931630f0c383c692a56
+    md5: b04a27880dce37908f58c9309f5f6200
 work/atmosphere/INPUT/seaice_piclim_n96_gregorian.anc:
   fullpath: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim/atmosphere/boundary_conditions/global.N96/2026.10.23/seaice_piclim_n96_gregorian.anc
   hashes:
