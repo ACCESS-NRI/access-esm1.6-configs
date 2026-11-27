@@ -16,7 +16,7 @@
 # Note: if laboratory is relative path, it is relative to shortpath/$USER
 laboratory: access-esm
 
-jobname: piClim-control
+jobname: piClim-anthro
 queue: normalsr
 walltime: 2:30:00
 jobfs: 15GB
@@ -42,17 +42,17 @@ submodels:
       exe: um_hg3.exe
       input:
         # Aerosols
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/OCFF_1850_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/BC_1850_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/scycl_1850_cmip7.anc
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/aerosol/global.N96/2025.06.04/Bio_1850_cmip7.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/BC_piclim_anthro_2021_cmip7.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/Bio_piclim_anthro_2021_cmip7.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/OCFF_piclim_anthro_2021_cmip7.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/aerosol/2026.11.25/scycl_piclim_anthro_2021_cmip7.anc
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/biogenic_351sm.N96L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/sulpc_oxidants_N96_L38
         - /g/data/vk83/configurations/inputs/access-esm1p5/modern/share/atmosphere/aerosol/global.N96/2020.05.19/DMS_conc.N96
         # Forcing
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/forcing/global.N96/2025.12.09/ozone_1850_cmip7.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/forcing/2026.11.25/ozone_piclim_anthro_2021_cmip7.anc
         # Land
-        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/pre-industrial/atmosphere/land/biogeochemistry/global.N96/2026.03.27/Ndep_1850_cmip7_v2_0.anc
+        - /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/atmosphere/land/biogeochemistry/2026.11.25/Ndep_piclim_anthro_2021_cmip7_v2_0.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/vegetation/global.N96/2025.08.29/cable_vegfunc_N96.anc
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2025.08.29/modis_phenology_csiro_13evergreen.txt
         - /g/data/vk83/configurations/inputs/access-esm1p6/share/atmosphere/land/biogeochemistry/resolution_independent/2026.02.10/pftlookup_cable3_Pfix.csv
@@ -66,7 +66,7 @@ submodels:
         - /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim/atmosphere/boundary_conditions/global.N96/2026.10.23/sst_piclim_n96_gregorian.anc
 
 
-restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim/restart/2026.11.09
+restart: /g/data/vk83/configurations/inputs/access-esm1p6/modern/piclim-anthro/restart/2026.11.25
 
 # Timing controls
 calendar:
